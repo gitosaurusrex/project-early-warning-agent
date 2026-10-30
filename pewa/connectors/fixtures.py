@@ -32,7 +32,10 @@ class FixtureConnector:
 
 
 def load_outcomes(name: str, base: Path | None = None) -> list[dict[str, Any]]:
-    records = json.loads((fixture_dir(name, base) / "outcomes.json").read_text())
+    return parse_outcomes(json.loads((fixture_dir(name, base) / "outcomes.json").read_text()))
+
+
+def parse_outcomes(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [
         {
             "epic_key": r["epic_key"],

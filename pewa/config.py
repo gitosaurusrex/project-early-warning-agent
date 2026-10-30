@@ -30,14 +30,23 @@ class Settings(BaseSettings):
     jira_email: str | None = None
     jira_api_token: SecretStr | None = None
     jira_project_key: str | None = None
+    # Story points live in a custom field whose id varies by site (Settings > Issues > Custom fields).
+    jira_points_field: str = "customfield_10016"
+    # Classic "Epic Link" field id, for older company-managed projects that don't use `parent`.
+    jira_epic_link_field: str | None = None
+    # "Jira status=pewa status" pairs, e.g. "Code Review=In Review,Ready for QA=In Review".
+    jira_status_map: Annotated[list[str], NoDecode] = Field(default_factory=list)
 
     # GitHub
     github_token: SecretStr | None = None
     github_repos: Annotated[list[str], NoDecode] = Field(default_factory=list)
+    github_api_url: str = "https://api.github.com"
 
     # Slack
     slack_bot_token: SecretStr | None = None
     slack_channels: Annotated[list[str], NoDecode] = Field(default_factory=list)
+    # Incremental syncs re-read threads started this many days before the last sync (see slack.py).
+    slack_thread_lookback_days: int = 14
 
     # Signal thresholds (used from Phase 2 on)
     pewa_stale_review_days: int = 3
@@ -55,12 +64,16 @@ class Settings(BaseSettings):
         ]
     )
 
-    @field_validator("github_repos", "slack_channels", "pewa_blocker_phrases", mode="before")
+    @field_validator("github_repos", "slack_channels", "pewa_blocker_phrases", "jira_status_map", mode="before")
     @classmethod
     def _split_csv(cls, value: object) -> object:
         if isinstance(value, str):
             return [part.strip() for part in value.split(",") if part.strip()]
         return value
+
+    def status_map(self) -> dict[str, str]:
+        pairs = (item.split("=", 1) for item in self.jira_status_map if "=" in item)
+        return {name.strip(): status.strip() for name, status in pairs}
 
     def anthropic_key(self) -> str | None:
         key = self.pewa_anthropic_api_key or self.anthropic_api_key

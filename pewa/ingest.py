@@ -4,17 +4,18 @@ import logging
 from collections import defaultdict
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import UTC, date, datetime
 from typing import Any
 
 from sqlalchemy import delete, func, select
 from sqlalchemy.orm import Session
 
-from pewa.connectors.base import Connector
+from pewa.connectors.base import Connector, ConnectorError
 from pewa.entities import build_versions, entity_type
 from pewa.linking import LinkResolver
 from pewa.models import EntityVersion, EventRow, Outcome
-from pewa.schemas import Event, make_event_id
+from pewa.schemas import Event, make_event_id, status_category
+from pewa.snapshot import build as build_snapshot
 from pewa.snapshot import load_entities, row_to_event
 
 log = logging.getLogger(__name__)
@@ -29,6 +30,7 @@ class IngestResult:
     entity_versions: int = 0
     linked_events: int = 0
     outcomes: int = 0
+    errors: dict[str, str] = field(default_factory=dict)  # source -> why it was skipped
 
 
 def _chunks(items: Sequence[Any], size: int = _CHUNK) -> Iterable[Sequence[Any]]:
@@ -129,6 +131,18 @@ def relink_events(session: Session, project: str) -> int:
     return changed
 
 
+def derive_outcomes(session: Session, project: str) -> list[dict[str, Any]]:
+    """Ground truth from finished epics: planned = first due date set, actual = when it reached Done."""
+    state = build_snapshot(session, project, datetime.now(UTC))
+    rows = []
+    for epic in state.epics.values():
+        if not (epic.original_due_date and epic.resolved_at and status_category(epic.status) == "done"):
+            continue
+        planned, actual = date.fromisoformat(epic.original_due_date), epic.resolved_at.date()
+        rows.append({"epic_key": epic.key, "planned_date": planned, "actual_date": actual, "slipped": actual > planned})
+    return rows
+
+
 def save_outcomes(session: Session, project: str, outcomes: Iterable[dict[str, Any]]) -> int:
     count = 0
     for outcome in outcomes:
@@ -149,7 +163,13 @@ def ingest(session: Session, project: str, connectors: Iterable[Connector], incr
     new_events: list[Event] = []
     for connector in connectors:
         since = last_ingested_at(session, project, connector.source) if incremental else None
-        events = connector.fetch(since)
+        try:
+            events = connector.fetch(since)
+        except ConnectorError as exc:
+            # One unreachable source shouldn't block the others; the caller reports it.
+            result.errors[connector.source] = str(exc)
+            log.warning("ingest %s/%s skipped: %s", project, connector.source, exc)
+            continue
         inserted = insert_events(session, project, events)
         result.fetched[connector.source] = len(events)
         result.inserted[connector.source] = len(inserted)

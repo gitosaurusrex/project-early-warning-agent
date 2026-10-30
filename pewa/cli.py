@@ -1,5 +1,6 @@
 """`pewa` command-line interface."""
 
+import json
 import logging
 import os
 import shutil
@@ -8,6 +9,7 @@ from enum import StrEnum
 from pathlib import Path
 
 import typer
+from sqlalchemy import select
 from rich.console import Console
 from rich.table import Table
 
@@ -18,11 +20,13 @@ from pewa import runs as runs_mod
 from pewa import snapshot as snapshot_mod
 from pewa.config import REPO_ROOT, get_settings
 from pewa.connectors.base import Connector
-from pewa.connectors.fixtures import FixtureConnector, fixture_dir, load_outcomes
+from pewa.connectors.fixtures import FixtureConnector, fixture_dir, load_outcomes, parse_outcomes
+from pewa.connectors.live import make_connector
 from pewa.db import make_engine, session_scope
 from pewa.ingest import ingest as run_ingest
-from pewa.ingest import save_outcomes
+from pewa.ingest import derive_outcomes, save_outcomes
 from pewa.llm import LLM, LLMAuthError
+from pewa.models import Outcome
 from pewa.schemas import SOURCES
 
 app = typer.Typer(help="Project Early-Warning Agent", no_args_is_help=True, add_completion=False)
@@ -63,33 +67,48 @@ def ingest(
     source: SourceOption = typer.Option(SourceOption.all, help="Which source to ingest."),
     fixtures: str | None = typer.Option(None, help="Load a bundled synthetic dataset (e.g. 'atlas') instead of live sources."),
     full: bool = typer.Option(False, help="Re-fetch all history instead of syncing from the last ingested event."),
+    project: str | None = typer.Option(None, help="Project name for live data (defaults to PEWA_PROJECT)."),
 ) -> None:
     """Fetch events from sources (or fixtures) and append them to the store."""
     settings = get_settings()
     sources = list(SOURCES) if source is SourceOption.all else [source.value]
+    connectors: list[Connector]
 
     if fixtures is None:
         live = [s for s in sources if settings.has_credentials(s)]
         for s in sorted(set(sources) - set(live)):
             err.print(f"[yellow]warning:[/yellow] skipping {s}: credentials not configured")
-        if live:
-            err.print("[red]Live connectors are not implemented yet (Phase 5). Use --fixtures atlas.[/red]")
-            raise typer.Exit(1)
-        err.print(f"No live credentials configured, using the bundled '{DEFAULT_FIXTURES}' fixtures.")
-        fixtures = DEFAULT_FIXTURES
+        if not live:
+            err.print(f"No live credentials configured, using the bundled '{DEFAULT_FIXTURES}' fixtures.")
+            fixtures = DEFAULT_FIXTURES
 
-    try:
-        fixture_dir(fixtures)
-    except FileNotFoundError as exc:
-        err.print(f"[red]{exc}[/red]")
-        raise typer.Exit(1) from exc
-    project = fixtures
-    connectors: list[Connector] = [FixtureConnector(fixtures, s) for s in sources]  # type: ignore[arg-type]
+    if fixtures is None:
+        project = project or settings.pewa_project
+        if (settings.pewa_fixtures_dir / project).is_dir():
+            err.print(f"[red]Project '{project}' is the name of a bundled fixture dataset.[/red] Set PEWA_PROJECT "
+                      "(or --project) to a name for your live project so the two don't mix.")
+            raise typer.Exit(1)
+        try:
+            connectors = [make_connector(s, settings) for s in live]
+        except ValueError as exc:
+            err.print(f"[red]{exc}[/red]")
+            raise typer.Exit(1) from exc
+        outcome_rows: list = []
+    else:
+        try:
+            fixture_dir(fixtures)
+        except FileNotFoundError as exc:
+            err.print(f"[red]{exc}[/red]")
+            raise typer.Exit(1) from exc
+        project = fixtures
+        connectors = [FixtureConnector(fixtures, s) for s in sources]  # type: ignore[arg-type]
+        outcome_rows = load_outcomes(fixtures)
+    sources = [c.source for c in connectors]
 
     engine = make_engine(settings.pewa_db_path)
     with session_scope(engine) as session:
         result = run_ingest(session, project, connectors, incremental=not full)
-        outcomes = save_outcomes(session, project, load_outcomes(fixtures))
+        outcomes = save_outcomes(session, project, outcome_rows)
 
     table = Table(title=f"Ingested project {project!r}")
     table.add_column("source")
@@ -100,6 +119,43 @@ def ingest(
     console.print(table)
     console.print(f"database: {settings.pewa_db_path}")
     console.print(f"entity versions written: {result.entity_versions}, event links updated: {result.linked_events}, outcomes: {outcomes}")
+    for s, message in result.errors.items():
+        err.print(f"[red]error:[/red] {s} was skipped: {message}")
+    if result.errors:
+        raise typer.Exit(1)
+
+
+@app.command()
+def outcomes(
+    file: Path | None = typer.Option(None, "--file", help="Load ground truth from a JSON file (same format as "
+                                     "data/fixtures/atlas/outcomes.json)."),
+    derive: bool = typer.Option(False, "--derive", help="Derive it from finished epics: planned = first due date "
+                                "set, actual = when the epic reached Done."),
+    project: str | None = typer.Option(None, help="Project name (defaults to PEWA_PROJECT)."),
+) -> None:
+    """Show, load or derive the ground truth that backtests are scored against."""
+    settings = get_settings()
+    project = project or settings.pewa_project
+    if file and derive:
+        raise typer.BadParameter("use either --file or --derive", param_hint="--file")
+    with session_scope(make_engine(settings.pewa_db_path)) as session:
+        if file or derive:
+            try:
+                rows = parse_outcomes(json.loads(file.read_text())) if file else derive_outcomes(session, project)
+            except (OSError, ValueError, KeyError) as exc:
+                err.print(f"[red]Could not read outcomes: {exc}[/red]")
+                raise typer.Exit(1) from exc
+            err.print(f"Saved {save_outcomes(session, project, rows)} outcome(s) for '{project}'.")
+        stored = session.scalars(select(Outcome).where(Outcome.project == project).order_by(Outcome.epic_key)).all()
+    if not stored:
+        err.print(f"No outcomes for '{project}'. Load them with --file, or --derive them from finished epics.")
+        raise typer.Exit(1)
+    table = Table(title=f"Outcomes for {project}")
+    for col in ("epic", "planned", "delivered", "slipped"):
+        table.add_column(col)
+    for o in stored:
+        table.add_row(o.epic_key, str(o.planned_date), str(o.actual_date or "-"), "yes" if o.slipped else "no")
+    console.print(table)
 
 
 @app.command()

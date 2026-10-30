@@ -7,6 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "anthropic>=2.3.0",
     "fastapi>=0.162.0",
+    "httpx>=0.28.1",
     "jinja2>=3.1.6",
     "pydantic>=2.7",
     "pydantic-settings>=2.3",
@@ -21,8 +22,8 @@ pewa = "pewa.cli:app"
 
 [dependency-groups]
 dev = [
-    "httpx>=0.28.1",
     "pytest>=8",
+    "respx>=0.23.1",
 ]
 
 [build-system]
