@@ -4,7 +4,10 @@ Server-rendered with Jinja2. HTMX (from a CDN) swaps fragments in place; every f
 as a plain POST + redirect, so the dashboard stays usable offline.
 """
 
-from collections.abc import Iterator
+import base64
+import binascii
+import secrets
+from collections.abc import Awaitable, Callable, Iterator
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Annotated, Any
@@ -36,6 +39,18 @@ def evidence_href(event_id: str, url: str | None) -> str:
 templates = Jinja2Templates(directory=[TEMPLATES, backtest.TEMPLATES])
 templates.env.globals.update(evidence_href=evidence_href, verdicts=VERDICTS, chart=backtest.chart)
 templates.env.filters["dt"] = lambda value, fmt="%a %d %b %Y": value.strftime(fmt) if value else ""
+
+
+def password_ok(authorization: str | None, password: str) -> bool:
+    """True if an HTTP Basic `Authorization` header carries `password` (any username)."""
+    scheme, _, encoded = (authorization or "").partition(" ")
+    if scheme.lower() != "basic":
+        return False
+    try:
+        _, _, given = base64.b64decode(encoded, validate=True).decode("utf-8").partition(":")
+    except (binascii.Error, UnicodeDecodeError):
+        return False
+    return secrets.compare_digest(given.encode(), password.encode())
 
 
 def get_session(request: Request) -> Iterator[Session]:
@@ -77,11 +92,22 @@ def _backtest_or_404(session: Session, project: str, backtest_id: int) -> Backte
     return bt
 
 
-def create_app(engine: Engine | None = None, *, project: str | None = None, dry_run: bool = False) -> FastAPI:
+def create_app(engine: Engine | None = None, *, project: str | None = None, dry_run: bool = False,
+               password: str | None = None) -> FastAPI:
     app = FastAPI(title="pewa dashboard", docs_url=None, redoc_url=None)
     app.state.engine = engine or make_engine(get_settings().pewa_db_path)
     app.state.project = project or get_settings().pewa_project
     app.state.dry_run = dry_run
+
+    if password:
+        # One shared password. This is the single place to swap in a real identity provider
+        # (Clerk, an SSO proxy, ...) when the dashboard needs per-person accounts.
+        @app.middleware("http")
+        async def require_password(request: Request, call_next: Callable[[Request], Awaitable[Response]]) -> Response:
+            if request.url.path == "/healthz" or password_ok(request.headers.get("authorization"), password):
+                return await call_next(request)
+            return Response("Sign in to the pewa dashboard (any username, the shared password).", status_code=401,
+                            headers={"WWW-Authenticate": 'Basic realm="pewa", charset="UTF-8"'})
 
     def page(request: Request, name: str, status_code: int = 200, **context: Any) -> HTMLResponse:
         context.update(project=app.state.project, dry_run=app.state.dry_run)
@@ -235,7 +261,8 @@ def create_app(engine: Engine | None = None, *, project: str | None = None, dry_
 
     @app.get("/healthz")
     def healthz(session: SessionDep) -> dict[str, Any]:
-        return {"ok": True, "project": app.state.project,
-                "runs": session.scalar(select(func.count(Run.id)).where(Run.project == app.state.project))}
+        # Public (hosting health checks), so it reveals nothing beyond "the database answers".
+        session.execute(select(func.count(Run.id)))
+        return {"ok": True}
 
     return app

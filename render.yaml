@@ -1,0 +1,36 @@
+# Render Blueprint for a hosted, password-protected copy of the Atlas demo.
+# Render dashboard: New > Blueprint > pick this repo. See "Hosting" in the README.
+services:
+  - type: web
+    name: pewa-demo
+    runtime: python
+    plan: free
+    region: oregon
+    branch: main
+    autoDeployTrigger: commit
+    buildCommand: pip install uv && uv sync --frozen --no-dev
+    # The free plan has no persistent disk, so the demo is rebuilt (in ~3 s, no model calls)
+    # whenever the instance starts. Feedback and dashboard-triggered runs reset with it.
+    startCommand: .venv/bin/pewa demo && .venv/bin/pewa serve --host 0.0.0.0
+    healthCheckPath: /healthz
+    envVars:
+      - key: PEWA_PROJECT
+        value: atlas
+      - key: PEWA_DB_PATH
+        value: /tmp/pewa.db
+      # Render generates a random password; read it under the service's Environment tab.
+      # Sign in with any username and this password.
+      - key: PEWA_DASHBOARD_PASSWORD
+        generateValue: true
+      # Optional. Leave empty to keep the dashboard on the free offline responder (no model
+      # calls). If set, signed-in visitors can run assessments and reports billed to this key.
+      - key: PEWA_ANTHROPIC_API_KEY
+        sync: false
+      - key: PEWA_MODEL
+        value: claude-sonnet-5-5
+    # To keep feedback and runs across restarts: switch to a paid plan, uncomment the disk,
+    # and set PEWA_DB_PATH to /var/data/pewa.db.
+    # disk:
+    #   name: pewa-data
+    #   mountPath: /var/data
+    #   sizeGB: 1
