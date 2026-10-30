@@ -68,6 +68,7 @@ class TicketState(BaseModel):
     resolved_at: datetime | None = None
     url: str | None = None
     last_activity_at: datetime | None = None
+    last_activity_event_id: str | None = None
 
     @property
     def category(self) -> str:
@@ -119,6 +120,16 @@ class EpicState(BaseModel):
     resolved_at: datetime | None = None
     url: str | None = None
     children: list[str] = Field(default_factory=list)
+
+
+class Signal(BaseModel):
+    """Output of a deterministic detector (SPEC §9). Evidence lists event ids."""
+
+    type: str
+    severity: int = Field(ge=1, le=3)
+    epic_key: str
+    evidence: list[str] = Field(default_factory=list)
+    detail: str
 
 
 class ProjectState(BaseModel):

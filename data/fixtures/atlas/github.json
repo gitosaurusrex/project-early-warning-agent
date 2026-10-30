@@ -1,7 +1,21 @@
 [
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-05T14:03:00+00:00",
+  "occurred_at": "2026-01-06T14:08:00+00:00",
+  "entity_id": "larkspur/atlas-api#101",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/101",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 101,
+   "title": "Onboarding API endpoints",
+   "branch": "liam/atl-34-onboarding-api-endpoints",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-06T14:08:00+00:00",
   "entity_id": "larkspur/atlas-web#101",
   "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-web/pull/101",
@@ -15,23 +29,69 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-05T14:05:00+00:00",
+  "occurred_at": "2026-01-06T14:10:00+00:00",
+  "entity_id": "larkspur/atlas-api#101",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/101",
+  "payload": {
+   "reviewer": "hana.sato"
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-06T14:10:00+00:00",
   "entity_id": "larkspur/atlas-web#101",
   "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-web/pull/101",
   "payload": {
-   "reviewer": "liam.orourke"
+   "reviewer": "hana.sato"
   }
  },
  {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-05T14:14:00+00:00",
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-07T10:47:00+00:00",
   "entity_id": "larkspur/atlas-api#101",
-  "actor": "diego.ferreira",
+  "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-api/pull/101",
   "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-07T10:57:00+00:00",
+  "entity_id": "larkspur/atlas-web#101",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/101",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-07T11:21:00+00:00",
+  "entity_id": "larkspur/atlas-api#101",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/101",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-07T11:43:00+00:00",
+  "entity_id": "larkspur/atlas-web#101",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/101",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-07T14:05:00+00:00",
+  "entity_id": "larkspur/atlas-api#102",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/102",
+  "payload": {
    "repo": "larkspur/atlas-api",
-   "number": 101,
+   "number": 102,
    "title": "Payments API skeleton and routing",
    "branch": "diego/atl-6-payments-api-skeleton-and-routing",
    "body": "Implements the change described in the ticket."
@@ -39,23 +99,23 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-05T14:16:00+00:00",
-  "entity_id": "larkspur/atlas-api#101",
+  "occurred_at": "2026-01-07T14:07:00+00:00",
+  "entity_id": "larkspur/atlas-api#102",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/101",
+  "url": "https://github.example/larkspur/atlas-api/pull/102",
   "payload": {
-   "reviewer": "priya.natarajan"
+   "reviewer": "hana.sato"
   }
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-05T14:17:00+00:00",
-  "entity_id": "larkspur/atlas-api#102",
+  "occurred_at": "2026-01-07T14:16:00+00:00",
+  "entity_id": "larkspur/atlas-api#103",
   "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/102",
+  "url": "https://github.example/larkspur/atlas-api/pull/103",
   "payload": {
    "repo": "larkspur/atlas-api",
-   "number": 102,
+   "number": 103,
    "title": "Notification service skeleton",
    "branch": "tomasz/notification-service-skeleton",
    "body": "Closes ATL-38.\n\nSee ticket for context."
@@ -63,87 +123,9 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-05T14:19:00+00:00",
-  "entity_id": "larkspur/atlas-api#102",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/102",
-  "payload": {
-   "reviewer": "diego.ferreira"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-06T10:02:00+00:00",
-  "entity_id": "larkspur/atlas-api#101",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/101",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-06T10:41:00+00:00",
-  "entity_id": "larkspur/atlas-api#102",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/102",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-06T10:54:00+00:00",
-  "entity_id": "larkspur/atlas-api#101",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/101",
-  "payload": {}
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-06T10:56:00+00:00",
-  "entity_id": "larkspur/atlas-web#101",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-web/pull/101",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-06T11:40:00+00:00",
-  "entity_id": "larkspur/atlas-web#101",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/101",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-06T11:41:00+00:00",
-  "entity_id": "larkspur/atlas-api#102",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/102",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-06T14:12:00+00:00",
+  "occurred_at": "2026-01-07T14:18:00+00:00",
   "entity_id": "larkspur/atlas-api#103",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/103",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 103,
-   "title": "Onboarding API endpoints",
-   "branch": "liam/atl-34-onboarding-api-endpoints",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-06T14:14:00+00:00",
-  "entity_id": "larkspur/atlas-api#103",
-  "actor": "liam.orourke",
+  "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/103",
   "payload": {
    "reviewer": "diego.ferreira"
@@ -151,255 +133,49 @@
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-07T10:46:00+00:00",
-  "entity_id": "larkspur/atlas-api#103",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/103",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-07T11:41:00+00:00",
-  "entity_id": "larkspur/atlas-api#103",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/103",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-07T14:15:00+00:00",
-  "entity_id": "larkspur/atlas-api#104",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/104",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 104,
-   "title": "Card tokenization client",
-   "branch": "diego/atl-7-card-tokenization-client",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-07T14:17:00+00:00",
-  "entity_id": "larkspur/atlas-api#104",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/104",
-  "payload": {
-   "reviewer": "priya.natarajan"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-08T10:54:00+00:00",
-  "entity_id": "larkspur/atlas-api#104",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/104",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-08T11:48:00+00:00",
-  "entity_id": "larkspur/atlas-api#104",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/104",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-08T14:16:00+00:00",
-  "entity_id": "larkspur/atlas-api#105",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/105",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 105,
-   "title": "Event schema for notifications",
-   "branch": "tomasz/atl-39-event-schema-for-notifications",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-08T14:16:00+00:00",
-  "entity_id": "larkspur/atlas-web#102",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/102",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 102,
-   "title": "ATL-49: Unsubscribe links",
-   "branch": "priya/unsubscribe-links",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-08T14:18:00+00:00",
-  "entity_id": "larkspur/atlas-api#105",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/105",
-  "payload": {
-   "reviewer": "priya.natarajan"
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-08T14:18:00+00:00",
-  "entity_id": "larkspur/atlas-web#102",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/102",
-  "payload": {
-   "reviewer": "hana.sato"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-09T10:20:00+00:00",
-  "entity_id": "larkspur/atlas-api#105",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/105",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-09T10:50:00+00:00",
-  "entity_id": "larkspur/atlas-web#102",
+  "occurred_at": "2026-01-08T10:30:00+00:00",
+  "entity_id": "larkspur/atlas-api#102",
   "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/102",
+  "url": "https://github.example/larkspur/atlas-api/pull/102",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-08T10:48:00+00:00",
+  "entity_id": "larkspur/atlas-api#103",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/103",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-09T10:59:00+00:00",
-  "entity_id": "larkspur/atlas-api#105",
+  "occurred_at": "2026-01-08T11:12:00+00:00",
+  "entity_id": "larkspur/atlas-api#102",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/102",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-08T11:28:00+00:00",
+  "entity_id": "larkspur/atlas-api#103",
   "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/105",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-09T11:40:00+00:00",
-  "entity_id": "larkspur/atlas-web#102",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/102",
+  "url": "https://github.example/larkspur/atlas-api/pull/103",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-09T14:12:00+00:00",
-  "entity_id": "larkspur/atlas-web#103",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/103",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 103,
-   "title": "Welcome screen",
-   "branch": "ama/atl-23-welcome-screen",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-09T14:14:00+00:00",
-  "entity_id": "larkspur/atlas-api#106",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/106",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 106,
-   "title": "Payment intent model",
-   "branch": "diego/payment-intent-model",
-   "body": "Closes ATL-8.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-09T14:14:00+00:00",
-  "entity_id": "larkspur/atlas-web#103",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/103",
-  "payload": {
-   "reviewer": "diego.ferreira"
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-09T14:16:00+00:00",
-  "entity_id": "larkspur/atlas-api#106",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/106",
-  "payload": {
-   "reviewer": "ama.owusu"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-12T10:18:00+00:00",
-  "entity_id": "larkspur/atlas-web#103",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-web/pull/103",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-12T10:54:00+00:00",
-  "entity_id": "larkspur/atlas-web#103",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/103",
-  "payload": {}
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-12T10:56:00+00:00",
-  "entity_id": "larkspur/atlas-api#106",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-api/pull/106",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-12T11:40:00+00:00",
-  "entity_id": "larkspur/atlas-api#106",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/106",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-12T14:08:00+00:00",
-  "entity_id": "larkspur/atlas-web#104",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/104",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 104,
-   "title": "Notification center UI",
-   "branch": "priya/notification-center-ui",
-   "body": "Closes ATL-50.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-12T14:10:00+00:00",
-  "entity_id": "larkspur/atlas-api#107",
+  "occurred_at": "2026-01-08T13:08:00+00:00",
+  "entity_id": "larkspur/atlas-api#104",
   "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/107",
+  "url": "https://github.example/larkspur/atlas-api/pull/104",
   "payload": {
    "repo": "larkspur/atlas-api",
-   "number": 107,
+   "number": 104,
    "title": "Persist onboarding progress",
    "branch": "liam/atl-35-persist-onboarding-progress",
    "body": "Implements the change described in the ticket."
@@ -407,153 +183,243 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-12T14:10:00+00:00",
-  "entity_id": "larkspur/atlas-web#104",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/104",
+  "occurred_at": "2026-01-08T13:10:00+00:00",
+  "entity_id": "larkspur/atlas-api#104",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/104",
   "payload": {
-   "reviewer": "hana.sato"
+   "reviewer": "ama.owusu"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-08T14:51:00+00:00",
+  "entity_id": "larkspur/atlas-api#104",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-api/pull/104",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-08T15:47:00+00:00",
+  "entity_id": "larkspur/atlas-api#104",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/104",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-09T14:01:00+00:00",
+  "entity_id": "larkspur/atlas-api#105",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/105",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 105,
+   "title": "Card tokenization client",
+   "branch": "diego/atl-7-card-tokenization-client",
+   "body": "Implements the change described in the ticket."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-12T14:12:00+00:00",
-  "entity_id": "larkspur/atlas-api#107",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/107",
+  "occurred_at": "2026-01-09T14:03:00+00:00",
+  "entity_id": "larkspur/atlas-api#105",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/105",
+  "payload": {
+   "reviewer": "liam.orourke"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-09T14:04:00+00:00",
+  "entity_id": "larkspur/atlas-web#102",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/102",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 102,
+   "title": "Unsubscribe links",
+   "branch": "priya/atl-49-unsubscribe-links",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-09T14:06:00+00:00",
+  "entity_id": "larkspur/atlas-web#102",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/102",
+  "payload": {
+   "reviewer": "liam.orourke"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-09T14:18:00+00:00",
+  "entity_id": "larkspur/atlas-web#103",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/103",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 103,
+   "title": "Welcome screen",
+   "branch": "ama/welcome-screen",
+   "body": "Closes ATL-23.\n\nSee ticket for context."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-09T14:20:00+00:00",
+  "entity_id": "larkspur/atlas-web#103",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/103",
   "payload": {
    "reviewer": "diego.ferreira"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-13T10:57:00+00:00",
-  "entity_id": "larkspur/atlas-web#104",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/104",
+  "occurred_at": "2026-01-12T10:13:00+00:00",
+  "entity_id": "larkspur/atlas-web#102",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-web/pull/102",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-13T10:58:00+00:00",
-  "entity_id": "larkspur/atlas-api#107",
+  "occurred_at": "2026-01-12T10:19:00+00:00",
+  "entity_id": "larkspur/atlas-web#103",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/107",
+  "url": "https://github.example/larkspur/atlas-web/pull/103",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-13T11:31:00+00:00",
-  "entity_id": "larkspur/atlas-api#107",
+  "occurred_at": "2026-01-12T10:51:00+00:00",
+  "entity_id": "larkspur/atlas-web#102",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/102",
+  "payload": {}
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-12T10:54:00+00:00",
+  "entity_id": "larkspur/atlas-api#105",
   "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/107",
+  "url": "https://github.example/larkspur/atlas-api/pull/105",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-12T10:58:00+00:00",
+  "entity_id": "larkspur/atlas-web#103",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/103",
   "payload": {}
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-13T11:43:00+00:00",
-  "entity_id": "larkspur/atlas-web#104",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/104",
+  "occurred_at": "2026-01-12T11:50:00+00:00",
+  "entity_id": "larkspur/atlas-api#105",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/105",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-13T14:06:00+00:00",
-  "entity_id": "larkspur/atlas-api#108",
+  "occurred_at": "2026-01-13T14:03:00+00:00",
+  "entity_id": "larkspur/atlas-api#106",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/108",
+  "url": "https://github.example/larkspur/atlas-api/pull/106",
   "payload": {
    "repo": "larkspur/atlas-api",
-   "number": 108,
-   "title": "ATL-9: Charge endpoint",
-   "branch": "diego/charge-endpoint",
+   "number": 106,
+   "title": "ATL-8: Payment intent model",
+   "branch": "diego/payment-intent-model",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-13T14:05:00+00:00",
+  "entity_id": "larkspur/atlas-api#106",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/106",
+  "payload": {
+   "reviewer": "tomasz.wilk"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-13T14:06:00+00:00",
+  "entity_id": "larkspur/atlas-web#104",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/104",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 104,
+   "title": "ATL-50: Notification center UI",
+   "branch": "priya/notification-center-ui",
    "body": "Implements the change described in the ticket."
   }
  },
  {
   "kind": "pr_review_requested",
   "occurred_at": "2026-01-13T14:08:00+00:00",
-  "entity_id": "larkspur/atlas-api#108",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/108",
-  "payload": {
-   "reviewer": "hana.sato"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-13T14:11:00+00:00",
-  "entity_id": "larkspur/atlas-api#109",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/109",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 109,
-   "title": "Email channel adapter",
-   "branch": "tomasz/atl-40-email-channel-adapter",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-13T14:13:00+00:00",
-  "entity_id": "larkspur/atlas-api#109",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/109",
+  "entity_id": "larkspur/atlas-web#104",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/104",
   "payload": {
    "reviewer": "liam.orourke"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-14T10:01:00+00:00",
-  "entity_id": "larkspur/atlas-api#109",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/109",
+  "occurred_at": "2026-01-14T10:20:00+00:00",
+  "entity_id": "larkspur/atlas-api#106",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/106",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-14T10:14:00+00:00",
-  "entity_id": "larkspur/atlas-api#108",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-api/pull/108",
+  "occurred_at": "2026-01-14T10:20:00+00:00",
+  "entity_id": "larkspur/atlas-web#104",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-web/pull/104",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-14T11:01:00+00:00",
-  "entity_id": "larkspur/atlas-api#109",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/109",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-14T11:07:00+00:00",
-  "entity_id": "larkspur/atlas-api#108",
+  "occurred_at": "2026-01-14T10:56:00+00:00",
+  "entity_id": "larkspur/atlas-api#106",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/108",
+  "url": "https://github.example/larkspur/atlas-api/pull/106",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-14T11:18:00+00:00",
-  "entity_id": "larkspur/atlas-api#110",
+  "occurred_at": "2026-01-14T11:05:00+00:00",
+  "entity_id": "larkspur/atlas-api#107",
   "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/110",
+  "url": "https://github.example/larkspur/atlas-api/pull/107",
   "payload": {
    "repo": "larkspur/atlas-api",
-   "number": 110,
+   "number": 107,
    "title": "Bump dependencies",
    "branch": "tomasz/bump-dependencies",
    "body": "Housekeeping, no ticket."
@@ -561,61 +427,179 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-14T11:19:00+00:00",
-  "entity_id": "larkspur/atlas-api#110",
+  "occurred_at": "2026-01-14T11:06:00+00:00",
+  "entity_id": "larkspur/atlas-api#107",
   "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/110",
-  "payload": {
-   "reviewer": "hana.sato"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-14T12:48:00+00:00",
-  "entity_id": "larkspur/atlas-api#110",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-api/pull/110",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-14T13:18:00+00:00",
-  "entity_id": "larkspur/atlas-api#110",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/110",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-14T14:19:00+00:00",
-  "entity_id": "larkspur/atlas-web#105",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/105",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 105,
-   "title": "Account details step",
-   "branch": "ama/atl-24-account-details-step",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-14T14:21:00+00:00",
-  "entity_id": "larkspur/atlas-web#105",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/105",
+  "url": "https://github.example/larkspur/atlas-api/pull/107",
   "payload": {
    "reviewer": "liam.orourke"
   }
  },
  {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-14T11:07:00+00:00",
+  "entity_id": "larkspur/atlas-web#104",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/104",
+  "payload": {}
+ },
+ {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-15T10:42:00+00:00",
-  "entity_id": "larkspur/atlas-web#105",
+  "occurred_at": "2026-01-14T12:35:00+00:00",
+  "entity_id": "larkspur/atlas-api#107",
   "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/107",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-14T13:05:00+00:00",
+  "entity_id": "larkspur/atlas-api#107",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/107",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-15T13:14:00+00:00",
+  "entity_id": "larkspur/atlas-api#108",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/108",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 108,
+   "title": "Charge endpoint",
+   "branch": "diego/atl-9-charge-endpoint",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-15T13:16:00+00:00",
+  "entity_id": "larkspur/atlas-api#108",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/108",
+  "payload": {
+   "reviewer": "ama.owusu"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-15T14:13:00+00:00",
+  "entity_id": "larkspur/atlas-api#109",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/109",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 109,
+   "title": "Event schema for notifications",
+   "branch": "tomasz/atl-39-event-schema-for-notifications",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-15T14:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#109",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/109",
+  "payload": {
+   "reviewer": "ama.owusu"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-15T14:17:00+00:00",
+  "entity_id": "larkspur/atlas-web#105",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/105",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 105,
+   "title": "ATL-52: Search index mapping v2",
+   "branch": "hana/search-index-mapping-v2",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-15T14:17:00+00:00",
+  "entity_id": "larkspur/atlas-web#106",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/106",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 106,
+   "title": "ATL-24: Account details step",
+   "branch": "ama/account-details-step",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-15T14:19:00+00:00",
+  "entity_id": "larkspur/atlas-web#105",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/105",
+  "payload": {
+   "reviewer": "priya.natarajan"
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-15T14:19:00+00:00",
+  "entity_id": "larkspur/atlas-web#106",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/106",
+  "payload": {
+   "reviewer": "priya.natarajan"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-15T14:56:00+00:00",
+  "entity_id": "larkspur/atlas-api#108",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-api/pull/108",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-15T15:35:00+00:00",
+  "entity_id": "larkspur/atlas-api#108",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/108",
+  "payload": {}
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-16T10:32:00+00:00",
+  "entity_id": "larkspur/atlas-web#106",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/106",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-16T10:36:00+00:00",
+  "entity_id": "larkspur/atlas-api#109",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-api/pull/109",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-16T10:42:00+00:00",
+  "entity_id": "larkspur/atlas-web#105",
+  "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-web/pull/105",
   "payload": {
    "state": "approved"
@@ -623,113 +607,157 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-15T11:33:00+00:00",
-  "entity_id": "larkspur/atlas-web#105",
+  "occurred_at": "2026-01-16T11:08:00+00:00",
+  "entity_id": "larkspur/atlas-web#106",
   "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/106",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-16T11:20:00+00:00",
+  "entity_id": "larkspur/atlas-web#105",
+  "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-web/pull/105",
   "payload": {}
  },
  {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-16T11:26:00+00:00",
+  "entity_id": "larkspur/atlas-api#109",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/109",
+  "payload": {}
+ },
+ {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-15T14:06:00+00:00",
-  "entity_id": "larkspur/atlas-api#111",
+  "occurred_at": "2026-01-16T14:16:00+00:00",
+  "entity_id": "larkspur/atlas-api#110",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/110",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 110,
+   "title": "Email verification hook",
+   "branch": "liam/email-verification-hook",
+   "body": "Closes ATL-36.\n\nSee ticket for context."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-16T14:18:00+00:00",
+  "entity_id": "larkspur/atlas-api#110",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/110",
+  "payload": {
+   "reviewer": "diego.ferreira"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-19T10:17:00+00:00",
+  "entity_id": "larkspur/atlas-api#110",
   "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/110",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-19T11:04:00+00:00",
+  "entity_id": "larkspur/atlas-api#110",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/110",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-19T13:03:00+00:00",
+  "entity_id": "larkspur/atlas-api#111",
+  "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/111",
   "payload": {
    "repo": "larkspur/atlas-api",
    "number": 111,
-   "title": "ATL-10: Currency handling and rounding",
-   "branch": "diego/currency-handling-and-rounding",
+   "title": "Email channel adapter",
+   "branch": "tomasz/atl-40-email-channel-adapter",
    "body": "Implements the change described in the ticket."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-15T14:08:00+00:00",
+  "occurred_at": "2026-01-19T13:05:00+00:00",
   "entity_id": "larkspur/atlas-api#111",
-  "actor": "diego.ferreira",
+  "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/111",
   "payload": {
-   "reviewer": "hana.sato"
+   "reviewer": "ama.owusu"
   }
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-15T14:11:00+00:00",
-  "entity_id": "larkspur/atlas-web#106",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/106",
+  "occurred_at": "2026-01-19T14:05:00+00:00",
+  "entity_id": "larkspur/atlas-api#112",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/112",
   "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 106,
-   "title": "Search index mapping v2",
-   "branch": "hana/search-index-mapping-v2",
-   "body": "Closes ATL-52.\n\nSee ticket for context."
+   "repo": "larkspur/atlas-api",
+   "number": 112,
+   "title": "Currency handling and rounding",
+   "branch": "diego/atl-10-currency-handling-and-rounding",
+   "body": "Implements the change described in the ticket."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-15T14:13:00+00:00",
-  "entity_id": "larkspur/atlas-web#106",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/106",
+  "occurred_at": "2026-01-19T14:07:00+00:00",
+  "entity_id": "larkspur/atlas-api#112",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/112",
   "payload": {
    "reviewer": "ama.owusu"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-16T10:19:00+00:00",
+  "occurred_at": "2026-01-19T15:00:00+00:00",
   "entity_id": "larkspur/atlas-api#111",
-  "actor": "hana.sato",
+  "actor": "ama.owusu",
   "url": "https://github.example/larkspur/atlas-api/pull/111",
   "payload": {
    "state": "approved"
   }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-19T15:53:00+00:00",
+  "entity_id": "larkspur/atlas-api#111",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/111",
+  "payload": {}
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-16T10:51:00+00:00",
-  "entity_id": "larkspur/atlas-web#106",
+  "occurred_at": "2026-01-20T10:32:00+00:00",
+  "entity_id": "larkspur/atlas-api#112",
   "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/106",
+  "url": "https://github.example/larkspur/atlas-api/pull/112",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-16T11:04:00+00:00",
-  "entity_id": "larkspur/atlas-api#111",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/111",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-16T11:38:00+00:00",
-  "entity_id": "larkspur/atlas-web#106",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/106",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-16T14:08:00+00:00",
+  "occurred_at": "2026-01-20T11:29:00+00:00",
   "entity_id": "larkspur/atlas-api#112",
-  "actor": "liam.orourke",
+  "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/112",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 112,
-   "title": "Email verification hook",
-   "branch": "liam/atl-36-email-verification-hook",
-   "body": "Implements the change described in the ticket."
-  }
+  "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-16T14:09:00+00:00",
+  "occurred_at": "2026-01-20T14:20:00+00:00",
   "entity_id": "larkspur/atlas-api#113",
   "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/113",
@@ -737,23 +765,13 @@
    "repo": "larkspur/atlas-api",
    "number": 113,
    "title": "Push channel adapter",
-   "branch": "tomasz/atl-41-push-channel-adapter",
-   "body": "Implements the change described in the ticket."
+   "branch": "tomasz/push-channel-adapter",
+   "body": "Closes ATL-41.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-16T14:10:00+00:00",
-  "entity_id": "larkspur/atlas-api#112",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/112",
-  "payload": {
-   "reviewer": "hana.sato"
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-16T14:11:00+00:00",
+  "occurred_at": "2026-01-20T14:22:00+00:00",
   "entity_id": "larkspur/atlas-api#113",
   "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/113",
@@ -763,7 +781,7 @@
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-19T10:05:00+00:00",
+  "occurred_at": "2026-01-21T10:21:00+00:00",
   "entity_id": "larkspur/atlas-api#113",
   "actor": "liam.orourke",
   "url": "https://github.example/larkspur/atlas-api/pull/113",
@@ -772,34 +790,16 @@
   }
  },
  {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-19T10:47:00+00:00",
-  "entity_id": "larkspur/atlas-api#112",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-api/pull/112",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-19T10:59:00+00:00",
+  "occurred_at": "2026-01-21T10:57:00+00:00",
   "entity_id": "larkspur/atlas-api#113",
   "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/113",
   "payload": {}
  },
  {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-19T11:21:00+00:00",
-  "entity_id": "larkspur/atlas-api#112",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/112",
-  "payload": {}
- },
- {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-19T14:14:00+00:00",
+  "occurred_at": "2026-01-21T13:15:00+00:00",
   "entity_id": "larkspur/atlas-api#114",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/114",
@@ -813,7 +813,7 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-19T14:16:00+00:00",
+  "occurred_at": "2026-01-21T13:17:00+00:00",
   "entity_id": "larkspur/atlas-api#114",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/114",
@@ -822,40 +822,22 @@
   }
  },
  {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-20T10:36:00+00:00",
-  "entity_id": "larkspur/atlas-api#114",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-api/pull/114",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-20T11:30:00+00:00",
-  "entity_id": "larkspur/atlas-api#114",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/114",
-  "payload": {}
- },
- {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-20T14:00:00+00:00",
+  "occurred_at": "2026-01-21T14:12:00+00:00",
   "entity_id": "larkspur/atlas-web#107",
   "actor": "ama.owusu",
   "url": "https://github.example/larkspur/atlas-web/pull/107",
   "payload": {
    "repo": "larkspur/atlas-web",
    "number": 107,
-   "title": "ATL-25: Workspace setup step",
+   "title": "Workspace setup step",
    "branch": "ama/workspace-setup-step",
-   "body": "Implements the change described in the ticket."
+   "body": "Closes ATL-25.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-20T14:02:00+00:00",
+  "occurred_at": "2026-01-21T14:14:00+00:00",
   "entity_id": "larkspur/atlas-web#107",
   "actor": "ama.owusu",
   "url": "https://github.example/larkspur/atlas-web/pull/107",
@@ -864,42 +846,26 @@
   }
  },
  {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-20T14:18:00+00:00",
-  "entity_id": "larkspur/atlas-web#108",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/108",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 108,
-   "title": "ATL-62: Reporting data model",
-   "branch": "priya/reporting-data-model",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-20T14:20:00+00:00",
-  "entity_id": "larkspur/atlas-web#108",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/108",
-  "payload": {
-   "reviewer": "hana.sato"
-  }
- },
- {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-21T10:16:00+00:00",
-  "entity_id": "larkspur/atlas-web#108",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/108",
+  "occurred_at": "2026-01-21T15:09:00+00:00",
+  "entity_id": "larkspur/atlas-api#114",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-api/pull/114",
   "payload": {
    "state": "approved"
   }
  },
  {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-21T16:08:00+00:00",
+  "entity_id": "larkspur/atlas-api#114",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/114",
+  "payload": {}
+ },
+ {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-21T10:34:00+00:00",
+  "occurred_at": "2026-01-22T10:27:00+00:00",
   "entity_id": "larkspur/atlas-web#107",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-web/pull/107",
@@ -909,15 +875,7 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-21T10:58:00+00:00",
-  "entity_id": "larkspur/atlas-web#108",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/108",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-21T11:29:00+00:00",
+  "occurred_at": "2026-01-22T11:23:00+00:00",
   "entity_id": "larkspur/atlas-web#107",
   "actor": "ama.owusu",
   "url": "https://github.example/larkspur/atlas-web/pull/107",
@@ -925,55 +883,13 @@
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-21T14:13:00+00:00",
+  "occurred_at": "2026-01-22T14:03:00+00:00",
   "entity_id": "larkspur/atlas-api#115",
-  "actor": "tomasz.wilk",
+  "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/115",
   "payload": {
    "repo": "larkspur/atlas-api",
    "number": 115,
-   "title": "User notification preferences",
-   "branch": "tomasz/atl-42-user-notification-preferences",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-21T14:15:00+00:00",
-  "entity_id": "larkspur/atlas-api#115",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/115",
-  "payload": {
-   "reviewer": "ama.owusu"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-22T10:36:00+00:00",
-  "entity_id": "larkspur/atlas-api#115",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-api/pull/115",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-22T11:26:00+00:00",
-  "entity_id": "larkspur/atlas-api#115",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/115",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-22T14:01:00+00:00",
-  "entity_id": "larkspur/atlas-api#116",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/116",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 116,
    "title": "ATL-12: Auth scopes for payments API",
    "branch": "diego/auth-scopes-for-payments-api",
    "body": "Implements the change described in the ticket."
@@ -981,47 +897,61 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-22T14:03:00+00:00",
-  "entity_id": "larkspur/atlas-api#116",
+  "occurred_at": "2026-01-22T14:05:00+00:00",
+  "entity_id": "larkspur/atlas-api#115",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/116",
+  "url": "https://github.example/larkspur/atlas-api/pull/115",
   "payload": {
    "reviewer": "tomasz.wilk"
   }
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-22T14:15:00+00:00",
-  "entity_id": "larkspur/atlas-web#109",
+  "occurred_at": "2026-01-22T14:07:00+00:00",
+  "entity_id": "larkspur/atlas-web#108",
   "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-web/pull/109",
+  "url": "https://github.example/larkspur/atlas-web/pull/108",
   "payload": {
    "repo": "larkspur/atlas-web",
-   "number": 109,
+   "number": 108,
    "title": "E2E tests for onboarding",
-   "branch": "liam/atl-37-e2e-tests-for-onboarding",
-   "body": "Implements the change described in the ticket."
+   "branch": "liam/e2e-tests-for-onboarding",
+   "body": "Closes ATL-37.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-22T14:17:00+00:00",
-  "entity_id": "larkspur/atlas-web#109",
+  "occurred_at": "2026-01-22T14:09:00+00:00",
+  "entity_id": "larkspur/atlas-web#108",
   "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-web/pull/109",
+  "url": "https://github.example/larkspur/atlas-web/pull/108",
   "payload": {
-   "reviewer": "priya.natarajan"
+   "reviewer": "tomasz.wilk"
   }
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-22T14:19:00+00:00",
-  "entity_id": "larkspur/atlas-web#110",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/110",
+  "occurred_at": "2026-01-22T14:14:00+00:00",
+  "entity_id": "larkspur/atlas-api#116",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/116",
   "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 110,
+   "repo": "larkspur/atlas-api",
+   "number": 116,
+   "title": "User notification preferences",
+   "branch": "tomasz/user-notification-preferences",
+   "body": "Closes ATL-42.\n\nSee ticket for context."
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-22T14:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#117",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-api/pull/117",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 117,
    "title": "Query parser rewrite",
    "branch": "hana/atl-53-query-parser-rewrite",
    "body": "Implements the change described in the ticket."
@@ -1029,175 +959,203 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-22T14:21:00+00:00",
-  "entity_id": "larkspur/atlas-web#110",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/110",
-  "payload": {
-   "reviewer": "tomasz.wilk"
-  }
- },
- {
-  "kind": "ci_failed",
-  "occurred_at": "2026-01-22T14:35:00+00:00",
-  "entity_id": "larkspur/atlas-web#109",
-  "actor": "github-actions",
-  "url": "https://github.example/larkspur/atlas-web/pull/109",
-  "payload": {
-   "check": "test"
-  }
- },
- {
-  "kind": "ci_failed",
-  "occurred_at": "2026-01-22T15:00:00+00:00",
-  "entity_id": "larkspur/atlas-web#109",
-  "actor": "github-actions",
-  "url": "https://github.example/larkspur/atlas-web/pull/109",
-  "payload": {
-   "check": "test"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-23T10:17:00+00:00",
-  "entity_id": "larkspur/atlas-web#109",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/109",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-23T10:34:00+00:00",
-  "entity_id": "larkspur/atlas-web#110",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-web/pull/110",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-23T10:40:00+00:00",
+  "occurred_at": "2026-01-22T14:16:00+00:00",
   "entity_id": "larkspur/atlas-api#116",
   "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/116",
   "payload": {
-   "state": "approved"
+   "reviewer": "diego.ferreira"
   }
  },
  {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-23T11:07:00+00:00",
-  "entity_id": "larkspur/atlas-web#109",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-web/pull/109",
-  "payload": {}
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-22T14:17:00+00:00",
+  "entity_id": "larkspur/atlas-api#117",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-api/pull/117",
+  "payload": {
+   "reviewer": "priya.natarajan"
+  }
  },
  {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-23T11:18:00+00:00",
+  "kind": "ci_failed",
+  "occurred_at": "2026-01-22T14:27:00+00:00",
+  "entity_id": "larkspur/atlas-web#108",
+  "actor": "github-actions",
+  "url": "https://github.example/larkspur/atlas-web/pull/108",
+  "payload": {
+   "check": "test"
+  }
+ },
+ {
+  "kind": "ci_failed",
+  "occurred_at": "2026-01-22T14:52:00+00:00",
+  "entity_id": "larkspur/atlas-web#108",
+  "actor": "github-actions",
+  "url": "https://github.example/larkspur/atlas-web/pull/108",
+  "payload": {
+   "check": "test"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-23T10:08:00+00:00",
   "entity_id": "larkspur/atlas-api#116",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/116",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-23T10:09:00+00:00",
+  "entity_id": "larkspur/atlas-api#117",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/117",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-23T10:11:00+00:00",
+  "entity_id": "larkspur/atlas-api#115",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/115",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-23T10:53:00+00:00",
+  "entity_id": "larkspur/atlas-api#115",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/115",
+  "payload": {}
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-23T10:55:00+00:00",
+  "entity_id": "larkspur/atlas-web#108",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-web/pull/108",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-23T10:57:00+00:00",
+  "entity_id": "larkspur/atlas-api#116",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/116",
   "payload": {}
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-23T11:21:00+00:00",
-  "entity_id": "larkspur/atlas-web#110",
+  "occurred_at": "2026-01-23T11:03:00+00:00",
+  "entity_id": "larkspur/atlas-api#117",
   "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/110",
+  "url": "https://github.example/larkspur/atlas-api/pull/117",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-23T11:34:00+00:00",
+  "entity_id": "larkspur/atlas-web#108",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-web/pull/108",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-23T14:05:00+00:00",
-  "entity_id": "larkspur/atlas-web#111",
+  "occurred_at": "2026-01-23T13:09:00+00:00",
+  "entity_id": "larkspur/atlas-web#109",
   "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/111",
+  "url": "https://github.example/larkspur/atlas-web/pull/109",
   "payload": {
    "repo": "larkspur/atlas-web",
-   "number": 111,
+   "number": 109,
    "title": "Progress indicator",
    "branch": "ama/atl-26-progress-indicator",
    "body": "Implements the change described in the ticket."
   }
  },
  {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-23T14:07:00+00:00",
-  "entity_id": "larkspur/atlas-api#117",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/117",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 117,
-   "title": "Admin dashboard shell",
-   "branch": "priya/admin-dashboard-shell",
-   "body": "Closes ATL-63.\n\nSee ticket for context."
-  }
- },
- {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-23T14:07:00+00:00",
-  "entity_id": "larkspur/atlas-web#111",
+  "occurred_at": "2026-01-23T13:11:00+00:00",
+  "entity_id": "larkspur/atlas-web#109",
   "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/111",
+  "url": "https://github.example/larkspur/atlas-web/pull/109",
   "payload": {
    "reviewer": "liam.orourke"
   }
  },
  {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-23T14:09:00+00:00",
-  "entity_id": "larkspur/atlas-api#117",
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-23T14:16:00+00:00",
+  "entity_id": "larkspur/atlas-web#110",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/117",
+  "url": "https://github.example/larkspur/atlas-web/pull/110",
   "payload": {
-   "reviewer": "tomasz.wilk"
+   "repo": "larkspur/atlas-web",
+   "number": 110,
+   "title": "ATL-62: Reporting data model",
+   "branch": "priya/reporting-data-model",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-23T14:18:00+00:00",
+  "entity_id": "larkspur/atlas-web#110",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/110",
+  "payload": {
+   "reviewer": "hana.sato"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-26T10:34:00+00:00",
-  "entity_id": "larkspur/atlas-web#111",
+  "occurred_at": "2026-01-23T15:13:00+00:00",
+  "entity_id": "larkspur/atlas-web#109",
   "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-web/pull/111",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-26T10:40:00+00:00",
-  "entity_id": "larkspur/atlas-api#117",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/117",
+  "url": "https://github.example/larkspur/atlas-web/pull/109",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-26T11:21:00+00:00",
-  "entity_id": "larkspur/atlas-web#111",
+  "occurred_at": "2026-01-23T16:04:00+00:00",
+  "entity_id": "larkspur/atlas-web#109",
   "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/111",
+  "url": "https://github.example/larkspur/atlas-web/pull/109",
   "payload": {}
  },
  {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-26T10:54:00+00:00",
+  "entity_id": "larkspur/atlas-web#110",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/110",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-26T11:32:00+00:00",
-  "entity_id": "larkspur/atlas-api#117",
+  "occurred_at": "2026-01-26T11:45:00+00:00",
+  "entity_id": "larkspur/atlas-web#110",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/117",
+  "url": "https://github.example/larkspur/atlas-web/pull/110",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-26T14:17:00+00:00",
+  "occurred_at": "2026-01-26T13:12:00+00:00",
   "entity_id": "larkspur/atlas-api#118",
   "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/118",
@@ -1211,19 +1169,19 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-26T14:19:00+00:00",
+  "occurred_at": "2026-01-26T13:14:00+00:00",
   "entity_id": "larkspur/atlas-api#118",
   "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/118",
   "payload": {
-   "reviewer": "ama.owusu"
+   "reviewer": "liam.orourke"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-27T10:33:00+00:00",
+  "occurred_at": "2026-01-26T15:00:00+00:00",
   "entity_id": "larkspur/atlas-api#118",
-  "actor": "ama.owusu",
+  "actor": "liam.orourke",
   "url": "https://github.example/larkspur/atlas-api/pull/118",
   "payload": {
    "state": "approved"
@@ -1231,7 +1189,7 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-27T11:10:00+00:00",
+  "occurred_at": "2026-01-26T15:47:00+00:00",
   "entity_id": "larkspur/atlas-api#118",
   "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/118",
@@ -1239,145 +1197,13 @@
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-28T14:00:00+00:00",
-  "entity_id": "larkspur/atlas-web#112",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/112",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 112,
-   "title": "Form validation for signup",
-   "branch": "ama/atl-27-form-validation-for-signup",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-28T14:02:00+00:00",
+  "occurred_at": "2026-01-27T14:09:00+00:00",
   "entity_id": "larkspur/atlas-api#119",
-  "actor": "priya.natarajan",
+  "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/119",
   "payload": {
    "repo": "larkspur/atlas-api",
    "number": 119,
-   "title": "Usage report",
-   "branch": "priya/atl-64-usage-report",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-28T14:02:00+00:00",
-  "entity_id": "larkspur/atlas-web#112",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/112",
-  "payload": {
-   "reviewer": "tomasz.wilk"
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-28T14:04:00+00:00",
-  "entity_id": "larkspur/atlas-api#119",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/119",
-  "payload": {
-   "reviewer": "diego.ferreira"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-29T10:17:00+00:00",
-  "entity_id": "larkspur/atlas-api#119",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/119",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-29T10:58:00+00:00",
-  "entity_id": "larkspur/atlas-web#112",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-web/pull/112",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-29T11:16:00+00:00",
-  "entity_id": "larkspur/atlas-api#119",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/119",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-29T11:45:00+00:00",
-  "entity_id": "larkspur/atlas-web#112",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/112",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-29T14:03:00+00:00",
-  "entity_id": "larkspur/atlas-api#120",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/120",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 120,
-   "title": "Sandbox merchant fixtures",
-   "branch": "liam/atl-14-sandbox-merchant-fixtures",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-29T14:05:00+00:00",
-  "entity_id": "larkspur/atlas-api#120",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/120",
-  "payload": {
-   "reviewer": "tomasz.wilk"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-29T14:08:00+00:00",
-  "entity_id": "larkspur/atlas-web#113",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/113",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 113,
-   "title": "Relevance scoring tweaks",
-   "branch": "hana/atl-54-relevance-scoring-tweaks",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-01-29T14:10:00+00:00",
-  "entity_id": "larkspur/atlas-web#113",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/113",
-  "payload": {
-   "reviewer": "ama.owusu"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-01-29T14:15:00+00:00",
-  "entity_id": "larkspur/atlas-api#121",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/121",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 121,
    "title": "Digest batching",
    "branch": "tomasz/digest-batching",
    "body": "Closes ATL-44.\n\nSee ticket for context."
@@ -1385,47 +1211,229 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-01-29T14:17:00+00:00",
-  "entity_id": "larkspur/atlas-api#121",
+  "occurred_at": "2026-01-27T14:11:00+00:00",
+  "entity_id": "larkspur/atlas-api#119",
   "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/121",
+  "url": "https://github.example/larkspur/atlas-api/pull/119",
   "payload": {
-   "reviewer": "diego.ferreira"
+   "reviewer": "priya.natarajan"
   }
  },
  {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-30T10:10:00+00:00",
-  "entity_id": "larkspur/atlas-web#113",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/113",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-01-30T10:36:00+00:00",
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-27T14:14:00+00:00",
   "entity_id": "larkspur/atlas-api#120",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/120",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-30T10:41:00+00:00",
-  "entity_id": "larkspur/atlas-web#113",
   "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-api/pull/120",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 120,
+   "title": "ATL-54: Relevance scoring tweaks",
+   "branch": "hana/relevance-scoring-tweaks",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-27T14:16:00+00:00",
+  "entity_id": "larkspur/atlas-api#120",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-api/pull/120",
+  "payload": {
+   "reviewer": "tomasz.wilk"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-27T14:18:00+00:00",
+  "entity_id": "larkspur/atlas-web#111",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/111",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 111,
+   "title": "ATL-63: Admin dashboard shell",
+   "branch": "priya/admin-dashboard-shell",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-27T14:20:00+00:00",
+  "entity_id": "larkspur/atlas-web#111",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/111",
+  "payload": {
+   "reviewer": "ama.owusu"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-28T10:03:00+00:00",
+  "entity_id": "larkspur/atlas-api#120",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/120",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-28T10:22:00+00:00",
+  "entity_id": "larkspur/atlas-web#111",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/111",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-28T10:55:00+00:00",
+  "entity_id": "larkspur/atlas-api#120",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-api/pull/120",
+  "payload": {}
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-28T10:56:00+00:00",
+  "entity_id": "larkspur/atlas-api#119",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/119",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-28T11:09:00+00:00",
+  "entity_id": "larkspur/atlas-web#111",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/111",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-28T11:26:00+00:00",
+  "entity_id": "larkspur/atlas-api#119",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/119",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-28T14:10:00+00:00",
+  "entity_id": "larkspur/atlas-web#112",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/112",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 112,
+   "title": "ATL-27: Form validation for signup",
+   "branch": "ama/form-validation-for-signup",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-28T14:12:00+00:00",
+  "entity_id": "larkspur/atlas-web#112",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/112",
+  "payload": {
+   "reviewer": "tomasz.wilk"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-29T10:30:00+00:00",
+  "entity_id": "larkspur/atlas-web#112",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-web/pull/112",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-29T11:08:00+00:00",
+  "entity_id": "larkspur/atlas-web#112",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/112",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-29T13:11:00+00:00",
+  "entity_id": "larkspur/atlas-web#113",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/113",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 113,
+   "title": "Usage report",
+   "branch": "priya/atl-64-usage-report",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-29T13:13:00+00:00",
+  "entity_id": "larkspur/atlas-web#113",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/113",
+  "payload": {
+   "reviewer": "tomasz.wilk"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-29T14:07:00+00:00",
+  "entity_id": "larkspur/atlas-api#121",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/121",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 121,
+   "title": "Sandbox merchant fixtures",
+   "branch": "liam/atl-14-sandbox-merchant-fixtures",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-29T14:09:00+00:00",
+  "entity_id": "larkspur/atlas-api#121",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/121",
+  "payload": {
+   "reviewer": "hana.sato"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-01-29T14:59:00+00:00",
+  "entity_id": "larkspur/atlas-web#113",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-web/pull/113",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-01-29T15:57:00+00:00",
+  "entity_id": "larkspur/atlas-web#113",
+  "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-web/pull/113",
   "payload": {}
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-01-30T10:55:00+00:00",
+  "occurred_at": "2026-01-30T10:58:00+00:00",
   "entity_id": "larkspur/atlas-api#121",
-  "actor": "diego.ferreira",
+  "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-api/pull/121",
   "payload": {
    "state": "approved"
@@ -1433,29 +1441,69 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-01-30T11:08:00+00:00",
-  "entity_id": "larkspur/atlas-api#120",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/120",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-01-30T11:31:00+00:00",
+  "occurred_at": "2026-01-30T11:40:00+00:00",
   "entity_id": "larkspur/atlas-api#121",
-  "actor": "tomasz.wilk",
+  "actor": "liam.orourke",
   "url": "https://github.example/larkspur/atlas-api/pull/121",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-01-30T14:10:00+00:00",
+  "occurred_at": "2026-01-30T14:02:00+00:00",
   "entity_id": "larkspur/atlas-api#122",
-  "actor": "diego.ferreira",
+  "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/122",
   "payload": {
    "repo": "larkspur/atlas-api",
    "number": 122,
+   "title": "ATL-45: Retry and dead-letter queue",
+   "branch": "tomasz/retry-and-dead-letter-queue",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-30T14:04:00+00:00",
+  "entity_id": "larkspur/atlas-api#122",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/122",
+  "payload": {
+   "reviewer": "priya.natarajan"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-30T14:06:00+00:00",
+  "entity_id": "larkspur/atlas-api#123",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/123",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 123,
+   "title": "Billing report",
+   "branch": "priya/atl-65-billing-report",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-01-30T14:08:00+00:00",
+  "entity_id": "larkspur/atlas-api#123",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/123",
+  "payload": {
+   "reviewer": "hana.sato"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-01-30T14:10:00+00:00",
+  "entity_id": "larkspur/atlas-api#124",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 124,
    "title": "ATL-15: Integrate ledger idempotency keys",
    "branch": "diego/atl-15-ledger-idempotency",
    "body": "Adds idempotency keys to every ledger write. Needs sign-off from the ledger team on the key schema."
@@ -1464,42 +1512,78 @@
  {
   "kind": "pr_review_requested",
   "occurred_at": "2026-01-30T14:12:00+00:00",
-  "entity_id": "larkspur/atlas-api#122",
+  "entity_id": "larkspur/atlas-api#124",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/122",
+  "url": "https://github.example/larkspur/atlas-api/pull/124",
   "payload": {
    "reviewer": "ken.ibarra"
   }
  },
  {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-02T14:09:00+00:00",
-  "entity_id": "larkspur/atlas-web#114",
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-02T10:20:00+00:00",
+  "entity_id": "larkspur/atlas-api#122",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/114",
+  "url": "https://github.example/larkspur/atlas-api/pull/122",
   "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 114,
-   "title": "Billing report",
-   "branch": "priya/billing-report",
-   "body": "Closes ATL-65.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-02T14:11:00+00:00",
-  "entity_id": "larkspur/atlas-web#114",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/114",
-  "payload": {
-   "reviewer": "hana.sato"
+   "state": "approved"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-02-03T10:22:00+00:00",
+  "occurred_at": "2026-02-02T10:46:00+00:00",
+  "entity_id": "larkspur/atlas-api#123",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-api/pull/123",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-02T11:17:00+00:00",
+  "entity_id": "larkspur/atlas-api#122",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/122",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-02T11:17:00+00:00",
+  "entity_id": "larkspur/atlas-api#123",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/123",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-02T14:01:00+00:00",
   "entity_id": "larkspur/atlas-web#114",
   "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/114",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 114,
+   "title": "Search results API pagination",
+   "branch": "hana/atl-55-search-results-api-pagination",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-02T14:03:00+00:00",
+  "entity_id": "larkspur/atlas-web#114",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/114",
+  "payload": {
+   "reviewer": "liam.orourke"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-03T10:26:00+00:00",
+  "entity_id": "larkspur/atlas-web#114",
+  "actor": "liam.orourke",
   "url": "https://github.example/larkspur/atlas-web/pull/114",
   "payload": {
    "state": "approved"
@@ -1507,56 +1591,80 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-02-03T11:15:00+00:00",
+  "occurred_at": "2026-02-03T11:25:00+00:00",
   "entity_id": "larkspur/atlas-web#114",
-  "actor": "priya.natarajan",
+  "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-web/pull/114",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-03T14:12:00+00:00",
-  "entity_id": "larkspur/atlas-api#123",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/123",
+  "occurred_at": "2026-02-03T14:14:00+00:00",
+  "entity_id": "larkspur/atlas-web#115",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/115",
   "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 123,
-   "title": "Retry and dead-letter queue",
-   "branch": "tomasz/atl-45-retry-and-dead-letter-queue",
+   "repo": "larkspur/atlas-web",
+   "number": 115,
+   "title": "CSV export",
+   "branch": "priya/atl-66-csv-export",
    "body": "Implements the change described in the ticket."
   }
  },
  {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-03T14:14:00+00:00",
-  "entity_id": "larkspur/atlas-api#123",
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-03T14:16:00+00:00",
+  "entity_id": "larkspur/atlas-api#125",
   "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/123",
+  "url": "https://github.example/larkspur/atlas-api/pull/125",
   "payload": {
-   "reviewer": "liam.orourke"
+   "repo": "larkspur/atlas-api",
+   "number": 125,
+   "title": "Notification templates",
+   "branch": "tomasz/notification-templates",
+   "body": "Closes ATL-46.\n\nSee ticket for context."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-03T14:16:00+00:00",
+  "entity_id": "larkspur/atlas-web#115",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/115",
+  "payload": {
+   "reviewer": "hana.sato"
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-03T14:18:00+00:00",
+  "entity_id": "larkspur/atlas-api#125",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/125",
+  "payload": {
+   "reviewer": "diego.ferreira"
   }
  },
  {
   "kind": "pr_opened",
   "occurred_at": "2026-02-03T15:30:00+00:00",
-  "entity_id": "larkspur/atlas-web#115",
+  "entity_id": "larkspur/atlas-web#116",
   "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/115",
+  "url": "https://github.example/larkspur/atlas-web/pull/116",
   "payload": {
    "repo": "larkspur/atlas-web",
-   "number": 115,
+   "number": 116,
    "title": "ATL-27: accept plus-addressed emails",
    "branch": "ama/form-validation-for-signup",
-   "body": "Closes ATL-27.\n\nSee ticket for context."
+   "body": "Implements the change described in the ticket."
   }
  },
  {
   "kind": "pr_review_requested",
   "occurred_at": "2026-02-03T15:32:00+00:00",
-  "entity_id": "larkspur/atlas-web#115",
+  "entity_id": "larkspur/atlas-web#116",
   "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/115",
+  "url": "https://github.example/larkspur/atlas-web/pull/116",
   "payload": {
    "reviewer": "liam.orourke"
   }
@@ -1564,19 +1672,29 @@
  {
   "kind": "pr_reviewed",
   "occurred_at": "2026-02-04T10:10:00+00:00",
-  "entity_id": "larkspur/atlas-web#115",
+  "entity_id": "larkspur/atlas-web#116",
   "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-web/pull/115",
+  "url": "https://github.example/larkspur/atlas-web/pull/116",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-02-04T10:16:00+00:00",
-  "entity_id": "larkspur/atlas-api#123",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/123",
+  "occurred_at": "2026-02-04T10:31:00+00:00",
+  "entity_id": "larkspur/atlas-api#125",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/125",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-04T10:33:00+00:00",
+  "entity_id": "larkspur/atlas-web#115",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/115",
   "payload": {
    "state": "approved"
   }
@@ -1584,28 +1702,36 @@
  {
   "kind": "pr_merged",
   "occurred_at": "2026-02-04T11:00:00+00:00",
-  "entity_id": "larkspur/atlas-web#115",
+  "entity_id": "larkspur/atlas-web#116",
   "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/115",
+  "url": "https://github.example/larkspur/atlas-web/pull/116",
   "payload": {}
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-02-04T11:03:00+00:00",
-  "entity_id": "larkspur/atlas-api#123",
+  "occurred_at": "2026-02-04T11:04:00+00:00",
+  "entity_id": "larkspur/atlas-api#125",
   "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/123",
+  "url": "https://github.example/larkspur/atlas-api/pull/125",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-04T11:11:00+00:00",
+  "entity_id": "larkspur/atlas-web#115",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/115",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-05T11:02:00+00:00",
-  "entity_id": "larkspur/atlas-api#124",
+  "occurred_at": "2026-02-05T11:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#126",
   "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "url": "https://github.example/larkspur/atlas-api/pull/126",
   "payload": {
    "repo": "larkspur/atlas-api",
-   "number": 124,
+   "number": 126,
    "title": "Fix lint config",
    "branch": "hana/fix-lint-config",
    "body": "Housekeeping, no ticket."
@@ -1613,261 +1739,41 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-05T11:03:00+00:00",
-  "entity_id": "larkspur/atlas-api#124",
+  "occurred_at": "2026-02-05T11:16:00+00:00",
+  "entity_id": "larkspur/atlas-api#126",
   "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "url": "https://github.example/larkspur/atlas-api/pull/126",
   "payload": {
-   "reviewer": "ama.owusu"
+   "reviewer": "priya.natarajan"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-02-05T12:32:00+00:00",
-  "entity_id": "larkspur/atlas-api#124",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "occurred_at": "2026-02-05T12:45:00+00:00",
+  "entity_id": "larkspur/atlas-api#126",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/126",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-02-05T13:02:00+00:00",
-  "entity_id": "larkspur/atlas-api#124",
+  "occurred_at": "2026-02-05T13:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#126",
   "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "url": "https://github.example/larkspur/atlas-api/pull/126",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-05T14:01:00+00:00",
-  "entity_id": "larkspur/atlas-web#116",
+  "occurred_at": "2026-02-05T14:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#127",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/116",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 116,
-   "title": "CSV export",
-   "branch": "priya/csv-export",
-   "body": "Closes ATL-66.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-05T14:03:00+00:00",
-  "entity_id": "larkspur/atlas-web#116",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/116",
-  "payload": {
-   "reviewer": "hana.sato"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-05T14:09:00+00:00",
-  "entity_id": "larkspur/atlas-api#125",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/125",
+  "url": "https://github.example/larkspur/atlas-api/pull/127",
   "payload": {
    "repo": "larkspur/atlas-api",
-   "number": 125,
-   "title": "Reindex backfill job",
-   "branch": "liam/reindex-backfill-job",
-   "body": "Closes ATL-59.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-05T14:11:00+00:00",
-  "entity_id": "larkspur/atlas-api#125",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/125",
-  "payload": {
-   "reviewer": "diego.ferreira"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-05T14:18:00+00:00",
-  "entity_id": "larkspur/atlas-web#117",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/117",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 117,
-   "title": "Search results API pagination",
-   "branch": "hana/search-results-api-pagination",
-   "body": "Closes ATL-55.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-05T14:20:00+00:00",
-  "entity_id": "larkspur/atlas-web#117",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/117",
-  "payload": {
-   "reviewer": "diego.ferreira"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-06T10:18:00+00:00",
-  "entity_id": "larkspur/atlas-web#116",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/116",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-06T10:26:00+00:00",
-  "entity_id": "larkspur/atlas-web#117",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-web/pull/117",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-06T10:29:00+00:00",
-  "entity_id": "larkspur/atlas-api#125",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/125",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-06T11:10:00+00:00",
-  "entity_id": "larkspur/atlas-web#117",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/117",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-06T11:11:00+00:00",
-  "entity_id": "larkspur/atlas-web#116",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/116",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-06T11:28:00+00:00",
-  "entity_id": "larkspur/atlas-api#125",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/125",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-06T14:12:00+00:00",
-  "entity_id": "larkspur/atlas-web#118",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/118",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 118,
-   "title": "Invite teammates step",
-   "branch": "ama/invite-teammates-step",
-   "body": "Closes ATL-29.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-06T14:13:00+00:00",
-  "entity_id": "larkspur/atlas-api#126",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/126",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 126,
-   "title": "ATL-46: Notification templates",
-   "branch": "tomasz/notification-templates",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-06T14:14:00+00:00",
-  "entity_id": "larkspur/atlas-web#118",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/118",
-  "payload": {
-   "reviewer": "diego.ferreira"
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-06T14:15:00+00:00",
-  "entity_id": "larkspur/atlas-api#126",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/126",
-  "payload": {
-   "reviewer": "diego.ferreira"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-09T10:27:00+00:00",
-  "entity_id": "larkspur/atlas-web#118",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-web/pull/118",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-09T10:42:00+00:00",
-  "entity_id": "larkspur/atlas-api#126",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/126",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-09T11:23:00+00:00",
-  "entity_id": "larkspur/atlas-web#118",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/118",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-09T11:40:00+00:00",
-  "entity_id": "larkspur/atlas-api#126",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/126",
-  "payload": {}
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-11T11:30:00+00:00",
-  "entity_id": "larkspur/atlas-api#122",
-  "actor": "ken.ibarra",
-  "url": "https://github.example/larkspur/atlas-api/pull/122",
-  "payload": {
-   "state": "changes_requested"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-11T14:08:00+00:00",
-  "entity_id": "larkspur/atlas-web#119",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/119",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 119,
+   "number": 127,
    "title": "Date range picker",
    "branch": "priya/date-range-picker",
    "body": "Closes ATL-67.\n\nSee ticket for context."
@@ -1875,329 +1781,125 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-11T14:10:00+00:00",
-  "entity_id": "larkspur/atlas-web#119",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/119",
-  "payload": {
-   "reviewer": "diego.ferreira"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-11T14:19:00+00:00",
-  "entity_id": "larkspur/atlas-web#120",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/120",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 120,
-   "title": "Skip and resume onboarding",
-   "branch": "ama/skip-and-resume-onboarding",
-   "body": "Closes ATL-30.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-11T14:21:00+00:00",
-  "entity_id": "larkspur/atlas-web#120",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/120",
-  "payload": {
-   "reviewer": "priya.natarajan"
-  }
- },
- {
-  "kind": "ci_failed",
-  "occurred_at": "2026-02-11T16:05:00+00:00",
-  "entity_id": "larkspur/atlas-api#122",
-  "actor": "github-actions",
-  "url": "https://github.example/larkspur/atlas-api/pull/122",
-  "payload": {
-   "check": "integration-tests"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-12T10:05:00+00:00",
-  "entity_id": "larkspur/atlas-web#119",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-web/pull/119",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "ci_failed",
-  "occurred_at": "2026-02-12T10:15:00+00:00",
-  "entity_id": "larkspur/atlas-api#122",
-  "actor": "github-actions",
-  "url": "https://github.example/larkspur/atlas-api/pull/122",
-  "payload": {
-   "check": "integration-tests"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-12T10:46:00+00:00",
-  "entity_id": "larkspur/atlas-web#119",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/119",
-  "payload": {}
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-12T10:48:00+00:00",
-  "entity_id": "larkspur/atlas-web#120",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/120",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-12T11:40:00+00:00",
-  "entity_id": "larkspur/atlas-web#120",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/120",
-  "payload": {}
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-12T14:00:00+00:00",
-  "entity_id": "larkspur/atlas-api#122",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/122",
-  "payload": {
-   "reviewer": "ken.ibarra"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-12T14:07:00+00:00",
-  "entity_id": "larkspur/atlas-web#121",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/121",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 121,
-   "title": "Autocomplete endpoint",
-   "branch": "hana/autocomplete-endpoint",
-   "body": "Closes ATL-56.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-12T14:09:00+00:00",
-  "entity_id": "larkspur/atlas-web#121",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/121",
-  "payload": {
-   "reviewer": "priya.natarajan"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-13T10:20:00+00:00",
-  "entity_id": "larkspur/atlas-web#121",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/121",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-13T10:51:00+00:00",
-  "entity_id": "larkspur/atlas-web#121",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/121",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-16T14:06:00+00:00",
+  "occurred_at": "2026-02-05T14:17:00+00:00",
   "entity_id": "larkspur/atlas-api#127",
   "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-api/pull/127",
   "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 127,
+   "reviewer": "ama.owusu"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-06T10:14:00+00:00",
+  "entity_id": "larkspur/atlas-api#127",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-api/pull/127",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-06T11:05:00+00:00",
+  "entity_id": "larkspur/atlas-api#127",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/127",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-09T13:00:00+00:00",
+  "entity_id": "larkspur/atlas-web#117",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/117",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 117,
    "title": "Role-based access for reports",
-   "branch": "priya/atl-68-role-based-access-for-reports",
-   "body": "Implements the change described in the ticket."
+   "branch": "priya/role-based-access-for-reports",
+   "body": "Closes ATL-68.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-16T14:08:00+00:00",
-  "entity_id": "larkspur/atlas-api#127",
+  "occurred_at": "2026-02-09T13:02:00+00:00",
+  "entity_id": "larkspur/atlas-web#117",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/127",
-  "payload": {
-   "reviewer": "hana.sato"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-16T14:14:00+00:00",
-  "entity_id": "larkspur/atlas-web#122",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/122",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 122,
-   "title": "Onboarding analytics",
-   "branch": "ama/atl-31-onboarding-analytics",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-16T14:16:00+00:00",
-  "entity_id": "larkspur/atlas-web#122",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/122",
-  "payload": {
-   "reviewer": "liam.orourke"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-17T10:46:00+00:00",
-  "entity_id": "larkspur/atlas-api#127",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-api/pull/127",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-17T10:47:00+00:00",
-  "entity_id": "larkspur/atlas-web#122",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-web/pull/122",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-17T11:17:00+00:00",
-  "entity_id": "larkspur/atlas-api#127",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/127",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-17T11:34:00+00:00",
-  "entity_id": "larkspur/atlas-web#122",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/122",
-  "payload": {}
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-17T16:00:00+00:00",
-  "entity_id": "larkspur/atlas-api#122",
-  "actor": "ken.ibarra",
-  "url": "https://github.example/larkspur/atlas-api/pull/122",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-18T10:00:00+00:00",
-  "entity_id": "larkspur/atlas-api#122",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/122",
-  "payload": {}
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-19T14:07:00+00:00",
-  "entity_id": "larkspur/atlas-api#128",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/128",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 128,
-   "title": "ATL-74: Reporting query service",
-   "branch": "tomasz/reporting-query-service",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-19T14:09:00+00:00",
-  "entity_id": "larkspur/atlas-api#128",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/128",
-  "payload": {
-   "reviewer": "liam.orourke"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-19T14:11:00+00:00",
-  "entity_id": "larkspur/atlas-web#123",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/123",
-  "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 123,
-   "title": "Mobile layout fixes",
-   "branch": "ama/mobile-layout-fixes",
-   "body": "Closes ATL-32.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-19T14:13:00+00:00",
-  "entity_id": "larkspur/atlas-api#129",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/129",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 129,
-   "title": "ATL-61: Feature flag for new search",
-   "branch": "liam/feature-flag-for-new-search",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-19T14:13:00+00:00",
-  "entity_id": "larkspur/atlas-web#123",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/123",
+  "url": "https://github.example/larkspur/atlas-web/pull/117",
   "payload": {
    "reviewer": "diego.ferreira"
   }
  },
  {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-19T14:15:00+00:00",
-  "entity_id": "larkspur/atlas-api#129",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/129",
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-09T14:06:00+00:00",
+  "entity_id": "larkspur/atlas-web#118",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/118",
   "payload": {
-   "reviewer": "hana.sato"
+   "repo": "larkspur/atlas-web",
+   "number": 118,
+   "title": "Invite teammates step",
+   "branch": "ama/atl-29-invite-teammates-step",
+   "body": "Implements the change described in the ticket."
   }
  },
  {
-  "kind": "pr_opened",
-  "occurred_at": "2026-02-19T14:16:00+00:00",
-  "entity_id": "larkspur/atlas-api#130",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/130",
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-09T14:08:00+00:00",
+  "entity_id": "larkspur/atlas-web#118",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/118",
   "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 130,
+   "reviewer": "liam.orourke"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-09T14:55:00+00:00",
+  "entity_id": "larkspur/atlas-web#117",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-web/pull/117",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-09T15:38:00+00:00",
+  "entity_id": "larkspur/atlas-web#117",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/117",
+  "payload": {}
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-10T10:13:00+00:00",
+  "entity_id": "larkspur/atlas-web#118",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-web/pull/118",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-10T10:47:00+00:00",
+  "entity_id": "larkspur/atlas-web#118",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/118",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-10T14:03:00+00:00",
+  "entity_id": "larkspur/atlas-web#119",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/119",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 119,
    "title": "ATL-69: Report caching",
    "branch": "priya/report-caching",
    "body": "Implements the change described in the ticket."
@@ -2205,91 +1907,279 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-19T14:18:00+00:00",
-  "entity_id": "larkspur/atlas-api#130",
+  "occurred_at": "2026-02-10T14:05:00+00:00",
+  "entity_id": "larkspur/atlas-web#119",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/130",
+  "url": "https://github.example/larkspur/atlas-web/pull/119",
   "payload": {
-   "reviewer": "ama.owusu"
+   "reviewer": "tomasz.wilk"
   }
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-19T14:20:00+00:00",
-  "entity_id": "larkspur/atlas-web#124",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/124",
+  "occurred_at": "2026-02-10T14:13:00+00:00",
+  "entity_id": "larkspur/atlas-api#128",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/128",
   "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 124,
-   "title": "Search UI: results page",
-   "branch": "hana/atl-57-search-ui-results-page",
+   "repo": "larkspur/atlas-api",
+   "number": 128,
+   "title": "ATL-59: Reindex backfill job",
+   "branch": "liam/reindex-backfill-job",
    "body": "Implements the change described in the ticket."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-19T14:22:00+00:00",
-  "entity_id": "larkspur/atlas-web#124",
+  "occurred_at": "2026-02-10T14:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#128",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/128",
+  "payload": {
+   "reviewer": "hana.sato"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-11T10:31:00+00:00",
+  "entity_id": "larkspur/atlas-web#119",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-web/pull/119",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-11T10:54:00+00:00",
+  "entity_id": "larkspur/atlas-api#128",
   "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/124",
+  "url": "https://github.example/larkspur/atlas-api/pull/128",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-11T11:20:00+00:00",
+  "entity_id": "larkspur/atlas-web#119",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/119",
+  "payload": {}
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-11T11:30:00+00:00",
+  "entity_id": "larkspur/atlas-api#124",
+  "actor": "ken.ibarra",
+  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "payload": {
+   "state": "changes_requested"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-11T11:36:00+00:00",
+  "entity_id": "larkspur/atlas-api#128",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/128",
+  "payload": {}
+ },
+ {
+  "kind": "ci_failed",
+  "occurred_at": "2026-02-11T16:05:00+00:00",
+  "entity_id": "larkspur/atlas-api#124",
+  "actor": "github-actions",
+  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "payload": {
+   "check": "integration-tests"
+  }
+ },
+ {
+  "kind": "ci_failed",
+  "occurred_at": "2026-02-12T10:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#124",
+  "actor": "github-actions",
+  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "payload": {
+   "check": "integration-tests"
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-12T14:00:00+00:00",
+  "entity_id": "larkspur/atlas-api#124",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "payload": {
+   "reviewer": "ken.ibarra"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-12T14:20:00+00:00",
+  "entity_id": "larkspur/atlas-web#120",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/120",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 120,
+   "title": "Skip and resume onboarding",
+   "branch": "ama/atl-30-skip-and-resume-onboarding",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-12T14:22:00+00:00",
+  "entity_id": "larkspur/atlas-web#120",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/120",
+  "payload": {
+   "reviewer": "hana.sato"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-13T10:07:00+00:00",
+  "entity_id": "larkspur/atlas-web#120",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/120",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-13T10:44:00+00:00",
+  "entity_id": "larkspur/atlas-web#120",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/120",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-13T14:20:00+00:00",
+  "entity_id": "larkspur/atlas-web#121",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/121",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 121,
+   "title": "Autocomplete endpoint",
+   "branch": "hana/atl-56-autocomplete-endpoint",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-13T14:22:00+00:00",
+  "entity_id": "larkspur/atlas-web#121",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/121",
   "payload": {
    "reviewer": "diego.ferreira"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-02-20T10:08:00+00:00",
-  "entity_id": "larkspur/atlas-api#128",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/128",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-20T10:19:00+00:00",
-  "entity_id": "larkspur/atlas-web#123",
+  "occurred_at": "2026-02-16T10:27:00+00:00",
+  "entity_id": "larkspur/atlas-web#121",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-web/pull/123",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-20T10:25:00+00:00",
-  "entity_id": "larkspur/atlas-api#130",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-api/pull/130",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-20T10:27:00+00:00",
-  "entity_id": "larkspur/atlas-web#124",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-web/pull/124",
+  "url": "https://github.example/larkspur/atlas-web/pull/121",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-02-20T10:52:00+00:00",
-  "entity_id": "larkspur/atlas-api#128",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/128",
+  "occurred_at": "2026-02-16T11:06:00+00:00",
+  "entity_id": "larkspur/atlas-web#121",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/121",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-17T14:06:00+00:00",
+  "entity_id": "larkspur/atlas-web#122",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/122",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 122,
+   "title": "Onboarding analytics",
+   "branch": "ama/onboarding-analytics",
+   "body": "Closes ATL-31.\n\nSee ticket for context."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-17T14:08:00+00:00",
+  "entity_id": "larkspur/atlas-web#122",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/122",
+  "payload": {
+   "reviewer": "diego.ferreira"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-17T14:13:00+00:00",
+  "entity_id": "larkspur/atlas-api#129",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/129",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 129,
+   "title": "Scheduled email reports",
+   "branch": "priya/atl-70-scheduled-email-reports",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-17T14:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#129",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/129",
+  "payload": {
+   "reviewer": "tomasz.wilk"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-17T16:00:00+00:00",
+  "entity_id": "larkspur/atlas-api#124",
+  "actor": "ken.ibarra",
+  "url": "https://github.example/larkspur/atlas-api/pull/124",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-18T10:00:00+00:00",
+  "entity_id": "larkspur/atlas-api#124",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/124",
   "payload": {}
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-02-20T10:54:00+00:00",
+  "occurred_at": "2026-02-18T10:28:00+00:00",
+  "entity_id": "larkspur/atlas-web#122",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-web/pull/122",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-18T10:35:00+00:00",
   "entity_id": "larkspur/atlas-api#129",
-  "actor": "hana.sato",
+  "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/129",
   "payload": {
    "state": "approved"
@@ -2297,65 +2187,175 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-02-20T11:00:00+00:00",
-  "entity_id": "larkspur/atlas-web#123",
+  "occurred_at": "2026-02-18T11:18:00+00:00",
+  "entity_id": "larkspur/atlas-web#122",
   "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-web/pull/123",
+  "url": "https://github.example/larkspur/atlas-web/pull/122",
   "payload": {}
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-02-20T11:06:00+00:00",
-  "entity_id": "larkspur/atlas-web#124",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/124",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-20T11:20:00+00:00",
-  "entity_id": "larkspur/atlas-api#130",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/130",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-20T11:36:00+00:00",
+  "occurred_at": "2026-02-18T11:27:00+00:00",
   "entity_id": "larkspur/atlas-api#129",
-  "actor": "liam.orourke",
+  "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-api/pull/129",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-23T14:06:00+00:00",
+  "occurred_at": "2026-02-19T14:01:00+00:00",
+  "entity_id": "larkspur/atlas-api#130",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/130",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 130,
+   "title": "ATL-61: Feature flag for new search",
+   "branch": "liam/feature-flag-for-new-search",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-19T14:03:00+00:00",
+  "entity_id": "larkspur/atlas-api#130",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/130",
+  "payload": {
+   "reviewer": "tomasz.wilk"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-19T14:14:00+00:00",
+  "entity_id": "larkspur/atlas-web#123",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/123",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 123,
+   "title": "Search UI: results page",
+   "branch": "hana/search-ui-results-page",
+   "body": "Closes ATL-57.\n\nSee ticket for context."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-19T14:16:00+00:00",
+  "entity_id": "larkspur/atlas-web#123",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/123",
+  "payload": {
+   "reviewer": "liam.orourke"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-20T10:44:00+00:00",
+  "entity_id": "larkspur/atlas-api#130",
+  "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/130",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-20T10:52:00+00:00",
+  "entity_id": "larkspur/atlas-web#123",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-web/pull/123",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-20T11:22:00+00:00",
+  "entity_id": "larkspur/atlas-web#123",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/123",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-20T11:41:00+00:00",
+  "entity_id": "larkspur/atlas-api#130",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/130",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-20T14:14:00+00:00",
+  "entity_id": "larkspur/atlas-web#124",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/124",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 124,
+   "title": "ATL-32: Mobile layout fixes",
+   "branch": "ama/mobile-layout-fixes",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-20T14:16:00+00:00",
+  "entity_id": "larkspur/atlas-web#124",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/124",
+  "payload": {
+   "reviewer": "liam.orourke"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-23T10:26:00+00:00",
+  "entity_id": "larkspur/atlas-web#124",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-web/pull/124",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-23T11:15:00+00:00",
+  "entity_id": "larkspur/atlas-web#124",
+  "actor": "ama.owusu",
+  "url": "https://github.example/larkspur/atlas-web/pull/124",
+  "payload": {}
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-02-23T14:14:00+00:00",
   "entity_id": "larkspur/atlas-api#131",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/131",
   "payload": {
    "repo": "larkspur/atlas-api",
    "number": 131,
-   "title": "Refund endpoint",
-   "branch": "diego/atl-16-refund-endpoint",
+   "title": "ATL-16: Refund endpoint",
+   "branch": "diego/refund-endpoint",
    "body": "Implements the change described in the ticket."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-23T14:08:00+00:00",
+  "occurred_at": "2026-02-23T14:16:00+00:00",
   "entity_id": "larkspur/atlas-api#131",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/131",
   "payload": {
-   "reviewer": "priya.natarajan"
+   "reviewer": "ama.owusu"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-02-24T10:44:00+00:00",
+  "occurred_at": "2026-02-24T10:40:00+00:00",
   "entity_id": "larkspur/atlas-api#131",
-  "actor": "priya.natarajan",
+  "actor": "ama.owusu",
   "url": "https://github.example/larkspur/atlas-api/pull/131",
   "payload": {
    "state": "approved"
@@ -2363,7 +2363,7 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-02-24T11:21:00+00:00",
+  "occurred_at": "2026-02-24T11:27:00+00:00",
   "entity_id": "larkspur/atlas-api#131",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/131",
@@ -2371,24 +2371,24 @@
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-24T14:03:00+00:00",
-  "entity_id": "larkspur/atlas-web#125",
+  "occurred_at": "2026-02-24T14:12:00+00:00",
+  "entity_id": "larkspur/atlas-api#132",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/125",
+  "url": "https://github.example/larkspur/atlas-api/pull/132",
   "payload": {
-   "repo": "larkspur/atlas-web",
-   "number": 125,
-   "title": "ATL-70: Scheduled email reports",
-   "branch": "priya/scheduled-email-reports",
-   "body": "Implements the change described in the ticket."
+   "repo": "larkspur/atlas-api",
+   "number": 132,
+   "title": "Report audit log",
+   "branch": "priya/report-audit-log",
+   "body": "Closes ATL-71.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-24T14:05:00+00:00",
-  "entity_id": "larkspur/atlas-web#125",
+  "occurred_at": "2026-02-24T14:14:00+00:00",
+  "entity_id": "larkspur/atlas-api#132",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/125",
+  "url": "https://github.example/larkspur/atlas-api/pull/132",
   "payload": {
    "reviewer": "diego.ferreira"
   }
@@ -2396,30 +2396,30 @@
  {
   "kind": "pr_reviewed",
   "occurred_at": "2026-02-25T10:13:00+00:00",
-  "entity_id": "larkspur/atlas-web#125",
+  "entity_id": "larkspur/atlas-api#132",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-web/pull/125",
+  "url": "https://github.example/larkspur/atlas-api/pull/132",
   "payload": {
    "state": "approved"
   }
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-02-25T10:57:00+00:00",
-  "entity_id": "larkspur/atlas-web#125",
+  "occurred_at": "2026-02-25T10:50:00+00:00",
+  "entity_id": "larkspur/atlas-api#132",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-web/pull/125",
+  "url": "https://github.example/larkspur/atlas-api/pull/132",
   "payload": {}
  },
  {
   "kind": "pr_opened",
   "occurred_at": "2026-02-25T11:23:00+00:00",
-  "entity_id": "larkspur/atlas-api#132",
+  "entity_id": "larkspur/atlas-api#133",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/132",
+  "url": "https://github.example/larkspur/atlas-api/pull/133",
   "payload": {
    "repo": "larkspur/atlas-api",
-   "number": 132,
+   "number": 133,
    "title": "Update CODEOWNERS",
    "branch": "priya/update-codeowners",
    "body": "Housekeeping, no ticket."
@@ -2428,19 +2428,19 @@
  {
   "kind": "pr_review_requested",
   "occurred_at": "2026-02-25T11:24:00+00:00",
-  "entity_id": "larkspur/atlas-api#132",
+  "entity_id": "larkspur/atlas-api#133",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/132",
+  "url": "https://github.example/larkspur/atlas-api/pull/133",
   "payload": {
-   "reviewer": "tomasz.wilk"
+   "reviewer": "diego.ferreira"
   }
  },
  {
   "kind": "pr_reviewed",
   "occurred_at": "2026-02-25T12:53:00+00:00",
-  "entity_id": "larkspur/atlas-api#132",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/132",
+  "entity_id": "larkspur/atlas-api#133",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/133",
   "payload": {
    "state": "approved"
   }
@@ -2448,136 +2448,154 @@
  {
   "kind": "pr_merged",
   "occurred_at": "2026-02-25T13:23:00+00:00",
-  "entity_id": "larkspur/atlas-api#132",
+  "entity_id": "larkspur/atlas-api#133",
   "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/132",
+  "url": "https://github.example/larkspur/atlas-api/pull/133",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-26T14:18:00+00:00",
-  "entity_id": "larkspur/atlas-web#126",
+  "occurred_at": "2026-02-26T14:02:00+00:00",
+  "entity_id": "larkspur/atlas-web#125",
   "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/126",
+  "url": "https://github.example/larkspur/atlas-web/pull/125",
   "payload": {
    "repo": "larkspur/atlas-web",
-   "number": 126,
+   "number": 125,
    "title": "Search UI: empty and error states",
-   "branch": "hana/atl-58-search-ui-empty-and-error-states",
-   "body": "Implements the change described in the ticket."
+   "branch": "hana/search-ui-empty-and-error-states",
+   "body": "Closes ATL-58.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-26T14:19:00+00:00",
-  "entity_id": "larkspur/atlas-api#133",
+  "occurred_at": "2026-02-26T14:03:00+00:00",
+  "entity_id": "larkspur/atlas-api#134",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/133",
+  "url": "https://github.example/larkspur/atlas-api/pull/134",
   "payload": {
    "repo": "larkspur/atlas-api",
-   "number": 133,
+   "number": 134,
    "title": "Payment status webhooks",
-   "branch": "diego/payment-status-webhooks",
-   "body": "Closes ATL-17.\n\nSee ticket for context."
+   "branch": "diego/atl-17-payment-status-webhooks",
+   "body": "Implements the change described in the ticket."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-26T14:20:00+00:00",
-  "entity_id": "larkspur/atlas-web#126",
+  "occurred_at": "2026-02-26T14:04:00+00:00",
+  "entity_id": "larkspur/atlas-web#125",
   "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/126",
+  "url": "https://github.example/larkspur/atlas-web/pull/125",
   "payload": {
-   "reviewer": "diego.ferreira"
+   "reviewer": "tomasz.wilk"
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-26T14:21:00+00:00",
-  "entity_id": "larkspur/atlas-api#133",
+  "occurred_at": "2026-02-26T14:05:00+00:00",
+  "entity_id": "larkspur/atlas-api#134",
   "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/133",
+  "url": "https://github.example/larkspur/atlas-api/pull/134",
   "payload": {
    "reviewer": "priya.natarajan"
   }
  },
  {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-27T10:10:00+00:00",
-  "entity_id": "larkspur/atlas-api#133",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/133",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-02-27T10:43:00+00:00",
-  "entity_id": "larkspur/atlas-web#126",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-web/pull/126",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-27T11:00:00+00:00",
-  "entity_id": "larkspur/atlas-api#133",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/133",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-02-27T11:27:00+00:00",
-  "entity_id": "larkspur/atlas-web#126",
-  "actor": "hana.sato",
-  "url": "https://github.example/larkspur/atlas-web/pull/126",
-  "payload": {}
- },
- {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-27T14:12:00+00:00",
-  "entity_id": "larkspur/atlas-api#134",
+  "occurred_at": "2026-02-26T14:08:00+00:00",
+  "entity_id": "larkspur/atlas-web#126",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/126",
+  "payload": {
+   "repo": "larkspur/atlas-web",
+   "number": 126,
+   "title": "Empty states and loading",
+   "branch": "priya/atl-72-empty-states-and-loading",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-02-26T14:10:00+00:00",
+  "entity_id": "larkspur/atlas-web#126",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/126",
+  "payload": {
+   "reviewer": "liam.orourke"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-27T10:00:00+00:00",
+  "entity_id": "larkspur/atlas-web#125",
   "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-web/pull/125",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-27T10:16:00+00:00",
+  "entity_id": "larkspur/atlas-api#134",
+  "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-api/pull/134",
   "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 134,
-   "title": "Materialized views for reports",
-   "branch": "tomasz/materialized-views-for-reports",
-   "body": "Closes ATL-75.\n\nSee ticket for context."
+   "state": "approved"
   }
  },
  {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-02-27T10:22:00+00:00",
+  "entity_id": "larkspur/atlas-web#126",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-web/pull/126",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-27T10:44:00+00:00",
+  "entity_id": "larkspur/atlas-web#125",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-web/pull/125",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-27T11:01:00+00:00",
+  "entity_id": "larkspur/atlas-api#134",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/134",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-02-27T11:09:00+00:00",
+  "entity_id": "larkspur/atlas-web#126",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-web/pull/126",
+  "payload": {}
+ },
+ {
   "kind": "pr_opened",
-  "occurred_at": "2026-02-27T14:13:00+00:00",
+  "occurred_at": "2026-03-02T13:07:00+00:00",
   "entity_id": "larkspur/atlas-api#135",
   "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-api/pull/135",
   "payload": {
    "repo": "larkspur/atlas-api",
    "number": 135,
-   "title": "ATL-71: Report audit log",
-   "branch": "priya/report-audit-log",
-   "body": "Implements the change described in the ticket."
+   "title": "Reporting query service",
+   "branch": "priya/reporting-query-service",
+   "body": "Closes ATL-73.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-02-27T14:14:00+00:00",
-  "entity_id": "larkspur/atlas-api#134",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/134",
-  "payload": {
-   "reviewer": "priya.natarajan"
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-02-27T14:15:00+00:00",
+  "occurred_at": "2026-03-02T13:09:00+00:00",
   "entity_id": "larkspur/atlas-api#135",
   "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-api/pull/135",
@@ -2586,44 +2604,8 @@
   }
  },
  {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-03-02T10:09:00+00:00",
-  "entity_id": "larkspur/atlas-api#135",
-  "actor": "liam.orourke",
-  "url": "https://github.example/larkspur/atlas-api/pull/135",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-03-02T10:51:00+00:00",
-  "entity_id": "larkspur/atlas-api#134",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/134",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-03-02T11:07:00+00:00",
-  "entity_id": "larkspur/atlas-api#135",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/135",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-03-02T11:32:00+00:00",
-  "entity_id": "larkspur/atlas-api#134",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/134",
-  "payload": {}
- },
- {
   "kind": "pr_opened",
-  "occurred_at": "2026-03-02T14:06:00+00:00",
+  "occurred_at": "2026-03-02T14:10:00+00:00",
   "entity_id": "larkspur/atlas-api#136",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/136",
@@ -2631,23 +2613,23 @@
    "repo": "larkspur/atlas-api",
    "number": 136,
    "title": "Payout scheduling",
-   "branch": "diego/atl-18-payout-scheduling",
-   "body": "Implements the change described in the ticket."
+   "branch": "diego/payout-scheduling",
+   "body": "Closes ATL-18.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-03-02T14:08:00+00:00",
+  "occurred_at": "2026-03-02T14:12:00+00:00",
   "entity_id": "larkspur/atlas-api#136",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/136",
   "payload": {
-   "reviewer": "hana.sato"
+   "reviewer": "ama.owusu"
   }
  },
  {
   "kind": "ci_failed",
-  "occurred_at": "2026-03-02T14:26:00+00:00",
+  "occurred_at": "2026-03-02T14:30:00+00:00",
   "entity_id": "larkspur/atlas-api#136",
   "actor": "github-actions",
   "url": "https://github.example/larkspur/atlas-api/pull/136",
@@ -2657,9 +2639,27 @@
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-03-03T10:30:00+00:00",
+  "occurred_at": "2026-03-02T14:53:00+00:00",
+  "entity_id": "larkspur/atlas-api#135",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/135",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-03-02T15:25:00+00:00",
+  "entity_id": "larkspur/atlas-api#135",
+  "actor": "priya.natarajan",
+  "url": "https://github.example/larkspur/atlas-api/pull/135",
+  "payload": {}
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-03-03T10:08:00+00:00",
   "entity_id": "larkspur/atlas-api#136",
-  "actor": "hana.sato",
+  "actor": "ama.owusu",
   "url": "https://github.example/larkspur/atlas-api/pull/136",
   "payload": {
    "state": "approved"
@@ -2667,7 +2667,7 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-03-03T11:08:00+00:00",
+  "occurred_at": "2026-03-03T10:53:00+00:00",
   "entity_id": "larkspur/atlas-api#136",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/136",
@@ -2675,31 +2675,65 @@
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-03-03T14:13:00+00:00",
+  "occurred_at": "2026-03-03T14:09:00+00:00",
   "entity_id": "larkspur/atlas-api#137",
-  "actor": "liam.orourke",
+  "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-api/pull/137",
   "payload": {
    "repo": "larkspur/atlas-api",
    "number": 137,
-   "title": "ATL-78: Date-range filters",
-   "branch": "liam/date-range-filters",
-   "body": "Implements the change described in the ticket."
+   "title": "Materialized views for reports",
+   "branch": "priya/materialized-views-for-reports",
+   "body": "Closes ATL-74.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-03-03T14:15:00+00:00",
+  "occurred_at": "2026-03-03T14:11:00+00:00",
   "entity_id": "larkspur/atlas-api#137",
-  "actor": "liam.orourke",
+  "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-api/pull/137",
   "payload": {
    "reviewer": "ama.owusu"
   }
  },
  {
+  "kind": "pr_opened",
+  "occurred_at": "2026-03-03T14:13:00+00:00",
+  "entity_id": "larkspur/atlas-api#138",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/138",
+  "payload": {
+   "repo": "larkspur/atlas-api",
+   "number": 138,
+   "title": "Date-range filters",
+   "branch": "liam/date-range-filters",
+   "body": "Closes ATL-78.\n\nSee ticket for context."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-03-03T14:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#138",
+  "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/138",
+  "payload": {
+   "reviewer": "hana.sato"
+  }
+ },
+ {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-03-04T10:22:00+00:00",
+  "occurred_at": "2026-03-04T10:30:00+00:00",
+  "entity_id": "larkspur/atlas-api#138",
+  "actor": "hana.sato",
+  "url": "https://github.example/larkspur/atlas-api/pull/138",
+  "payload": {
+   "state": "approved"
+  }
+ },
+ {
+  "kind": "pr_reviewed",
+  "occurred_at": "2026-03-04T10:46:00+00:00",
   "entity_id": "larkspur/atlas-api#137",
   "actor": "ama.owusu",
   "url": "https://github.example/larkspur/atlas-api/pull/137",
@@ -2709,69 +2743,29 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-03-04T10:56:00+00:00",
-  "entity_id": "larkspur/atlas-api#137",
+  "occurred_at": "2026-03-04T11:10:00+00:00",
+  "entity_id": "larkspur/atlas-api#138",
   "actor": "liam.orourke",
+  "url": "https://github.example/larkspur/atlas-api/pull/138",
+  "payload": {}
+ },
+ {
+  "kind": "pr_merged",
+  "occurred_at": "2026-03-04T11:43:00+00:00",
+  "entity_id": "larkspur/atlas-api#137",
+  "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-api/pull/137",
   "payload": {}
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-03-04T14:07:00+00:00",
-  "entity_id": "larkspur/atlas-api#138",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/138",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 138,
-   "title": "ATL-19: Daily reconciliation job",
-   "branch": "diego/daily-reconciliation-job",
-   "body": "Implements the change described in the ticket."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-03-04T14:09:00+00:00",
-  "entity_id": "larkspur/atlas-api#138",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/138",
-  "payload": {
-   "reviewer": "ama.owusu"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-03-04T14:10:00+00:00",
+  "occurred_at": "2026-03-04T14:12:00+00:00",
   "entity_id": "larkspur/atlas-api#139",
-  "actor": "priya.natarajan",
+  "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/139",
   "payload": {
    "repo": "larkspur/atlas-api",
    "number": 139,
-   "title": "Empty states and loading",
-   "branch": "priya/empty-states-and-loading",
-   "body": "Closes ATL-72.\n\nSee ticket for context."
-  }
- },
- {
-  "kind": "pr_review_requested",
-  "occurred_at": "2026-03-04T14:12:00+00:00",
-  "entity_id": "larkspur/atlas-api#139",
-  "actor": "priya.natarajan",
-  "url": "https://github.example/larkspur/atlas-api/pull/139",
-  "payload": {
-   "reviewer": "tomasz.wilk"
-  }
- },
- {
-  "kind": "pr_opened",
-  "occurred_at": "2026-03-04T14:15:00+00:00",
-  "entity_id": "larkspur/atlas-api#140",
-  "actor": "tomasz.wilk",
-  "url": "https://github.example/larkspur/atlas-api/pull/140",
-  "payload": {
-   "repo": "larkspur/atlas-api",
-   "number": 140,
    "title": "ATL-21: Load test charge path",
    "branch": "tomasz/load-test-charge-path",
    "body": "Implements the change described in the ticket."
@@ -2779,19 +2773,43 @@
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-03-04T14:17:00+00:00",
-  "entity_id": "larkspur/atlas-api#140",
+  "occurred_at": "2026-03-04T14:14:00+00:00",
+  "entity_id": "larkspur/atlas-api#139",
   "actor": "tomasz.wilk",
+  "url": "https://github.example/larkspur/atlas-api/pull/139",
+  "payload": {
+   "reviewer": "hana.sato"
+  }
+ },
+ {
+  "kind": "pr_opened",
+  "occurred_at": "2026-03-04T14:15:00+00:00",
+  "entity_id": "larkspur/atlas-api#140",
+  "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/140",
   "payload": {
-   "reviewer": "ama.owusu"
+   "repo": "larkspur/atlas-api",
+   "number": 140,
+   "title": "ATL-19: Daily reconciliation job",
+   "branch": "diego/daily-reconciliation-job",
+   "body": "Implements the change described in the ticket."
+  }
+ },
+ {
+  "kind": "pr_review_requested",
+  "occurred_at": "2026-03-04T14:17:00+00:00",
+  "entity_id": "larkspur/atlas-api#140",
+  "actor": "diego.ferreira",
+  "url": "https://github.example/larkspur/atlas-api/pull/140",
+  "payload": {
+   "reviewer": "tomasz.wilk"
   }
  },
  {
   "kind": "pr_reviewed",
   "occurred_at": "2026-03-05T10:12:00+00:00",
   "entity_id": "larkspur/atlas-api#140",
-  "actor": "ama.owusu",
+  "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/140",
   "payload": {
    "state": "approved"
@@ -2799,19 +2817,9 @@
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-03-05T10:30:00+00:00",
-  "entity_id": "larkspur/atlas-api#138",
-  "actor": "ama.owusu",
-  "url": "https://github.example/larkspur/atlas-api/pull/138",
-  "payload": {
-   "state": "approved"
-  }
- },
- {
-  "kind": "pr_reviewed",
-  "occurred_at": "2026-03-05T10:30:00+00:00",
+  "occurred_at": "2026-03-05T10:59:00+00:00",
   "entity_id": "larkspur/atlas-api#139",
-  "actor": "tomasz.wilk",
+  "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-api/pull/139",
   "payload": {
    "state": "approved"
@@ -2821,24 +2829,16 @@
   "kind": "pr_merged",
   "occurred_at": "2026-03-05T11:02:00+00:00",
   "entity_id": "larkspur/atlas-api#140",
-  "actor": "tomasz.wilk",
+  "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-api/pull/140",
   "payload": {}
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-03-05T11:17:00+00:00",
+  "occurred_at": "2026-03-05T11:40:00+00:00",
   "entity_id": "larkspur/atlas-api#139",
-  "actor": "priya.natarajan",
+  "actor": "tomasz.wilk",
   "url": "https://github.example/larkspur/atlas-api/pull/139",
-  "payload": {}
- },
- {
-  "kind": "pr_merged",
-  "occurred_at": "2026-03-05T11:21:00+00:00",
-  "entity_id": "larkspur/atlas-api#138",
-  "actor": "diego.ferreira",
-  "url": "https://github.example/larkspur/atlas-api/pull/138",
   "payload": {}
  },
  {
@@ -2862,14 +2862,14 @@
   "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-api/pull/141",
   "payload": {
-   "reviewer": "tomasz.wilk"
+   "reviewer": "priya.natarajan"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-03-06T10:25:00+00:00",
+  "occurred_at": "2026-03-06T10:27:00+00:00",
   "entity_id": "larkspur/atlas-api#141",
-  "actor": "tomasz.wilk",
+  "actor": "priya.natarajan",
   "url": "https://github.example/larkspur/atlas-api/pull/141",
   "payload": {
    "state": "approved"
@@ -2877,7 +2877,7 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-03-06T11:12:00+00:00",
+  "occurred_at": "2026-03-06T11:05:00+00:00",
   "entity_id": "larkspur/atlas-api#141",
   "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-api/pull/141",
@@ -2885,33 +2885,33 @@
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-03-11T14:11:00+00:00",
+  "occurred_at": "2026-03-11T14:10:00+00:00",
   "entity_id": "larkspur/atlas-web#127",
   "actor": "liam.orourke",
   "url": "https://github.example/larkspur/atlas-web/pull/127",
   "payload": {
    "repo": "larkspur/atlas-web",
    "number": 127,
-   "title": "ATL-80: Search analytics events",
+   "title": "Search analytics events",
    "branch": "liam/search-analytics-events",
-   "body": "Implements the change described in the ticket."
+   "body": "Closes ATL-80.\n\nSee ticket for context."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-03-11T14:13:00+00:00",
+  "occurred_at": "2026-03-11T14:12:00+00:00",
   "entity_id": "larkspur/atlas-web#127",
   "actor": "liam.orourke",
   "url": "https://github.example/larkspur/atlas-web/pull/127",
   "payload": {
-   "reviewer": "diego.ferreira"
+   "reviewer": "ama.owusu"
   }
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-03-12T10:50:00+00:00",
+  "occurred_at": "2026-03-12T10:39:00+00:00",
   "entity_id": "larkspur/atlas-web#127",
-  "actor": "diego.ferreira",
+  "actor": "ama.owusu",
   "url": "https://github.example/larkspur/atlas-web/pull/127",
   "payload": {
    "state": "approved"
@@ -2919,7 +2919,7 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-03-12T11:46:00+00:00",
+  "occurred_at": "2026-03-12T11:37:00+00:00",
   "entity_id": "larkspur/atlas-web#127",
   "actor": "liam.orourke",
   "url": "https://github.example/larkspur/atlas-web/pull/127",
@@ -2927,21 +2927,21 @@
  },
  {
   "kind": "pr_opened",
-  "occurred_at": "2026-03-12T14:19:00+00:00",
+  "occurred_at": "2026-03-12T14:03:00+00:00",
   "entity_id": "larkspur/atlas-web#128",
   "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-web/pull/128",
   "payload": {
    "repo": "larkspur/atlas-web",
    "number": 128,
-   "title": "Synonym dictionary admin",
-   "branch": "hana/atl-79-synonym-dictionary-admin",
+   "title": "ATL-79: Synonym dictionary admin",
+   "branch": "hana/synonym-dictionary-admin",
    "body": "Implements the change described in the ticket."
   }
  },
  {
   "kind": "pr_review_requested",
-  "occurred_at": "2026-03-12T14:21:00+00:00",
+  "occurred_at": "2026-03-12T14:05:00+00:00",
   "entity_id": "larkspur/atlas-web#128",
   "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-web/pull/128",
@@ -2951,7 +2951,7 @@
  },
  {
   "kind": "pr_reviewed",
-  "occurred_at": "2026-03-13T10:06:00+00:00",
+  "occurred_at": "2026-03-13T10:35:00+00:00",
   "entity_id": "larkspur/atlas-web#128",
   "actor": "diego.ferreira",
   "url": "https://github.example/larkspur/atlas-web/pull/128",
@@ -2961,7 +2961,7 @@
  },
  {
   "kind": "pr_merged",
-  "occurred_at": "2026-03-13T11:02:00+00:00",
+  "occurred_at": "2026-03-13T11:13:00+00:00",
   "entity_id": "larkspur/atlas-web#128",
   "actor": "hana.sato",
   "url": "https://github.example/larkspur/atlas-web/pull/128",

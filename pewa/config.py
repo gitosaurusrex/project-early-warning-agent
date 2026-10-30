@@ -43,8 +43,16 @@ class Settings(BaseSettings):
     pewa_ci_flaky_failures: int = 2
     pewa_owner_overload_n: int = 3
     pewa_burn_window_weeks: int = 4
+    # Only recent reopen / CI / Slack activity counts as a live signal.
+    pewa_signal_lookback_days: int = 14
+    pewa_blocker_phrases: Annotated[list[str], NoDecode] = Field(
+        default_factory=lambda: [
+            "blocked on", "blocked by", "waiting on", "waiting for", "can't proceed", "cannot proceed",
+            "stuck on", "stuck behind", "held up", "no movement",
+        ]
+    )
 
-    @field_validator("github_repos", "slack_channels", mode="before")
+    @field_validator("github_repos", "slack_channels", "pewa_blocker_phrases", mode="before")
     @classmethod
     def _split_csv(cls, value: object) -> object:
         if isinstance(value, str):

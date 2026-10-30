@@ -1,7 +1,9 @@
 """`pewa` command-line interface."""
 
 import logging
+import os
 import shutil
+from datetime import UTC, datetime
 from enum import StrEnum
 from pathlib import Path
 
@@ -9,6 +11,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
+from pewa import assess as assess_mod
 from pewa import snapshot as snapshot_mod
 from pewa.config import REPO_ROOT, get_settings
 from pewa.connectors.base import Connector
@@ -16,6 +19,7 @@ from pewa.connectors.fixtures import FixtureConnector, fixture_dir, load_outcome
 from pewa.db import make_engine, session_scope
 from pewa.ingest import ingest as run_ingest
 from pewa.ingest import save_outcomes
+from pewa.llm import LLM, LLMAuthError
 from pewa.schemas import SOURCES
 
 app = typer.Typer(help="Project Early-Warning Agent", no_args_is_help=True, add_completion=False)
@@ -123,6 +127,49 @@ def snapshot(
         table.add_row(epic.key, epic.title, epic.status, epic.owner or "-", due, f"{done}/{len(children)}",
                       str(open_prs), str(len(state.epic_events(epic.key))))
     console.print(table)
+
+
+RATING_STYLE = {"green": "green", "amber": "yellow", "red": "red", "unknown": "magenta"}
+
+
+@app.command()
+def assess(
+    as_of: str | None = typer.Option(None, "--as-of", help="Date (end of that day, UTC) or ISO datetime. Default: now."),
+    project: str | None = typer.Option(None, help="Project name (defaults to PEWA_PROJECT)."),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Don't call the model; use the offline heuristic responder."),
+    label: str | None = typer.Option(None, help="Free-text label stored on the run (e.g. a prompt version)."),
+) -> None:
+    """Run signals and the LLM risk assessment for every epic, store the run and print it."""
+    settings = get_settings()
+    project = project or settings.pewa_project
+    when = snapshot_mod.parse_as_of(as_of) if as_of else datetime.now(UTC)
+    if not dry_run and not (settings.anthropic_api_key or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
+        err.print("[yellow]warning:[/yellow] ANTHROPIC_API_KEY is not set, running with --dry-run (offline heuristic).")
+        dry_run = True
+
+    try:
+        with session_scope(make_engine(settings.pewa_db_path)) as session:
+            llm = LLM(settings.pewa_model, dry_run=dry_run, session=session)
+            result = assess_mod.run(session, project, when, llm, label=label)
+    except LLMAuthError as exc:
+        err.print(f"[red]{exc}[/red]\nCheck ANTHROPIC_API_KEY, or run with --dry-run.")
+        raise typer.Exit(1) from exc
+
+    if not result.assessments:
+        err.print(f"No epics for project '{project}' as of {when:%Y-%m-%d}. Run `pewa ingest` first?")
+        raise typer.Exit(1)
+    table = Table(title=f"{project} as of {result.as_of:%Y-%m-%d %H:%M} UTC · run {result.run_id} · {result.model}")
+    for col in ("epic", "title", "rating", "conf", "rationale", "signals", "cites"):
+        table.add_column(col)
+    for a in result.assessments:
+        style = RATING_STYLE[a.rating]
+        table.add_row(a.epic_key, a.title, f"[{style}]{a.rating}[/{style}]", f"{a.confidence:.2f}",
+                      a.rationale if a.rating != "unknown" else f"error: {a.error}",
+                      str(len(a.signals)), str(len(a.evidence)))
+    console.print(table)
+    for a in result.assessments:
+        for risk in a.key_risks:
+            console.print(f"[bold]{a.epic_key}[/bold] · {risk.summary} [dim]({', '.join(risk.evidence_ids)})[/dim]")
 
 
 if __name__ == "__main__":

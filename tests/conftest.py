@@ -1,3 +1,4 @@
+import os
 from collections.abc import Iterator
 from datetime import UTC, datetime
 from pathlib import Path
@@ -12,6 +13,10 @@ from pewa.connectors.fixtures import FixtureConnector
 from pewa.db import make_engine, session_scope
 from pewa.ingest import ingest
 from pewa.schemas import SOURCES, Event
+
+
+# Captured before the autouse fixture strips credentials; only the opt-in `llm` tests use it.
+REAL_ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 
 
 def utc(*args: int) -> datetime:

@@ -43,3 +43,48 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     a re-fix PR and three unlinked chore PRs. Uniform sizing wasn't worth distorting the stories.
 14. **Names and URLs are invented.** The company is Larkspur Labs, and every URL uses the reserved
     `.example` TLD.
+
+## Phase 2
+
+15. **The real-model acceptance check could not run while building this phase**: there was no API
+    key. The Phase 2 criterion (Epic A amber/red with a valid citation at week 6; D and E green)
+    is verified in `tests/test_assess.py` with the dry-run responder, at both Mon 9 Feb and Fri
+    13 Feb. The same check against the real model is `tests/test_llm_integration.py`
+    (`pytest -m llm`). The real API path was smoke-tested with a deliberately invalid key: the SDK
+    accepted the request and the 401 is reported cleanly.
+16. **Dry-run is a heuristic responder, not canned text.** Fixed canned replies would make the
+    acceptance check meaningless. Instead the dry-run "model" rates each epic from its signals
+    (weighted severity: 3+ amber, 6+ red, any severity-3 strong signal at least amber) and cites
+    their evidence. It runs through the same validation, retry and storage path. Tests feed
+    malformed replies through `LLM(scripted=[...])`.
+17. **JSON via prompt, not structured outputs.** The spec's "retry once with the validation error"
+    flow is implemented over free-text JSON parsed with Pydantic. Switching to the API's structured
+    outputs (`output_config.format`) would harden it further. I didn't want to ship that unverified
+    with no key to test against.
+18. **Refusal fallbacks are on by default** for models that support them (`fallbacks: "default"`,
+    beta `server-side-fallback-2026-07-01`). A `refusal` stop reason that still comes back is
+    stored as an `unknown` assessment. Rejected credentials (401/403) abort the whole run instead
+    of storing one failure per epic.
+19. **No sampling parameters, default thinking.** The request sends no `temperature` (rejected on
+    current models) and leaves adaptive thinking and effort at the model's defaults.
+    `max_tokens` is 16000 so thinking can't truncate the JSON.
+20. **Done epics are not sent to the model.** They're stored as green ("Completed on ...") with
+    `detail.skipped = "done"`, which saves a call per finished epic in backtests.
+21. **Missing citations drop the risk, not the rating.** A key risk whose ids are all invalid is
+    removed. If that leaves an amber/red rating with no risks, the reply is invalid and is retried.
+22. **`burn_gap` uses the epic's own trailing throughput.** The spec says "team's trailing 4-week
+    throughput". A project-wide rate would compare one epic's work with five epics' capacity, so
+    the "team" is whoever completed this epic's work. The window is the last 4 weeks or since the
+    epic started, whichever is shorter. A week of history is required before it fires. It fires
+    when the projected finish exceeds the time left by 25% or more.
+23. **Recency window for event-type signals.** `reopened`, `ci_flaky` and `blocker_language` only
+    count events within `PEWA_SIGNAL_LOOKBACK_DAYS` (14). Otherwise a reopen fixed six weeks ago
+    would keep counting. `due_date_pushed` and `scope_growth` look at the whole history.
+24. **Signal evidence stays inside the epic.** `owner_overload` cites only the overloaded person's
+    tickets in that epic (the count still covers all epics). That keeps every cited id linked to
+    the epic it is cited for, which the citation-validity metric (§12) relies on.
+25. **Atlas generator: ticket durations now scale with points, and Epic E is Priya's alone.**
+    Phase 1 scheduled tickets evenly by count, so healthy epics burned points unevenly and
+    `burn_gap` flagged Epic E, a healthy control. With durations proportional to points the
+    controls burn at a steady pace. The planted stories are unchanged, and the dataset now has
+    428 messages.

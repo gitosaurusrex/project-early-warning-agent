@@ -89,6 +89,18 @@ def add_bdays(day: date, n: int) -> date:
     return day
 
 
+def split_days(total: int, weights: list[float]) -> list[int]:
+    """Split `total` days into consecutive chunks proportional to weights, each at least one day."""
+    raw = [w / sum(weights) * total for w in weights]
+    lengths = [max(1, round(r)) for r in raw]
+    while sum(lengths) > total:
+        lengths[max(range(len(lengths)), key=lambda i: (lengths[i] - raw[i], lengths[i]))] -= 1
+    while sum(lengths) < total:
+        lengths[max(range(len(lengths)), key=lambda i: raw[i] - lengths[i])] += 1
+    assert min(lengths) >= 1 and sum(lengths) == total
+    return lengths
+
+
 def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:40].rstrip("-")
 
@@ -247,17 +259,21 @@ class Atlas:
         created: datetime,
         repos: list[str],
     ) -> list[str]:
-        """Create tickets and work them back to back across the window. items: (slug, title, has_pr)."""
+        """Create tickets and work them back to back across the window, each taking time in
+        proportion to its points (so the burn rate is steady). items: (slug, title, has_pr)."""
         days = bdays(*window)
         assert len(days) >= len(items), f"window too short for {epic}/{assignee}"
-        slugs = []
-        for i, (slug, title, has_pr) in enumerate(items):
-            full = f"{epic}.{slug}"
-            self.ticket(full, epic, title, assignee, created + timedelta(minutes=2 * i))
-            segment = days[i * len(days) // len(items) : (i + 1) * len(days) // len(items)]
-            self.work_ticket(full, segment[0], segment[-1], self.rng.choice(repos) if has_pr else None)
-            slugs.append(full)
-        return slugs
+        tickets = [
+            self.ticket(f"{epic}.{slug}", epic, title, assignee, created + timedelta(minutes=2 * i))
+            for i, (slug, title, _) in enumerate(items)
+        ]
+        lengths = split_days(len(days), [t.points or 1 for t in tickets])
+        start = 0
+        for ticket, (_, _, has_pr), length in zip(tickets, items, lengths):
+            segment = days[start : start + length]
+            self.work_ticket(ticket.slug, segment[0], segment[-1], self.rng.choice(repos) if has_pr else None)
+            start += length
+        return [t.slug for t in tickets]
 
     def epic(self, key: str, created: datetime, start: date) -> None:
         spec = EPICS[key]
@@ -560,14 +576,12 @@ class Atlas:
             ("scheduled", "Scheduled email reports", True),
             ("audit", "Report audit log", True),
             ("states", "Empty states and loading", True),
-            ("docs", "Admin reporting docs", False),
-        ], (D(1, 19), D(3, 11)), backlog, [WEB, API])
-        self.plan("E", TOMASZ, [
             ("query", "Reporting query service", True),
             ("views", "Materialized views for reports", True),
             ("perf", "Report performance tuning", False),
-        ], (D(2, 16), D(3, 10)), backlog + timedelta(minutes=24), [API])
-        self.msg("atlas-eng", at(EPICS["E"]["actual"], 17, 0), PRIYA, "Admin reporting ({t:E}) shipped. Thanks Tomasz for the query work!")
+            ("docs", "Admin reporting docs", False),
+        ], (D(1, 19), D(3, 11)), backlog, [WEB, API])
+        self.msg("atlas-eng", at(EPICS["E"]["actual"], 17, 0), PRIYA, "Admin reporting ({t:E}) shipped. Thanks for all the reviews!")
 
     def chores(self) -> None:
         for slug, author, day in [("chore:Bump dependencies", TOMASZ, D(1, 14)),

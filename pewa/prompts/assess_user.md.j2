@@ -1,0 +1,25 @@
+As of: {{ as_of }}
+
+## Epic
+- Key: {{ epic.key }}
+- Title: {{ epic.title }}
+- Status: {{ epic.status }}
+- Owner: {{ epic.owner or "unassigned" }}
+- Due date: {{ epic.due_date or "none" }}{% if epic.original_due_date and epic.original_due_date != epic.due_date %} (originally {{ epic.original_due_date }}){% endif %}
+- Business days until due: {{ business_days_left if business_days_left is not none else "n/a" }}
+
+## Child tickets
+- Done: {{ children.done }} | In progress: {{ children.in_progress }} | To do: {{ children.todo }}
+- Points done: {{ children.points_done }} | Points open: {{ children.points_open }}
+{% if children.open %}
+Open tickets:
+{% for t in children.open %}- {{ t.key }} [{{ t.status }}] {{ t.title }} (assignee: {{ t.assignee or "unassigned" }}, points: {{ t.points if t.points is not none else "?" }}, last activity: {{ t.last_activity }})
+{% endfor %}{% endif %}
+## Signals from detectors
+{% if signals %}{% for s in signals %}- {{ s.type }} (severity {{ s.severity }}/3): {{ s.detail }} Evidence: {{ s.evidence | join(", ") if s.evidence else "none" }}
+{% endfor %}{% else %}None.
+{% endif %}
+## Evidence (oldest first)
+{% for e in evidence %}- {{ e.id }} | {{ e.when }} | {{ e.source }}/{{ e.kind }} | {{ e.summary }}
+{% endfor %}
+Assess the risk to this epic's due date. Return the JSON object only.

@@ -96,10 +96,10 @@ def build(session: Session, project: str, as_of: datetime) -> ProjectState:
     events = [e.model_copy(update={"epic_key": links[e.id]}) for e in raw_events]
 
     prs = {key: PRState(**data, epic_key=resolver.epic_for_pr(key)) for key, data in pr_data.items()}
-    last_activity: dict[str, datetime] = {}
+    last_activity: dict[str, Event] = {}
     for event in events:
         for ref in resolver.ticket_refs(event):
-            last_activity[ref] = event.occurred_at
+            last_activity[ref] = event
         pr = prs.get(event.entity_id) if event.source == "github" else None
         if pr is None:
             continue
@@ -128,7 +128,12 @@ def build(session: Session, project: str, as_of: datetime) -> ProjectState:
                 url=data.get("url"),
             )
         else:
-            tickets[key] = TicketState(**data, last_activity_at=last_activity.get(key))
+            last = last_activity.get(key)
+            tickets[key] = TicketState(
+                **data,
+                last_activity_at=last.occurred_at if last else None,
+                last_activity_event_id=last.id if last else None,
+            )
 
     for key in sorted(tickets, key=natural_key):
         epic = resolver.epic_for_ticket(key)

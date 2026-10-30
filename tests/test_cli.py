@@ -49,3 +49,17 @@ def test_init_creates_db_and_env(db, tmp_path):
     assert result.exit_code == 0, result.output
     assert db.exists()
     assert (tmp_path / ".env").exists()
+
+
+def test_assess_without_key_falls_back_to_dry_run(db):
+    assert runner.invoke(app, ["ingest", "--fixtures", "atlas"]).exit_code == 0
+    result = runner.invoke(app, ["assess", "--as-of", "2026-02-13"])
+    assert result.exit_code == 0, result.output
+    assert "running with --dry-run" in result.output
+    assert "ATL-1" in result.output and "red" in result.output and "dry-run" in result.output
+
+
+def test_assess_on_empty_db_explains(db):
+    result = runner.invoke(app, ["assess", "--as-of", "2026-02-13", "--dry-run"])
+    assert result.exit_code == 1
+    assert "pewa ingest" in result.output
