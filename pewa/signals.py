@@ -61,17 +61,21 @@ class Context:
         return matches[-1] if matches else None
 
     def started_at(self, epic: EpicState) -> datetime | None:
-        """When the epic (or, failing that, its first child) moved into progress."""
-        for event in self.by_entity[epic.key]:
-            if event.kind == "status_changed" and status_category(event.payload.get("to")) != "todo":
-                return event.occurred_at
-        starts = [
-            e.occurred_at
-            for child in epic.children
-            for e in self.by_entity[child]
-            if e.kind == "status_changed" and status_category(e.payload.get("to")) != "todo"
-        ]
-        return min(starts, default=None)
+        return started_at(epic, self.by_entity)
+
+
+def started_at(epic: EpicState, by_entity: dict[str, list[Event]]) -> datetime | None:
+    """When the epic (or, failing that, its first child) moved into progress."""
+    for event in by_entity.get(epic.key, []):
+        if event.kind == "status_changed" and status_category(event.payload.get("to")) != "todo":
+            return event.occurred_at
+    starts = [
+        e.occurred_at
+        for child in epic.children
+        for e in by_entity.get(child, [])
+        if e.kind == "status_changed" and status_category(e.payload.get("to")) != "todo"
+    ]
+    return min(starts, default=None)
 
 
 def _ids(events: list[Event | None]) -> list[str]:

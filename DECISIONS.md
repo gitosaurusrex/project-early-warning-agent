@@ -59,10 +59,9 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     (weighted severity: 3+ amber, 6+ red, any severity-3 strong signal at least amber) and cites
     their evidence. It runs through the same validation, retry and storage path. Tests feed
     malformed replies through `LLM(scripted=[...])`.
-17. **JSON via prompt, not structured outputs.** The spec's "retry once with the validation error"
-    flow is implemented over free-text JSON parsed with Pydantic. Switching to the API's structured
-    outputs (`output_config.format`) would harden it further. I didn't want to ship that unverified
-    with no key to test against.
+17. **JSON via prompt, not structured outputs** (superseded by #61). The spec's "retry once with
+    the validation error" flow was first implemented over free-text JSON parsed with Pydantic,
+    because structured outputs couldn't be verified without a key.
 18. **Refusal fallbacks are on by default** for models that support them (`fallbacks: "default"`,
     beta `server-side-fallback-2026-07-01`). A `refusal` stop reason that still comes back is
     stored as an `unknown` assessment. Rejected credentials (401/403) abort the whole run instead
@@ -244,4 +243,32 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
 59. **The hosted demo uses the offline responder unless a key is supplied.** Seeding never calls
     the model, even when a key is set. With a key, signed-in visitors can run real assessments
     and reports, which is what the password is for.
+
+
+
+## Quality and CI
+
+60. **Thin-history guard.** Both early false alarms in the first real backtest (#45) were pace
+    projections from a week or two of work. The model now sees when work started and how many
+    weeks it has run, and is told that such projections aren't enough for amber on their own. The
+    rule is also enforced in code (`assess.thin_history_guard`): before an epic has
+    `PEWA_MIN_HISTORY_WEEKS` (2) of work and `PEWA_MIN_DONE_TICKETS` (3) finished tickets, amber or
+    red needs a detector signal of severity 2+ behind it, unless the due date is within 10 business
+    days. Otherwise the rating is kept green. The model's rationale and risks stay visible, with a
+    note saying why, and the reason is stored in `assessments.detail.guard`. Setting
+    `PEWA_MIN_HISTORY_WEEKS=0` turns it off.
+61. **Structured outputs.** Assessment calls send `output_config.format` with a JSON schema that
+    mirrors `AssessmentOutput`, so replies are always schema-shaped JSON. Validation in code stays,
+    because ranges and the citation rules can't be expressed in the schema. Report calls are
+    Markdown and send no schema.
+62. **Measured on Atlas** (Sonnet 5.5, same 10 Mondays as #45). Before: backtest 3. After: backtest
+    4, 43 calls, $0.69. Precision rose from 67% to 100% and the false alarm rate fell from 33% to 0%.
+    Recall stayed at 100%. Sustained lead time rose from 21.5 to 25 days (ATL-1 still flagged
+    2 Feb; ATL-2 now flagged 2 Feb and held). The code guard didn't fire once: the model followed the
+    new history line and instruction on its own, so the guard is a backstop. There were no retries.
+    This is one run per configuration on one synthetic project, and model runs vary, so it shows
+    the direction, not a settled rate.
+63. **CI** (`.github/workflows/ci.yml`): on every pull request and every push to `main`, checks
+    that `uv.lock` matches `pyproject.toml`, installs from the lockfile, and runs the test suite.
+    It needs no secrets: the real-model test is opt-in and every connector test mocks HTTP.
 

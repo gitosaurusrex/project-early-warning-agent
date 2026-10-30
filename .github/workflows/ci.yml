@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Lockfile matches pyproject.toml
+        run: uv lock --check
+      - name: Install
+        run: uv sync --frozen
+      # The real-model test (marker `llm`) is skipped by default and needs no secrets.
+      # Connector tests mock all HTTP, so CI never reaches Jira, GitHub, Slack or Anthropic.
+      - name: Tests
+        run: uv run pytest
