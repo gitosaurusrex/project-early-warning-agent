@@ -1,0 +1,91 @@
+{
+ "project": "atlas",
+ "name": "Atlas",
+ "company": "Larkspur Labs (fictional)",
+ "jira_project_key": "ATL",
+ "start": "2026-01-05",
+ "end": "2026-03-13",
+ "repos": [
+  "larkspur/atlas-api",
+  "larkspur/atlas-web"
+ ],
+ "channels": {
+  "atlas-eng": "C0ATLASENG",
+  "atlas-standup": "C0ATLASSTD",
+  "atlas-design": "C0ATLASDSN"
+ },
+ "people": {
+  "diego.ferreira": {
+   "name": "Diego Ferreira",
+   "role": "engineer"
+  },
+  "hana.sato": {
+   "name": "Hana Sato",
+   "role": "engineer"
+  },
+  "ama.owusu": {
+   "name": "Ama Owusu",
+   "role": "engineer"
+  },
+  "tomasz.wilk": {
+   "name": "Tomasz Wilk",
+   "role": "engineer"
+  },
+  "priya.natarajan": {
+   "name": "Priya Natarajan",
+   "role": "engineer"
+  },
+  "liam.orourke": {
+   "name": "Liam O'Rourke",
+   "role": "engineer"
+  },
+  "rosa.delgado": {
+   "name": "Rosa Delgado",
+   "role": "technical program manager"
+  },
+  "mei.lindqvist": {
+   "name": "Mei Lindqvist",
+   "role": "product designer"
+  },
+  "ken.ibarra": {
+   "name": "Ken Ibarra",
+   "role": "engineer, ledger team (another team)"
+  },
+  "standup-bot": {
+   "name": "Standup Bot",
+   "role": "bot"
+  }
+ },
+ "epics": [
+  {
+   "slug": "A",
+   "key": "ATL-1",
+   "title": "Payments API",
+   "owner": "diego.ferreira"
+  },
+  {
+   "slug": "B",
+   "key": "ATL-2",
+   "title": "Search revamp",
+   "owner": "hana.sato"
+  },
+  {
+   "slug": "C",
+   "key": "ATL-3",
+   "title": "Onboarding flow",
+   "owner": "ama.owusu"
+  },
+  {
+   "slug": "D",
+   "key": "ATL-4",
+   "title": "Notifications service",
+   "owner": "tomasz.wilk"
+  },
+  {
+   "slug": "E",
+   "key": "ATL-5",
+   "title": "Admin reporting",
+   "owner": "priya.natarajan"
+  }
+ ]
+}

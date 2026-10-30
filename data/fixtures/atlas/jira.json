@@ -1,0 +1,3834 @@
+[
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T07:30:00+00:00",
+  "entity_id": "ATL-1",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.atlassian.example/browse/ATL-1",
+  "payload": {
+   "issue_type": "Epic",
+   "title": "Payments API",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": null,
+   "points": null,
+   "due_date": "2026-02-20"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T07:32:00+00:00",
+  "entity_id": "ATL-2",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.atlassian.example/browse/ATL-2",
+  "payload": {
+   "issue_type": "Epic",
+   "title": "Search revamp",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": null,
+   "points": null,
+   "due_date": "2026-03-06"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T07:34:00+00:00",
+  "entity_id": "ATL-3",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.atlassian.example/browse/ATL-3",
+  "payload": {
+   "issue_type": "Epic",
+   "title": "Onboarding flow",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": null,
+   "points": null,
+   "due_date": "2026-02-27"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T07:36:00+00:00",
+  "entity_id": "ATL-4",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.atlassian.example/browse/ATL-4",
+  "payload": {
+   "issue_type": "Epic",
+   "title": "Notifications service",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": null,
+   "points": null,
+   "due_date": "2026-02-13"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T07:38:00+00:00",
+  "entity_id": "ATL-5",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.atlassian.example/browse/ATL-5",
+  "payload": {
+   "issue_type": "Epic",
+   "title": "Admin reporting",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": null,
+   "points": null,
+   "due_date": "2026-03-13"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:00:00+00:00",
+  "entity_id": "ATL-6",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-6",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Payments API skeleton and routing",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:02:00+00:00",
+  "entity_id": "ATL-7",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-7",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Card tokenization client",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:04:00+00:00",
+  "entity_id": "ATL-8",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-8",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Payment intent model",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:06:00+00:00",
+  "entity_id": "ATL-9",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-9",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Charge endpoint",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 1,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:08:00+00:00",
+  "entity_id": "ATL-10",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-10",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Currency handling and rounding",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:10:00+00:00",
+  "entity_id": "ATL-11",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-11",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Payments error taxonomy",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:12:00+00:00",
+  "entity_id": "ATL-12",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-12",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Auth scopes for payments API",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:14:00+00:00",
+  "entity_id": "ATL-13",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-13",
+  "payload": {
+   "issue_type": "Story",
+   "title": "OpenAPI spec for payments",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-1",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:16:00+00:00",
+  "entity_id": "ATL-14",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-14",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Sandbox merchant fixtures",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-1",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:18:00+00:00",
+  "entity_id": "ATL-15",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-15",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Integrate ledger idempotency keys",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:20:00+00:00",
+  "entity_id": "ATL-16",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-16",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Refund endpoint",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:22:00+00:00",
+  "entity_id": "ATL-17",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-17",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Payment status webhooks",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:24:00+00:00",
+  "entity_id": "ATL-18",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-18",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Payout scheduling",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:26:00+00:00",
+  "entity_id": "ATL-19",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-19",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Daily reconciliation job",
+   "status": "To Do",
+   "assignee": "diego.ferreira",
+   "parent": "ATL-1",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:28:00+00:00",
+  "entity_id": "ATL-20",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-20",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Payments API docs",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-1",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:30:00+00:00",
+  "entity_id": "ATL-21",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-21",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Load test charge path",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-1",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:40:00+00:00",
+  "entity_id": "ATL-22",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-22",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Onboarding flow wireframes review",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:42:00+00:00",
+  "entity_id": "ATL-23",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-23",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Welcome screen",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:44:00+00:00",
+  "entity_id": "ATL-24",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-24",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Account details step",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:46:00+00:00",
+  "entity_id": "ATL-25",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-25",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Workspace setup step",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:48:00+00:00",
+  "entity_id": "ATL-26",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-26",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Progress indicator",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 1,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:50:00+00:00",
+  "entity_id": "ATL-27",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-27",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Form validation for signup",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 1,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:52:00+00:00",
+  "entity_id": "ATL-28",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-28",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Onboarding copy pass",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:54:00+00:00",
+  "entity_id": "ATL-29",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-29",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Invite teammates step",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:56:00+00:00",
+  "entity_id": "ATL-30",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-30",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Skip and resume onboarding",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T08:58:00+00:00",
+  "entity_id": "ATL-31",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-31",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Onboarding analytics",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:00:00+00:00",
+  "entity_id": "ATL-32",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-32",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Mobile layout fixes",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:02:00+00:00",
+  "entity_id": "ATL-33",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-33",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Onboarding launch checklist",
+   "status": "To Do",
+   "assignee": "ama.owusu",
+   "parent": "ATL-3",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:04:00+00:00",
+  "entity_id": "ATL-34",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-34",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Onboarding API endpoints",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-3",
+   "points": 1,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:06:00+00:00",
+  "entity_id": "ATL-35",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-35",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Persist onboarding progress",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-3",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:08:00+00:00",
+  "entity_id": "ATL-36",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-36",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Email verification hook",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-3",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:10:00+00:00",
+  "entity_id": "ATL-37",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-37",
+  "payload": {
+   "issue_type": "Story",
+   "title": "E2E tests for onboarding",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-3",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:20:00+00:00",
+  "entity_id": "ATL-38",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-38",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Notification service skeleton",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:22:00+00:00",
+  "entity_id": "ATL-39",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-39",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Event schema for notifications",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:24:00+00:00",
+  "entity_id": "ATL-40",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-40",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Email channel adapter",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 1,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:26:00+00:00",
+  "entity_id": "ATL-41",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-41",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Push channel adapter",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:28:00+00:00",
+  "entity_id": "ATL-42",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-42",
+  "payload": {
+   "issue_type": "Story",
+   "title": "User notification preferences",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:30:00+00:00",
+  "entity_id": "ATL-43",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-43",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Rate limiting per user",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:32:00+00:00",
+  "entity_id": "ATL-44",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-44",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Digest batching",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:34:00+00:00",
+  "entity_id": "ATL-45",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-45",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Retry and dead-letter queue",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:36:00+00:00",
+  "entity_id": "ATL-46",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-46",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Notification templates",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:38:00+00:00",
+  "entity_id": "ATL-47",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-47",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Rollout and monitoring",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-4",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:40:00+00:00",
+  "entity_id": "ATL-48",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-48",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Preferences UI",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-4",
+   "points": 1,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:42:00+00:00",
+  "entity_id": "ATL-49",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-49",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Unsubscribe links",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-4",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:44:00+00:00",
+  "entity_id": "ATL-50",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-50",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Notification center UI",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-4",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-05T09:46:00+00:00",
+  "entity_id": "ATL-51",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-51",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Delivery metrics",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-4",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T09:55:00+00:00",
+  "entity_id": "ATL-1",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-1",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T09:55:00+00:00",
+  "entity_id": "ATL-3",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-3",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T09:55:00+00:00",
+  "entity_id": "ATL-4",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-4",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T10:12:00+00:00",
+  "entity_id": "ATL-6",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-6",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T10:13:00+00:00",
+  "entity_id": "ATL-22",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-22",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T10:21:00+00:00",
+  "entity_id": "ATL-38",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-38",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T10:50:00+00:00",
+  "entity_id": "ATL-34",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-34",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T10:54:00+00:00",
+  "entity_id": "ATL-48",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-48",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T14:06:00+00:00",
+  "entity_id": "ATL-48",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-48",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T14:17:00+00:00",
+  "entity_id": "ATL-6",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-6",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-05T14:20:00+00:00",
+  "entity_id": "ATL-38",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-38",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-06T10:58:00+00:00",
+  "entity_id": "ATL-6",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-6",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-06T11:44:00+00:00",
+  "entity_id": "ATL-48",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-48",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-06T11:45:00+00:00",
+  "entity_id": "ATL-38",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-38",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-06T14:15:00+00:00",
+  "entity_id": "ATL-34",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-34",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-07T10:03:00+00:00",
+  "entity_id": "ATL-39",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-39",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-07T10:04:00+00:00",
+  "entity_id": "ATL-7",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-7",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-07T10:06:00+00:00",
+  "entity_id": "ATL-49",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-49",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-07T11:45:00+00:00",
+  "entity_id": "ATL-34",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-34",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-07T14:18:00+00:00",
+  "entity_id": "ATL-7",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-7",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-07T16:30:00+00:00",
+  "entity_id": "ATL-22",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-22",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-08T10:29:00+00:00",
+  "entity_id": "ATL-23",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-23",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-08T10:42:00+00:00",
+  "entity_id": "ATL-35",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-35",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-08T11:52:00+00:00",
+  "entity_id": "ATL-7",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-7",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-08T14:19:00+00:00",
+  "entity_id": "ATL-39",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-39",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-08T14:19:00+00:00",
+  "entity_id": "ATL-49",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-49",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-09T10:38:00+00:00",
+  "entity_id": "ATL-8",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-8",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-09T11:03:00+00:00",
+  "entity_id": "ATL-39",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-39",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-09T11:44:00+00:00",
+  "entity_id": "ATL-49",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-49",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-09T14:15:00+00:00",
+  "entity_id": "ATL-23",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-23",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-09T14:17:00+00:00",
+  "entity_id": "ATL-8",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-8",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:30:00+00:00",
+  "entity_id": "ATL-52",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-52",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Search index mapping v2",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": "ATL-2",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:32:00+00:00",
+  "entity_id": "ATL-53",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-53",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Query parser rewrite",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": "ATL-2",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:34:00+00:00",
+  "entity_id": "ATL-54",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-54",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Relevance scoring tweaks",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": "ATL-2",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:36:00+00:00",
+  "entity_id": "ATL-55",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-55",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Search results API pagination",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": "ATL-2",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:38:00+00:00",
+  "entity_id": "ATL-56",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-56",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Autocomplete endpoint",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": "ATL-2",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:40:00+00:00",
+  "entity_id": "ATL-57",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-57",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Search UI: results page",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": "ATL-2",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:42:00+00:00",
+  "entity_id": "ATL-58",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-58",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Search UI: empty and error states",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": "ATL-2",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:44:00+00:00",
+  "entity_id": "ATL-59",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-59",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Reindex backfill job",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-2",
+   "points": 1,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:46:00+00:00",
+  "entity_id": "ATL-60",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-60",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Search latency dashboard",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-2",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-12T08:48:00+00:00",
+  "entity_id": "ATL-61",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-61",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Feature flag for new search",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-2",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-12T09:55:00+00:00",
+  "entity_id": "ATL-2",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-2",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-12T10:14:00+00:00",
+  "entity_id": "ATL-50",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-50",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-12T10:14:00+00:00",
+  "entity_id": "ATL-52",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-52",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-12T10:48:00+00:00",
+  "entity_id": "ATL-40",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-40",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-12T10:58:00+00:00",
+  "entity_id": "ATL-23",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-23",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-12T11:44:00+00:00",
+  "entity_id": "ATL-8",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-8",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-12T14:11:00+00:00",
+  "entity_id": "ATL-50",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-50",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-12T14:13:00+00:00",
+  "entity_id": "ATL-35",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-35",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-13T10:01:00+00:00",
+  "entity_id": "ATL-24",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-24",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-13T10:12:00+00:00",
+  "entity_id": "ATL-9",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-9",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-13T11:35:00+00:00",
+  "entity_id": "ATL-35",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-35",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-13T11:47:00+00:00",
+  "entity_id": "ATL-50",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-50",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-13T14:09:00+00:00",
+  "entity_id": "ATL-9",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-9",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-13T14:14:00+00:00",
+  "entity_id": "ATL-40",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-40",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-14T10:01:00+00:00",
+  "entity_id": "ATL-36",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-36",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-14T10:52:00+00:00",
+  "entity_id": "ATL-51",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-51",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-14T11:05:00+00:00",
+  "entity_id": "ATL-40",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-40",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-14T11:11:00+00:00",
+  "entity_id": "ATL-9",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-9",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-14T14:22:00+00:00",
+  "entity_id": "ATL-24",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-24",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-15T10:45:00+00:00",
+  "entity_id": "ATL-10",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-10",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-15T10:52:00+00:00",
+  "entity_id": "ATL-41",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-41",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-15T11:37:00+00:00",
+  "entity_id": "ATL-24",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-24",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-15T14:09:00+00:00",
+  "entity_id": "ATL-10",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-10",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-15T14:14:00+00:00",
+  "entity_id": "ATL-52",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-52",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-16T10:46:00+00:00",
+  "entity_id": "ATL-25",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-25",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-16T11:08:00+00:00",
+  "entity_id": "ATL-10",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-10",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-16T11:42:00+00:00",
+  "entity_id": "ATL-52",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-52",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:00:00+00:00",
+  "entity_id": "ATL-62",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-62",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Reporting data model",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:02:00+00:00",
+  "entity_id": "ATL-63",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-63",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Admin dashboard shell",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:04:00+00:00",
+  "entity_id": "ATL-64",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-64",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Usage report",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:06:00+00:00",
+  "entity_id": "ATL-65",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-65",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Billing report",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:08:00+00:00",
+  "entity_id": "ATL-66",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-66",
+  "payload": {
+   "issue_type": "Story",
+   "title": "CSV export",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:10:00+00:00",
+  "entity_id": "ATL-67",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-67",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Date range picker",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-16T14:11:00+00:00",
+  "entity_id": "ATL-36",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-36",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-16T14:12:00+00:00",
+  "entity_id": "ATL-41",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-41",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:12:00+00:00",
+  "entity_id": "ATL-68",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-68",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Role-based access for reports",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:14:00+00:00",
+  "entity_id": "ATL-69",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-69",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Report caching",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:16:00+00:00",
+  "entity_id": "ATL-70",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-70",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Scheduled email reports",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:18:00+00:00",
+  "entity_id": "ATL-71",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-71",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Report audit log",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 1,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:20:00+00:00",
+  "entity_id": "ATL-72",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-72",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Empty states and loading",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:22:00+00:00",
+  "entity_id": "ATL-73",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-73",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Admin reporting docs",
+   "status": "To Do",
+   "assignee": "priya.natarajan",
+   "parent": "ATL-5",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:24:00+00:00",
+  "entity_id": "ATL-74",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-74",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Reporting query service",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-5",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:26:00+00:00",
+  "entity_id": "ATL-75",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-75",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Materialized views for reports",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-5",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-01-16T14:28:00+00:00",
+  "entity_id": "ATL-76",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-76",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Report performance tuning",
+   "status": "To Do",
+   "assignee": "tomasz.wilk",
+   "parent": "ATL-5",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-16T16:39:00+00:00",
+  "entity_id": "ATL-51",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-51",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-19T09:55:00+00:00",
+  "entity_id": "ATL-5",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-5",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-19T10:06:00+00:00",
+  "entity_id": "ATL-53",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-53",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-19T10:32:00+00:00",
+  "entity_id": "ATL-11",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-11",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-19T10:43:00+00:00",
+  "entity_id": "ATL-62",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-62",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-19T11:03:00+00:00",
+  "entity_id": "ATL-41",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-41",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-19T11:25:00+00:00",
+  "entity_id": "ATL-36",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-36",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-19T14:17:00+00:00",
+  "entity_id": "ATL-11",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-11",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-20T10:13:00+00:00",
+  "entity_id": "ATL-42",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-42",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-20T10:46:00+00:00",
+  "entity_id": "ATL-37",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-37",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-20T11:34:00+00:00",
+  "entity_id": "ATL-11",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-11",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-20T14:03:00+00:00",
+  "entity_id": "ATL-25",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-25",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-20T14:21:00+00:00",
+  "entity_id": "ATL-62",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-62",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-21T10:29:00+00:00",
+  "entity_id": "ATL-12",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-12",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-21T11:02:00+00:00",
+  "entity_id": "ATL-62",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-62",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-21T11:33:00+00:00",
+  "entity_id": "ATL-25",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-25",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-21T14:16:00+00:00",
+  "entity_id": "ATL-42",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-42",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-22T10:28:00+00:00",
+  "entity_id": "ATL-26",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-26",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-22T10:35:00+00:00",
+  "entity_id": "ATL-63",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-63",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-22T11:30:00+00:00",
+  "entity_id": "ATL-42",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-42",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-22T14:04:00+00:00",
+  "entity_id": "ATL-12",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-12",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-22T14:18:00+00:00",
+  "entity_id": "ATL-37",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-37",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-22T14:22:00+00:00",
+  "entity_id": "ATL-53",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-53",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-23T10:17:00+00:00",
+  "entity_id": "ATL-43",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-43",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-23T11:11:00+00:00",
+  "entity_id": "ATL-37",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-37",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-23T11:22:00+00:00",
+  "entity_id": "ATL-12",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-12",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-23T11:25:00+00:00",
+  "entity_id": "ATL-53",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-53",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-23T14:08:00+00:00",
+  "entity_id": "ATL-26",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-26",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-23T14:10:00+00:00",
+  "entity_id": "ATL-63",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-63",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-26T10:05:00+00:00",
+  "entity_id": "ATL-15",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-15",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-26T10:13:00+00:00",
+  "entity_id": "ATL-13",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-13",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-26T10:42:00+00:00",
+  "entity_id": "ATL-54",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-54",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-26T11:25:00+00:00",
+  "entity_id": "ATL-26",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-26",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-26T11:36:00+00:00",
+  "entity_id": "ATL-63",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-63",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-26T14:20:00+00:00",
+  "entity_id": "ATL-43",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-43",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-27T10:02:00+00:00",
+  "entity_id": "ATL-64",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-64",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-27T10:43:00+00:00",
+  "entity_id": "ATL-27",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-27",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-27T11:14:00+00:00",
+  "entity_id": "ATL-43",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-43",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-27T16:07:00+00:00",
+  "entity_id": "ATL-13",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-13",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-28T10:24:00+00:00",
+  "entity_id": "ATL-14",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-14",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-28T10:41:00+00:00",
+  "entity_id": "ATL-44",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-44",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-28T14:03:00+00:00",
+  "entity_id": "ATL-27",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-27",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-28T14:05:00+00:00",
+  "entity_id": "ATL-64",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-64",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-29T11:20:00+00:00",
+  "entity_id": "ATL-64",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-64",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-29T11:49:00+00:00",
+  "entity_id": "ATL-27",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-27",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-29T14:06:00+00:00",
+  "entity_id": "ATL-14",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-14",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-29T14:11:00+00:00",
+  "entity_id": "ATL-54",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-54",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-29T14:18:00+00:00",
+  "entity_id": "ATL-44",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-44",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-30T10:44:00+00:00",
+  "entity_id": "ATL-28",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-28",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-30T10:45:00+00:00",
+  "entity_id": "ATL-54",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-54",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-30T10:53:00+00:00",
+  "entity_id": "ATL-65",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-65",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-30T11:12:00+00:00",
+  "entity_id": "ATL-14",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-14",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-30T11:35:00+00:00",
+  "entity_id": "ATL-44",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-44",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-01-30T14:13:00+00:00",
+  "entity_id": "ATL-15",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-15",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-02T10:20:00+00:00",
+  "entity_id": "ATL-16",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-16",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-02T10:25:00+00:00",
+  "entity_id": "ATL-45",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-45",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-02T10:28:00+00:00",
+  "entity_id": "ATL-55",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-55",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-02T10:57:00+00:00",
+  "entity_id": "ATL-59",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-59",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-02T14:12:00+00:00",
+  "entity_id": "ATL-65",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-65",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-03T10:40:00+00:00",
+  "entity_id": "ATL-17",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-17",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-03T11:19:00+00:00",
+  "entity_id": "ATL-65",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-65",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-03T12:40:00+00:00",
+  "entity_id": "ATL-27",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-27",
+  "payload": {
+   "from": "Done",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-03T14:15:00+00:00",
+  "entity_id": "ATL-45",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-45",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-03T15:33:00+00:00",
+  "entity_id": "ATL-27",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-27",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-03T16:35:00+00:00",
+  "entity_id": "ATL-28",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-28",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-04T10:02:00+00:00",
+  "entity_id": "ATL-29",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-29",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-04T10:12:00+00:00",
+  "entity_id": "ATL-66",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-66",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-04T11:05:00+00:00",
+  "entity_id": "ATL-18",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-18",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-04T11:05:00+00:00",
+  "entity_id": "ATL-27",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-27",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-04T11:07:00+00:00",
+  "entity_id": "ATL-45",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-45",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-02-04T11:10:00+00:00",
+  "entity_id": "ATL-77",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-77",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Typo tolerance (fuzzy matching)",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": "ATL-2",
+   "points": 5,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-02-04T11:12:00+00:00",
+  "entity_id": "ATL-78",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-78",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Date-range filters",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-2",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-05T10:19:00+00:00",
+  "entity_id": "ATL-46",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-46",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-05T14:04:00+00:00",
+  "entity_id": "ATL-66",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-66",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-05T14:12:00+00:00",
+  "entity_id": "ATL-59",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-59",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-05T14:21:00+00:00",
+  "entity_id": "ATL-55",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-55",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-06T11:14:00+00:00",
+  "entity_id": "ATL-55",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-55",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-06T11:15:00+00:00",
+  "entity_id": "ATL-66",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-66",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-06T11:32:00+00:00",
+  "entity_id": "ATL-59",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-59",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-06T14:15:00+00:00",
+  "entity_id": "ATL-29",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-29",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-06T14:16:00+00:00",
+  "entity_id": "ATL-46",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-46",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-09T10:12:00+00:00",
+  "entity_id": "ATL-60",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-60",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-09T10:17:00+00:00",
+  "entity_id": "ATL-56",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-56",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-09T10:58:00+00:00",
+  "entity_id": "ATL-67",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-67",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-09T11:27:00+00:00",
+  "entity_id": "ATL-29",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-29",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-09T11:44:00+00:00",
+  "entity_id": "ATL-46",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-46",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-10T10:14:00+00:00",
+  "entity_id": "ATL-47",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-47",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-10T10:40:00+00:00",
+  "entity_id": "ATL-30",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-30",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-02-10T15:20:00+00:00",
+  "entity_id": "ATL-79",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-79",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Synonym dictionary admin",
+   "status": "To Do",
+   "assignee": "hana.sato",
+   "parent": "ATL-2",
+   "points": 3,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "ticket_created",
+  "occurred_at": "2026-02-11T10:05:00+00:00",
+  "entity_id": "ATL-80",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-80",
+  "payload": {
+   "issue_type": "Story",
+   "title": "Search analytics events",
+   "status": "To Do",
+   "assignee": "liam.orourke",
+   "parent": "ATL-2",
+   "points": 2,
+   "due_date": null
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-11T11:45:00+00:00",
+  "entity_id": "ATL-15",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-15",
+  "payload": {
+   "from": "In Review",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-11T14:11:00+00:00",
+  "entity_id": "ATL-67",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-67",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-11T14:22:00+00:00",
+  "entity_id": "ATL-30",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-30",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-12T10:50:00+00:00",
+  "entity_id": "ATL-67",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-67",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-12T11:44:00+00:00",
+  "entity_id": "ATL-30",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-30",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-12T14:02:00+00:00",
+  "entity_id": "ATL-15",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-15",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-12T14:10:00+00:00",
+  "entity_id": "ATL-56",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-56",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-12T16:00:00+00:00",
+  "entity_id": "ATL-47",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-47",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-12T17:00:00+00:00",
+  "entity_id": "ATL-4",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-4",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-13T10:29:00+00:00",
+  "entity_id": "ATL-68",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-68",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-13T10:47:00+00:00",
+  "entity_id": "ATL-31",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-31",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-13T10:55:00+00:00",
+  "entity_id": "ATL-56",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-56",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-13T16:45:00+00:00",
+  "entity_id": "ATL-60",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-60",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-16T10:13:00+00:00",
+  "entity_id": "ATL-74",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-74",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-16T10:16:00+00:00",
+  "entity_id": "ATL-57",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-57",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-16T10:30:00+00:00",
+  "entity_id": "ATL-61",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-61",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-16T14:09:00+00:00",
+  "entity_id": "ATL-68",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-68",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-16T14:17:00+00:00",
+  "entity_id": "ATL-31",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-31",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-17T11:21:00+00:00",
+  "entity_id": "ATL-68",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-68",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-17T11:38:00+00:00",
+  "entity_id": "ATL-31",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-31",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "due_date_changed",
+  "occurred_at": "2026-02-17T15:30:00+00:00",
+  "entity_id": "ATL-1",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.atlassian.example/browse/ATL-1",
+  "payload": {
+   "from": "2026-02-20",
+   "to": "2026-03-06"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-18T10:04:00+00:00",
+  "entity_id": "ATL-15",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-15",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-18T10:08:00+00:00",
+  "entity_id": "ATL-32",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-32",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-18T10:08:00+00:00",
+  "entity_id": "ATL-69",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-69",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-19T14:10:00+00:00",
+  "entity_id": "ATL-74",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-74",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-19T14:14:00+00:00",
+  "entity_id": "ATL-32",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-32",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-19T14:16:00+00:00",
+  "entity_id": "ATL-61",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-61",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-19T14:19:00+00:00",
+  "entity_id": "ATL-69",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-69",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-19T14:23:00+00:00",
+  "entity_id": "ATL-57",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-57",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-20T10:56:00+00:00",
+  "entity_id": "ATL-74",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-74",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-20T11:04:00+00:00",
+  "entity_id": "ATL-32",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-32",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-20T11:10:00+00:00",
+  "entity_id": "ATL-57",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-57",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-20T11:24:00+00:00",
+  "entity_id": "ATL-69",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-69",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-20T11:40:00+00:00",
+  "entity_id": "ATL-61",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-61",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-23T10:27:00+00:00",
+  "entity_id": "ATL-78",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-78",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-23T10:28:00+00:00",
+  "entity_id": "ATL-58",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-58",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-23T10:34:00+00:00",
+  "entity_id": "ATL-75",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-75",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-23T10:42:00+00:00",
+  "entity_id": "ATL-70",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-70",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-23T10:44:00+00:00",
+  "entity_id": "ATL-20",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-20",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-23T10:49:00+00:00",
+  "entity_id": "ATL-33",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-33",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-23T14:09:00+00:00",
+  "entity_id": "ATL-16",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-16",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-24T11:25:00+00:00",
+  "entity_id": "ATL-16",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-16",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-24T14:06:00+00:00",
+  "entity_id": "ATL-70",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-70",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-25T11:01:00+00:00",
+  "entity_id": "ATL-70",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-70",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-25T16:28:00+00:00",
+  "entity_id": "ATL-20",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-20",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-26T10:32:00+00:00",
+  "entity_id": "ATL-71",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-71",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-26T14:21:00+00:00",
+  "entity_id": "ATL-58",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-58",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-26T14:22:00+00:00",
+  "entity_id": "ATL-17",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-17",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-26T16:13:00+00:00",
+  "entity_id": "ATL-33",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-33",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-26T17:00:00+00:00",
+  "entity_id": "ATL-3",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.atlassian.example/browse/ATL-3",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-27T11:04:00+00:00",
+  "entity_id": "ATL-17",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-17",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-27T11:31:00+00:00",
+  "entity_id": "ATL-58",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-58",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-27T14:15:00+00:00",
+  "entity_id": "ATL-75",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-75",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-02-27T14:16:00+00:00",
+  "entity_id": "ATL-71",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-71",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-02T10:28:00+00:00",
+  "entity_id": "ATL-77",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-77",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-02T10:36:00+00:00",
+  "entity_id": "ATL-21",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-21",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "due_date_changed",
+  "occurred_at": "2026-03-02T11:00:00+00:00",
+  "entity_id": "ATL-2",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.atlassian.example/browse/ATL-2",
+  "payload": {
+   "from": "2026-03-06",
+   "to": "2026-03-13"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-02T11:11:00+00:00",
+  "entity_id": "ATL-71",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-71",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-02T11:36:00+00:00",
+  "entity_id": "ATL-75",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-75",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-02T14:09:00+00:00",
+  "entity_id": "ATL-18",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-18",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-03T10:16:00+00:00",
+  "entity_id": "ATL-72",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-72",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-03T10:44:00+00:00",
+  "entity_id": "ATL-76",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-76",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-03T11:12:00+00:00",
+  "entity_id": "ATL-18",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-18",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-03T14:16:00+00:00",
+  "entity_id": "ATL-78",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-78",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-04T10:21:00+00:00",
+  "entity_id": "ATL-19",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-19",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-04T11:00:00+00:00",
+  "entity_id": "ATL-78",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-78",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-04T14:10:00+00:00",
+  "entity_id": "ATL-19",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-19",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-04T14:13:00+00:00",
+  "entity_id": "ATL-72",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-72",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-04T14:18:00+00:00",
+  "entity_id": "ATL-21",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-21",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-05T10:19:00+00:00",
+  "entity_id": "ATL-80",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-80",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-05T11:06:00+00:00",
+  "entity_id": "ATL-21",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-21",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-05T11:21:00+00:00",
+  "entity_id": "ATL-72",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-72",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-05T11:25:00+00:00",
+  "entity_id": "ATL-19",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-19",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-05T14:08:00+00:00",
+  "entity_id": "ATL-77",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-77",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-06T10:25:00+00:00",
+  "entity_id": "ATL-73",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-73",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-06T11:16:00+00:00",
+  "entity_id": "ATL-77",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-77",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-06T17:00:00+00:00",
+  "entity_id": "ATL-1",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.atlassian.example/browse/ATL-1",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-09T10:07:00+00:00",
+  "entity_id": "ATL-79",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-79",
+  "payload": {
+   "from": "To Do",
+   "to": "In Progress"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-10T16:41:00+00:00",
+  "entity_id": "ATL-76",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.atlassian.example/browse/ATL-76",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-11T14:14:00+00:00",
+  "entity_id": "ATL-80",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-80",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-11T16:09:00+00:00",
+  "entity_id": "ATL-73",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-73",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-11T17:00:00+00:00",
+  "entity_id": "ATL-5",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.atlassian.example/browse/ATL-5",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-12T11:50:00+00:00",
+  "entity_id": "ATL-80",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.atlassian.example/browse/ATL-80",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-12T14:22:00+00:00",
+  "entity_id": "ATL-79",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-79",
+  "payload": {
+   "from": "In Progress",
+   "to": "In Review"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-13T11:06:00+00:00",
+  "entity_id": "ATL-79",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-79",
+  "payload": {
+   "from": "In Review",
+   "to": "Done"
+  }
+ },
+ {
+  "kind": "status_changed",
+  "occurred_at": "2026-03-13T17:00:00+00:00",
+  "entity_id": "ATL-2",
+  "actor": "hana.sato",
+  "url": "https://larkspur.atlassian.example/browse/ATL-2",
+  "payload": {
+   "from": "In Progress",
+   "to": "Done"
+  }
+ }
+]

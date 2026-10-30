@@ -1,0 +1,5896 @@
+[
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1767603600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767603600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767603600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Jan 05. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1767603900.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767603900000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767603900.000000",
+   "thread_ts": "1767603600.000000",
+   "text": "Continuing on ATL-22. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1767604200.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767604200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767604200.000000",
+   "thread_ts": "1767603600.000000",
+   "text": "Today: ATL-34 (onboarding api endpoints). Pairing with Hana after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1767604440.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767604440000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767604440.000000",
+   "thread_ts": "1767603600.000000",
+   "text": "Working on ATL-48, preferences ui. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1767606000.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1767606000000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1767606000.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1767606720.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1767606720000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1767606720.000000",
+   "thread_ts": "1767606000.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T11:00:00+00:00",
+  "entity_id": "C0ATLASDSN:1767610800.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767610800000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767610800.000000",
+   "thread_ts": null,
+   "text": "First pass of onboarding wireframes for ATL-22 is in Figma. Feedback welcome!"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T11:20:00+00:00",
+  "entity_id": "C0ATLASDSN:1767612000.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767612000000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767612000.000000",
+   "thread_ts": "1767610800.000000",
+   "text": "Love the step layout. Can we fold workspace setup into the account step?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T11:25:00+00:00",
+  "entity_id": "C0ATLASDSN:1767612300.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767612300000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767612300.000000",
+   "thread_ts": "1767610800.000000",
+   "text": "Fewer steps means fewer API calls, I'm in."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T11:35:00+00:00",
+  "entity_id": "C0ATLASDSN:1767612900.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767612900000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767612900.000000",
+   "thread_ts": "1767610800.000000",
+   "text": "Let me try a 3-step version."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T11:54:00+00:00",
+  "entity_id": "C0ATLASDSN:1767614040.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767614040000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767614040.000000",
+   "thread_ts": "1767610800.000000",
+   "text": "👍"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-05T14:23:00+00:00",
+  "entity_id": "C0ATLASENG:1767622980.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1767622980000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1767622980.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-38: https://github.example/larkspur/atlas-api/pull/102"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-06T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1767690000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767690000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767690000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Jan 06. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-06T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1767690360.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767690360000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767690360.000000",
+   "thread_ts": "1767690000.000000",
+   "text": "Today: ATL-34 (onboarding api endpoints). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-06T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1767690540.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767690540000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767690540.000000",
+   "thread_ts": "1767690000.000000",
+   "text": "Wrapped up some reviews, now on ATL-22."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1767776400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767776400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767776400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Jan 07. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1767776700.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767776700000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767776700.000000",
+   "thread_ts": "1767776400.000000",
+   "text": "Wrapped up some reviews, now on ATL-34. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1767776880.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767776880000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767776880.000000",
+   "thread_ts": "1767776400.000000",
+   "text": "Reviews and small fixes today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1767777000.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767777000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767777000.000000",
+   "thread_ts": "1767776400.000000",
+   "text": "Working on ATL-7, card tokenization client."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T09:16:00+00:00",
+  "entity_id": "C0ATLASSTD:1767777360.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767777360000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767777360.000000",
+   "thread_ts": "1767776400.000000",
+   "text": "Today: ATL-49 (unsubscribe links). Pairing with Ama after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T09:18:00+00:00",
+  "entity_id": "C0ATLASSTD:1767777480.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767777480000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767777480.000000",
+   "thread_ts": "1767776400.000000",
+   "text": "Working on ATL-22, onboarding flow wireframes review. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T14:00:00+00:00",
+  "entity_id": "C0ATLASDSN:1767794400.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767794400000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767794400.000000",
+   "thread_ts": null,
+   "text": "3-step version is up. Also exploring illustrations for the welcome screen (ATL-23)."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T14:04:00+00:00",
+  "entity_id": "C0ATLASDSN:1767794640.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767794640000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767794640.000000",
+   "thread_ts": "1767794400.000000",
+   "text": "This is much better."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T14:15:00+00:00",
+  "entity_id": "C0ATLASDSN:1767795300.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767795300000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767795300.000000",
+   "thread_ts": "1767794400.000000",
+   "text": "Illustrations look great."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T14:21:00+00:00",
+  "entity_id": "C0ATLASENG:1767795660.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1767795660000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1767795660.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-7: https://github.example/larkspur/atlas-api/pull/104"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T14:35:00+00:00",
+  "entity_id": "C0ATLASDSN:1767796500.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767796500000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767796500.000000",
+   "thread_ts": "1767794400.000000",
+   "text": "I'll finalize colors tomorrow."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-07T16:24:00+00:00",
+  "entity_id": "C0ATLASENG:1767803040.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1767803040000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1767803040.000000",
+   "thread_ts": null,
+   "text": "Staging looks slow today, anyone else seeing that?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1767862800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767862800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767862800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Jan 08. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1767863040.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767863040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767863040.000000",
+   "thread_ts": "1767862800.000000",
+   "text": "Wrapped up some reviews, now on ATL-49."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1767863400.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767863400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767863400.000000",
+   "thread_ts": "1767862800.000000",
+   "text": "Wrapped up some reviews, now on ATL-7. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T09:13:00+00:00",
+  "entity_id": "C0ATLASSTD:1767863580.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767863580000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767863580.000000",
+   "thread_ts": "1767862800.000000",
+   "text": "Working on ATL-39, event schema for notifications."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T09:15:00+00:00",
+  "entity_id": "C0ATLASSTD:1767863700.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767863700000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767863700.000000",
+   "thread_ts": "1767862800.000000",
+   "text": "Picking up the next ticket from the board."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T10:30:00+00:00",
+  "entity_id": "C0ATLASDSN:1767868200.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767868200000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767868200.000000",
+   "thread_ts": null,
+   "text": "Copy debate for ATL-23: 'Welcome to Atlas' vs 'Let's get you set up'. Votes?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T10:54:00+00:00",
+  "entity_id": "C0ATLASDSN:1767869640.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767869640000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767869640.000000",
+   "thread_ts": "1767868200.000000",
+   "text": "Second one, warmer."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T11:08:00+00:00",
+  "entity_id": "C0ATLASDSN:1767870480.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767870480000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767870480.000000",
+   "thread_ts": "1767868200.000000",
+   "text": "First one is clearer imo."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T11:13:00+00:00",
+  "entity_id": "C0ATLASDSN:1767870780.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767870780000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767870780.000000",
+   "thread_ts": "1767868200.000000",
+   "text": "Second."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T11:32:00+00:00",
+  "entity_id": "C0ATLASDSN:1767871920.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767871920000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767871920.000000",
+   "thread_ts": "1767868200.000000",
+   "text": "Second 🙂"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T11:43:00+00:00",
+  "entity_id": "C0ATLASDSN:1767872580.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767872580000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767872580.000000",
+   "thread_ts": "1767868200.000000",
+   "text": "Fine, outvoted 😄"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T11:52:00+00:00",
+  "entity_id": "C0ATLASDSN:1767873120.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1767873120000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1767873120.000000",
+   "thread_ts": "1767868200.000000",
+   "text": "Going with 'Let's get you set up'."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T14:22:00+00:00",
+  "entity_id": "C0ATLASENG:1767882120.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1767882120000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1767882120.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-39: https://github.example/larkspur/atlas-api/pull/105"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-08T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1767882600.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1767882600000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1767882600.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-09T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1767949200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767949200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767949200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Jan 09. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-09T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1767949560.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767949560000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767949560.000000",
+   "thread_ts": "1767949200.000000",
+   "text": "Wrapped up some reviews, now on ATL-49. Pairing with Tomasz after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-09T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1767949740.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1767949740000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1767949740.000000",
+   "thread_ts": "1767949200.000000",
+   "text": "Working on ATL-8, payment intent model."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-12T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1768208400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768208400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768208400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Jan 12. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-12T09:02:00+00:00",
+  "entity_id": "C0ATLASSTD:1768208520.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768208520000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768208520.000000",
+   "thread_ts": "1768208400.000000",
+   "text": "Wrapped up some reviews, now on ATL-40. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-12T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1768208880.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768208880000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768208880.000000",
+   "thread_ts": "1768208400.000000",
+   "text": "Continuing on ATL-50. Pairing with Tomasz after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-12T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1768209060.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768209060000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768209060.000000",
+   "thread_ts": "1768208400.000000",
+   "text": "Wrapped up some reviews, now on ATL-52. Pairing with Ama after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-12T09:17:00+00:00",
+  "entity_id": "C0ATLASSTD:1768209420.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768209420000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768209420.000000",
+   "thread_ts": "1768208400.000000",
+   "text": "Continuing on ATL-35. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-12T09:23:00+00:00",
+  "entity_id": "C0ATLASSTD:1768209780.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768209780000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768209780.000000",
+   "thread_ts": "1768208400.000000",
+   "text": "Today: ATL-8 (payment intent model). All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-12T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1768210800.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768210800000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768210800.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-12T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1768211520.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768211520000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768211520.000000",
+   "thread_ts": "1768210800.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-12T14:14:00+00:00",
+  "entity_id": "C0ATLASENG:1768227240.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768227240000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768227240.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-50: https://github.example/larkspur/atlas-web/pull/104"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-13T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1768294800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768294800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768294800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Jan 13. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-13T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1768295160.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768295160000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768295160.000000",
+   "thread_ts": "1768294800.000000",
+   "text": "Working on ATL-9, charge endpoint. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-13T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1768295280.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768295280000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768295280.000000",
+   "thread_ts": "1768294800.000000",
+   "text": "Working on ATL-35, persist onboarding progress. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-14T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1768381200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768381200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768381200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Jan 14. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-14T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1768381380.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768381380000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768381380.000000",
+   "thread_ts": "1768381200.000000",
+   "text": "Working on ATL-36, email verification hook. Pairing with Priya after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-14T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1768381500.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768381500000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768381500.000000",
+   "thread_ts": "1768381200.000000",
+   "text": "Wrapped up some reviews, now on ATL-52. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-14T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1768381740.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768381740000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768381740.000000",
+   "thread_ts": "1768381200.000000",
+   "text": "Continuing on ATL-40. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-14T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1768381860.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768381860000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768381860.000000",
+   "thread_ts": "1768381200.000000",
+   "text": "Continuing on ATL-9. Pairing with Priya after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-14T11:30:00+00:00",
+  "entity_id": "C0ATLASENG:1768390200.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768390200000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768390200.000000",
+   "thread_ts": null,
+   "text": "Lunch order going in at 12, reply with your pick 🌯"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-14T11:52:00+00:00",
+  "entity_id": "C0ATLASENG:1768391520.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768391520000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768391520.000000",
+   "thread_ts": "1768390200.000000",
+   "text": "Burrito bowl"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-14T12:02:00+00:00",
+  "entity_id": "C0ATLASENG:1768392120.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768392120000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768392120.000000",
+   "thread_ts": "1768390200.000000",
+   "text": "Burrito bowl"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-14T12:21:00+00:00",
+  "entity_id": "C0ATLASENG:1768393260.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768393260000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768393260.000000",
+   "thread_ts": "1768390200.000000",
+   "text": "Veggie wrap please"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-15T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1768467600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768467600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768467600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Jan 15. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-15T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1768467780.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768467780000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768467780.000000",
+   "thread_ts": "1768467600.000000",
+   "text": "Working on ATL-51, delivery metrics. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-15T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1768468080.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768468080000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768468080.000000",
+   "thread_ts": "1768467600.000000",
+   "text": "Today: ATL-24 (account details step). All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-15T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1768468200.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768468200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768468200.000000",
+   "thread_ts": "1768467600.000000",
+   "text": "Wrapped up some reviews, now on ATL-52. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-15T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1768468440.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768468440000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768468440.000000",
+   "thread_ts": "1768467600.000000",
+   "text": "Wrapped up some reviews, now on ATL-10. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-15T14:12:00+00:00",
+  "entity_id": "C0ATLASENG:1768486320.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768486320000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768486320.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-10: https://github.example/larkspur/atlas-api/pull/111"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-15T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1768487400.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768487400000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768487400.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-16T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1768554000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768554000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768554000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Jan 16. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-16T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1768554240.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768554240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768554240.000000",
+   "thread_ts": "1768554000.000000",
+   "text": "Today: ATL-41 (push channel adapter). All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-16T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1768554360.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768554360000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768554360.000000",
+   "thread_ts": "1768554000.000000",
+   "text": "Continuing on ATL-10. Pairing with Liam after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-16T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1768554720.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768554720000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768554720.000000",
+   "thread_ts": "1768554000.000000",
+   "text": "Working on ATL-25, workspace setup step. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-16T09:18:00+00:00",
+  "entity_id": "C0ATLASSTD:1768555080.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768555080000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768555080.000000",
+   "thread_ts": "1768554000.000000",
+   "text": "Today: ATL-36 (email verification hook). Pairing with Hana after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-16T10:11:00+00:00",
+  "entity_id": "C0ATLASENG:1768558260.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768558260000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768558260.000000",
+   "thread_ts": "1768486320.000000",
+   "text": "Looking now"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-16T14:14:00+00:00",
+  "entity_id": "C0ATLASENG:1768572840.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768572840000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768572840.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-36: https://github.example/larkspur/atlas-api/pull/112"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-19T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1768813200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768813200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768813200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Jan 19. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-19T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1768813500.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768813500000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768813500.000000",
+   "thread_ts": "1768813200.000000",
+   "text": "Continuing on ATL-25. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-19T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1768813800.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768813800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768813800.000000",
+   "thread_ts": "1768813200.000000",
+   "text": "Working on ATL-36, email verification hook."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-19T09:13:00+00:00",
+  "entity_id": "C0ATLASSTD:1768813980.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768813980000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768813980.000000",
+   "thread_ts": "1768813200.000000",
+   "text": "Today: ATL-41 (push channel adapter). Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-19T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1768814340.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768814340000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768814340.000000",
+   "thread_ts": "1768813200.000000",
+   "text": "Working on ATL-11, payments error taxonomy."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-19T09:25:00+00:00",
+  "entity_id": "C0ATLASSTD:1768814700.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768814700000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768814700.000000",
+   "thread_ts": "1768813200.000000",
+   "text": "Working on ATL-62, reporting data model. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-19T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1768815600.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768815600000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768815600.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-19T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1768816320.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768816320000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768816320.000000",
+   "thread_ts": "1768815600.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-19T10:39:00+00:00",
+  "entity_id": "C0ATLASENG:1768819140.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768819140000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768819140.000000",
+   "thread_ts": "1768572840.000000",
+   "text": "Will review shortly"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-20T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1768899600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768899600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768899600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Jan 20. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-20T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1768899900.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768899900000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768899900.000000",
+   "thread_ts": "1768899600.000000",
+   "text": "Working on ATL-37, e2e tests for onboarding."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-20T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1768900200.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768900200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768900200.000000",
+   "thread_ts": "1768899600.000000",
+   "text": "Today: ATL-42 (user notification preferences). Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-20T09:16:00+00:00",
+  "entity_id": "C0ATLASSTD:1768900560.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768900560000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768900560.000000",
+   "thread_ts": "1768899600.000000",
+   "text": "Today: ATL-62 (reporting data model)."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-20T09:20:00+00:00",
+  "entity_id": "C0ATLASSTD:1768900800.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768900800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768900800.000000",
+   "thread_ts": "1768899600.000000",
+   "text": "Today: ATL-25 (workspace setup step)."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-20T09:25:00+00:00",
+  "entity_id": "C0ATLASSTD:1768901100.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768901100000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768901100.000000",
+   "thread_ts": "1768899600.000000",
+   "text": "Today: ATL-53 (query parser rewrite). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-20T16:48:00+00:00",
+  "entity_id": "C0ATLASENG:1768927680.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1768927680000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1768927680.000000",
+   "thread_ts": null,
+   "text": "Staging looks slow today, anyone else seeing that?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1768986000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768986000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768986000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Jan 21. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1768986300.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768986300000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768986300.000000",
+   "thread_ts": "1768986000.000000",
+   "text": "Wrapped up some reviews, now on ATL-53. Pairing with Diego after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1768986480.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768986480000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768986480.000000",
+   "thread_ts": "1768986000.000000",
+   "text": "Continuing on ATL-12."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1768986660.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768986660000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768986660.000000",
+   "thread_ts": "1768986000.000000",
+   "text": "Continuing on ATL-62. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T09:16:00+00:00",
+  "entity_id": "C0ATLASSTD:1768986960.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768986960000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768986960.000000",
+   "thread_ts": "1768986000.000000",
+   "text": "Working on ATL-25, workspace setup step. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1768987140.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768987140000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768987140.000000",
+   "thread_ts": "1768986000.000000",
+   "text": "Today: ATL-42 (user notification preferences). Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T09:23:00+00:00",
+  "entity_id": "C0ATLASSTD:1768987380.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1768987380000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1768987380.000000",
+   "thread_ts": "1768986000.000000",
+   "text": "Working on ATL-37, e2e tests for onboarding. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T15:00:00+00:00",
+  "entity_id": "C0ATLASDSN:1769007600.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769007600000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769007600.000000",
+   "thread_ts": null,
+   "text": "Updated progress indicator designs for ATL-26."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T15:10:00+00:00",
+  "entity_id": "C0ATLASDSN:1769008200.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769008200000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769008200.000000",
+   "thread_ts": "1769007600.000000",
+   "text": "Can the dots be clickable?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T15:28:00+00:00",
+  "entity_id": "C0ATLASDSN:1769009280.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769009280000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769009280.000000",
+   "thread_ts": "1769007600.000000",
+   "text": "Only for completed steps."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-21T15:40:00+00:00",
+  "entity_id": "C0ATLASDSN:1769010000.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769010000000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769010000.000000",
+   "thread_ts": "1769007600.000000",
+   "text": "Perfect."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-22T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1769072400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769072400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769072400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Jan 22. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-22T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1769072580.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769072580000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769072580.000000",
+   "thread_ts": "1769072400.000000",
+   "text": "Today: ATL-53 (query parser rewrite). Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-22T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1769072760.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769072760000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769072760.000000",
+   "thread_ts": "1769072400.000000",
+   "text": "Wrapped up some reviews, now on ATL-12. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-22T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1769073060.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769073060000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769073060.000000",
+   "thread_ts": "1769072400.000000",
+   "text": "Working on ATL-63, admin dashboard shell."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-22T09:15:00+00:00",
+  "entity_id": "C0ATLASSTD:1769073300.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769073300000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769073300.000000",
+   "thread_ts": "1769072400.000000",
+   "text": "Continuing on ATL-42. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-22T14:07:00+00:00",
+  "entity_id": "C0ATLASENG:1769090820.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769090820000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769090820.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-12: https://github.example/larkspur/atlas-api/pull/116"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-22T14:21:00+00:00",
+  "entity_id": "C0ATLASENG:1769091660.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769091660000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769091660.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-37: https://github.example/larkspur/atlas-web/pull/109"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-22T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1769092200.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769092200000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769092200.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1769158800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769158800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769158800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Jan 23. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1769158980.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769158980000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769158980.000000",
+   "thread_ts": "1769158800.000000",
+   "text": "Working on ATL-43, rate limiting per user. Pairing with Hana after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T09:07:00+00:00",
+  "entity_id": "C0ATLASSTD:1769159220.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769159220000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769159220.000000",
+   "thread_ts": "1769158800.000000",
+   "text": "Wrapped up some reviews, now on ATL-12."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1769159400.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769159400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769159400.000000",
+   "thread_ts": "1769158800.000000",
+   "text": "Wrapped up some reviews, now on ATL-26. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1769159640.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769159640000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769159640.000000",
+   "thread_ts": "1769158800.000000",
+   "text": "Working on ATL-63, admin dashboard shell. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1769159940.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769159940000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769159940.000000",
+   "thread_ts": "1769158800.000000",
+   "text": "Today: ATL-53 (query parser rewrite). All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T09:25:00+00:00",
+  "entity_id": "C0ATLASSTD:1769160300.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769160300000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769160300.000000",
+   "thread_ts": "1769158800.000000",
+   "text": "Wrapped up some reviews, now on ATL-37."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T10:09:00+00:00",
+  "entity_id": "C0ATLASENG:1769162940.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769162940000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769162940.000000",
+   "thread_ts": "1769091660.000000",
+   "text": "Looking now"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T10:32:00+00:00",
+  "entity_id": "C0ATLASENG:1769164320.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769164320000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769164320.000000",
+   "thread_ts": "1769090820.000000",
+   "text": "Will review shortly"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-23T14:13:00+00:00",
+  "entity_id": "C0ATLASENG:1769177580.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769177580000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769177580.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-63: https://github.example/larkspur/atlas-api/pull/117"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1769418000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769418000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769418000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Jan 26. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1769418240.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769418240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769418240.000000",
+   "thread_ts": "1769418000.000000",
+   "text": "Working on ATL-15, integrate ledger idempotency keys. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1769418600.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769418600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769418600.000000",
+   "thread_ts": "1769418000.000000",
+   "text": "Today: ATL-54 (relevance scoring tweaks). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T09:13:00+00:00",
+  "entity_id": "C0ATLASSTD:1769418780.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769418780000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769418780.000000",
+   "thread_ts": "1769418000.000000",
+   "text": "Today: ATL-43 (rate limiting per user). Pairing with Ama after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T09:17:00+00:00",
+  "entity_id": "C0ATLASSTD:1769419020.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769419020000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769419020.000000",
+   "thread_ts": "1769418000.000000",
+   "text": "Continuing on ATL-26."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T09:23:00+00:00",
+  "entity_id": "C0ATLASSTD:1769419380.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769419380000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769419380.000000",
+   "thread_ts": "1769418000.000000",
+   "text": "Today: ATL-63 (admin dashboard shell). Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T09:25:00+00:00",
+  "entity_id": "C0ATLASSTD:1769419500.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769419500000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769419500.000000",
+   "thread_ts": "1769418000.000000",
+   "text": "Continuing on ATL-13. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1769420400.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769420400000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769420400.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1769421120.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769421120000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769421120.000000",
+   "thread_ts": "1769420400.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-26T10:32:00+00:00",
+  "entity_id": "C0ATLASENG:1769423520.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769423520000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769423520.000000",
+   "thread_ts": "1769177580.000000",
+   "text": "Looking now"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-27T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1769504400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769504400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769504400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Jan 27. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-27T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1769504700.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769504700000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769504700.000000",
+   "thread_ts": "1769504400.000000",
+   "text": "Working on ATL-27, form validation for signup. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-27T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1769505000.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769505000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769505000.000000",
+   "thread_ts": "1769504400.000000",
+   "text": "Today: ATL-13 (openapi spec for payments). Pairing with Diego after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-27T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1769505240.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769505240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769505240.000000",
+   "thread_ts": "1769504400.000000",
+   "text": "Wrapped up some reviews, now on ATL-64."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-27T11:15:00+00:00",
+  "entity_id": "C0ATLASDSN:1769512500.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769512500000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769512500.000000",
+   "thread_ts": null,
+   "text": "Validation messages for ATL-27: too harsh?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-27T11:40:00+00:00",
+  "entity_id": "C0ATLASDSN:1769514000.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769514000000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769514000.000000",
+   "thread_ts": "1769512500.000000",
+   "text": "A bit. Let's soften the email one."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-27T11:48:00+00:00",
+  "entity_id": "C0ATLASDSN:1769514480.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769514480000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769514480.000000",
+   "thread_ts": "1769512500.000000",
+   "text": "Updated."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-27T11:57:00+00:00",
+  "entity_id": "C0ATLASDSN:1769515020.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769515020000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769515020.000000",
+   "thread_ts": "1769512500.000000",
+   "text": "LGTM"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-28T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1769590800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769590800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769590800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Jan 28. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-28T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1769590980.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769590980000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769590980.000000",
+   "thread_ts": "1769590800.000000",
+   "text": "Today: ATL-44 (digest batching). Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-28T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1769591280.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769591280000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769591280.000000",
+   "thread_ts": "1769590800.000000",
+   "text": "Working on ATL-15, integrate ledger idempotency keys. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-28T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1769591520.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769591520000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769591520.000000",
+   "thread_ts": "1769590800.000000",
+   "text": "Continuing on ATL-54. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-28T09:15:00+00:00",
+  "entity_id": "C0ATLASSTD:1769591700.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769591700000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769591700.000000",
+   "thread_ts": "1769590800.000000",
+   "text": "Continuing on ATL-27. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-28T16:00:00+00:00",
+  "entity_id": "C0ATLASDSN:1769616000.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769616000000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769616000.000000",
+   "thread_ts": null,
+   "text": "Anyone have opinions on the new brand palette? Thinking of using it in onboarding."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-28T16:14:00+00:00",
+  "entity_id": "C0ATLASDSN:1769616840.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769616840000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769616840.000000",
+   "thread_ts": "1769616000.000000",
+   "text": "The teal is nice."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-28T16:22:00+00:00",
+  "entity_id": "C0ATLASDSN:1769617320.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769617320000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769617320.000000",
+   "thread_ts": "1769616000.000000",
+   "text": "As long as contrast passes, go for it."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-28T16:38:00+00:00",
+  "entity_id": "C0ATLASDSN:1769618280.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769618280000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769618280.000000",
+   "thread_ts": "1769616000.000000",
+   "text": "Will check contrast ratios."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-29T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1769677200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769677200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769677200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Jan 29. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-29T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1769677500.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769677500000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769677500.000000",
+   "thread_ts": "1769677200.000000",
+   "text": "Working on ATL-44, digest batching. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-29T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1769677860.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769677860000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769677860.000000",
+   "thread_ts": "1769677200.000000",
+   "text": "Today: ATL-64 (usage report)."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-29T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1769678040.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769678040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769678040.000000",
+   "thread_ts": "1769677200.000000",
+   "text": "Continuing on ATL-54. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-29T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1769697000.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769697000000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769697000.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1769763600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769763600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769763600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Jan 30. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T09:02:00+00:00",
+  "entity_id": "C0ATLASSTD:1769763720.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769763720000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769763720.000000",
+   "thread_ts": "1769763600.000000",
+   "text": "Wrapped up some reviews, now on ATL-54."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1769763960.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769763960000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769763960.000000",
+   "thread_ts": "1769763600.000000",
+   "text": "Wrapped up some reviews, now on ATL-44. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1769764080.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769764080000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769764080.000000",
+   "thread_ts": "1769763600.000000",
+   "text": "Today: ATL-65 (billing report). Pairing with Hana after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1769764260.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1769764260000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1769764260.000000",
+   "thread_ts": "1769763600.000000",
+   "text": "Wrapped up some reviews, now on ATL-15. Pairing with Ama after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T14:16:00+00:00",
+  "entity_id": "C0ATLASENG:1769782560.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1769782560000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1769782560.000000",
+   "thread_ts": null,
+   "text": "PR for ATL-15 is up: https://github.example/larkspur/atlas-api/pull/122. @ken.ibarra could the ledger team take a look? We need your sign-off on the idempotency key schema."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T16:00:00+00:00",
+  "entity_id": "C0ATLASDSN:1769788800.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769788800000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769788800.000000",
+   "thread_ts": null,
+   "text": "Copy pass for ATL-28: shortened all the step headings."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T16:17:00+00:00",
+  "entity_id": "C0ATLASDSN:1769789820.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769789820000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769789820.000000",
+   "thread_ts": "1769788800.000000",
+   "text": "Love it."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T16:27:00+00:00",
+  "entity_id": "C0ATLASDSN:1769790420.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769790420000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769790420.000000",
+   "thread_ts": "1769788800.000000",
+   "text": "Much cleaner."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-01-30T16:48:00+00:00",
+  "entity_id": "C0ATLASDSN:1769791680.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1769791680000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1769791680.000000",
+   "thread_ts": "1769788800.000000",
+   "text": "+1"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770022800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770022800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770022800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Feb 02. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T09:02:00+00:00",
+  "entity_id": "C0ATLASSTD:1770022920.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770022920000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770022920.000000",
+   "thread_ts": "1770022800.000000",
+   "text": "Wrapped up some reviews, now on ATL-55. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1770023040.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770023040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770023040.000000",
+   "thread_ts": "1770022800.000000",
+   "text": "Working on ATL-65, billing report. Pairing with Liam after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1770023400.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770023400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770023400.000000",
+   "thread_ts": "1770022800.000000",
+   "text": "Today: ATL-28 (onboarding copy pass). Pairing with Tomasz after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1770023640.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770023640000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770023640.000000",
+   "thread_ts": "1770022800.000000",
+   "text": "Blocked on the ledger team's review of ATL-15. Starting groundwork on refunds in the meantime."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T09:18:00+00:00",
+  "entity_id": "C0ATLASSTD:1770023880.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770023880000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770023880.000000",
+   "thread_ts": "1770022800.000000",
+   "text": "Today: ATL-45 (retry and dead-letter queue). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1770025200.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770025200000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770025200.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1770025920.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770025920000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770025920.000000",
+   "thread_ts": "1770025200.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T10:25:00+00:00",
+  "entity_id": "C0ATLASENG:1770027900.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770027900000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770027900.000000",
+   "thread_ts": null,
+   "text": "Blocked on the ledger team for ATL-15: still no review on https://github.example/larkspur/atlas-api/pull/122."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T10:41:00+00:00",
+  "entity_id": "C0ATLASENG:1770028860.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770028860000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770028860.000000",
+   "thread_ts": "1770027900.000000",
+   "text": "Want me to escalate to their EM?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T10:52:00+00:00",
+  "entity_id": "C0ATLASENG:1770029520.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770029520000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770029520.000000",
+   "thread_ts": "1770027900.000000",
+   "text": "Let's give it a day or two."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-02T14:15:00+00:00",
+  "entity_id": "C0ATLASENG:1770041700.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770041700000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770041700.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-65: https://github.example/larkspur/atlas-web/pull/114"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770109200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770109200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770109200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Feb 03. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1770109560.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770109560000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770109560.000000",
+   "thread_ts": "1770109200.000000",
+   "text": "Still waiting on ledger for ATL-15. Refunds and payouts can't proceed without the new keys."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1770109920.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770109920000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770109920.000000",
+   "thread_ts": "1770109200.000000",
+   "text": "Continuing on ATL-28. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1770110040.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770110040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770110040.000000",
+   "thread_ts": "1770109200.000000",
+   "text": "Today: ATL-55 (search results api pagination). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T09:17:00+00:00",
+  "entity_id": "C0ATLASSTD:1770110220.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770110220000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770110220.000000",
+   "thread_ts": "1770109200.000000",
+   "text": "Working on ATL-65, billing report. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T10:30:00+00:00",
+  "entity_id": "C0ATLASENG:1770114600.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770114600000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770114600.000000",
+   "thread_ts": null,
+   "text": "Product review outcome: search revamp (ATL-2) needs typo tolerance and date-range filters before launch. @hana.sato can you scope these?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T10:35:00+00:00",
+  "entity_id": "C0ATLASENG:1770114900.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770114900000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770114900.000000",
+   "thread_ts": "1770114600.000000",
+   "text": "On it. That's a decent chunk of work, adding tickets now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T11:00:00+00:00",
+  "entity_id": "C0ATLASENG:1770116400.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770116400000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770116400.000000",
+   "thread_ts": "1770114600.000000",
+   "text": "Thanks. Let's see how it affects the Mar 6 date."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T12:45:00+00:00",
+  "entity_id": "C0ATLASENG:1770122700.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770122700000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770122700.000000",
+   "thread_ts": null,
+   "text": "Heads up: QA found an edge case in ATL-27 (emails with plus signs). Reopening, it's a small fix."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T12:58:00+00:00",
+  "entity_id": "C0ATLASENG:1770123480.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770123480000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770123480.000000",
+   "thread_ts": "1770122700.000000",
+   "text": "Thanks for catching it."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-03T13:22:00+00:00",
+  "entity_id": "C0ATLASENG:1770124920.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770124920000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770124920.000000",
+   "thread_ts": "1770122700.000000",
+   "text": "Fix is up: https://github.example/larkspur/atlas-web/pull/115"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770195600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770195600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770195600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Feb 04. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1770195840.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770195840000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770195840.000000",
+   "thread_ts": "1770195600.000000",
+   "text": "Continuing on ATL-66. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T09:07:00+00:00",
+  "entity_id": "C0ATLASSTD:1770196020.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770196020000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770196020.000000",
+   "thread_ts": "1770195600.000000",
+   "text": "Today: ATL-45 (retry and dead-letter queue). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1770196320.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770196320000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770196320.000000",
+   "thread_ts": "1770195600.000000",
+   "text": "Working on ATL-59, reindex backfill job. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T09:17:00+00:00",
+  "entity_id": "C0ATLASSTD:1770196620.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770196620000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770196620.000000",
+   "thread_ts": "1770195600.000000",
+   "text": "Wrapped up some reviews, now on ATL-29. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1770196740.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770196740000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770196740.000000",
+   "thread_ts": "1770195600.000000",
+   "text": "No movement on the ledger review for ATL-15 yet. Pinged Ken again."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T09:24:00+00:00",
+  "entity_id": "C0ATLASSTD:1770197040.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770197040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770197040.000000",
+   "thread_ts": "1770195600.000000",
+   "text": "Continuing on ATL-55."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T11:20:00+00:00",
+  "entity_id": "C0ATLASENG:1770204000.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770204000000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770204000.000000",
+   "thread_ts": null,
+   "text": "Added ATL-77 and ATL-78 to the search epic."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T11:30:00+00:00",
+  "entity_id": "C0ATLASENG:1770204600.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770204600000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770204600.000000",
+   "thread_ts": null,
+   "text": "Lunch order going in at 12, reply with your pick 🌯"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T11:41:00+00:00",
+  "entity_id": "C0ATLASENG:1770205260.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770205260000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770205260.000000",
+   "thread_ts": "1770204600.000000",
+   "text": "Same as last time"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T11:53:00+00:00",
+  "entity_id": "C0ATLASENG:1770205980.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770205980000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770205980.000000",
+   "thread_ts": "1770204600.000000",
+   "text": "Pass today"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T12:10:00+00:00",
+  "entity_id": "C0ATLASENG:1770207000.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770207000000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770207000.000000",
+   "thread_ts": "1770204600.000000",
+   "text": "Veggie wrap please"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T15:02:00+00:00",
+  "entity_id": "C0ATLASENG:1770217320.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770217320000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770217320.000000",
+   "thread_ts": "1770027900.000000",
+   "text": "Still waiting on ledger. Refunds and payouts both depend on the new idempotency keys, so we can't proceed on those until it lands."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-04T16:52:00+00:00",
+  "entity_id": "C0ATLASENG:1770223920.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770223920000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770223920.000000",
+   "thread_ts": null,
+   "text": "Staging looks slow today, anyone else seeing that?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770282000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770282000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770282000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Feb 05. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1770282240.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770282240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770282240.000000",
+   "thread_ts": "1770282000.000000",
+   "text": "Continuing on ATL-55. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T09:07:00+00:00",
+  "entity_id": "C0ATLASSTD:1770282420.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770282420000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770282420.000000",
+   "thread_ts": "1770282000.000000",
+   "text": "Waiting on the ledger team. Poking at webhooks, but most of it depends on ATL-15."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1770282600.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770282600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770282600.000000",
+   "thread_ts": "1770282000.000000",
+   "text": "Working on ATL-59, reindex backfill job. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1770282720.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770282720000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770282720.000000",
+   "thread_ts": "1770282000.000000",
+   "text": "Working on ATL-46, notification templates. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T09:48:00+00:00",
+  "entity_id": "C0ATLASENG:1770284880.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770284880000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770284880.000000",
+   "thread_ts": "1770027900.000000",
+   "text": "Escalated to the ledger EM, they're heads-down on quarter close."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T10:00:00+00:00",
+  "entity_id": "C0ATLASDSN:1770285600.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1770285600000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1770285600.000000",
+   "thread_ts": null,
+   "text": "Waiting on design for the final invite-step illustration (ATL-29). @mei.lindqvist any ETA?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T10:20:00+00:00",
+  "entity_id": "C0ATLASDSN:1770286800.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1770286800000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1770286800.000000",
+   "thread_ts": "1770285600.000000",
+   "text": "Uploading this afternoon!"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T14:10:00+00:00",
+  "entity_id": "C0ATLASDSN:1770300600.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1770300600000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1770300600.000000",
+   "thread_ts": "1770285600.000000",
+   "text": "Illustrations are in Figma ✅"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T14:24:00+00:00",
+  "entity_id": "C0ATLASENG:1770301440.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770301440000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770301440.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-55: https://github.example/larkspur/atlas-web/pull/117"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T14:25:00+00:00",
+  "entity_id": "C0ATLASDSN:1770301500.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1770301500000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1770301500.000000",
+   "thread_ts": "1770285600.000000",
+   "text": "Thanks, wiring it in now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-05T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1770301800.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770301800000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770301800.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-06T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770368400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770368400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770368400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Feb 06. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-06T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1770368640.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770368640000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770368640.000000",
+   "thread_ts": "1770368400.000000",
+   "text": "Working on ATL-66, csv export. Pairing with Ama after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-06T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1770368760.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770368760000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770368760.000000",
+   "thread_ts": "1770368400.000000",
+   "text": "Blocked on the ledger team's review of ATL-15. Starting groundwork on refunds in the meantime."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-06T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1770368880.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770368880000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770368880.000000",
+   "thread_ts": "1770368400.000000",
+   "text": "Wrapped up some reviews, now on ATL-55. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-06T09:13:00+00:00",
+  "entity_id": "C0ATLASSTD:1770369180.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770369180000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770369180.000000",
+   "thread_ts": "1770368400.000000",
+   "text": "Working on ATL-29, invite teammates step. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770627600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770627600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770627600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Feb 09. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1770627960.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770627960000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770627960.000000",
+   "thread_ts": "1770627600.000000",
+   "text": "Today: ATL-29 (invite teammates step). Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1770628200.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770628200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770628200.000000",
+   "thread_ts": "1770627600.000000",
+   "text": "Today: ATL-46 (notification templates). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T09:13:00+00:00",
+  "entity_id": "C0ATLASSTD:1770628380.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770628380000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770628380.000000",
+   "thread_ts": "1770627600.000000",
+   "text": "Continuing on ATL-60. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T09:15:00+00:00",
+  "entity_id": "C0ATLASSTD:1770628500.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770628500000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770628500.000000",
+   "thread_ts": "1770627600.000000",
+   "text": "Wrapped up some reviews, now on ATL-56."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T09:20:00+00:00",
+  "entity_id": "C0ATLASSTD:1770628800.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770628800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770628800.000000",
+   "thread_ts": "1770627600.000000",
+   "text": "Still waiting on ledger for ATL-15. Refunds and payouts can't proceed without the new keys."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1770630000.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770630000000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770630000.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1770630720.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770630720000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770630720.000000",
+   "thread_ts": "1770630000.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T11:00:00+00:00",
+  "entity_id": "C0ATLASENG:1770634800.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770634800000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770634800.000000",
+   "thread_ts": null,
+   "text": "@diego.ferreira is Payments (ATL-1) still on track for Feb 20?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T11:14:00+00:00",
+  "entity_id": "C0ATLASENG:1770635640.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770635640000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770635640.000000",
+   "thread_ts": "1770634800.000000",
+   "text": "Honestly not sure. We're waiting on the ledger team for ATL-15, and three tickets are stuck behind it. Even if it lands Wednesday we're tight."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-09T11:20:00+00:00",
+  "entity_id": "C0ATLASENG:1770636000.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770636000000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770636000.000000",
+   "thread_ts": "1770634800.000000",
+   "text": "Ok. Let's revisit Thursday."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770714000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770714000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770714000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Feb 10. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1770714360.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770714360000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770714360.000000",
+   "thread_ts": "1770714000.000000",
+   "text": "Working on ATL-47, rollout and monitoring. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1770714720.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770714720000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770714720.000000",
+   "thread_ts": "1770714000.000000",
+   "text": "Working on ATL-30, skip and resume onboarding. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T09:15:00+00:00",
+  "entity_id": "C0ATLASSTD:1770714900.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770714900000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770714900.000000",
+   "thread_ts": "1770714000.000000",
+   "text": "Continuing on ATL-56."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T09:18:00+00:00",
+  "entity_id": "C0ATLASSTD:1770715080.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770715080000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770715080.000000",
+   "thread_ts": "1770714000.000000",
+   "text": "No movement on the ledger review for ATL-15 yet. Pinged Ken again."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T13:00:00+00:00",
+  "entity_id": "C0ATLASDSN:1770728400.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1770728400000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1770728400.000000",
+   "thread_ts": null,
+   "text": "Should skipping onboarding be permanent, or should we nudge later? (ATL-30)"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T13:20:00+00:00",
+  "entity_id": "C0ATLASDSN:1770729600.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1770729600000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1770729600.000000",
+   "thread_ts": "1770728400.000000",
+   "text": "Nudge once after 3 days, then never again."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T13:39:00+00:00",
+  "entity_id": "C0ATLASDSN:1770730740.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1770730740000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1770730740.000000",
+   "thread_ts": "1770728400.000000",
+   "text": "Agree, and let's track it in analytics."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T14:02:00+00:00",
+  "entity_id": "C0ATLASDSN:1770732120.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1770732120000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1770732120.000000",
+   "thread_ts": "1770728400.000000",
+   "text": "Works for me."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T14:13:00+00:00",
+  "entity_id": "C0ATLASDSN:1770732780.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1770732780000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1770732780.000000",
+   "thread_ts": "1770728400.000000",
+   "text": "API already supports a resume flag."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T15:30:00+00:00",
+  "entity_id": "C0ATLASENG:1770737400.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770737400000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770737400.000000",
+   "thread_ts": null,
+   "text": "Also adding ATL-79, and growth asked for ATL-80 as a late add."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-10T17:05:00+00:00",
+  "entity_id": "C0ATLASENG:1770743100.000000",
+  "actor": "ken.ibarra",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770743100000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770743100.000000",
+   "thread_ts": "1770027900.000000",
+   "text": "Sorry all, ledger team is buried in quarter close. Will review tomorrow."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-11T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770800400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770800400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770800400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Feb 11. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-11T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1770800640.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770800640000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770800640.000000",
+   "thread_ts": "1770800400.000000",
+   "text": "Ledger requested changes on ATL-15; reworking the key schema."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-11T09:07:00+00:00",
+  "entity_id": "C0ATLASSTD:1770800820.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770800820000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770800820.000000",
+   "thread_ts": "1770800400.000000",
+   "text": "Wrapped up some reviews, now on ATL-47. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-11T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1770801060.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770801060000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770801060.000000",
+   "thread_ts": "1770800400.000000",
+   "text": "Working on ATL-60, search latency dashboard. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-11T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1770801240.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770801240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770801240.000000",
+   "thread_ts": "1770800400.000000",
+   "text": "Working on ATL-30, skip and resume onboarding. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-11T11:50:00+00:00",
+  "entity_id": "C0ATLASENG:1770810600.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770810600000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770810600.000000",
+   "thread_ts": null,
+   "text": "Ledger requested changes on https://github.example/larkspur/atlas-api/pull/122: the key schema needs a version field. Reworking now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-11T14:25:00+00:00",
+  "entity_id": "C0ATLASENG:1770819900.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770819900000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770819900.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-30: https://github.example/larkspur/atlas-web/pull/120"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-12T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770886800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770886800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770886800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Feb 12. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-12T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1770887160.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770887160000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770887160.000000",
+   "thread_ts": "1770886800.000000",
+   "text": "Fighting CI on the ledger sandbox for ATL-15."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-12T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1770887460.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770887460000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770887460.000000",
+   "thread_ts": "1770886800.000000",
+   "text": "Continuing on ATL-47. Pairing with Diego after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-12T09:16:00+00:00",
+  "entity_id": "C0ATLASSTD:1770887760.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770887760000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770887760.000000",
+   "thread_ts": "1770886800.000000",
+   "text": "Continuing on ATL-30. Pairing with Hana after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-12T09:21:00+00:00",
+  "entity_id": "C0ATLASSTD:1770888060.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770888060000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770888060.000000",
+   "thread_ts": "1770886800.000000",
+   "text": "Continuing on ATL-67. Pairing with Tomasz after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-12T09:24:00+00:00",
+  "entity_id": "C0ATLASSTD:1770888240.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770888240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770888240.000000",
+   "thread_ts": "1770886800.000000",
+   "text": "Continuing on ATL-56. Pairing with Diego after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-12T10:40:00+00:00",
+  "entity_id": "C0ATLASENG:1770892800.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770892800000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770892800.000000",
+   "thread_ts": "1770819900.000000",
+   "text": "Looking now"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-12T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1770906600.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770906600000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770906600.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-12T17:20:00+00:00",
+  "entity_id": "C0ATLASENG:1770916800.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770916800000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770916800.000000",
+   "thread_ts": null,
+   "text": "Notifications service (ATL-4) is done and rolled out 🎉"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-13T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1770973200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770973200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770973200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Feb 13. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-13T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1770973560.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770973560000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770973560.000000",
+   "thread_ts": "1770973200.000000",
+   "text": "Wrapped up some reviews, now on ATL-68. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-13T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1770973740.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770973740000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770973740.000000",
+   "thread_ts": "1770973200.000000",
+   "text": "Continuing on ATL-56. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-13T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1770974040.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770974040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770974040.000000",
+   "thread_ts": "1770973200.000000",
+   "text": "ATL-15 is back with the ledger team for re-review."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-13T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1770974340.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1770974340000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1770974340.000000",
+   "thread_ts": "1770973200.000000",
+   "text": "Today: ATL-60 (search latency dashboard). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-13T10:30:00+00:00",
+  "entity_id": "C0ATLASENG:1770978600.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1770978600000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1770978600.000000",
+   "thread_ts": null,
+   "text": "CI keeps failing on the ledger sandbox for https://github.example/larkspur/atlas-api/pull/122. Looking into it, re-requested review from Ken."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-16T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1771232400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771232400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771232400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Feb 16. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-16T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1771232580.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771232580000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771232580.000000",
+   "thread_ts": "1771232400.000000",
+   "text": "Still waiting on ledger re-review of ATL-15."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-16T09:07:00+00:00",
+  "entity_id": "C0ATLASSTD:1771232820.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771232820000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771232820.000000",
+   "thread_ts": "1771232400.000000",
+   "text": "Working on ATL-68, role-based access for reports. Pairing with Ama after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-16T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1771233120.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771233120000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771233120.000000",
+   "thread_ts": "1771232400.000000",
+   "text": "Continuing on ATL-61."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-16T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1771233240.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771233240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771233240.000000",
+   "thread_ts": "1771232400.000000",
+   "text": "Working on ATL-74, reporting query service. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-16T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1771233540.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771233540000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771233540.000000",
+   "thread_ts": "1771232400.000000",
+   "text": "Continuing on ATL-31."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-16T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1771234800.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771234800000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771234800.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-16T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1771235520.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771235520000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771235520.000000",
+   "thread_ts": "1771234800.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-16T14:12:00+00:00",
+  "entity_id": "C0ATLASENG:1771251120.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771251120000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771251120.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-68: https://github.example/larkspur/atlas-api/pull/127"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-17T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1771318800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771318800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771318800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Feb 17. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-17T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1771319160.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771319160000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771319160.000000",
+   "thread_ts": "1771318800.000000",
+   "text": "Working on ATL-57, search ui: results page. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-17T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1771319280.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771319280000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771319280.000000",
+   "thread_ts": "1771318800.000000",
+   "text": "Ken says approval today for ATL-15. Then refunds, webhooks and payouts."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-17T09:13:00+00:00",
+  "entity_id": "C0ATLASSTD:1771319580.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771319580000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771319580.000000",
+   "thread_ts": "1771318800.000000",
+   "text": "Continuing on ATL-31. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-17T09:18:00+00:00",
+  "entity_id": "C0ATLASSTD:1771319880.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771319880000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771319880.000000",
+   "thread_ts": "1771318800.000000",
+   "text": "Today: ATL-74 (reporting query service). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-17T09:21:00+00:00",
+  "entity_id": "C0ATLASSTD:1771320060.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771320060000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771320060.000000",
+   "thread_ts": "1771318800.000000",
+   "text": "Working on ATL-61, feature flag for new search. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-17T15:35:00+00:00",
+  "entity_id": "C0ATLASENG:1771342500.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771342500000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771342500.000000",
+   "thread_ts": null,
+   "text": "Heads up: Payments API (ATL-1) won't make Feb 20. Moving the target to Mar 6 now that the ledger review is unblocking."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1771405200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771405200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771405200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Feb 18. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1771405380.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771405380000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771405380.000000",
+   "thread_ts": "1771405200.000000",
+   "text": "Working on ATL-69, report caching."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T09:07:00+00:00",
+  "entity_id": "C0ATLASSTD:1771405620.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771405620000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771405620.000000",
+   "thread_ts": "1771405200.000000",
+   "text": "Today: ATL-32 (mobile layout fixes). All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1771405800.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771405800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771405800.000000",
+   "thread_ts": "1771405200.000000",
+   "text": "Continuing on ATL-61. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T09:15:00+00:00",
+  "entity_id": "C0ATLASSTD:1771406100.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771406100000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771406100.000000",
+   "thread_ts": "1771405200.000000",
+   "text": "Picking up the next ticket from the board."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T11:00:00+00:00",
+  "entity_id": "C0ATLASDSN:1771412400.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1771412400000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1771412400.000000",
+   "thread_ts": null,
+   "text": "Mobile layout looks off on small Android screens (ATL-32)."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T11:10:00+00:00",
+  "entity_id": "C0ATLASDSN:1771413000.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1771413000000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1771413000.000000",
+   "thread_ts": "1771412400.000000",
+   "text": "Screenshots?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T11:34:00+00:00",
+  "entity_id": "C0ATLASDSN:1771414440.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1771414440000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1771414440.000000",
+   "thread_ts": "1771412400.000000",
+   "text": "Posted in the thread above."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T11:42:00+00:00",
+  "entity_id": "C0ATLASDSN:1771414920.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1771414920000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1771414920.000000",
+   "thread_ts": "1771412400.000000",
+   "text": "Let's reduce the illustration height below 360px."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-18T12:00:00+00:00",
+  "entity_id": "C0ATLASDSN:1771416000.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1771416000000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1771416000.000000",
+   "thread_ts": "1771412400.000000",
+   "text": "Done, PR coming."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1771491600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771491600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771491600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Feb 19. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1771491900.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771491900000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771491900.000000",
+   "thread_ts": "1771491600.000000",
+   "text": "Today: ATL-32 (mobile layout fixes)."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1771492140.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771492140000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771492140.000000",
+   "thread_ts": "1771491600.000000",
+   "text": "Continuing on ATL-57. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1771492320.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771492320000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771492320.000000",
+   "thread_ts": "1771491600.000000",
+   "text": "Continuing on ATL-69. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T11:30:00+00:00",
+  "entity_id": "C0ATLASDSN:1771500600.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1771500600000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1771500600.000000",
+   "thread_ts": null,
+   "text": "Design crit moved to Thursday this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T11:39:00+00:00",
+  "entity_id": "C0ATLASDSN:1771501140.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASDSN/p1771501140000000",
+  "payload": {
+   "channel": "C0ATLASDSN",
+   "channel_name": "atlas-design",
+   "ts": "1771501140.000000",
+   "thread_ts": "1771500600.000000",
+   "text": "👍"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T14:17:00+00:00",
+  "entity_id": "C0ATLASENG:1771510620.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771510620000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771510620.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-32: https://github.example/larkspur/atlas-web/pull/123"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T14:22:00+00:00",
+  "entity_id": "C0ATLASENG:1771510920.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771510920000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771510920.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-69: https://github.example/larkspur/atlas-api/pull/130"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1771511400.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771511400000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771511400.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-19T16:08:00+00:00",
+  "entity_id": "C0ATLASENG:1771517280.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771517280000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771517280.000000",
+   "thread_ts": null,
+   "text": "Staging looks slow today, anyone else seeing that?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-20T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1771578000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771578000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771578000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Feb 20. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-20T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1771578240.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771578240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771578240.000000",
+   "thread_ts": "1771578000.000000",
+   "text": "Wrapped up some reviews, now on ATL-32. Pairing with Diego after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-20T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1771578540.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771578540000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771578540.000000",
+   "thread_ts": "1771578000.000000",
+   "text": "Wrapped up some reviews, now on ATL-57. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-20T10:11:00+00:00",
+  "entity_id": "C0ATLASENG:1771582260.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771582260000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771582260.000000",
+   "thread_ts": "1771510620.000000",
+   "text": "Will review shortly"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1771837200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771837200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771837200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Feb 23. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1771837560.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771837560000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771837560.000000",
+   "thread_ts": "1771837200.000000",
+   "text": "Today: ATL-58 (search ui: empty and error states)."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1771837860.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771837860000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771837860.000000",
+   "thread_ts": "1771837200.000000",
+   "text": "Wrapped up some reviews, now on ATL-33. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1771838040.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771838040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771838040.000000",
+   "thread_ts": "1771837200.000000",
+   "text": "Working on ATL-16, refund endpoint. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T09:20:00+00:00",
+  "entity_id": "C0ATLASSTD:1771838400.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771838400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771838400.000000",
+   "thread_ts": "1771837200.000000",
+   "text": "Wrapped up some reviews, now on ATL-78. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T09:24:00+00:00",
+  "entity_id": "C0ATLASSTD:1771838640.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771838640000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771838640.000000",
+   "thread_ts": "1771837200.000000",
+   "text": "Today: ATL-70 (scheduled email reports). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T09:26:00+00:00",
+  "entity_id": "C0ATLASSTD:1771838760.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771838760000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771838760.000000",
+   "thread_ts": "1771837200.000000",
+   "text": "Continuing on ATL-20. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1771839600.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771839600000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771839600.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1771840320.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771840320000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771840320.000000",
+   "thread_ts": "1771839600.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T10:00:00+00:00",
+  "entity_id": "C0ATLASENG:1771840800.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771840800000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771840800.000000",
+   "thread_ts": null,
+   "text": "Onboarding launch readiness (ATL-33): anything at risk for Friday?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T10:12:00+00:00",
+  "entity_id": "C0ATLASENG:1771841520.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771841520000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771841520.000000",
+   "thread_ts": "1771840800.000000",
+   "text": "We're good, final QA tomorrow."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T10:26:00+00:00",
+  "entity_id": "C0ATLASENG:1771842360.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771842360000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771842360.000000",
+   "thread_ts": "1771840800.000000",
+   "text": "Design signed off ✅"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T10:43:00+00:00",
+  "entity_id": "C0ATLASENG:1771843380.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771843380000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771843380.000000",
+   "thread_ts": "1771840800.000000",
+   "text": "E2E suite is green."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-23T14:12:00+00:00",
+  "entity_id": "C0ATLASENG:1771855920.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771855920000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771855920.000000",
+   "thread_ts": null,
+   "text": "PR up for ATL-16: https://github.example/larkspur/atlas-api/pull/131"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-24T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1771923600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771923600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771923600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Feb 24. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-24T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1771923900.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771923900000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771923900.000000",
+   "thread_ts": "1771923600.000000",
+   "text": "Working on ATL-78, date-range filters. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-24T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1771924260.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771924260000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771924260.000000",
+   "thread_ts": "1771923600.000000",
+   "text": "Working on ATL-20, payments api docs."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-24T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1771924440.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771924440000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771924440.000000",
+   "thread_ts": "1771923600.000000",
+   "text": "Today: ATL-58 (search ui: empty and error states). All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-24T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1771924740.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771924740000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771924740.000000",
+   "thread_ts": "1771923600.000000",
+   "text": "Today: ATL-16 (refund endpoint). Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-24T09:23:00+00:00",
+  "entity_id": "C0ATLASSTD:1771924980.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1771924980000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1771924980.000000",
+   "thread_ts": "1771923600.000000",
+   "text": "Wrapped up some reviews, now on ATL-33. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-24T10:36:00+00:00",
+  "entity_id": "C0ATLASENG:1771929360.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771929360000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771929360.000000",
+   "thread_ts": "1771855920.000000",
+   "text": "Looking now"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-24T14:00:00+00:00",
+  "entity_id": "C0ATLASENG:1771941600.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771941600000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771941600.000000",
+   "thread_ts": null,
+   "text": "Search revamp (ATL-2) is tracking about a week behind with the added scope."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-24T14:23:00+00:00",
+  "entity_id": "C0ATLASENG:1771942980.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1771942980000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1771942980.000000",
+   "thread_ts": "1771941600.000000",
+   "text": "Understood. I'll take it to Monday's planning."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1772010000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772010000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772010000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Feb 25. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T09:02:00+00:00",
+  "entity_id": "C0ATLASSTD:1772010120.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772010120000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772010120.000000",
+   "thread_ts": "1772010000.000000",
+   "text": "Today: ATL-33 (onboarding launch checklist). Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1772010360.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772010360000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772010360.000000",
+   "thread_ts": "1772010000.000000",
+   "text": "Today: ATL-78 (date-range filters). Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1772010540.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772010540000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772010540.000000",
+   "thread_ts": "1772010000.000000",
+   "text": "Continuing on ATL-20."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1772010720.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772010720000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772010720.000000",
+   "thread_ts": "1772010000.000000",
+   "text": "Continuing on ATL-17. Pairing with Liam after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1772010840.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772010840000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772010840.000000",
+   "thread_ts": "1772010000.000000",
+   "text": "Today: ATL-58 (search ui: empty and error states)."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1772011140.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772011140000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772011140.000000",
+   "thread_ts": "1772010000.000000",
+   "text": "Continuing on ATL-70."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T11:30:00+00:00",
+  "entity_id": "C0ATLASENG:1772019000.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772019000000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772019000.000000",
+   "thread_ts": null,
+   "text": "Lunch order going in at 12, reply with your pick 🌯"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T11:54:00+00:00",
+  "entity_id": "C0ATLASENG:1772020440.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772020440000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772020440.000000",
+   "thread_ts": "1772019000.000000",
+   "text": "Veggie wrap please"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T12:15:00+00:00",
+  "entity_id": "C0ATLASENG:1772021700.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772021700000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772021700.000000",
+   "thread_ts": "1772019000.000000",
+   "text": "Pass today"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-25T12:22:00+00:00",
+  "entity_id": "C0ATLASENG:1772022120.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772022120000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772022120.000000",
+   "thread_ts": "1772019000.000000",
+   "text": "Burrito bowl"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1772096400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772096400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772096400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Feb 26. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1772096580.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772096580000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772096580.000000",
+   "thread_ts": "1772096400.000000",
+   "text": "Today: ATL-33 (onboarding launch checklist). Pairing with Hana after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1772096760.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772096760000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772096760.000000",
+   "thread_ts": "1772096400.000000",
+   "text": "Continuing on ATL-58. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1772097060.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772097060000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772097060.000000",
+   "thread_ts": "1772096400.000000",
+   "text": "Wrapped up some reviews, now on ATL-17. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T09:17:00+00:00",
+  "entity_id": "C0ATLASSTD:1772097420.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772097420000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772097420.000000",
+   "thread_ts": "1772096400.000000",
+   "text": "Working on ATL-75, materialized views for reports. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T09:20:00+00:00",
+  "entity_id": "C0ATLASSTD:1772097600.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772097600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772097600.000000",
+   "thread_ts": "1772096400.000000",
+   "text": "Wrapped up some reviews, now on ATL-71. Pairing with Hana after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1772116200.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772116200000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772116200.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T17:10:00+00:00",
+  "entity_id": "C0ATLASENG:1772125800.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772125800000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772125800.000000",
+   "thread_ts": null,
+   "text": "Onboarding flow (ATL-3) is live! 🎉"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T17:27:00+00:00",
+  "entity_id": "C0ATLASENG:1772126820.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772126820000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772126820.000000",
+   "thread_ts": "1772125800.000000",
+   "text": "Great work team!"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T17:42:00+00:00",
+  "entity_id": "C0ATLASENG:1772127720.000000",
+  "actor": "mei.lindqvist",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772127720000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772127720.000000",
+   "thread_ts": "1772125800.000000",
+   "text": "🎉🎉"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-26T18:07:00+00:00",
+  "entity_id": "C0ATLASENG:1772129220.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772129220000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772129220.000000",
+   "thread_ts": "1772125800.000000",
+   "text": "Congrats!"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-27T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1772182800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772182800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772182800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Feb 27. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-27T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1772183040.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772183040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772183040.000000",
+   "thread_ts": "1772182800.000000",
+   "text": "Continuing on ATL-17. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-27T09:07:00+00:00",
+  "entity_id": "C0ATLASSTD:1772183220.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772183220000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772183220.000000",
+   "thread_ts": "1772182800.000000",
+   "text": "Wrapped up some reviews, now on ATL-75. On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-27T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1772183520.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772183520000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772183520.000000",
+   "thread_ts": "1772182800.000000",
+   "text": "Reviews and small fixes today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-27T09:16:00+00:00",
+  "entity_id": "C0ATLASSTD:1772183760.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772183760000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772183760.000000",
+   "thread_ts": "1772182800.000000",
+   "text": "Today: ATL-58 (search ui: empty and error states). All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-27T09:18:00+00:00",
+  "entity_id": "C0ATLASSTD:1772183880.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772183880000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772183880.000000",
+   "thread_ts": "1772182800.000000",
+   "text": "Continuing on ATL-71. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-02-27T09:24:00+00:00",
+  "entity_id": "C0ATLASSTD:1772184240.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772184240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772184240.000000",
+   "thread_ts": "1772182800.000000",
+   "text": "Continuing on ATL-78."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-02T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1772442000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772442000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772442000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Mar 02. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-02T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1772442180.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772442180000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772442180.000000",
+   "thread_ts": "1772442000.000000",
+   "text": "Today: ATL-21 (load test charge path). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-02T09:08:00+00:00",
+  "entity_id": "C0ATLASSTD:1772442480.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772442480000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772442480.000000",
+   "thread_ts": "1772442000.000000",
+   "text": "Continuing on ATL-78. Pairing with Priya after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-02T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1772442720.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772442720000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772442720.000000",
+   "thread_ts": "1772442000.000000",
+   "text": "Continuing on ATL-71. Pairing with Diego after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-02T09:17:00+00:00",
+  "entity_id": "C0ATLASSTD:1772443020.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772443020000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772443020.000000",
+   "thread_ts": "1772442000.000000",
+   "text": "Working on ATL-18, payout scheduling. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-02T09:22:00+00:00",
+  "entity_id": "C0ATLASSTD:1772443320.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772443320000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772443320.000000",
+   "thread_ts": "1772442000.000000",
+   "text": "Reviews and small fixes today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-02T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1772444400.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772444400000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772444400.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-02T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1772445120.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772445120000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772445120.000000",
+   "thread_ts": "1772444400.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-02T11:05:00+00:00",
+  "entity_id": "C0ATLASENG:1772449500.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772449500000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772449500.000000",
+   "thread_ts": null,
+   "text": "Moving search revamp (ATL-2) target to Mar 13 to absorb the extra scope."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-03T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1772528400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772528400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772528400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Mar 03. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-03T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1772528700.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772528700000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772528700.000000",
+   "thread_ts": "1772528400.000000",
+   "text": "Continuing on ATL-72."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-03T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1772529000.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772529000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772529000.000000",
+   "thread_ts": "1772528400.000000",
+   "text": "Today: ATL-18 (payout scheduling). Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-03T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1772529120.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772529120000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772529120.000000",
+   "thread_ts": "1772528400.000000",
+   "text": "Today: ATL-21 (load test charge path)."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-03T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1772529240.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772529240000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772529240.000000",
+   "thread_ts": "1772528400.000000",
+   "text": "Wrapped up some reviews, now on ATL-77. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-03T09:20:00+00:00",
+  "entity_id": "C0ATLASSTD:1772529600.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772529600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772529600.000000",
+   "thread_ts": "1772528400.000000",
+   "text": "Helping out with code reviews today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-04T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1772614800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772614800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772614800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Mar 04. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-04T09:04:00+00:00",
+  "entity_id": "C0ATLASSTD:1772615040.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772615040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772615040.000000",
+   "thread_ts": "1772614800.000000",
+   "text": "Continuing on ATL-21. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-04T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1772615340.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772615340000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772615340.000000",
+   "thread_ts": "1772614800.000000",
+   "text": "Picking up the next ticket from the board."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-04T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1772615520.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772615520000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772615520.000000",
+   "thread_ts": "1772614800.000000",
+   "text": "Working on ATL-19, daily reconciliation job. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-05T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1772701200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772701200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772701200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Mar 05. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-05T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1772701380.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772701380000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772701380.000000",
+   "thread_ts": "1772701200.000000",
+   "text": "Working on ATL-72, empty states and loading. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-05T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1772701740.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772701740000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772701740.000000",
+   "thread_ts": "1772701200.000000",
+   "text": "Today: ATL-77 (typo tolerance (fuzzy matching)). All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-05T09:15:00+00:00",
+  "entity_id": "C0ATLASSTD:1772702100.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772702100000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772702100.000000",
+   "thread_ts": "1772701200.000000",
+   "text": "Reviews and small fixes today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-05T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1772702340.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772702340000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772702340.000000",
+   "thread_ts": "1772701200.000000",
+   "text": "Today: ATL-19 (daily reconciliation job). All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-05T09:21:00+00:00",
+  "entity_id": "C0ATLASSTD:1772702460.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772702460000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772702460.000000",
+   "thread_ts": "1772701200.000000",
+   "text": "Working on ATL-21, load test charge path. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-05T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1772721000.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772721000000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772721000.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-05T16:25:00+00:00",
+  "entity_id": "C0ATLASENG:1772727900.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772727900000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772727900.000000",
+   "thread_ts": null,
+   "text": "Staging looks slow today, anyone else seeing that?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-06T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1772787600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772787600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772787600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Mar 06. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-06T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1772787900.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772787900000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772787900.000000",
+   "thread_ts": "1772787600.000000",
+   "text": "Continuing on ATL-80. All good."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-06T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1772788200.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772788200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772788200.000000",
+   "thread_ts": "1772787600.000000",
+   "text": "Reviews and small fixes today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-06T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1772788320.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1772788320000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1772788320.000000",
+   "thread_ts": "1772787600.000000",
+   "text": "Today: ATL-77 (typo tolerance (fuzzy matching)). Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-06T17:10:00+00:00",
+  "entity_id": "C0ATLASENG:1772817000.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1772817000000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1772817000.000000",
+   "thread_ts": null,
+   "text": "Payments API (ATL-1) is live 🎉 Thanks for the patience everyone."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-09T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1773046800.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773046800000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773046800.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Mon Mar 09. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-09T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1773046980.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773046980000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773046980.000000",
+   "thread_ts": "1773046800.000000",
+   "text": "Working on ATL-73, admin reporting docs. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-09T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1773047160.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773047160000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773047160.000000",
+   "thread_ts": "1773046800.000000",
+   "text": "Continuing on ATL-79. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-09T09:11:00+00:00",
+  "entity_id": "C0ATLASSTD:1773047460.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773047460000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773047460.000000",
+   "thread_ts": "1773046800.000000",
+   "text": "Wrapped up some reviews, now on ATL-76."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-09T09:14:00+00:00",
+  "entity_id": "C0ATLASSTD:1773047640.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773047640000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773047640.000000",
+   "thread_ts": "1773046800.000000",
+   "text": "Today: ATL-80 (search analytics events). On track."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-09T09:40:00+00:00",
+  "entity_id": "C0ATLASENG:1773049200.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1773049200000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1773049200.000000",
+   "thread_ts": null,
+   "text": "Who has the on-call pager this week?"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-09T09:52:00+00:00",
+  "entity_id": "C0ATLASENG:1773049920.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1773049920000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1773049920.000000",
+   "thread_ts": "1773049200.000000",
+   "text": "Me this week."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-10T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1773133200.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773133200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773133200.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Tue Mar 10. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-10T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1773133500.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773133500000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773133500.000000",
+   "thread_ts": "1773133200.000000",
+   "text": "Continuing on ATL-80. Pairing with Ama after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-10T09:07:00+00:00",
+  "entity_id": "C0ATLASSTD:1773133620.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773133620000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773133620.000000",
+   "thread_ts": "1773133200.000000",
+   "text": "Wrapped up some reviews, now on ATL-79. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-10T09:13:00+00:00",
+  "entity_id": "C0ATLASSTD:1773133980.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773133980000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773133980.000000",
+   "thread_ts": "1773133200.000000",
+   "text": "Helping out with code reviews today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-10T09:19:00+00:00",
+  "entity_id": "C0ATLASSTD:1773134340.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773134340000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773134340.000000",
+   "thread_ts": "1773133200.000000",
+   "text": "Helping out with code reviews today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-10T09:24:00+00:00",
+  "entity_id": "C0ATLASSTD:1773134640.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773134640000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773134640.000000",
+   "thread_ts": "1773133200.000000",
+   "text": "Continuing on ATL-76."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-11T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1773219600.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773219600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773219600.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Wed Mar 11. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-11T09:06:00+00:00",
+  "entity_id": "C0ATLASSTD:1773219960.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773219960000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773219960.000000",
+   "thread_ts": "1773219600.000000",
+   "text": "Continuing on ATL-73. Should have a PR up by end of day."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-11T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1773220320.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773220320000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773220320.000000",
+   "thread_ts": "1773219600.000000",
+   "text": "Picking up the next ticket from the board."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-11T09:17:00+00:00",
+  "entity_id": "C0ATLASSTD:1773220620.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773220620000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773220620.000000",
+   "thread_ts": "1773219600.000000",
+   "text": "Wrapped up some reviews, now on ATL-79. Pairing with Ama after lunch."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-11T09:22:00+00:00",
+  "entity_id": "C0ATLASSTD:1773220920.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773220920000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773220920.000000",
+   "thread_ts": "1773219600.000000",
+   "text": "Helping out with code reviews today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-11T09:24:00+00:00",
+  "entity_id": "C0ATLASSTD:1773221040.000000",
+  "actor": "tomasz.wilk",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773221040000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773221040.000000",
+   "thread_ts": "1773219600.000000",
+   "text": "Picking up the next ticket from the board."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-11T17:00:00+00:00",
+  "entity_id": "C0ATLASENG:1773248400.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1773248400000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1773248400.000000",
+   "thread_ts": null,
+   "text": "Admin reporting (ATL-5) shipped. Thanks Tomasz for the query work!"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-12T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1773306000.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773306000000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773306000.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Thu Mar 12. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-12T09:05:00+00:00",
+  "entity_id": "C0ATLASSTD:1773306300.000000",
+  "actor": "priya.natarajan",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773306300000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773306300.000000",
+   "thread_ts": "1773306000.000000",
+   "text": "Helping out with code reviews today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-12T09:07:00+00:00",
+  "entity_id": "C0ATLASSTD:1773306420.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773306420000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773306420.000000",
+   "thread_ts": "1773306000.000000",
+   "text": "Working on ATL-79, synonym dictionary admin."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-12T09:10:00+00:00",
+  "entity_id": "C0ATLASSTD:1773306600.000000",
+  "actor": "ama.owusu",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773306600000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773306600.000000",
+   "thread_ts": "1773306000.000000",
+   "text": "Reviews and small fixes today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-12T09:15:00+00:00",
+  "entity_id": "C0ATLASSTD:1773306900.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773306900000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773306900.000000",
+   "thread_ts": "1773306000.000000",
+   "text": "Working on ATL-80, search analytics events. Mostly reviews this afternoon."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-12T09:20:00+00:00",
+  "entity_id": "C0ATLASSTD:1773307200.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773307200000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773307200.000000",
+   "thread_ts": "1773306000.000000",
+   "text": "Helping out with code reviews today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-12T14:30:00+00:00",
+  "entity_id": "C0ATLASENG:1773325800.000000",
+  "actor": "rosa.delgado",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1773325800000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1773325800.000000",
+   "thread_ts": null,
+   "text": "Reminder: retro at 4pm today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-13T09:00:00+00:00",
+  "entity_id": "C0ATLASSTD:1773392400.000000",
+  "actor": "standup-bot",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773392400000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773392400.000000",
+   "thread_ts": null,
+   "text": "Daily standup for Fri Mar 13. Reply in thread 🧵"
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-13T09:03:00+00:00",
+  "entity_id": "C0ATLASSTD:1773392580.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773392580000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773392580.000000",
+   "thread_ts": "1773392400.000000",
+   "text": "Working on ATL-79, synonym dictionary admin. Writing tests now."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-13T09:09:00+00:00",
+  "entity_id": "C0ATLASSTD:1773392940.000000",
+  "actor": "liam.orourke",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773392940000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773392940.000000",
+   "thread_ts": "1773392400.000000",
+   "text": "Reviews and small fixes today."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-13T09:12:00+00:00",
+  "entity_id": "C0ATLASSTD:1773393120.000000",
+  "actor": "diego.ferreira",
+  "url": "https://larkspur.slack.example/archives/C0ATLASSTD/p1773393120000000",
+  "payload": {
+   "channel": "C0ATLASSTD",
+   "channel_name": "atlas-standup",
+   "ts": "1773393120.000000",
+   "thread_ts": "1773392400.000000",
+   "text": "Picking up the next ticket from the board."
+  }
+ },
+ {
+  "kind": "message",
+  "occurred_at": "2026-03-13T17:15:00+00:00",
+  "entity_id": "C0ATLASENG:1773422100.000000",
+  "actor": "hana.sato",
+  "url": "https://larkspur.slack.example/archives/C0ATLASENG/p1773422100000000",
+  "payload": {
+   "channel": "C0ATLASENG",
+   "channel_name": "atlas-eng",
+   "ts": "1773422100.000000",
+   "thread_ts": null,
+   "text": "Search revamp (ATL-2) shipped ✅"
+  }
+ }
+]
