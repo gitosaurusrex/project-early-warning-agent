@@ -6,6 +6,10 @@ from typing import Protocol
 from pewa.schemas import Event, Source
 
 
+class ConnectorError(Exception):
+    """A source could not be read (bad credentials, missing scope, unreachable, out of retries)."""
+
+
 class Connector(Protocol):
     source: Source
 

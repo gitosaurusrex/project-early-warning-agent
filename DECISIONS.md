@@ -180,3 +180,47 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     low-confidence pace extrapolations from a week or two of history. That makes them the first
     target for prompt tuning (a stretch item), or for a minimum-history rule like the one
     `burn_gap` already uses.
+
+## Phase 5
+
+46. **Jira history is rebuilt from changelogs.** Search returns current fields only, so each
+    issue's state at creation is reconstructed by undoing its changelog from newest to oldest.
+    Status, assignee, due date, parent, points, title and sprint changes become events with the
+    same kinds and payloads as the Atlas fixtures, so snapshots, signals and linking need no
+    changes. Reconstruction is only as good as the changelog: fields edited before they were
+    tracked show their current value at creation.
+47. **Jira uses `/rest/api/3/search/jql`** (token pagination), the replacement for the retired
+    `/search`. Changelogs embedded in search results can be truncated, so longer ones are re-read
+    from `/issue/{key}/changelog`. Incremental JQL uses `updated >= since - 1 day`, because JQL
+    dates are minute-precision in the API user's timezone. Events before `since` are filtered
+    afterwards, and ingest ignores duplicates.
+48. **Status mapping** (the follow-up promised in #9): `JIRA_STATUS_MAP` first, then names already
+    in pewa's workflow, then Jira's status category (new / indeterminate / done), with "review"
+    in an in-progress name meaning In Review. Payloads keep the raw names (`from_name`,
+    `to_name`). A change between two Jira statuses that map to the same step produces no event.
+    An unknown target in `JIRA_STATUS_MAP` is rejected before any request is made.
+49. **People are named per source.** Jira uses display names, GitHub uses logins, and Slack uses
+    user ids. Matching identities across sources (for `owner_overload` or "the owner said...")
+    would need a mapping table. That's left out; signals work within each source.
+50. **GitHub CI failures come from check runs on the PR's last 30 commits.** Reading only the head
+    commit would lose the earlier failures that `ci_flaky` counts. Older commit statuses
+    (the pre-Checks API) aren't read.
+51. **Slack re-reads recent threads.** History only returns messages newer than `oldest`, so a new
+    reply in an older thread would be missed. Incremental syncs start
+    `SLACK_THREAD_LOOKBACK_DAYS` (14) earlier and re-read the replies of every thread found.
+    Message permalinks are built from the workspace URL (`auth.test`) instead of one
+    `chat.getPermalink` call per message.
+52. **One shared HTTP client** (`pewa/connectors/http.py`): GET only; retries 429, 5xx and network
+    errors with Retry-After or exponential backoff; and honours GitHub's `x-ratelimit-reset`. A
+    wait over two minutes fails clearly instead of hanging the sync. 401/403/404 become
+    `ConnectorError`s that never include the token. Tests inject the sleep function, so no test
+    waits.
+53. **A failing source doesn't block the others.** `ingest` records a `ConnectorError` per source
+    and carries on. The CLI saves what succeeded, reports the failure and exits with status 1.
+54. **Live data needs its own project name.** Ingesting live sources into `atlas` (the default
+    `PEWA_PROJECT`, and a fixture name) would mix real and synthetic events, so it is refused
+    with a message to set `PEWA_PROJECT` or `--project`.
+55. **`pewa outcomes`** shows, loads (`--file`) or derives (`--derive`) ground truth, so live
+    projects can be backtested. Derived outcomes use the first due date ever set as the plan and
+    the time the epic reached Done as delivery. Only finished epics with a due date are included.
+

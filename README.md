@@ -15,7 +15,7 @@ calls made while building it.
 | 2 | Signals + LLM assessment, `pewa assess` | ✅ done |
 | 3 | Reports, dashboard, feedback | ✅ done |
 | 4 | Backtesting | ✅ done |
-| 5 | Live Jira / GitHub / Slack connectors | not started |
+| 5 | Live Jira / GitHub / Slack connectors | ✅ done |
 
 ## Quick start (Atlas demo, no credentials)
 
@@ -181,6 +181,79 @@ chart with clickable cells, the metrics, and a two-backtest comparison.
 Model calls and their estimated cost are recorded per backtest. A dry-run backtest is free. A
 real one on Atlas makes about 40 calls (done epics are skipped).
 
+## Connecting real sources
+
+Every connector is read-only and only issues GET requests. Tokens are read from environment
+variables (or `.env`) and are never logged. Any source whose credentials are missing is skipped
+with a warning.
+
+```bash
+export PEWA_PROJECT=billing            # a name for your project; must not be "atlas"
+uv run pewa ingest                     # all configured sources; re-run any time to sync new activity
+uv run pewa ingest --source jira --full   # re-fetch one source's whole history
+uv run pewa outcomes --derive          # ground truth from finished epics, for backtests
+uv run pewa assess                     # rate every open epic as of now
+```
+
+The first sync reads full history. Later syncs start from each source's last ingested event,
+and anything already stored is ignored. If one source fails (bad token, missing scope, rate
+limit that won't reset soon), the others are still saved. The failure is reported and
+`pewa ingest` exits with status 1.
+
+### Jira Cloud
+
+| Variable | Value |
+|---|---|
+| `JIRA_BASE_URL` | `https://your-site.atlassian.net` |
+| `JIRA_EMAIL` | the Atlassian account the token belongs to |
+| `JIRA_API_TOKEN` | an API token from [id.atlassian.com](https://id.atlassian.com/manage-profile/security/api-tokens). It acts as that account, so use one that can only *browse* the project |
+| `JIRA_PROJECT_KEY` | e.g. `BILL` |
+| `JIRA_POINTS_FIELD` | the story-points custom field id (default `customfield_10016`; find yours under Settings → Issues → Custom fields) |
+| `JIRA_EPIC_LINK_FIELD` | optional: the classic "Epic Link" field id, for projects that don't use `parent` |
+| `JIRA_STATUS_MAP` | optional: `Jira status=pewa status` pairs, e.g. `Code Review=In Review,QA=In Review` |
+
+pewa reads issues with their changelogs (`/rest/api/3/search/jql` with `expand=changelog`, plus
+`/rest/api/3/issue/{key}/changelog` for long histories). It replays each issue's status,
+assignee, due date, parent, points, title and sprint changes as events. Jira statuses are
+mapped onto pewa's four-step workflow (To Do, In Progress, In Review, Done) by their status
+category. An in-progress status with "review" in its name counts as In Review, and
+`JIRA_STATUS_MAP` overrides either rule.
+
+### GitHub
+
+| Variable | Value |
+|---|---|
+| `GITHUB_TOKEN` | a [fine-grained token](https://github.com/settings/personal-access-tokens) with read-only **Pull requests**, **Issues** and **Checks** (plus the default **Metadata**) on the repos below |
+| `GITHUB_REPOS` | comma-separated `owner/repo` list |
+| `GITHUB_API_URL` | optional, for GitHub Enterprise Server (`https://ghe.example.com/api/v3`) |
+
+For each pull request updated since the last sync, pewa reads the PR, its timeline (review
+requests, reviews, merge, close, reopen) and the check runs on its last 30 commits (failed or
+timed-out runs become `ci_failed`). Ticket keys in a PR's title, branch or body link it to Jira.
+GitHub's rate limits are respected: pewa waits for the reset when it is under two minutes away,
+and otherwise stops with a clear error.
+
+### Slack
+
+| Variable | Value |
+|---|---|
+| `SLACK_BOT_TOKEN` | the bot token (`xoxb-…`) of a Slack app with **channels:history**, **channels:read** (and **groups:history**, **groups:read** for private channels) |
+| `SLACK_CHANNELS` | comma-separated channel **ids** (`C0123…`; in Slack, open the channel details to copy it) |
+| `SLACK_THREAD_LOOKBACK_DAYS` | optional (default 14): how far back incremental syncs re-read threads for new replies |
+
+Invite the bot to each channel (`/invite @your-app`). pewa reads channel history and thread
+replies. Messages mentioning a ticket key or PR URL are linked to that epic, and replies inherit
+the thread's links. Message text is stored locally (the blocker-language signal and linking need
+it) but is never logged. People appear as Slack user ids, since resolving names would need the
+extra `users:read` scope.
+
+### Ground truth for backtests
+
+Backtests score ratings against the `outcomes` table. For a live project, either derive it from
+finished epics (`pewa outcomes --derive`: planned = the first due date set, delivered = when the
+epic reached Done) or load your own JSON in the Atlas format (`pewa outcomes --file
+outcomes.json`). `pewa outcomes` lists what's stored.
+
 ## Development
 
 ```bash
@@ -190,5 +263,6 @@ uv run python scripts/make_fixtures.py   # regenerate Atlas after changing the g
 ```
 
 Settings come from environment variables or `.env`; see `.env.example`. Sources without
-credentials are skipped with a warning. Live connectors arrive in Phase 5. Until then,
-`pewa ingest` without `--fixtures` falls back to the Atlas fixtures when no credentials are set.
+credentials are skipped with a warning. `pewa ingest` without `--fixtures` falls back to the Atlas
+fixtures when no source has credentials. Connector tests mock all HTTP with respx, so the suite
+never touches a real Jira, GitHub or Slack.
