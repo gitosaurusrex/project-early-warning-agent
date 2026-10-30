@@ -369,6 +369,8 @@ def run(
             signals=[s.model_dump() for s in r.signals],
             detail={
                 "title": r.title,
+                "owner": state.epics[r.epic_key].owner,
+                "due_date": state.epics[r.epic_key].due_date,
                 "key_risks": [k.model_dump() for k in r.key_risks],
                 "suggested_actions": r.suggested_actions,
                 "dropped_evidence_ids": r.dropped_evidence_ids,

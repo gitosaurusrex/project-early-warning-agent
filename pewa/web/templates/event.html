@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ e.id }}{% endblock %}
+{% block content %}
+{% if back %}<p class="small"><a href="{{ back }}">← Back</a></p>{% endif %}
+<h1>{{ e.source }} · {{ e.kind | replace("_", " ") }}</h1>
+<p class="muted">{{ e.occurred_at | dt("%a %d %b %Y, %H:%M") }} UTC · {{ e.actor or "unknown actor" }} · {{ e.entity_id }}{% if e.epic_key %} · epic {{ e.epic_key }}{% endif %} · <code>{{ e.id }}</code></p>
+{% if e.url %}<p class="small">Source link: <code>{{ e.url }}</code>{% if ".example" in e.url %} <span class="muted">(fictional fixture URL, so the event is shown here)</span>{% else %} · <a href="{{ e.url }}">open</a>{% endif %}</p>{% endif %}
+{% if e.payload.text %}<div class="card"><p style="margin:0; white-space:pre-wrap">{{ e.payload.text }}</p></div>{% endif %}
+<h2>Payload</h2>
+<pre class="card">{{ e.payload | tojson(indent=2) }}</pre>
+{% endblock %}

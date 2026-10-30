@@ -1,0 +1,34 @@
+# {{ data.project | title }} engineering update, as of {{ data.as_of.strftime("%a %d %b %Y") }}
+
+Overall **{{ data.overall }}**{% if data.previous_as_of %}; changes are against {{ data.previous_as_of.strftime("%d %b") }}{% endif %}.
+
+{% for epic in data.open_epics %}
+## {{ epic.key }} {{ epic.title }}: {{ epic.rating | upper }}{% if epic.trend in ("worse", "better") %} (was {{ epic.previous_rating }}){% endif %}
+
+
+{% set facts = [
+  "owner " ~ epic.owner if epic.owner else "",
+  "due " ~ epic.due_date if epic.due_date else "",
+  "confidence %.0f%%" | format(epic.confidence * 100),
+  "predicted slip %d days" | format(epic.predicted_slip_days) if epic.predicted_slip_days else "",
+] %}
+{{ facts | select | join(" · ") | capitalize }}
+
+
+{{ epic.rationale }}
+
+{% for risk in epic.key_risks[:n] %}
+- {{ risk.summary }}{% for url in risk.evidence | map(attribute="url") | select | unique | list | batch(3) | first | default([]) %} [{{ loop.index }}]({{ url }}){% endfor %}
+
+{% endfor %}
+{% if n and epic.suggested_actions %}
+- Next: {{ epic.suggested_actions[0] }}
+{% endif %}
+
+{% endfor %}
+{% if data.done_epics %}
+## Completed
+{% for epic in data.done_epics %}
+- {{ epic.key }} {{ epic.title }}: {{ epic.rationale }}
+{% endfor %}
+{% endif %}

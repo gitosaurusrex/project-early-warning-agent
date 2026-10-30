@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge %}
+{% block title %}{{ a.epic_key }}{% endblock %}
+{% block content %}
+<p class="small"><a href="/?run={{ run.id }}">← Overview (run {{ run.id }})</a></p>
+<h1>{{ a.epic_key }} {{ a.detail.title }} {{ badge(a.rating) }}</h1>
+<p class="muted">As of {{ run.as_of | dt("%a %d %b %Y") }} · confidence {{ "%.0f" | format(a.confidence * 100) }}%{% if a.detail.owner %} · owner {{ a.detail.owner }}{% endif %}{% if a.detail.due_date %} · due {{ a.detail.due_date }}{% endif %}{% if a.predicted_slip_days %} · predicted slip {{ a.predicted_slip_days }} days{% endif %}</p>
+
+<div class="grid2">
+<div>
+  <div class="card"><p style="margin:0">{{ a.rationale }}</p></div>
+
+  {% if a.detail.key_risks %}
+  <h2>Key risks</h2>
+  <ul class="plain">
+  {% for risk in a.detail.key_risks %}
+    <li>{{ risk.summary }}<br>
+      {% for id in risk.evidence_ids %}{% set ev = evidence.get(id) %}
+      <a class="small" href="{{ evidence_href(id, ev.url if ev else none) }}" title="{{ ev.summary if ev else id }}">{{ ev.when if ev else id }} · {{ ev.source if ev else "" }}</a>{% if not loop.last %} · {% endif %}
+      {% endfor %}
+    </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if a.detail.suggested_actions %}
+  <h2>Suggested actions</h2>
+  <ul>{% for action in a.detail.suggested_actions %}<li>{{ action }}</li>{% endfor %}</ul>
+  {% endif %}
+
+  <h2>Signal timeline</h2>
+  {% if timeline %}
+  <ul class="plain timeline">
+  {% for item in timeline %}
+    <li><span class="small muted">{{ item.event.occurred_at | dt("%a %d %b %H:%M") }}</span>
+      <span>{% for s in item.signals %}<span class="tag">{{ s }}</span>{% endfor %}{% if item.cited %}<span class="tag">cited</span>{% endif %}
+        <a href="{{ evidence_href(item.event.id, item.event.url) }}">{{ item.summary }}</a></span></li>
+  {% endfor %}
+  </ul>
+  {% else %}<p class="muted">No signals fired and nothing was cited.</p>{% endif %}
+
+  {% if a.signals %}
+  <h2>Signals</h2>
+  <ul class="plain">{% for s in a.signals %}<li><span class="tag">{{ s.type }}</span> severity {{ s.severity }}/3 · {{ s.detail }}</li>{% endfor %}</ul>
+  {% endif %}
+</div>
+
+<div>
+  <h2 style="margin-top:0">Rating history</h2>
+  <div class="history">
+  {% for as_of, rating, aid in history %}<a href="/assessments/{{ aid }}" title="{{ as_of | dt('%a %d %b') }}" style="text-decoration:none">{{ badge(rating) }}<br><span class="small muted">{{ as_of | dt("%d %b") }}</span></a>{% endfor %}
+  </div>
+
+  <h2 id="feedback">Was this flag useful?</h2>
+  {% include "_feedback.html" %}
+
+  {% if a.detail.dropped_evidence_ids %}
+  <p class="small muted">The model cited {{ a.detail.dropped_evidence_ids | length }} evidence id(s) that weren't in its input; they were dropped.</p>
+  {% endif %}
+  {% if a.detail.error %}<p class="small muted">Error: {{ a.detail.error }}</p>{% endif %}
+</div>
+</div>
+{% endblock %}

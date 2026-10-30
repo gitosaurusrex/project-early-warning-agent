@@ -1,0 +1,27 @@
+{% set c = data.counts() %}
+# {{ data.project | title }} status, as of {{ data.as_of.strftime("%a %d %b %Y") }}
+
+**Overall: {{ data.overall | upper }}** · {{ c.red }} red, {{ c.amber }} amber, {{ c.green }} green{% if c.unknown %}, {{ c.unknown }} not assessed{% endif %}
+
+
+## Top risks
+{% for epic, risk in data.top_risks(n) %}
+- **{{ epic.key }} {{ epic.title }}** ({{ epic.rating }}): {{ risk.summary }}
+{% else %}
+- {% if data.open_epics | selectattr("rating", "in", ["red", "amber"]) | list %}See the engineering update for detail.{% else %}No epics are flagged.{% endif %}
+
+{% endfor %}
+
+## Decisions needed
+{% for epic, action in data.decisions(n) %}
+- {{ epic.key }}: {{ action }}
+{% else %}
+- None this week.
+{% endfor %}
+{% if data.changes %}
+
+## Since {{ data.previous_as_of.strftime("%d %b") }}
+{% for epic in data.changes %}
+- {{ epic.key }} {{ epic.title }}: {{ epic.previous_rating }} → {{ epic.rating }}
+{% endfor %}
+{% endif %}

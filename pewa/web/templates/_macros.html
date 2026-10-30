@@ -1,0 +1,2 @@
+{% macro badge(rating) %}<span class="badge b-{{ rating }}">{{ rating }}</span>{% endmacro %}
+{% macro trend(t, before) %}{% if t == "worse" %}<span class="trend t-worse" title="was {{ before }}">↑ worse</span>{% elif t == "better" %}<span class="trend t-better" title="was {{ before }}">↓ better</span>{% elif t == "same" %}<span class="trend t-same" title="unchanged">→</span>{% else %}<span class="trend t-new" title="no earlier run to compare">new</span>{% endif %}{% endmacro %}

@@ -13,7 +13,7 @@ calls made while building it.
 |---|---|---|
 | 1 | Scaffold, config, DB, Atlas fixtures, ingest, snapshots | ✅ done |
 | 2 | Signals + LLM assessment, `pewa assess` | ✅ done |
-| 3 | Reports, dashboard, feedback | not started |
+| 3 | Reports, dashboard, feedback | ✅ done |
 | 4 | Backtesting | not started |
 | 5 | Live Jira / GitHub / Slack connectors | not started |
 
@@ -28,9 +28,11 @@ uv run pewa ingest --fixtures atlas       # load the synthetic "Atlas" project
 uv run pewa snapshot --as-of 2026-02-13   # what was known at end of week 6
 uv run pewa snapshot --as-of 2026-03-13   # ...and at the end of the project
 uv run pewa assess --as-of 2026-02-13     # rate every epic green/amber/red with cited evidence
+uv run pewa report --as-of 2026-02-13     # draft the exec + engineering status updates (Markdown)
+uv run pewa serve                         # dashboard at http://127.0.0.1:8000
 ```
 
-`pewa assess` calls Claude (model from `PEWA_MODEL`, default `claude-sonnet-5-5`) when
+`pewa assess` and `pewa report` call Claude (model from `PEWA_MODEL`, default `claude-sonnet-5-5`) when
 `PEWA_ANTHROPIC_API_KEY` or `ANTHROPIC_API_KEY` is set. Without a key, or with `--dry-run`, it uses an offline heuristic
 responder instead (see below), so the demo still runs end to end.
 
@@ -102,6 +104,44 @@ retried on a fallback model rather than failing.
 responder that rates from signal severity and cites the signals' evidence. It goes through the
 same validation and storage. It is a transparent baseline for demos and tests, not a substitute
 for the model.
+
+## Status reports
+
+`pewa report [--as-of DATE] [--variant exec|eng|both] [--out FILE] [--dry-run]` drafts two
+Markdown updates from the latest stored run on or before `--as-of`. It never runs an assessment
+itself, so run `pewa assess` first.
+
+- **Exec** (≤ 200 words): overall RAG (the worst epic rating), top 3 risks, decisions needed,
+  and rating changes since last week.
+- **Engineering** (≤ 600 words): one section per epic with owner, due date, rationale, key risks
+  linked to their evidence, and next actions.
+
+"Last week" is the newest run at least 6 days older from the same model. Ratings from a
+different model or from dry-run are never compared. The model may only restate the
+assessments. These checks are enforced in code (`pewa/report.py`):
+- the word limit;
+- every ticket key, evidence id and URL in the draft must appear in the input;
+- the engineering draft must cover every epic.
+
+A failing draft is retried once with the problem. If it fails again, the deterministic template
+(`pewa/report_templates/`) is used and the reason is reported. Dry-run uses that template directly.
+
+## Dashboard
+
+`pewa serve [--host 127.0.0.1] [--port 8000] [--dry-run]` starts a local dashboard for
+`PEWA_PROJECT`:
+- **Overview**: each epic's rating, trend arrow against the previous run, confidence and
+  rationale, and feedback counts. A date picker opens the run for a date or runs a new
+  assessment for it, and an earlier-runs menu reopens any stored run.
+- **Epic detail**: rationale, key risks with evidence links, suggested actions, a timeline of
+  the events behind each signal and citation, the epic's rating history, and 👍/👎 feedback
+  with an optional note (stored in `feedback`).
+- **Reports**: generate either draft for any run and copy the Markdown.
+
+Evidence links open the real Jira/GitHub/Slack page. Fixture URLs (the `.example` domain) open
+a local view of the stored event instead. HTMX comes from a CDN for in-place updates. Every form
+also works as a plain form post, so the dashboard still works offline. It has no authentication
+and binds to localhost by default.
 
 ## Development
 

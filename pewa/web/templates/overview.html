@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, trend %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+<h1>Epic risk overview</h1>
+{% if run %}
+<p class="muted">As of {{ run.as_of | dt("%a %d %b %Y, %H:%M") }} UTC · run {{ run.id }} · {{ run.model }}{% if run.label %} · {{ run.label }}{% endif %}{% if previous %} · trend vs. {{ previous.as_of | dt("%d %b") }}{% endif %}</p>
+{% endif %}
+{% if notice %}<div class="notice">{{ notice }}</div>{% endif %}
+
+<div class="toolbar">
+  <form method="get" action="/">
+    <label>As of<input type="date" name="as_of" value="{{ as_of_value }}"></label>
+    <button class="ghost" type="submit">Show</button>
+  </form>
+  <form method="post" action="/runs" onsubmit="document.getElementById('running').style.display='inline'">
+    <input type="hidden" name="as_of" value="{{ as_of_value }}">
+    <button type="submit" title="Snapshot, signals and one assessment per epic for this date">Run assessment{% if as_of_value %} for {{ as_of_value }}{% endif %}</button>
+    <span id="running" class="muted small" style="display:none">Assessing epics…</span>
+  </form>
+  {% if all_runs | length > 1 %}
+  <form method="get" action="/">
+    <label>Earlier runs<select name="run" onchange="this.form.submit()">
+      {% for r in all_runs %}<option value="{{ r.id }}" {% if run and r.id == run.id %}selected{% endif %}>{{ r.as_of | dt("%Y-%m-%d") }} · run {{ r.id }} · {{ r.model }}</option>{% endfor %}
+    </select></label>
+    <noscript><button class="ghost" type="submit">Open</button></noscript>
+  </form>
+  {% endif %}
+</div>
+
+{% if not run %}
+<div class="card">
+  <p>No assessments yet for <strong>{{ project }}</strong>.</p>
+  <p class="muted">Load data with <code>pewa ingest --fixtures atlas</code>, then pick a date and run an assessment (or use <code>pewa assess --as-of 2026-02-13</code>).</p>
+</div>
+{% else %}
+<div class="table-wrap">
+<table class="epics">
+  <thead><tr><th>Epic</th><th>Rating</th><th>Trend</th><th>Conf.</th><th>Rationale</th><th>Feedback</th></tr></thead>
+  <tbody>
+  {% for row in rows %}{% set a = row.a %}
+  <tr>
+    <td class="epic"><a href="/assessments/{{ a.id }}"><strong>{{ a.epic_key }}</strong></a><br><span class="small">{{ a.detail.title }}</span>
+      {% if a.detail.due_date %}<br><span class="small muted">due {{ a.detail.due_date }}</span>{% endif %}</td>
+    <td>{{ badge(a.rating) }}</td>
+    <td>{{ trend(row.trend, row.before) }}</td>
+    <td>{{ "%.0f" | format(a.confidence * 100) }}%</td>
+    <td class="rationale">{{ a.rationale }}</td>
+    <td class="small fb">{% set useful = row.feedback | selectattr("verdict", "equalto", "useful") | list | length %}{% set noise = row.feedback | selectattr("verdict", "equalto", "noise") | list | length %}{% if useful or noise %}👍 {{ useful }} · 👎 {{ noise }}{% else %}<span class="muted">none</span>{% endif %}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<p class="small muted"><a href="/reports?run={{ run.id }}">Draft the weekly update from this run →</a></p>
+{% endif %}
+{% endblock %}

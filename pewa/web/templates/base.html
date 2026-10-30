@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}pewa{% endblock %} · {{ project }}</title>
+<script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js" defer></script>
+<style>
+:root {
+  --bg: #f7f7f5; --surface: #ffffff; --text: #1d1d1b; --muted: #6b6b66; --border: #e2e1dc;
+  --accent: #2f5fd0; --on-accent: #ffffff; --green: #1f7a3f; --green-bg: #e3f3e8; --amber: #8a5a00; --amber-bg: #fdf0d2;
+  --red: #b42318; --red-bg: #fde5e2; --unknown: #6b4fa0; --unknown-bg: #ece6f7;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413; --surface: #1d1d1b; --text: #ecebe6; --muted: #a09f98; --border: #33332f;
+    --accent: #8aa9f0; --on-accent: #141413; --green: #7fd69c; --green-bg: #173322; --amber: #f2c46b; --amber-bg: #3a2c0c;
+    --red: #ff9a8f; --red-bg: #45201b; --unknown: #c3b0ea; --unknown-bg: #2c2440;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--accent); }
+header { background: var(--surface); border-bottom: 1px solid var(--border); }
+header .wrap { display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; }
+header strong { font-size: 17px; }
+header nav { display: flex; gap: 16px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 14px 16px; }
+main.wrap { padding-top: 24px; padding-bottom: 48px; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+h2 { font-size: 17px; margin: 28px 0 10px; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.notice { background: var(--amber-bg); color: var(--amber); border-radius: 6px; padding: 8px 12px; margin: 12px 0; }
+.toolbar { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; margin: 16px 0; }
+.toolbar form { display: flex; gap: 8px; align-items: end; flex-wrap: wrap; }
+label { font-size: 13px; color: var(--muted); display: grid; gap: 2px; }
+input, select, textarea, button { font: inherit; color: inherit; }
+input, select, textarea { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; }
+button { background: var(--accent); color: var(--on-accent); border: 0; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+button.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+.badge { display: inline-block; border-radius: 999px; padding: 1px 10px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap; }
+.b-green { background: var(--green-bg); color: var(--green); }
+.b-amber { background: var(--amber-bg); color: var(--amber); }
+.b-red { background: var(--red-bg); color: var(--red); }
+.b-unknown { background: var(--unknown-bg); color: var(--unknown); }
+.tag { display: inline-block; border: 1px solid var(--border); border-radius: 4px; padding: 0 6px; font-size: 12px; color: var(--muted); margin-right: 4px; }
+.trend { font-weight: 700; }
+.t-worse { color: var(--red); } .t-better { color: var(--green); } .t-same, .t-new { color: var(--muted); }
+ul.plain { list-style: none; padding: 0; margin: 0; }
+ul.plain li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+ul.plain li:last-child { border-bottom: 0; }
+.timeline li { display: grid; grid-template-columns: 120px 1fr; gap: 12px; }
+.history { display: flex; gap: 6px; flex-wrap: wrap; }
+.grid2 { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } .timeline li { grid-template-columns: 1fr; gap: 0; } }
+@media (max-width: 640px) {
+  table.epics thead { display: none; }
+  table.epics, table.epics tbody { display: block; }
+  table.epics tr { display: grid; grid-template-columns: auto auto 1fr; gap: 6px 12px; align-items: center;
+    padding: 12px; border-bottom: 1px solid var(--border); }
+  table.epics tr:last-child { border-bottom: 0; }
+  table.epics td { display: block; border: 0; padding: 0; }
+  table.epics td.epic, table.epics td.rationale, table.epics td.fb { grid-column: 1 / -1; }
+}
+pre, textarea.md { width: 100%; white-space: pre-wrap; font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+textarea.md { min-height: 320px; }
+.htmx-indicator { display: none; } .htmx-request .htmx-indicator, .htmx-request.htmx-indicator { display: inline; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <strong>pewa</strong>
+  <span class="muted">{{ project }}</span>
+  <nav><a href="/">Overview</a><a href="/reports">Reports</a></nav>
+  {% if dry_run %}<span class="tag" title="The model is not called; assessments and reports use the offline heuristic and templates.">dry-run</span>{% endif %}
+</div></header>
+<main class="wrap">
+{% block content %}{% endblock %}
+</main>
+</body>
+</html>

@@ -12,6 +12,8 @@ from rich.console import Console
 from rich.table import Table
 
 from pewa import assess as assess_mod
+from pewa import report as report_mod
+from pewa import runs as runs_mod
 from pewa import snapshot as snapshot_mod
 from pewa.config import REPO_ROOT, get_settings
 from pewa.connectors.base import Connector
@@ -129,6 +131,16 @@ def snapshot(
     console.print(table)
 
 
+def _resolve_dry_run(dry_run: bool) -> bool:
+    """Fall back to dry-run (with a warning) when no API key is configured."""
+    settings = get_settings()
+    if not dry_run and not (settings.anthropic_key() or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
+        err.print("[yellow]warning:[/yellow] no Anthropic API key (PEWA_ANTHROPIC_API_KEY or ANTHROPIC_API_KEY),"
+                  " running with --dry-run (offline heuristic).")
+        return True
+    return dry_run
+
+
 RATING_STYLE = {"green": "green", "amber": "yellow", "red": "red", "unknown": "magenta"}
 
 
@@ -143,10 +155,7 @@ def assess(
     settings = get_settings()
     project = project or settings.pewa_project
     when = snapshot_mod.parse_as_of(as_of) if as_of else datetime.now(UTC)
-    if not dry_run and not (settings.anthropic_key() or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
-        err.print("[yellow]warning:[/yellow] no Anthropic API key (PEWA_ANTHROPIC_API_KEY or ANTHROPIC_API_KEY),"
-                  " running with --dry-run (offline heuristic).")
-        dry_run = True
+    dry_run = _resolve_dry_run(dry_run)
 
     try:
         with session_scope(make_engine(settings.pewa_db_path)) as session:
@@ -171,6 +180,70 @@ def assess(
     for a in result.assessments:
         for risk in a.key_risks:
             console.print(f"[bold]{a.epic_key}[/bold] · {risk.summary} [dim]({', '.join(risk.evidence_ids)})[/dim]")
+
+
+class VariantOption(StrEnum):
+    exec = "exec"
+    eng = "eng"
+    both = "both"
+
+
+@app.command()
+def report(
+    as_of: str | None = typer.Option(None, "--as-of", help="Use the latest run on or before this date. Default: latest run."),
+    variant: VariantOption = typer.Option(VariantOption.both, help="Exec summary, engineering detail, or both."),
+    out: Path | None = typer.Option(None, "--out", help="Write the Markdown to this file instead of printing it."),
+    project: str | None = typer.Option(None, help="Project name (defaults to PEWA_PROJECT)."),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Don't call the model; fill the deterministic template."),
+) -> None:
+    """Draft weekly status updates (Markdown) from a stored assessment run."""
+    settings = get_settings()
+    project = project or settings.pewa_project
+    when = snapshot_mod.parse_as_of(as_of) if as_of else None
+    dry_run = _resolve_dry_run(dry_run)
+    variants = list(report_mod.VARIANTS) if variant is VariantOption.both else [variant.value]
+
+    try:
+        with session_scope(make_engine(settings.pewa_db_path)) as session:
+            run = runs_mod.latest_run(session, project, when)
+            if run is None:
+                on = f" on or before {when:%Y-%m-%d}" if when else ""
+                err.print(f"No assessment run for '{project}'{on}. Run `pewa assess{f' --as-of {as_of}' if as_of else ''}` first.")
+                raise typer.Exit(1)
+            llm = LLM(settings.pewa_model, dry_run=dry_run, session=session)
+            reports = [report_mod.generate(session, run, llm, v) for v in variants]  # type: ignore[arg-type]
+    except LLMAuthError as exc:
+        err.print(f"[red]{exc}[/red]\nCheck PEWA_ANTHROPIC_API_KEY / ANTHROPIC_API_KEY, or run with --dry-run.")
+        raise typer.Exit(1) from exc
+
+    for r in reports:
+        how = "template" if r.source == "template" else f"model, {r.attempts} attempt(s)"
+        err.print(f"{r.variant}: run {r.run_id} as of {r.as_of:%Y-%m-%d %H:%M} UTC, {r.words} words ({how})")
+        if r.error:
+            err.print(f"[yellow]warning:[/yellow] {r.variant} draft fell back to the template: {r.error}")
+    markdown = "\n---\n\n".join(r.markdown for r in reports)
+    if out:
+        out.write_text(markdown)
+        err.print(f"Wrote {out}")
+    else:
+        print(markdown, end="")
+
+
+@app.command()
+def serve(
+    host: str = typer.Option("127.0.0.1", help="Interface to bind."),
+    port: int = typer.Option(8000, help="Port to listen on."),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Never call the model from the dashboard."),
+) -> None:
+    """Start the local dashboard."""
+    import uvicorn
+
+    from pewa.web.app import create_app
+
+    settings = get_settings()
+    dry_run = _resolve_dry_run(dry_run)
+    console.print(f"Dashboard for '{settings.pewa_project}' at http://{host}:{port} (database {settings.pewa_db_path})")
+    uvicorn.run(create_app(dry_run=dry_run), host=host, port=port, log_level="warning")
 
 
 if __name__ == "__main__":

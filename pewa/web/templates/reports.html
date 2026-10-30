@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+<h1>Weekly update drafts</h1>
+{% if not run %}
+<div class="card"><p>No assessment runs yet. Run one from the <a href="/">overview</a> first.</p></div>
+{% else %}
+<p class="muted">From run {{ run.id }} as of {{ run.as_of | dt("%a %d %b %Y") }} ({{ run.model }}). Drafts use only that run's assessments.</p>
+<div class="toolbar">
+  {% if all_runs | length > 1 %}
+  <form method="get" action="/reports">
+    <label>Run<select name="run" onchange="this.form.submit()">
+      {% for r in all_runs %}<option value="{{ r.id }}" {% if r.id == run.id %}selected{% endif %}>{{ r.as_of | dt("%Y-%m-%d") }} · run {{ r.id }} · {{ r.model }}</option>{% endfor %}
+    </select></label>
+    <noscript><button class="ghost" type="submit">Use</button></noscript>
+  </form>
+  {% endif %}
+  {% for variant, label in [("exec", "Exec summary"), ("eng", "Engineering detail")] %}
+  <form method="post" action="/reports" hx-post="/reports" hx-target="#draft-{{ variant }}" hx-swap="innerHTML" hx-indicator="#ind-{{ variant }}">
+    <input type="hidden" name="run_id" value="{{ run.id }}">
+    <input type="hidden" name="variant" value="{{ variant }}">
+    <button type="submit">Generate {{ label | lower }}</button>
+    <span id="ind-{{ variant }}" class="htmx-indicator muted small">Drafting…</span>
+  </form>
+  {% endfor %}
+</div>
+{% for variant in ["exec", "eng"] %}
+<div id="draft-{{ variant }}">{% for r in reports if r.variant == variant %}{% include "_report.html" %}{% endfor %}</div>
+{% endfor %}
+{% endif %}
+{% endblock %}

@@ -46,12 +46,14 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
 
 ## Phase 2
 
-15. **The real-model acceptance check could not run while building this phase**: there was no API
-    key. The Phase 2 criterion (Epic A amber/red with a valid citation at week 6; D and E green)
-    is verified in `tests/test_assess.py` with the dry-run responder, at both Mon 9 Feb and Fri
-    13 Feb. The same check against the real model is `tests/test_llm_integration.py`
-    (`pytest -m llm`). The real API path was smoke-tested with a deliberately invalid key: the SDK
-    accepted the request and the 401 is reported cleanly.
+15. **The real-model acceptance check ran after the phase was committed.** There was no API key
+    while building Phase 2, so the criterion (Epic A amber/red with a valid citation at week 6;
+    D and E green) was first verified in `tests/test_assess.py` with the dry-run responder, at
+    both Mon 9 Feb and Fri 13 Feb. Once a key was available, `tests/test_llm_integration.py`
+    (`pytest -m llm`) passed against `claude-sonnet-5-5`. A full week-6 run on that model rated
+    A red (11 valid citations), B red, the noisy C green ("resolved noise"), and D and E green,
+    for about $0.06 across four calls. B being red rather than amber, with a ~9-week pace
+    projection against an actual 1-week slip, is a calibration question for the Phase 4 backtest.
 16. **Dry-run is a heuristic responder, not canned text.** Fixed canned replies would make the
     acceptance check meaningless. Instead the dry-run "model" rates each epic from its signals
     (weighted severity: 3+ amber, 6+ red, any severity-3 strong signal at least amber) and cites
@@ -92,3 +94,41 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     set.** In Claude Code cloud environments a user-defined `ANTHROPIC_API_KEY` never reached the
     container, presumably because the host reserves it for Claude Code's own login. pewa passes
     the resolved key to the SDK explicitly. With neither set, the SDK's usual lookup still applies.
+
+## Phase 3
+
+27. **Reports read stored runs; they never assess.** `pewa report --as-of DATE` uses the newest
+    live run on or before that moment and says which run it used. Generating a report silently
+    calling the model once per epic would be surprising, so a missing run is an error that names
+    the `pewa assess` command to run.
+28. **"Week over week" is the newest comparable run at least 6 days older.** Comparable means same
+    project, mode and model. Six days allows for a Friday run compared with a Saturday one. The
+    dashboard's trend arrow uses the newest comparable earlier run, with no minimum gap. Model
+    matching was added after a real-model report called ATL-2 "amber → red" by comparing
+    Sonnet's run with a dry-run run from the week before: that was a model change, not an epic
+    change.
+29. **"No new facts" is partly enforced in code.** Ticket keys, evidence ids and URLs in a draft
+    must all appear in the model's input. Word limits are checked, and the engineering draft must
+    name every epic. Dates, names and numbers in prose are only covered by the prompt; checking
+    them reliably would need a claim-extraction pass. A failing draft is retried once with the
+    problem, then replaced by the template, with the reason shown in the CLI and dashboard. Unlike
+    assessments, reports have no `unknown` state: a usable draft always comes back.
+30. **Template reports.** Dry-run and the fallback fill Jinja templates (`pewa/report_templates/`),
+    which drop risks per epic (3, 2, 1, 0) until the draft fits the word limit. They pass the same
+    validation as model drafts (tested).
+31. **Reports are not stored.** They're cheap to regenerate from a run, and their model calls are
+    logged in `llm_calls`. A `reports` table can come later if drafts need history or edits.
+32. **Assessments now record the epic's owner and due date** (`assessments.detail`), for reports
+    and the dashboard. Runs from before Phase 3 lack them, and both views simply omit them.
+33. **Dashboard choices.** It serves one project (`PEWA_PROJECT`), binds to 127.0.0.1 and has no
+    authentication (out of scope, §3). HTMX 2.0.4 loads from unpkg for in-place feedback and report
+    swaps. Every form is also a normal POST with redirect, so it works offline without JavaScript.
+    "Run assessment" is a plain POST because it replaces the whole page anyway. The signal
+    timeline describes events from a snapshot at the run's `as_of`, so titles are what was known
+    then. The backtest page arrives with Phase 4.
+34. **Fixture evidence links open a local event view.** The spec allows "a local view in fixture
+    mode". The rule is by URL rather than by mode: hosts under the reserved `.example` TLD go to
+    `/events/{id}`, and real hosts open the source.
+35. **Real-model check of reports** (Sonnet 5.5, Atlas week 6). The exec draft passed on the first
+    attempt at 183 words. The engineering draft came back at 663 words, was rejected for the
+    600-word limit, and the retry passed at 565. About $0.15 for both.

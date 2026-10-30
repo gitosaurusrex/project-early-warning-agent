@@ -1,0 +1,40 @@
+{% if variant == "exec" %}
+Write the **executive** status update for project {{ data.project }}, as of {{ as_of }}.
+- Start with the overall rating: {{ data.overall | upper }} (the worst rating among the epics).
+- Then the top 3 risks, one line each, naming the epic.
+- Then the decisions or help needed, drawn from the suggested actions.
+- Then, if any ratings changed since last week, list those changes.
+- At most {{ limit }} words. No links are needed.
+{% else %}
+Write the **engineering** status update for project {{ data.project }}, as of {{ as_of }}.
+- Start with the overall rating: {{ data.overall }}.
+- One short section per epic, worst first; every epic below must appear, completed ones briefly.
+- For each open epic: rating (and last week's if it changed), owner, due date, the rationale,
+  the key risks with Markdown links to their evidence URLs, and the next action.
+- At most {{ limit }} words.
+{% endif %}
+
+## Assessment data
+Overall: {{ data.overall }}
+Last week's run: {{ previous_as_of or "none (no comparison available)" }}
+{% for e in data.epics %}
+
+### {{ e.key }} {{ e.title }}
+- Rating: {{ e.rating }}{% if e.previous_rating %} (last week: {{ e.previous_rating }}){% endif %}{% if e.done %}, completed{% endif %}
+
+- Owner: {{ e.owner or "not recorded" }} | Due: {{ e.due_date or "not recorded" }} | Confidence: {{ "%.2f" | format(e.confidence) }}{% if e.predicted_slip_days is not none %} | Predicted slip: {{ e.predicted_slip_days }} days{% endif %}
+
+- Rationale: {{ e.rationale }}
+{% for r in e.key_risks %}
+- Key risk: {{ r.summary }}
+{% for ev in r.evidence %}
+  - Evidence {{ ev.id }}{% if ev.when %} ({{ ev.when }}){% endif %}: {{ ev.summary or "no summary" }}{% if ev.url %} | {{ ev.url }}{% endif %}
+
+{% endfor %}
+{% endfor %}
+{% for a in e.suggested_actions %}
+- Suggested action: {{ a }}
+{% endfor %}
+{% endfor %}
+
+Write the report now. Markdown only.
