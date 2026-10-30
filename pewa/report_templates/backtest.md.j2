@@ -1,0 +1,32 @@
+# {{ ev.name }}: {{ ev.project }}
+
+{{ ev.span }} · model `{{ ev.model }}`
+
+## Metrics
+
+| Metric | Value | How it's computed |
+|---|---|---|
+{% for name, value, how in ev.metric_rows() %}
+| {{ name }} | {{ value }} | {{ how }} |
+{% endfor %}
+
+## Per epic
+
+| Epic | Planned | Delivered | Outcome | First amber/red before due | Sustained from | Verdict |
+|---|---|---|---|---|---|---|
+{% for e in ev.epics %}
+| {{ e.key }} {{ e.title }} | {{ e.planned_date.strftime("%d %b") if e.planned_date else "–" }} | {{ e.actual_date.strftime("%d %b") if e.actual_date else "–" }} | {{ e.outcome }} | {{ e.first_flag.strftime("%d %b") if e.first_flag else "–" }} | {{ e.sustained_flag.strftime("%d %b") if e.sustained_flag else "–" }} | {{ e.verdict }} |
+{% endfor %}
+
+## Rating timeline
+
+| Epic | {% for d in ev.steps %}{{ d.strftime("%d %b") }} | {% endfor %}
+
+|---|{% for d in ev.steps %}---|{% endfor %}
+
+{% for e in ev.epics %}
+| {{ e.key }} | {% for cell in cells_md(e, ev.steps) %}{{ cell }} | {% endfor %}
+
+{% endfor %}
+
+🟢G green · 🟡A amber · 🔴R red · ✅ completed · ⚪? failed. An epic counts as flagged when it was rated amber or red at a step strictly before its original planned date.

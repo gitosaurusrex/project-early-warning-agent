@@ -14,7 +14,7 @@ calls made while building it.
 | 1 | Scaffold, config, DB, Atlas fixtures, ingest, snapshots | ✅ done |
 | 2 | Signals + LLM assessment, `pewa assess` | ✅ done |
 | 3 | Reports, dashboard, feedback | ✅ done |
-| 4 | Backtesting | not started |
+| 4 | Backtesting | ✅ done |
 | 5 | Live Jira / GitHub / Slack connectors | not started |
 
 ## Quick start (Atlas demo, no credentials)
@@ -29,6 +29,7 @@ uv run pewa snapshot --as-of 2026-02-13   # what was known at end of week 6
 uv run pewa snapshot --as-of 2026-03-13   # ...and at the end of the project
 uv run pewa assess --as-of 2026-02-13     # rate every epic green/amber/red with cited evidence
 uv run pewa report --as-of 2026-02-13     # draft the exec + engineering status updates (Markdown)
+uv run pewa backtest --from 2026-01-05 --to 2026-03-13 --step 7d   # replay week by week, score vs outcomes
 uv run pewa serve                         # dashboard at http://127.0.0.1:8000
 ```
 
@@ -142,6 +143,43 @@ Evidence links open the real Jira/GitHub/Slack page. Fixture URLs (the `.example
 a local view of the stored event instead. HTMX comes from a CDN for in-place updates. Every form
 also works as a plain form post, so the dashboard still works offline. It has no authentication
 and binds to localhost by default.
+
+## Backtesting
+
+```bash
+uv run pewa backtest --from 2026-01-05 --to 2026-03-13 --step 7d [--model M] [--label L] [--dry-run]
+uv run pewa backtests            # list stored backtests with their headline metrics
+uv run pewa backtests 3          # re-score backtest 3 and rewrite its reports
+uv run pewa compare 2 3          # side by side, e.g. two prompts or two models
+```
+
+A backtest assesses the project as of each step date (inclusive of `--from`; the last step is the
+last one on or before `--to`). Each assessment sees only the data that existed then. Each step
+is stored as an ordinary run (mode `backtest`), so it never shows up in the live overview or in
+reports. Without `--from`/`--to`, the backtest spans the project's events.
+
+Metrics, against the `outcomes` table:
+
+| Metric | Meaning |
+|---|---|
+| Lead time | Planned date minus the first amber/red rating, for slipped epics that were flagged |
+| Sustained lead time | Planned date minus the start of the amber/red streak still running at the last step before it (a warning later withdrawn doesn't count) |
+| Recall | Slipped epics rated amber/red at some step **before their planned date** |
+| Precision | Epics flagged before their planned date that actually slipped |
+| False alarm rate | On-time epics that were flagged anyway |
+| Citation validity | Cited evidence ids that exist and are linked to that epic as of the step, including made-up ids the validator dropped |
+
+Ratings on or after an epic's planned date don't count as flags: an epic that is still open
+on its due date is late by definition. Metrics are recomputed from the stored runs each time, so
+feedback added later (from the dashboard) shows up in the report.
+
+Reports go to `backtest_reports/` (change it with `--out`) as Markdown and as a self-contained
+HTML page. The HTML page has a rating-strip chart: one row per epic and one cell per step, with
+the planned and actual delivery dates marked. The dashboard's **Backtests** page shows the same
+chart with clickable cells, the metrics, and a two-backtest comparison.
+
+Model calls and their estimated cost are recorded per backtest. A dry-run backtest is free. A
+real one on Atlas makes about 40 calls (done epics are skipped).
 
 ## Development
 

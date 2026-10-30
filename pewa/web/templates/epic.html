@@ -2,7 +2,7 @@
 {% from "_macros.html" import badge %}
 {% block title %}{{ a.epic_key }}{% endblock %}
 {% block content %}
-<p class="small"><a href="/?run={{ run.id }}">← Overview (run {{ run.id }})</a></p>
+<p class="small">{% if backtest_id %}<a href="/backtests/{{ backtest_id }}">← Backtest {{ backtest_id }}</a>{% else %}<a href="/?run={{ run.id }}">← Overview (run {{ run.id }})</a>{% endif %}</p>
 <h1>{{ a.epic_key }} {{ a.detail.title }} {{ badge(a.rating) }}</h1>
 <p class="muted">As of {{ run.as_of | dt("%a %d %b %Y") }} · confidence {{ "%.0f" | format(a.confidence * 100) }}%{% if a.detail.owner %} · owner {{ a.detail.owner }}{% endif %}{% if a.detail.due_date %} · due {{ a.detail.due_date }}{% endif %}{% if a.predicted_slip_days %} · predicted slip {{ a.predicted_slip_days }} days{% endif %}</p>
 

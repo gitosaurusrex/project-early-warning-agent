@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "_bt_macros.html" import bt_chart, metrics_table, epic_table, grid_table %}
+{% block title %}{{ ev.name }}{% endblock %}
+{% block content %}
+<p class="small"><a href="/backtests">← Backtests</a></p>
+<h1>{{ ev.name }}</h1>
+<p class="muted">{{ ev.span }} · model {{ ev.model }}</p>
+
+<h2>Rating timeline</h2>
+<p class="small muted">Hover a cell for the rationale; click it to open that assessment, where you can also leave feedback.</p>
+{{ bt_chart(chart(ev, link=true), ev.name) }}
+
+<h2>Metrics</h2>
+{{ metrics_table([ev]) }}
+
+<h2>Per epic</h2>
+{{ epic_table([ev]) }}
+
+<details style="margin-top:16px"><summary class="muted">Table view of the timeline</summary>{{ grid_table(ev) }}</details>
+<p class="small muted">An epic counts as flagged when it was rated amber or red at a step strictly before its original planned date. Later ratings don't count as early warnings.</p>
+{% endblock %}

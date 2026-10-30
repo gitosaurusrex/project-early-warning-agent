@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Backtests{% endblock %}
+{% block content %}
+<h1>Backtests</h1>
+<p class="muted">Each backtest replays the project week by week using only the data that existed at each step, then scores the ratings against what actually happened.</p>
+{% if not evs %}
+<div class="card">
+  <p>No backtests yet for <strong>{{ project }}</strong>.</p>
+  <p class="muted">Run one from the command line, e.g. <code>pewa backtest --from 2026-01-05 --to 2026-03-13 --step 7d</code> (add <code>--dry-run</code> for the free offline baseline).</p>
+</div>
+{% else %}
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Backtest</th><th>Model</th><th>Steps</th><th>Recall</th><th>Precision</th><th>False alarms</th><th>Lead time</th><th>Cost</th></tr></thead>
+  <tbody>
+  {% for ev in evs %}{% set m = {} %}{% for name, value, how in ev.metric_rows() %}{% set _ = m.update({name: value}) %}{% endfor %}
+  <tr>
+    <td><a href="/backtests/{{ ev.backtest_id }}"><strong>{{ ev.name }}</strong></a><br><span class="small muted">created {{ ev.created_at | dt("%d %b %H:%M") }}</span></td>
+    <td>{{ ev.model }}</td>
+    <td class="small">{{ ev.span }}</td>
+    <td>{{ m["Recall"] }}</td><td>{{ m["Precision"] }}</td><td>{{ m["False alarm rate"] }}</td><td class="small">{{ m["Lead time"] }}</td>
+    <td>${{ "%.2f" | format(ev.cost_usd) }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% if evs | length > 1 %}
+<h2>Compare two backtests</h2>
+<form class="toolbar" method="get" action="/backtests/compare">
+  {% for field, default in [("a", evs[1]), ("b", evs[0])] %}
+  <label>{{ "First" if field == "a" else "Second" }}<select name="{{ field }}">
+    {% for ev in evs %}<option value="{{ ev.backtest_id }}" {% if ev.backtest_id == default.backtest_id %}selected{% endif %}>{{ ev.name }} · {{ ev.model }}</option>{% endfor %}
+  </select></label>
+  {% endfor %}
+  <button type="submit">Compare</button>
+</form>
+{% endif %}
+{% endif %}
+{% endblock %}

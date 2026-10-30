@@ -1,0 +1,31 @@
+.bt-scroll { overflow-x: auto; }
+.bt-figure { margin: 0; }
+.bt-chart { display: block; font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; }
+.bt-chart text { fill: var(--text); dominant-baseline: central; }
+.bt-chart .bt-key { font-weight: 700; }
+.bt-chart .bt-outcome { font-weight: 600; }
+.bt-chart .bt-verdict, .bt-chart .bt-tick { fill: var(--muted); }
+.bt-chart .bt-tick { text-anchor: middle; font-size: 11px; }
+.bt-cell rect { stroke: var(--surface); stroke-width: 2; }
+.bt-cell text { text-anchor: middle; font-weight: 700; }
+.bt-cell:hover rect { stroke: var(--text); }
+.bt-green rect { fill: #0ca30c; } .bt-chart .bt-green text { fill: #ffffff; }
+.bt-amber rect { fill: #fab219; } .bt-chart .bt-amber text { fill: #0b0b0b; }
+.bt-red rect { fill: #d03b3b; } .bt-chart .bt-red text { fill: #ffffff; }
+.bt-unknown rect { fill: #8a8a84; } .bt-chart .bt-unknown text { fill: #ffffff; }
+.bt-done rect { fill: transparent; stroke: var(--border); stroke-width: 1.5; } .bt-chart .bt-done text { fill: var(--muted); }
+.bt-halo { stroke: var(--bg); stroke-width: 6; }
+.bt-planned { stroke: var(--text); stroke-width: 2; stroke-dasharray: 3 3; }
+.bt-actual { stroke: var(--text); stroke-width: 2; }
+.bt-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 8px; font-size: 13px; color: var(--muted); }
+.bt-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.bt-swatch { display: inline-grid; place-items: center; width: 20px; height: 18px; border-radius: 4px; font: 700 11px system-ui; font-style: normal; }
+.bt-swatch.bt-green { background: #0ca30c; color: #fff; } .bt-swatch.bt-amber { background: #fab219; color: #0b0b0b; }
+.bt-swatch.bt-red { background: #d03b3b; color: #fff; } .bt-swatch.bt-unknown { background: #8a8a84; color: #fff; }
+.bt-swatch.bt-done { border: 1.5px solid var(--border); color: var(--muted); }
+.bt-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); font-size: 14px; }
+.bt-table th, .bt-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.bt-table th { font-size: 12px; color: var(--muted); font-weight: 600; }
+.bt-table .bt-num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.bt-grid td, .bt-grid th { white-space: nowrap; }
+.bt-muted { color: var(--muted); font-weight: 400; }

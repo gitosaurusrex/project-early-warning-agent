@@ -3,7 +3,7 @@
 import logging
 import os
 import shutil
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from enum import StrEnum
 from pathlib import Path
 
@@ -12,6 +12,7 @@ from rich.console import Console
 from rich.table import Table
 
 from pewa import assess as assess_mod
+from pewa import backtest as backtest_mod
 from pewa import report as report_mod
 from pewa import runs as runs_mod
 from pewa import snapshot as snapshot_mod
@@ -227,6 +228,150 @@ def report(
         err.print(f"Wrote {out}")
     else:
         print(markdown, end="")
+
+
+DEFAULT_REPORT_DIR = Path("backtest_reports")
+
+
+def _parse_date(value: str, option: str) -> date:
+    try:
+        return date.fromisoformat(value)
+    except ValueError as exc:
+        raise typer.BadParameter(f"expected YYYY-MM-DD, got {value!r}", param_hint=option) from exc
+
+
+def _print_metrics(ev: backtest_mod.Evaluation) -> None:
+    table = Table(title=f"{ev.name} · {ev.project} · {ev.model}")
+    table.add_column("metric")
+    table.add_column("value")
+    for name, value, _how in ev.metric_rows():
+        table.add_row(name, value)
+    console.print(table)
+    epics = Table()
+    for col in ("epic", "outcome", "first amber/red before due", "verdict"):
+        epics.add_column(col)
+    for e in ev.epics:
+        epics.add_row(f"{e.key} {e.title}", e.outcome, f"{e.first_flag:%d %b}" if e.first_flag else "-", e.verdict)
+    console.print(epics)
+
+
+@app.command()
+def backtest(
+    start: str | None = typer.Option(None, "--from", help="First step date (YYYY-MM-DD). Default: first event."),
+    end: str | None = typer.Option(None, "--to", help="Last possible step date (YYYY-MM-DD). Default: last event."),
+    step: str = typer.Option("7d", help="Step between replays, e.g. 7d or 1w."),
+    project: str | None = typer.Option(None, help="Project name (defaults to PEWA_PROJECT)."),
+    model: str | None = typer.Option(None, help="Model to assess with (defaults to PEWA_MODEL)."),
+    label: str | None = typer.Option(None, help="Free-text label, e.g. the prompt version being compared."),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Don't call the model; use the offline heuristic responder."),
+    out: Path = typer.Option(DEFAULT_REPORT_DIR, "--out", help="Directory for the Markdown and HTML reports."),
+) -> None:
+    """Replay the project week by week, score the ratings against outcomes, and write a report."""
+    settings = get_settings()
+    project = project or settings.pewa_project
+    try:
+        step_days = backtest_mod.parse_step(step)
+    except ValueError as exc:
+        raise typer.BadParameter(str(exc), param_hint="--step") from exc
+    dry_run = _resolve_dry_run(dry_run)
+
+    with session_scope(make_engine(settings.pewa_db_path)) as session:
+        span = backtest_mod.event_range(session, project)
+        if span is None:
+            err.print(f"No events for project '{project}'. Run `pewa ingest` first?")
+            raise typer.Exit(1)
+        first = _parse_date(start, "--from") if start else span[0]
+        last = _parse_date(end, "--to") if end else span[1]
+        try:
+            dates = backtest_mod.step_dates(first, last, step_days)
+        except ValueError as exc:
+            raise typer.BadParameter(str(exc), param_hint="--to") from exc
+        llm = LLM(model or settings.pewa_model, dry_run=dry_run, session=session)
+        err.print(f"Replaying {project} at {len(dates)} steps from {first} to {dates[-1]} with {llm.label}...")
+
+        def progress(day: date, result: assess_mod.RunResult) -> None:
+            ratings = ", ".join(f"{a.epic_key} {a.rating}" for a in result.assessments)
+            err.print(f"  {day:%a %d %b}: {ratings}")
+            session.commit()  # keep finished steps if a later one fails
+
+        try:
+            bt = backtest_mod.run(session, project, first, last, step_days, llm, label=label, on_step=progress)
+        except LLMAuthError as exc:
+            err.print(f"[red]{exc}[/red]\nCheck PEWA_ANTHROPIC_API_KEY / ANTHROPIC_API_KEY, or run with --dry-run.")
+            raise typer.Exit(1) from exc
+        ev = backtest_mod.evaluate(session, bt)
+
+    _print_metrics(ev)
+    paths = backtest_mod.write_reports(out, f"backtest-{ev.backtest_id}", backtest_mod.render(ev, "md"),
+                                       backtest_mod.render(ev, "html"))
+    console.print("Reports: " + ", ".join(str(p) for p in paths))
+
+
+@app.command()
+def backtests(
+    backtest_id: int | None = typer.Argument(None, help="Show this backtest's metrics and rewrite its reports."),
+    project: str | None = typer.Option(None, help="Project name (defaults to PEWA_PROJECT)."),
+    out: Path = typer.Option(DEFAULT_REPORT_DIR, "--out", help="Directory for the Markdown and HTML reports."),
+) -> None:
+    """List stored backtests, or re-score one."""
+    settings = get_settings()
+    project = project or settings.pewa_project
+    with session_scope(make_engine(settings.pewa_db_path)) as session:
+        if backtest_id is None:
+            rows = [backtest_mod.evaluate(session, bt) for bt in backtest_mod.list_backtests(session, project)]
+        else:
+            bt = session.get(backtest_mod.Backtest, backtest_id)
+            if bt is None or bt.project != project:
+                err.print(f"No backtest {backtest_id} for project '{project}'.")
+                raise typer.Exit(1)
+            ev = backtest_mod.evaluate(session, bt)
+    if backtest_id is not None:
+        _print_metrics(ev)
+        paths = backtest_mod.write_reports(out, f"backtest-{ev.backtest_id}", backtest_mod.render(ev, "md"),
+                                           backtest_mod.render(ev, "html"))
+        console.print("Reports: " + ", ".join(str(p) for p in paths))
+        return
+    if not rows:
+        err.print(f"No backtests for '{project}' yet. Try `pewa backtest --dry-run`.")
+        raise typer.Exit(1)
+    table = Table(title=f"Backtests for {project}")
+    for col in ("id", "label", "model", "range", "steps", "recall", "precision", "lead time", "cost"):
+        table.add_column(col)
+    for ev in rows:
+        values = dict((name, value) for name, value, _ in ev.metric_rows())
+        table.add_row(str(ev.backtest_id), ev.label or "-", ev.model, f"{ev.start} to {ev.end}", str(len(ev.steps)),
+                      values["Recall"], values["Precision"], values["Lead time"], f"${ev.cost_usd:.2f}")
+    console.print(table)
+
+
+@app.command()
+def compare(
+    first: int = typer.Argument(..., help="Backtest id."),
+    second: int = typer.Argument(..., help="Backtest id to compare against."),
+    project: str | None = typer.Option(None, help="Project name (defaults to PEWA_PROJECT)."),
+    out: Path = typer.Option(DEFAULT_REPORT_DIR, "--out", help="Directory for the Markdown and HTML reports."),
+) -> None:
+    """Compare two backtests side by side (e.g. two prompts or models)."""
+    settings = get_settings()
+    project = project or settings.pewa_project
+    with session_scope(make_engine(settings.pewa_db_path)) as session:
+        evs = []
+        for backtest_id in (first, second):
+            bt = session.get(backtest_mod.Backtest, backtest_id)
+            if bt is None or bt.project != project:
+                err.print(f"No backtest {backtest_id} for project '{project}'.")
+                raise typer.Exit(1)
+            evs.append(backtest_mod.evaluate(session, bt))
+    a, b = evs
+    table = Table(title=f"{a.name} vs {b.name}")
+    for col in ("metric", f"{a.name} · {a.model}", f"{b.name} · {b.model}"):
+        table.add_column(col)
+    for ra, rb in zip(a.metric_rows(), b.metric_rows()):
+        table.add_row(ra[0], ra[1], rb[1])
+    console.print(table)
+    paths = backtest_mod.write_reports(out, f"compare-{first}-{second}", backtest_mod.render_compare(a, b, "md"),
+                                       backtest_mod.render_compare(a, b, "html"))
+    console.print("Reports: " + ", ".join(str(p) for p in paths))
 
 
 @app.command()

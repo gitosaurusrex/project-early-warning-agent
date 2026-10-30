@@ -348,9 +348,12 @@ def run(
     mode: str = "live",
     label: str | None = None,
     cfg: Settings | None = None,
+    state: ProjectState | None = None,
 ) -> RunResult:
-    """Snapshot -> signals -> one assessment per epic, stored as a run."""
-    state = snapshot.build(session, project, as_of)
+    """Snapshot -> signals -> one assessment per epic, stored as a run.
+
+    Pass `state` to reuse a snapshot already built for `as_of`."""
+    state = state or snapshot.build(session, project, as_of)
     detected = signals_mod.detect(state, cfg or get_settings())
     results = [assess_epic(llm, state, epic, detected.get(key, [])) for key, epic in state.epics.items()]
 
