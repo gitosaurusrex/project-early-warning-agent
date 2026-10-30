@@ -33,6 +33,9 @@ uv run pewa backtest --from 2026-01-05 --to 2026-03-13 --step 7d   # replay week
 uv run pewa serve                         # dashboard at http://127.0.0.1:8000
 ```
 
+Or load the whole demo in one step, including two weekly runs and a backtest, with no model
+calls: `uv run pewa demo && uv run pewa serve`.
+
 `pewa assess` and `pewa report` call Claude (model from `PEWA_MODEL`, default `claude-sonnet-5-5`) when
 `PEWA_ANTHROPIC_API_KEY` or `ANTHROPIC_API_KEY` is set. Without a key, or with `--dry-run`, it uses an offline heuristic
 responder instead (see below), so the demo still runs end to end.
@@ -253,6 +256,28 @@ Backtests score ratings against the `outcomes` table. For a live project, either
 finished epics (`pewa outcomes --derive`: planned = the first due date set, delivered = when the
 epic reached Done) or load your own JSON in the Atlas format (`pewa outcomes --file
 outcomes.json`). `pewa outcomes` lists what's stored.
+
+## Hosting
+
+`render.yaml` is a [Render Blueprint](https://render.com/docs/blueprint-spec) for a hosted,
+password-protected copy of the Atlas demo:
+
+1. In Render: **New → Blueprint**, connect this GitHub repo, and pick the `main` branch.
+2. When asked for `PEWA_ANTHROPIC_API_KEY`, leave it empty to keep the free offline responder,
+   or paste a key so signed-in visitors can run real assessments and reports (billed to it).
+3. After the deploy, open the service's **Environment** tab and copy the generated
+   `PEWA_DASHBOARD_PASSWORD`. The site asks for it on every page (any username works).
+
+The service runs `pewa demo` (loads Atlas with dry-run assessments for weeks 5–6 and a dry-run
+backtest in about 3 seconds, no model calls), then `pewa serve --host 0.0.0.0` on Render's
+`PORT`. It uses the free plan, which has no persistent disk and sleeps when idle. The demo is
+rebuilt whenever the instance starts, and feedback or runs added from the dashboard are lost
+then. To keep them, move to a paid plan and enable the commented-out disk in `render.yaml`.
+
+Anywhere else, the same two commands work. Setting `PEWA_DASHBOARD_PASSWORD` turns on the
+password prompt (HTTP Basic auth; serve it over HTTPS). `pewa serve` refuses to listen beyond
+localhost without one, unless you pass `--no-auth` because a proxy in front handles sign-in.
+`/healthz` stays public for health checks and only reports `{"ok": true}`.
 
 ## Development
 

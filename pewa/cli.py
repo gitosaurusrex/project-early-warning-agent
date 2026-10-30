@@ -430,21 +430,59 @@ def compare(
     console.print("Reports: " + ", ".join(str(p) for p in paths))
 
 
+DEMO_RUNS = ("2026-02-06", "2026-02-13")  # weeks 5 and 6, so trends and "since last week" have data
+
+
+@app.command()
+def demo(
+    force: bool = typer.Option(False, "--force", help="Add the demo runs even if the demo is already loaded."),
+) -> None:
+    """Load the Atlas demo: fixtures, dry-run assessments for weeks 5-6 and a dry-run backtest.
+
+    Safe to run on every start (it does nothing when already loaded) and free: it never calls the model."""
+    settings = get_settings()
+    project = DEFAULT_FIXTURES
+    with session_scope(make_engine(settings.pewa_db_path)) as session:
+        if runs_mod.latest_run(session, project) and not force:
+            console.print(f"Demo already loaded in {settings.pewa_db_path}.")
+            return
+        result = run_ingest(session, project, [FixtureConnector(project, s) for s in SOURCES])
+        save_outcomes(session, project, load_outcomes(project))
+        llm = LLM(settings.pewa_model, dry_run=True, session=session)
+        for day in DEMO_RUNS:
+            assess_mod.run(session, project, snapshot_mod.parse_as_of(day), llm, label="demo")
+        bt = backtest_mod.run(session, project, date(2026, 1, 5), date(2026, 3, 13), 7, llm, label="demo baseline")
+    console.print(f"Loaded the Atlas demo into {settings.pewa_db_path}: {sum(result.inserted.values())} events, "
+                  f"assessments as of {' and '.join(DEMO_RUNS)}, backtest {bt.id}.")
+
+
+LOOPBACK = {"127.0.0.1", "localhost", "::1"}
+
+
 @app.command()
 def serve(
-    host: str = typer.Option("127.0.0.1", help="Interface to bind."),
-    port: int = typer.Option(8000, help="Port to listen on."),
+    host: str = typer.Option("127.0.0.1", envvar="PEWA_HOST", help="Interface to bind (0.0.0.0 when hosted)."),
+    port: int = typer.Option(8000, envvar="PORT", help="Port to listen on (hosts such as Render set PORT)."),
     dry_run: bool = typer.Option(False, "--dry-run", help="Never call the model from the dashboard."),
+    no_auth: bool = typer.Option(False, "--no-auth", help="Allow serving beyond localhost without a password."),
 ) -> None:
-    """Start the local dashboard."""
+    """Start the dashboard (password-protected when PEWA_DASHBOARD_PASSWORD is set)."""
     import uvicorn
 
     from pewa.web.app import create_app
 
     settings = get_settings()
+    password = settings.pewa_dashboard_password.get_secret_value() if settings.pewa_dashboard_password else None
+    if host not in LOOPBACK and not password and not no_auth:
+        err.print(f"[red]Refusing to serve on {host} without a password.[/red] Set PEWA_DASHBOARD_PASSWORD "
+                  "(or pass --no-auth if something else in front of pewa handles sign-in).")
+        raise typer.Exit(1)
     dry_run = _resolve_dry_run(dry_run)
-    console.print(f"Dashboard for '{settings.pewa_project}' at http://{host}:{port} (database {settings.pewa_db_path})")
-    uvicorn.run(create_app(dry_run=dry_run), host=host, port=port, log_level="warning")
+    lock = " (password required)" if password else ""
+    console.print(f"Dashboard for '{settings.pewa_project}' at http://{host}:{port}{lock} "
+                  f"(database {settings.pewa_db_path})")
+    uvicorn.run(create_app(dry_run=dry_run, password=password), host=host, port=port, log_level="warning",
+                proxy_headers=True, forwarded_allow_ips="*")
 
 
 if __name__ == "__main__":

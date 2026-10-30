@@ -224,3 +224,24 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     projects can be backtested. Derived outcomes use the first due date ever set as the plan and
     the time the epic reached Done as delivery. Only finished epics with a due date are included.
 
+## Hosting
+
+56. **Render, not Vercel.** pewa is a long-running FastAPI server with a SQLite file and long jobs
+    (ingest, backtests). Vercel's serverless functions have no persistent disk and short time
+    limits. Render runs it as an ordinary web service. `render.yaml` targets the free plan. It
+    has no disk, so the demo reseeds on every start (`pewa demo`, about 3 s, no model calls).
+    Persistence is one commented block away on a paid plan.
+57. **A shared password, not accounts (yet).** The spec puts multi-user auth out of scope. Hosting
+    a dashboard that shows project activity and can spend an API key still needs a gate. That
+    gate is `PEWA_DASHBOARD_PASSWORD` (HTTP Basic, any username, constant-time comparison),
+    whose value Render generates. `pewa serve` refuses a non-loopback bind without it, unless
+    `--no-auth` is passed. The check is one middleware in `create_app`, the place to plug in
+    Clerk or an SSO proxy when people need their own logins (which would also attribute
+    feedback to a person).
+58. **`/healthz` is public and says only `{"ok": true}`.** It previously returned the project
+    name and run count. That was harmless locally, but there's no reason to expose it to anyone
+    who finds the URL.
+59. **The hosted demo uses the offline responder unless a key is supplied.** Seeding never calls
+    the model, even when a key is set. With a key, signed-in visitors can run real assessments
+    and reports, which is what the password is for.
+

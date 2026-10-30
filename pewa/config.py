@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     pewa_anthropic_api_key: SecretStr | None = None
     pewa_model: str = "claude-sonnet-5-5"
 
+    # Dashboard: when set, every page except /healthz asks for this password (HTTP Basic auth).
+    pewa_dashboard_password: SecretStr | None = None
+
     # Storage / project
     pewa_db_path: Path = Path("pewa.db")
     pewa_project: str = "atlas"
