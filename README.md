@@ -31,7 +31,7 @@ uv run pewa assess --as-of 2026-02-13     # rate every epic green/amber/red with
 ```
 
 `pewa assess` calls Claude (model from `PEWA_MODEL`, default `claude-sonnet-5-5`) when
-`ANTHROPIC_API_KEY` is set. Without a key, or with `--dry-run`, it uses an offline heuristic
+`PEWA_ANTHROPIC_API_KEY` or `ANTHROPIC_API_KEY` is set. Without a key, or with `--dry-run`, it uses an offline heuristic
 responder instead (see below), so the demo still runs end to end.
 
 `--as-of` takes a date (meaning the end of that day, UTC) or an ISO datetime. Re-running
@@ -107,7 +107,7 @@ for the model.
 
 ```bash
 uv run pytest                            # all tests (the opt-in `llm` marker is skipped)
-ANTHROPIC_API_KEY=... uv run pytest -m llm   # real-model check: Epic A flagged a week early
+PEWA_ANTHROPIC_API_KEY=... uv run pytest -m llm   # real-model check: Epic A flagged a week early
 uv run python scripts/make_fixtures.py   # regenerate Atlas after changing the generator
 ```
 

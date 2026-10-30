@@ -88,3 +88,7 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     `burn_gap` flagged Epic E, a healthy control. With durations proportional to points the
     controls burn at a steady pace. The planted stories are unchanged, and the dataset now has
     428 messages.
+26. **`PEWA_ANTHROPIC_API_KEY` is accepted alongside `ANTHROPIC_API_KEY`, and wins when both are
+    set.** In Claude Code cloud environments a user-defined `ANTHROPIC_API_KEY` never reached the
+    container, presumably because the host reserves it for Claude Code's own login. pewa passes
+    the resolved key to the SDK explicitly. With neither set, the SDK's usual lookup still applies.

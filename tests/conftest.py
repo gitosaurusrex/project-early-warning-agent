@@ -16,7 +16,7 @@ from pewa.schemas import SOURCES, Event
 
 
 # Captured before the autouse fixture strips credentials; only the opt-in `llm` tests use it.
-REAL_ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
+REAL_ANTHROPIC_API_KEY = os.environ.get("PEWA_ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_API_KEY")
 
 
 def utc(*args: int) -> datetime:
@@ -45,7 +45,8 @@ def ingest_events(session: Session, project: str, events: list[Event]) -> None:
 @pytest.fixture(autouse=True)
 def _isolated_settings(monkeypatch: pytest.MonkeyPatch) -> Iterator[None]:
     """Keep tests independent of any developer .env or credentials."""
-    for var in ("JIRA_API_TOKEN", "GITHUB_TOKEN", "SLACK_BOT_TOKEN", "ANTHROPIC_API_KEY", "PEWA_PROJECT", "PEWA_DB_PATH"):
+    for var in ("JIRA_API_TOKEN", "GITHUB_TOKEN", "SLACK_BOT_TOKEN", "ANTHROPIC_API_KEY", "PEWA_ANTHROPIC_API_KEY",
+                "PEWA_PROJECT", "PEWA_DB_PATH"):
         monkeypatch.delenv(var, raising=False)
     monkeypatch.setitem(Settings.model_config, "env_file", None)
     get_settings.cache_clear()

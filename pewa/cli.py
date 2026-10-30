@@ -143,8 +143,9 @@ def assess(
     settings = get_settings()
     project = project or settings.pewa_project
     when = snapshot_mod.parse_as_of(as_of) if as_of else datetime.now(UTC)
-    if not dry_run and not (settings.anthropic_api_key or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
-        err.print("[yellow]warning:[/yellow] ANTHROPIC_API_KEY is not set, running with --dry-run (offline heuristic).")
+    if not dry_run and not (settings.anthropic_key() or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
+        err.print("[yellow]warning:[/yellow] no Anthropic API key (PEWA_ANTHROPIC_API_KEY or ANTHROPIC_API_KEY),"
+                  " running with --dry-run (offline heuristic).")
         dry_run = True
 
     try:
@@ -152,7 +153,7 @@ def assess(
             llm = LLM(settings.pewa_model, dry_run=dry_run, session=session)
             result = assess_mod.run(session, project, when, llm, label=label)
     except LLMAuthError as exc:
-        err.print(f"[red]{exc}[/red]\nCheck ANTHROPIC_API_KEY, or run with --dry-run.")
+        err.print(f"[red]{exc}[/red]\nCheck PEWA_ANTHROPIC_API_KEY / ANTHROPIC_API_KEY, or run with --dry-run.")
         raise typer.Exit(1) from exc
 
     if not result.assessments:

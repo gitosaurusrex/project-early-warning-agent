@@ -229,3 +229,14 @@ def test_auth_failure_aborts_the_run(week6):
     llm.complete = reject  # type: ignore[method-assign]
     with pytest.raises(LLMAuthError):
         assess.assess_epic(llm, state, state.epics["ATL-1"], found["ATL-1"])
+
+
+def test_pewa_specific_key_name_is_used(monkeypatch):
+    from pewa.config import Settings
+
+    monkeypatch.setenv("PEWA_ANTHROPIC_API_KEY", "sk-ant-pewa")
+    assert Settings(_env_file=None).anthropic_key() == "sk-ant-pewa"
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-standard")
+    assert Settings(_env_file=None).anthropic_key() == "sk-ant-pewa"  # pewa name wins
+    monkeypatch.delenv("PEWA_ANTHROPIC_API_KEY")
+    assert Settings(_env_file=None).anthropic_key() == "sk-ant-standard"

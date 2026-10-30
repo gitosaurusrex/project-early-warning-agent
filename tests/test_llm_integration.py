@@ -1,6 +1,6 @@
 """Opt-in: runs the real model on Atlas (SPEC §15).
 
-    ANTHROPIC_API_KEY=... uv run pytest -m llm
+    PEWA_ANTHROPIC_API_KEY=... uv run pytest -m llm   (ANTHROPIC_API_KEY also works)
 """
 
 from datetime import date
@@ -20,8 +20,8 @@ pytestmark = pytest.mark.llm
 def real_key(monkeypatch):
     # conftest strips credentials for hermetic tests; restore the real key for this one.
     if not REAL_ANTHROPIC_API_KEY:
-        pytest.skip("set ANTHROPIC_API_KEY to run the real-model test")
-    monkeypatch.setenv("ANTHROPIC_API_KEY", REAL_ANTHROPIC_API_KEY)
+        pytest.skip("set PEWA_ANTHROPIC_API_KEY (or ANTHROPIC_API_KEY) to run the real-model test")
+    monkeypatch.setenv("PEWA_ANTHROPIC_API_KEY", REAL_ANTHROPIC_API_KEY)
     get_settings.cache_clear()
 
 

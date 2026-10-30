@@ -122,7 +122,10 @@ class LLM:
 
         if self._client is None:
             # The SDK retries connection errors, 408/409/429 and 5xx with exponential backoff.
-            self._client = anthropic.Anthropic(max_retries=self.max_retries)
+            # An explicit key wins; otherwise the SDK resolves ANTHROPIC_API_KEY / AUTH_TOKEN / profiles.
+            key = get_settings().anthropic_key()
+            self._client = anthropic.Anthropic(api_key=key, max_retries=self.max_retries) if key else \
+                anthropic.Anthropic(max_retries=self.max_retries)
         request: dict[str, Any] = {"model": self.model, "max_tokens": max_tokens, "system": system, "messages": messages}
         try:
             if self.model in FALLBACK_MODELS:

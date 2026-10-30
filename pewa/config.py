@@ -15,6 +15,9 @@ class Settings(BaseSettings):
 
     # LLM
     anthropic_api_key: SecretStr | None = None
+    # Same key under a name hosted environments won't reserve (e.g. Claude Code cloud sessions,
+    # which keep ANTHROPIC_API_KEY for their own use). Takes precedence when both are set.
+    pewa_anthropic_api_key: SecretStr | None = None
     pewa_model: str = "claude-sonnet-5-5"
 
     # Storage / project
@@ -58,6 +61,10 @@ class Settings(BaseSettings):
         if isinstance(value, str):
             return [part.strip() for part in value.split(",") if part.strip()]
         return value
+
+    def anthropic_key(self) -> str | None:
+        key = self.pewa_anthropic_api_key or self.anthropic_api_key
+        return key.get_secret_value() if key else None
 
     def has_credentials(self, source: str) -> bool:
         if source == "jira":
