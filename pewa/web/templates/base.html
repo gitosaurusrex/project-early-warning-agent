@@ -73,6 +73,7 @@ ul.plain li:last-child { border-bottom: 0; }
 }
 pre, textarea.md { width: 100%; white-space: pre-wrap; font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
 textarea.md { min-height: 320px; }
+{% include "_bt_style.css" %}
 .htmx-indicator { display: none; } .htmx-request .htmx-indicator, .htmx-request.htmx-indicator { display: inline; }
 </style>
 </head>
@@ -80,7 +81,7 @@ textarea.md { min-height: 320px; }
 <header><div class="wrap">
   <strong>pewa</strong>
   <span class="muted">{{ project }}</span>
-  <nav><a href="/">Overview</a><a href="/reports">Reports</a></nav>
+  <nav><a href="/">Overview</a><a href="/reports">Reports</a><a href="/backtests">Backtests</a></nav>
   {% if dry_run %}<span class="tag" title="The model is not called; assessments and reports use the offline heuristic and templates.">dry-run</span>{% endif %}
 </div></header>
 <main class="wrap">

@@ -100,6 +100,33 @@ class Assessment(Base):
     detail: Mapped[dict[str, Any]] = mapped_column(default=dict)  # key_risks, suggested_actions, errors
 
 
+class Backtest(Base):
+    """A replay over past dates (SPEC §12). Each step is an ordinary run with mode 'backtest'."""
+
+    __tablename__ = "backtests"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    project: Mapped[str] = mapped_column(String(64))
+    start: Mapped[date] = mapped_column(Date)
+    end: Mapped[date] = mapped_column(Date)
+    step_days: Mapped[int] = mapped_column(Integer)
+    model: Mapped[str] = mapped_column(String(64))
+    label: Mapped[str | None] = mapped_column(String(128))
+    llm_calls: Mapped[int] = mapped_column(Integer, default=0)
+    cost_usd: Mapped[float] = mapped_column(Float, default=0.0)
+    created_at: Mapped[datetime] = mapped_column(default=_now)
+
+
+class BacktestStep(Base):
+    __tablename__ = "backtest_steps"
+    __table_args__ = (UniqueConstraint("backtest_id", "run_id", name="uq_backtest_step"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    backtest_id: Mapped[int] = mapped_column(ForeignKey("backtests.id", ondelete="CASCADE"), index=True)
+    run_id: Mapped[int] = mapped_column(ForeignKey("runs.id", ondelete="CASCADE"), index=True)
+    as_of: Mapped[datetime]
+
+
 class Feedback(Base):
     __tablename__ = "feedback"
 

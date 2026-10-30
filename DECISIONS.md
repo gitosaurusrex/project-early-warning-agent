@@ -132,3 +132,51 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
 35. **Real-model check of reports** (Sonnet 5.5, Atlas week 6). The exec draft passed on the first
     attempt at 183 words. The engineering draft came back at 663 words, was rejected for the
     600-word limit, and the retry passed at 565. About $0.15 for both.
+
+## Phase 4
+
+36. **Backtests are grouped with two new tables, not a new column on `runs`.** `backtests` holds the
+    parameters plus the model-call count and cost, and `backtest_steps` links each step's run.
+    Tables are created on start with no migration tool (#11). Adding a column to `runs` would break
+    existing databases, while new tables just appear.
+37. **"Flagged" means amber or red strictly before the planned date.** The spec says "at any point",
+    but an epic still open after its due date is trivially late. Counting those ratings would
+    turn every slip into a hit and inflate recall. Lead time uses the same first flag. Epics with
+    no outcome row are shown but not scored.
+38. **Citation validity counts dropped ids.** The validator removes made-up evidence ids before
+    storing (#21), so stored citations alone would always score 100%. The denominator therefore adds
+    the dropped ids recorded on each assessment. "Linked to that epic" is checked against a
+    snapshot at the step's `as_of`, the same rule the assessment itself used.
+39. **Metrics are recomputed, not stored.** Snapshots take about 0.03 s, so re-scoring a 10-step backtest
+    is quick. Feedback given later counts, and the scoring rules can change without re-running
+    the model. Only cost and call counts are stored, because they can't be recovered later.
+40. **Steps are `--from`, `--from + step`, ... up to `--to`.** For the spec's example
+    (5 Jan to 13 Mar, 7d) that is ten Mondays ending 9 Mar. Steps are not aligned to Fridays or
+    to `--to`, which keeps every step the same distance apart. The CLI commits after each step, so
+    a failure partway through keeps the finished steps.
+41. **Chart.** One row per epic and one cell per step, using the status colors from the data-viz
+    guide (green/amber/red). Each cell also carries a letter, so the rating never depends on color
+    alone. A neutral ✓ marks a completed epic, so "done" isn't confused with "assessed green".
+    Dashed and solid lines mark the planned and actual dates on the same time scale. Hovering a
+    cell shows its rationale, and every page has a table view. The same Jinja macros
+    (`pewa/report_templates/_bt_macros.html`) render the standalone HTML report and the dashboard.
+42. **Comparison works across step schedules.** Two backtests with different steps still get
+    side-by-side metrics and per-epic verdicts, with a note that their weeks don't line up.
+43. **Backtests run from the CLI only.** About 40 model calls take several minutes, which is too
+    long for a request. The dashboard lists, shows and compares them.
+44. **Sustained lead time is reported alongside lead time.** The real-model run flagged ATL-2 amber
+    on 19 Jan by extrapolating one week of throughput (confidence 0.55). It then rated it green
+    on 2 Feb, before the planted scope growth turned it red on 9 Feb. "First flag" credits that
+    as 46 days of warning, which overstates what a TPM would have acted on. Sustained lead time
+    starts from the amber/red streak still running at the last step before the due date. It is
+    25 days for ATL-2.
+45. **First real-model backtest** (Sonnet 5.5, Atlas, 10 Mondays from 5 Jan to 9 Mar, 43 calls,
+    $0.62). Recall was 100%, and both slips were flagged before their due dates (A on 2 Feb,
+    18 days early; B sustained from 9 Feb, 25 days early). Precision was 67%: ATL-5 was rated amber
+    once on 26 Jan, at confidence 0.45, from one finished ticket and no detector signals. The model
+    said the evidence was thin but still chose amber. Citation validity was 100% (108/108), with no
+    failed assessments. The dry-run baseline scores 100% precision and recall but with shorter lead
+    times. It was tuned on this dataset, so it isn't a fair competitor. Both early misfires were
+    low-confidence pace extrapolations from a week or two of history. That makes them the first
+    target for prompt tuning (a stretch item), or for a minimum-history rule like the one
+    `burn_gap` already uses.

@@ -1,0 +1,24 @@
+{% from "_bt_macros.html" import bt_chart, metrics_table, epic_table, grid_table %}
+<!doctype html>
+<html lang="en">
+<head>
+<title>{{ ev.name }} · {{ ev.project }}</title>
+{% include "_bt_page.html" %}
+</head>
+<body><main>
+<h1>{{ ev.name }}: {{ ev.project }}</h1>
+<p class="bt-muted">{{ ev.span }} · model {{ ev.model }} · run {{ ev.created_at.strftime("%Y-%m-%d %H:%M") }} UTC</p>
+
+<h2>Metrics</h2>
+{{ metrics_table([ev]) }}
+
+<h2>Rating timeline</h2>
+{{ bt_chart(chart(ev), ev.name) }}
+
+<h2>Per epic</h2>
+{{ epic_table([ev]) }}
+
+<details><summary>Table view of the timeline</summary>{{ grid_table(ev) }}</details>
+<p class="bt-muted">An epic counts as flagged when it was rated amber or red at a step strictly before its original planned date. Later ratings don't count as early warnings.</p>
+</main></body>
+</html>

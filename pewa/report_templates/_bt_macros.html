@@ -1,0 +1,90 @@
+{# Shared by the standalone backtest reports and the dashboard. Colors come from CSS variables
+   (--text, --muted, --border, --surface) that both pages define. #}
+{% macro bt_chart(g, name) %}
+<figure class="bt-figure">
+{% if g.rows %}
+<div class="bt-scroll">
+<svg class="bt-chart" width="{{ g.width }}" height="{{ g.height }}" viewBox="0 0 {{ g.width }} {{ g.height }}" role="img" aria-label="{{ name }}: rating per epic at each step, with planned and actual delivery dates">
+{% for row in g.rows %}
+<g>
+  <text class="bt-label" x="0" y="{{ row.y + g.row_h / 2 }}"><tspan class="bt-key">{{ row.epic.key }}</tspan> {{ row.epic.title | truncate(20, true, "…") }}</text>
+  {% for c in row.cells %}
+  {% if c.href %}<a href="{{ c.href }}">{% endif %}
+  <g class="bt-cell bt-{{ c.kind }}"><title>{{ c.title }}</title>
+    <rect x="{{ c.x }}" y="{{ row.y }}" width="{{ g.cell_w }}" height="{{ g.row_h }}" rx="4"></rect>
+    <text x="{{ c.x + g.cell_w / 2 }}" y="{{ row.y + g.row_h / 2 }}">{{ c.text }}</text>
+  </g>
+  {% if c.href %}</a>{% endif %}
+  {% endfor %}
+  {% if row.planned_x is not none %}<line class="bt-halo" x1="{{ row.planned_x }}" x2="{{ row.planned_x }}" y1="{{ row.y - 4 }}" y2="{{ row.y + g.row_h + 4 }}"></line><line class="bt-planned" x1="{{ row.planned_x }}" x2="{{ row.planned_x }}" y1="{{ row.y - 4 }}" y2="{{ row.y + g.row_h + 4 }}"><title>{{ row.epic.key }} planned for {{ row.epic.planned_date.strftime("%a %d %b") }}</title></line>{% endif %}
+  {% if row.actual_x is not none %}<line class="bt-halo" x1="{{ row.actual_x }}" x2="{{ row.actual_x }}" y1="{{ row.y - 4 }}" y2="{{ row.y + g.row_h + 4 }}"></line><line class="bt-actual" x1="{{ row.actual_x }}" x2="{{ row.actual_x }}" y1="{{ row.y - 4 }}" y2="{{ row.y + g.row_h + 4 }}"><title>{{ row.epic.key }} delivered {{ row.epic.actual_date.strftime("%a %d %b") }}</title></line>{% endif %}
+  <text class="bt-outcome" x="{{ g.outcome_x }}" y="{{ row.y + g.row_h / 2 - 7 }}">{{ row.epic.outcome }}</text>
+  <text class="bt-verdict" x="{{ g.outcome_x }}" y="{{ row.y + g.row_h / 2 + 8 }}">{{ row.epic.verdict }}</text>
+</g>
+{% endfor %}
+{% for t in g.ticks %}<text class="bt-tick" x="{{ t.x }}" y="{{ g.axis_y }}">{{ t.text }}</text>{% endfor %}
+</svg>
+</div>
+<figcaption class="bt-legend">
+  <span><i class="bt-swatch bt-green">G</i> green</span>
+  <span><i class="bt-swatch bt-amber">A</i> amber</span>
+  <span><i class="bt-swatch bt-red">R</i> red</span>
+  <span><i class="bt-swatch bt-done">✓</i> completed</span>
+  <span><i class="bt-swatch bt-unknown">?</i> failed</span>
+  <span><svg width="14" height="16" aria-hidden="true"><line class="bt-planned" x1="7" x2="7" y1="0" y2="16"></line></svg> planned date</span>
+  <span><svg width="14" height="16" aria-hidden="true"><line class="bt-actual" x1="7" x2="7" y1="0" y2="16"></line></svg> delivered</span>
+</figcaption>
+{% else %}
+<p class="bt-muted">No steps stored for this backtest.</p>
+{% endif %}
+</figure>
+{% endmacro %}
+
+{% macro metrics_table(evs) %}
+{% set rows = [] %}
+{% for ev in evs %}{% set _ = rows.append(ev.metric_rows()) %}{% endfor %}
+<div class="bt-scroll">
+<table class="bt-table">
+  <thead><tr><th>Metric</th>{% for ev in evs %}<th>{{ ev.name }}<br><span class="bt-muted">{{ ev.model }}</span></th>{% endfor %}{% if evs | length == 1 %}<th>How it's computed</th>{% endif %}</tr></thead>
+  <tbody>
+  {% for i in range(rows[0] | length) %}
+  <tr><td>{{ rows[0][i][0] }}</td>{% for r in rows %}<td class="bt-num">{{ r[i][1] }}</td>{% endfor %}{% if evs | length == 1 %}<td class="bt-muted">{{ rows[0][i][2] }}</td>{% endif %}</tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endmacro %}
+
+{% macro epic_table(evs) %}
+<div class="bt-scroll">
+<table class="bt-table">
+  <thead><tr><th>Epic</th><th>Planned</th><th>Delivered</th><th>Outcome</th>
+    {% for ev in evs %}<th>First amber/red before due{% if evs | length > 1 %}<br><span class="bt-muted">{{ ev.name }}</span>{% endif %}</th><th>Sustained from{% if evs | length > 1 %}<br><span class="bt-muted">{{ ev.name }}</span>{% endif %}</th><th>Verdict{% if evs | length > 1 %}<br><span class="bt-muted">{{ ev.name }}</span>{% endif %}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for epic in evs[0].epics %}
+  <tr><td><strong>{{ epic.key }}</strong> {{ epic.title }}</td>
+    <td>{{ epic.planned_date.strftime("%d %b") if epic.planned_date else "–" }}</td>
+    <td>{{ epic.actual_date.strftime("%d %b") if epic.actual_date else "–" }}</td>
+    <td>{{ epic.outcome }}</td>
+    {% for ev in evs %}{% set e = ev.epics | selectattr("key", "equalto", epic.key) | first %}
+    <td>{{ e.first_flag.strftime("%d %b") if e and e.first_flag else "–" }}</td><td>{{ e.sustained_flag.strftime("%d %b") if e and e.sustained_flag else "–" }}</td><td>{{ e.verdict if e else "–" }}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endmacro %}
+
+{% macro grid_table(ev) %}
+<div class="bt-scroll">
+<table class="bt-table bt-grid">
+  <thead><tr><th>Epic</th>{% for d in ev.steps %}<th>{{ d.strftime("%d %b") }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for epic in ev.epics %}{% set by_day = {} %}{% for c in epic.cells %}{% set _ = by_day.update({c.as_of: c}) %}{% endfor %}
+  <tr><td>{{ epic.key }}</td>{% for d in ev.steps %}{% set c = by_day.get(d) %}<td>{% if c %}{{ "completed" if c.done else c.rating }}{% endif %}</td>{% endfor %}</tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endmacro %}

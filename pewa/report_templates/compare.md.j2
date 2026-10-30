@@ -1,0 +1,33 @@
+# {{ a.name }} vs {{ b.name }}: {{ a.project }}
+
+`{{ a.model }}` vs `{{ b.model }}`{% if a.steps != b.steps %} (different step dates: compare metrics, not individual weeks){% endif %}
+
+
+## Metrics
+
+| Metric | {{ a.name }} | {{ b.name }} |
+|---|---|---|
+{% for ra, rb in zip(a.metric_rows(), b.metric_rows()) %}
+| {{ ra[0] }} | {{ ra[1] }} | {{ rb[1] }} |
+{% endfor %}
+
+## Per epic
+
+| Epic | Outcome | {{ a.name }} | {{ b.name }} |
+|---|---|---|---|
+{% for e in a.epics %}{% set other = b.epics | selectattr("key", "equalto", e.key) | first %}
+| {{ e.key }} {{ e.title }} | {{ e.outcome }} | {{ e.verdict }} | {{ other.verdict if other else "–" }} |
+{% endfor %}
+{% for ev in evs %}
+
+## Timeline: {{ ev.name }}
+
+| Epic | {% for d in ev.steps %}{{ d.strftime("%d %b") }} | {% endfor %}
+
+|---|{% for d in ev.steps %}---|{% endfor %}
+
+{% for e in ev.epics %}
+| {{ e.key }} | {% for cell in cells_md(e, ev.steps) %}{{ cell }} | {% endfor %}
+
+{% endfor %}
+{% endfor %}

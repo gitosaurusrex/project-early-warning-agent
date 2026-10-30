@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% from "_bt_macros.html" import bt_chart, metrics_table, epic_table %}
+{% block title %}Compare backtests{% endblock %}
+{% block content %}
+<p class="small"><a href="/backtests">← Backtests</a></p>
+<h1>{{ a.name }} vs {{ b.name }}</h1>
+<p class="muted">{{ a.model }} vs {{ b.model }}</p>
+{% if a.steps != b.steps %}<div class="notice">The two backtests used different step dates, so compare metrics rather than individual weeks.</div>{% endif %}
+<h2>Metrics</h2>
+{{ metrics_table(evs) }}
+<h2>Per epic</h2>
+{{ epic_table(evs) }}
+{% for ev in evs %}
+<h2><a href="/backtests/{{ ev.backtest_id }}">{{ ev.name }}</a> · {{ ev.model }}</h2>
+{{ bt_chart(chart(ev, link=true), ev.name) }}
+{% endfor %}
+{% endblock %}

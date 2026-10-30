@@ -16,11 +16,11 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy import Engine, func, select
 from sqlalchemy.orm import Session
 
-from pewa import assess, report, runs, snapshot
+from pewa import assess, backtest, report, runs, snapshot
 from pewa.config import get_settings
 from pewa.db import make_engine, session_scope
 from pewa.llm import LLM, LLMAuthError
-from pewa.models import Assessment, EventRow, Feedback, Run
+from pewa.models import Assessment, Backtest, BacktestStep, EventRow, Feedback, Run
 
 TEMPLATES = Path(__file__).parent / "templates"
 VERDICTS = ("useful", "noise")
@@ -32,8 +32,9 @@ def evidence_href(event_id: str, url: str | None) -> str:
     return url if url and host and not host.endswith(".example") else f"/events/{event_id}"
 
 
-templates = Jinja2Templates(directory=TEMPLATES)
-templates.env.globals.update(evidence_href=evidence_href, verdicts=VERDICTS)
+# Backtest charts and tables are shared with the standalone reports in pewa/report_templates.
+templates = Jinja2Templates(directory=[TEMPLATES, backtest.TEMPLATES])
+templates.env.globals.update(evidence_href=evidence_href, verdicts=VERDICTS, chart=backtest.chart)
 templates.env.filters["dt"] = lambda value, fmt="%a %d %b %Y": value.strftime(fmt) if value else ""
 
 
@@ -67,6 +68,13 @@ def _feedback(session: Session, assessment_ids: list[int]) -> dict[int, list[Fee
     for row in rows:
         grouped[row.assessment_id].append(row)
     return grouped
+
+
+def _backtest_or_404(session: Session, project: str, backtest_id: int) -> Backtest:
+    bt = session.get(Backtest, backtest_id)
+    if bt is None or bt.project != project:
+        raise HTTPException(404, f"no backtest {backtest_id} for project {project!r}")
+    return bt
 
 
 def create_app(engine: Engine | None = None, *, project: str | None = None, dry_run: bool = False) -> FastAPI:
@@ -139,12 +147,13 @@ def create_app(engine: Engine | None = None, *, project: str | None = None, dry_
             raise HTTPException(404, f"no assessment {assessment_id}")
         run = _run_or_404(session, app.state.project, a.run_id)
 
-        # Rating history for this epic across runs of the same mode, oldest first.
-        history = session.execute(
-            select(Run.as_of, Assessment.rating, Assessment.id).join(Assessment, Assessment.run_id == Run.id)
-            .where(Run.project == run.project, Run.mode == run.mode, Assessment.epic_key == a.epic_key)
-            .order_by(Run.as_of, Run.id)
-        ).all()
+        # Rating history for this epic, oldest first: across live runs, or within one backtest.
+        backtest_id = session.scalar(select(BacktestStep.backtest_id).where(BacktestStep.run_id == run.id))
+        query = (select(Run.as_of, Assessment.rating, Assessment.id).join(Assessment, Assessment.run_id == Run.id)
+                 .where(Run.project == run.project, Run.mode == run.mode, Assessment.epic_key == a.epic_key))
+        if backtest_id is not None:
+            query = query.join(BacktestStep, BacktestStep.run_id == Run.id).where(BacktestStep.backtest_id == backtest_id)
+        history = session.execute(query.order_by(Run.as_of, Run.id)).all()
 
         # Signal timeline: every event a signal or a key risk points at, described as of the run.
         signal_ids: dict[str, list[str]] = {}
@@ -162,7 +171,7 @@ def create_app(engine: Engine | None = None, *, project: str | None = None, dry_
         ]
         evidence = {e["id"]: e for e in a.evidence or []}
         return page(request, "epic.html", a=a, run=run, history=history, timeline=timeline, evidence=evidence,
-                    feedback=_feedback(session, [a.id])[a.id])
+                    feedback=_feedback(session, [a.id])[a.id], backtest_id=backtest_id)
 
     @app.post("/assessments/{assessment_id}/feedback")
     def add_feedback(request: Request, session: SessionDep, assessment_id: int,
@@ -208,6 +217,21 @@ def create_app(engine: Engine | None = None, *, project: str | None = None, dry_
             return templates.TemplateResponse(request, "_report.html", {"r": draft})
         return page(request, "reports.html", run=current, all_runs=runs.list_runs(session, app.state.project),
                     reports=[draft])
+
+    @app.get("/backtests", response_class=HTMLResponse)
+    def backtests_page(request: Request, session: SessionDep) -> Response:
+        evs = [backtest.evaluate(session, bt) for bt in backtest.list_backtests(session, app.state.project)]
+        return page(request, "backtests.html", evs=evs)
+
+    @app.get("/backtests/compare", response_class=HTMLResponse)
+    def compare_page(request: Request, session: SessionDep, a: int, b: int) -> Response:
+        evs = [backtest.evaluate(session, _backtest_or_404(session, app.state.project, i)) for i in (a, b)]
+        return page(request, "backtest_compare.html", a=evs[0], b=evs[1], evs=evs)
+
+    @app.get("/backtests/{backtest_id}", response_class=HTMLResponse)
+    def backtest_page(request: Request, session: SessionDep, backtest_id: int) -> Response:
+        ev = backtest.evaluate(session, _backtest_or_404(session, app.state.project, backtest_id))
+        return page(request, "backtest.html", ev=ev)
 
     @app.get("/healthz")
     def healthz(session: SessionDep) -> dict[str, Any]:
