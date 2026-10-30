@@ -7,6 +7,7 @@ As of: {{ as_of }}
 - Owner: {{ epic.owner or "unassigned" }}
 - Due date: {{ epic.due_date or "none" }}{% if epic.original_due_date and epic.original_due_date != epic.due_date %} (originally {{ epic.original_due_date }}){% endif %}
 - Business days until due: {{ business_days_left if business_days_left is not none else "n/a" }}
+- Work started: {% if started %}{{ started }} ({{ weeks_in_progress }} weeks in progress){% else %}not yet{% endif %}. Pace projections need {{ min_weeks | round(1) }}+ weeks in progress and {{ min_done }}+ finished child tickets.
 
 ## Child tickets
 - Done: {{ children.done }} | In progress: {{ children.in_progress }} | To do: {{ children.todo }}

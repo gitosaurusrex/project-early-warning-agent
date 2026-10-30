@@ -1,5 +1,7 @@
 # Project Early-Warning Agent (pewa)
 
+[![CI](https://github.com/gitosaurusrex/project-early-warning-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/gitosaurusrex/project-early-warning-agent/actions/workflows/ci.yml)
+
 Watches a project's Jira, GitHub and Slack activity, flags epics at risk of slipping with
 linked evidence, and drafts status updates. It can **replay history** as of any past date
 using only the data that existed then, so it can be backtested on finished projects.
@@ -99,6 +101,13 @@ these rules are enforced in code:
 - amber and red ratings must keep at least one valid citation;
 - an invalid reply is retried once with the validation error; a second failure is stored as
   `rating: "unknown"` with the error.
+
+Requests use structured outputs (a JSON schema on `output_config.format`), so replies are always
+well-formed. The checks above still run in code. Early in an epic, pace projections are noisy:
+until it has `PEWA_MIN_HISTORY_WEEKS` (2) of work and `PEWA_MIN_DONE_TICKETS` (3) finished tickets,
+an amber or red rating needs a detector signal of severity 2 or more, unless the due date is
+within two working weeks. Otherwise pewa keeps it green and notes why. The model is told the same
+rule and sees the epic's history.
 
 Done epics are recorded as green without a model call. On models that support it, requests opt
 into server-side refusal fallbacks (`fallbacks: "default"`), so a safety-classifier decline is

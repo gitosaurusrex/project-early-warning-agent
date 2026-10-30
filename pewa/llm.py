@@ -83,8 +83,12 @@ class LLM:
         *,
         canned: Callable[[], str] | None = None,
         max_tokens: int = 16000,
+        output_schema: dict[str, Any] | None = None,
     ) -> str:
-        """Return the model's text reply. Every attempt is logged to `llm_calls`."""
+        """Return the model's text reply. Every attempt is logged to `llm_calls`.
+
+        With `output_schema`, the API constrains the reply to JSON matching that schema
+        (structured outputs); callers still validate it, since the schema can't express every rule."""
         started = time.monotonic()
         record = LLMCall(
             model=self.label,
@@ -96,7 +100,8 @@ class LLM:
             if self.dry_run:
                 text = self._canned(canned)
             else:
-                text, record.input_tokens, record.output_tokens = self._call_api(system, messages, max_tokens)
+                text, record.input_tokens, record.output_tokens = self._call_api(system, messages, max_tokens,
+                                                                                 output_schema)
                 record.cost_usd = cost_usd(self.model, record.input_tokens, record.output_tokens)
             return text
         except LLMError as exc:
@@ -117,7 +122,8 @@ class LLM:
             raise LLMError("dry-run: no canned response for this call")
         return canned()
 
-    def _call_api(self, system: str, messages: list[Message], max_tokens: int) -> tuple[str, int, int]:
+    def _call_api(self, system: str, messages: list[Message], max_tokens: int,
+                  output_schema: dict[str, Any] | None = None) -> tuple[str, int, int]:
         import anthropic
 
         if self._client is None:
@@ -127,6 +133,8 @@ class LLM:
             self._client = anthropic.Anthropic(api_key=key, max_retries=self.max_retries) if key else \
                 anthropic.Anthropic(max_retries=self.max_retries)
         request: dict[str, Any] = {"model": self.model, "max_tokens": max_tokens, "system": system, "messages": messages}
+        if output_schema is not None:
+            request["output_config"] = {"format": {"type": "json_schema", "schema": output_schema}}
         try:
             if self.model in FALLBACK_MODELS:
                 # If the model's safety classifiers decline, the API re-runs the request on a

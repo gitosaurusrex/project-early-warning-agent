@@ -60,6 +60,10 @@ class Settings(BaseSettings):
     pewa_burn_window_weeks: int = 4
     # Only recent reopen / CI / Slack activity counts as a live signal.
     pewa_signal_lookback_days: int = 14
+    # Thin-history guard: before an epic has this much history, a pace-based amber/red needs a
+    # severity 2+ detector signal behind it (unless the due date is close). 0 disables it.
+    pewa_min_history_weeks: float = 2.0
+    pewa_min_done_tickets: int = 3
     pewa_blocker_phrases: Annotated[list[str], NoDecode] = Field(
         default_factory=lambda: [
             "blocked on", "blocked by", "waiting on", "waiting for", "can't proceed", "cannot proceed",

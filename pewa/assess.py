@@ -44,6 +44,31 @@ class AssessmentOutput(BaseModel):
     suggested_actions: list[str] = Field(default_factory=list)
 
 
+# The same shape as AssessmentOutput, for the API's structured outputs. Ranges and the citation
+# rules aren't expressible here, so replies are still validated in code (validate()).
+OUTPUT_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "rating": {"type": "string", "enum": ["green", "amber", "red"]},
+        "confidence": {"type": "number"},
+        "rationale": {"type": "string"},
+        "predicted_slip_days": {"anyOf": [{"type": "integer"}, {"type": "null"}]},
+        "key_risks": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {"summary": {"type": "string"}, "evidence_ids": {"type": "array", "items": {"type": "string"}}},
+                "required": ["summary", "evidence_ids"],
+                "additionalProperties": False,
+            },
+        },
+        "suggested_actions": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["rating", "confidence", "rationale", "predicted_slip_days", "key_risks", "suggested_actions"],
+    "additionalProperties": False,
+}
+
+
 class InvalidAssessment(ValueError):
     pass
 
@@ -63,6 +88,8 @@ class EpicPacket(BaseModel):
     as_of: datetime
     epic: EpicState
     business_days_left: int | None
+    started_at: datetime | None = None  # when work on the epic began
+    weeks_in_progress: float | None = None
     children: dict[str, Any]
     signals: list[Signal]
     evidence: list[EvidenceItem]
@@ -87,6 +114,7 @@ class EpicAssessment(BaseModel):
     attempts: int = 0
     error: str | None = None
     skipped: str | None = None
+    guard: str | None = None  # why pewa overrode the model's rating, if it did
 
 
 class RunResult(BaseModel):
@@ -167,6 +195,12 @@ def select_evidence(state: ProjectState, epic: EpicState, signals: list[Signal])
 
 def build_packet(state: ProjectState, epic: EpicState, signals: list[Signal]) -> EpicPacket:
     children = state.epic_children(epic.key)
+    keys = {epic.key, *epic.children}
+    by_entity: dict[str, list[Event]] = {}
+    for event in state.events:
+        if event.entity_id in keys:
+            by_entity.setdefault(event.entity_id, []).append(event)
+    started = signals_mod.started_at(epic, by_entity)
     open_children = [t for t in children if t.category != "done"]
     counts = {c: sum(1 for t in children if t.category == c) for c in ("todo", "in_progress", "done")}
     due = date.fromisoformat(epic.due_date) if epic.due_date else None
@@ -174,6 +208,8 @@ def build_packet(state: ProjectState, epic: EpicState, signals: list[Signal]) ->
         as_of=state.as_of,
         epic=epic,
         business_days_left=signals_mod.business_days(state.as_of, due) if due else None,
+        started_at=started,
+        weeks_in_progress=round(signals_mod.business_days(started, state.as_of) / 5, 1) if started else None,
         children={
             **counts,
             "points_done": _num(sum(t.points or 0 for t in children if t.category == "done")),
@@ -201,10 +237,15 @@ _env = Environment(loader=FileSystemLoader(PROMPTS), undefined=StrictUndefined, 
 
 def render_prompt(packet: EpicPacket) -> tuple[str, str]:
     system = (PROMPTS / "assess_system.md").read_text()
+    cfg = get_settings()
     user = _env.get_template("assess_user.md.j2").render(
         as_of=f"{packet.as_of:%Y-%m-%d %H:%M} UTC",
         epic=packet.epic,
         business_days_left=packet.business_days_left,
+        started=f"{packet.started_at:%Y-%m-%d}" if packet.started_at else None,
+        weeks_in_progress=packet.weeks_in_progress,
+        min_weeks=cfg.pewa_min_history_weeks,
+        min_done=cfg.pewa_min_done_tickets,
         children=packet.children,
         signals=packet.signals,
         evidence=packet.evidence,
@@ -249,6 +290,33 @@ def validate(text: str, allowed_ids: set[str]) -> tuple[AssessmentOutput, list[s
             f"a {output.rating} rating must cite at least one evidence id from the evidence list{detail}"
         )
     return output, dropped
+
+
+# ----- thin-history guard -----------------------------------------------------------------------
+
+GUARD_DUE_SOON_DAYS = 10  # within two working weeks of the due date, little history is itself a risk
+
+
+def thin_history_guard(packet: EpicPacket, output: AssessmentOutput, cfg: Settings) -> str | None:
+    """Why an amber/red rating should be kept green, or None.
+
+    Backtests showed the model's early false alarms were pace projections from a week or two of
+    work. Until an epic has `pewa_min_history_weeks` of history and `pewa_min_done_tickets` done
+    tickets, amber/red needs a detector signal of severity 2+ behind it. Epics due soon are exempt."""
+    if output.rating not in ("amber", "red") or cfg.pewa_min_history_weeks <= 0:
+        return None
+    if packet.business_days_left is not None and packet.business_days_left <= GUARD_DUE_SOON_DAYS:
+        return None
+    weeks, done = packet.weeks_in_progress or 0.0, packet.children.get("done", 0)
+    if weeks >= cfg.pewa_min_history_weeks and done >= cfg.pewa_min_done_tickets:
+        return None
+    if any(s.severity >= 2 for s in packet.signals):
+        return None
+    history = (f"{weeks:g} weeks of work and {done} finished ticket(s)" if packet.started_at
+               else "work hasn't started")
+    return (f"the model rated it {output.rating}, but with {history} and no detector signal of severity 2+, "
+            f"a pace projection is too early to flag (needs {cfg.pewa_min_history_weeks:g} weeks and "
+            f"{cfg.pewa_min_done_tickets} done tickets)")
 
 
 # ----- dry-run responder ------------------------------------------------------------------------
@@ -298,7 +366,8 @@ def offline_response(packet: EpicPacket) -> str:
 # ----- running ----------------------------------------------------------------------------------
 
 
-def assess_epic(llm: LLM, state: ProjectState, epic: EpicState, signals: list[Signal]) -> EpicAssessment:
+def assess_epic(llm: LLM, state: ProjectState, epic: EpicState, signals: list[Signal],
+                cfg: Settings | None = None) -> EpicAssessment:
     base = EpicAssessment(epic_key=epic.key, title=epic.title, rating="unknown", signals=signals)
     if status_category(epic.status) == "done":
         when = f"{epic.resolved_at:%Y-%m-%d}" if epic.resolved_at else "an earlier date"
@@ -311,7 +380,8 @@ def assess_epic(llm: LLM, state: ProjectState, epic: EpicState, signals: list[Si
     error = None
     for attempt in (1, 2):
         try:
-            text = llm.complete("assess", system, messages, canned=lambda: offline_response(packet))
+            text = llm.complete("assess", system, messages, canned=lambda: offline_response(packet),
+                                output_schema=OUTPUT_SCHEMA)
         except LLMAuthError:
             raise  # no point trying the remaining epics
         except LLMError as exc:
@@ -329,9 +399,14 @@ def assess_epic(llm: LLM, state: ProjectState, epic: EpicState, signals: list[Si
             continue
         by_id = {e.id: e for e in packet.evidence}
         cited = list(dict.fromkeys(i for r in output.key_risks for i in r.evidence_ids))
+        update: dict[str, Any] = {**output.model_dump(), "key_risks": output.key_risks}
+        if guard := thin_history_guard(packet, output, cfg or get_settings()):
+            # Keep the model's reasoning and risks visible as things to watch; only the rating changes.
+            update.update(rating="green", guard=guard,
+                          rationale=f"{output.rationale} (Kept green: {guard}.)",
+                          predicted_slip_days=None)
         return base.model_copy(update={
-            **output.model_dump(),
-            "key_risks": output.key_risks,
+            **update,
             "evidence": [by_id[i] for i in cited],
             "dropped_evidence_ids": dropped,
             "attempts": attempt,
@@ -355,7 +430,7 @@ def run(
     Pass `state` to reuse a snapshot already built for `as_of`."""
     state = state or snapshot.build(session, project, as_of)
     detected = signals_mod.detect(state, cfg or get_settings())
-    results = [assess_epic(llm, state, epic, detected.get(key, [])) for key, epic in state.epics.items()]
+    results = [assess_epic(llm, state, epic, detected.get(key, []), cfg) for key, epic in state.epics.items()]
 
     run_row = Run(project=project, as_of=state.as_of, mode=mode, model=llm.label, label=label)
     session.add(run_row)
@@ -380,6 +455,7 @@ def run(
                 "attempts": r.attempts,
                 "error": r.error,
                 "skipped": r.skipped,
+                "guard": r.guard,
             },
         ))
     session.flush()

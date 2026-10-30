@@ -15,6 +15,10 @@ How to judge:
 - Be calibrated. When evidence is thin, ambiguous or already resolved, prefer green. A single
   reopened ticket that was fixed the next day, a flaky test that then passed, normal review
   back-and-forth, or lively design discussion are usually noise, not risk.
+- Pace needs history. Early in an epic, throughput swings week to week, so a projection from
+  the first week or two (or from one or two finished tickets) is not enough on its own for amber
+  or red: mention it as something to watch instead. pewa keeps such ratings green unless a
+  severity 2+ detector signal backs them or the due date is close.
 - Weigh signals by what they mean for the due date. Work stuck behind another team, reviews that
   nobody picks up, scope added mid-flight, or a pace that cannot reach the date are real risks.
 - Separate facts from inferences: state what the evidence shows, and say "likely" or "suggests"

@@ -8,7 +8,9 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from pewa import assess, signals, snapshot
+from pewa.config import get_settings
 from pewa.llm import FALLBACK_BETA, LLM, LLMError
+from pewa.schemas import Signal
 from pewa.models import Assessment, LLMCall, Run
 
 WEEK6 = "2026-02-13"  # end of week 6; Epic A is due 2026-02-20
@@ -240,3 +242,86 @@ def test_pewa_specific_key_name_is_used(monkeypatch):
     assert Settings(_env_file=None).anthropic_key() == "sk-ant-pewa"  # pewa name wins
     monkeypatch.delenv("PEWA_ANTHROPIC_API_KEY")
     assert Settings(_env_file=None).anthropic_key() == "sk-ant-standard"
+
+
+# ----- structured outputs -----
+
+
+def test_schema_matches_the_validated_model():
+    assert set(assess.OUTPUT_SCHEMA["required"]) == set(assess.AssessmentOutput.model_fields)
+    assert assess.OUTPUT_SCHEMA["additionalProperties"] is False
+
+
+def test_assessments_request_structured_output(session: Session, week6):
+    state, found = week6
+    llm = LLM("claude-sonnet-5-5", session=session)
+    llm._client, calls = fake_client()
+    result = assess.assess_epic(llm, state, state.epics["ATL-5"], found["ATL-5"])
+    assert result.rating == "green"
+    assert calls[0]["output_config"] == {"format": {"type": "json_schema", "schema": assess.OUTPUT_SCHEMA}}
+
+
+def test_plain_completions_send_no_output_config(session: Session):
+    llm = LLM("claude-sonnet-5-5", session=session)
+    llm._client, calls = fake_client()
+    llm.complete("report_exec", "sys", [{"role": "user", "content": "hi"}])
+    assert "output_config" not in calls[0]
+
+
+# ----- thin-history guard -----
+
+
+@pytest.fixture
+def week3(atlas: Session):
+    state = snapshot.build(atlas, "atlas", snapshot.parse_as_of("2026-01-26"))
+    return state, signals.detect(state)
+
+
+def test_early_pace_flags_are_kept_green(week3):
+    state, found = week3  # ATL-5: one week of work, one finished ticket, no signals
+    packet_ids_ = packet_ids(state, found, "ATL-5")
+    llm = RecordingLLM(reply(rating="amber", ids=packet_ids_[:1]))
+    result = assess.assess_epic(llm, state, state.epics["ATL-5"], found["ATL-5"])
+    assert result.rating == "green" and result.predicted_slip_days is None
+    assert "the model rated it amber" in result.guard and "1 weeks of work and 1 finished ticket" in result.guard
+    assert result.rationale.startswith("Because.") and "Kept green" in result.rationale
+    assert result.key_risks and result.evidence  # the concern stays visible as something to watch
+
+
+def test_a_strong_signal_lets_an_early_flag_stand(week3):
+    state, found = week3
+    ids = packet_ids(state, found, "ATL-5")
+    strong = Signal(type="stale_review", severity=2, epic_key="ATL-5", evidence=ids[:1], detail="PR waiting 6 days.")
+    result = assess.assess_epic(RecordingLLM(reply(rating="amber", ids=ids[:1])), state, state.epics["ATL-5"], [strong])
+    assert result.rating == "amber" and result.guard is None
+
+
+def test_guard_spares_epics_due_soon_and_can_be_disabled(week3):
+    state, found = week3
+    packet = assess.build_packet(state, state.epics["ATL-5"], found["ATL-5"])
+    amber = assess.AssessmentOutput.model_validate_json(reply(rating="amber", ids=("x",)))
+    cfg = get_settings()
+    assert assess.thin_history_guard(packet, amber, cfg)
+    assert assess.thin_history_guard(packet.model_copy(update={"business_days_left": 8}), amber, cfg) is None
+    assert assess.thin_history_guard(packet, amber, cfg.model_copy(update={"pewa_min_history_weeks": 0})) is None
+    green = amber.model_copy(update={"rating": "green"})
+    assert assess.thin_history_guard(packet, green, cfg) is None
+
+
+def test_mature_epics_are_not_guarded(week6):
+    state, found = week6  # by week 6 ATL-1 has weeks of history and many finished tickets
+    ids = packet_ids(state, found)
+    result = assess.assess_epic(RecordingLLM(reply(rating="red", ids=ids[:1])), state, state.epics["ATL-1"], [])
+    assert result.rating == "red" and result.guard is None
+
+
+def test_guard_reason_is_stored(atlas: Session):
+    llm = RecordingLLM()
+    state = snapshot.build(atlas, "atlas", snapshot.parse_as_of("2026-01-26"))
+    found = signals.detect(state)
+    ids = {k: packet_ids(state, found, k) for k in state.epics}
+    # Every open epic gets an amber reply citing its own evidence; done epics never reach the model.
+    llm.scripted.extend(reply(rating="amber", ids=ids[k][:1]) for k, e in state.epics.items() if e.status != "Done")
+    result = assess.run(atlas, "atlas", state.as_of, llm)
+    stored = {a.epic_key: a for a in atlas.scalars(select(Assessment).where(Assessment.run_id == result.run_id))}
+    assert stored["ATL-5"].rating == "green" and "too early to flag" in stored["ATL-5"].detail["guard"]
