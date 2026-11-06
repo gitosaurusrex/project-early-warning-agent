@@ -2,7 +2,7 @@
 # Render dashboard: New > Blueprint > pick this repo. See "Hosting" in the README.
 services:
   - type: web
-    name: pewa-demo
+    name: mvp-atlas-demo
     runtime: python
     plan: free
     region: oregon

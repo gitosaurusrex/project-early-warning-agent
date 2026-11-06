@@ -281,6 +281,8 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     the dashboard password, like `/healthz`, since browsers fetch them before sign-in and they
     reveal nothing. A Font Awesome icon was considered, but it would load a kit or CDN on every page
     and couldn't say anything specific to this product.
-65. **Live demo** at https://pewa-demo.onrender.com/, deployed from `main` by `render.yaml` (free
-    plan, Atlas data, offline responder, generated password). It's linked from the top of the README.
+65. **Live demo** at https://mvp-atlas-demo.onrender.com/ (first deployed as `pewa-demo`; Render
+    can't rename an `onrender.com` address, so the ATLAS name meant a new service), deployed from
+    `main` by `render.yaml` (free plan, Atlas data, offline responder, generated password). It's
+    linked from the top of the README.
 
