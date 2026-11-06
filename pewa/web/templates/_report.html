@@ -1,9 +1,12 @@
-<div class="card" style="margin-top:16px">
-  <p style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 8px">
-    <strong>{{ "Exec summary" if r.variant == "exec" else "Engineering detail" }}</strong>
-    <span class="small muted">{{ r.words }} words · {{ "written by the model" if r.source == "model" else "template" }}
-      <button class="ghost" type="button" onclick="navigator.clipboard.writeText(this.closest('.card').querySelector('textarea').value); this.textContent='Copied'">Copy Markdown</button></span>
-  </p>
+<article class="card stack rise">
+  <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center">
+    <h2>{{ "Exec summary" if r.variant == "exec" else "Engineering detail" }}</h2>
+    <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+      <span class="tag">{{ r.words }} words</span>
+      <span class="tag">{{ "written by the model" if r.source == "model" else "template" }}</span>
+      <button class="btn ghost" type="button" onclick="var t=this.closest('article').querySelector('textarea'), b=this; navigator.clipboard.writeText(t.value).then(function(){b.textContent='Copied'}, function(){t.select()})">Copy Markdown</button>
+    </div>
+  </div>
   {% if r.error %}<div class="notice small">The model's draft couldn't be used ({{ r.error }}), so this is the template version.</div>{% endif %}
-  <textarea class="md" readonly>{{ r.markdown }}</textarea>
-</div>
+  <textarea class="md" readonly aria-label="Markdown draft">{{ r.markdown }}</textarea>
+</article>

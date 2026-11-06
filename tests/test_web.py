@@ -86,7 +86,7 @@ def test_epic_detail_shows_risks_timeline_and_history(client: TestClient, engine
     run_at(client, "2026-02-06")
     run_id = run_at(client, "2026-02-13")
     page = client.get(f"/assessments/{assessment_id(engine, run_id, 'ATL-1')}").text
-    assert "ATL-1 Payments API" in page
+    assert "ATL-1" in page and "<h1>Payments API</h1>" in page
     assert "Key risks" in page and "Suggested actions" in page
     assert "Signal timeline" in page and "blocker_language" in page and ">cited<" in page
     assert 'href="/events/evt_' in page  # fixture URLs open the local event view
