@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="pewa">
+  <title>pewa</title>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="8" fill="#161b26" stroke="#2c3546"/>
+  <path d="M5.5 25h21" stroke="#3a4558" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="6.5" y="16.5" width="5" height="6.5" rx="2.5" fill="#22b35e"/>
+  <rect x="13.5" y="11.5" width="5" height="11.5" rx="2.5" fill="#f0a50f"/>
+  <rect x="20.5" y="6" width="5" height="17" rx="2.5" fill="#ef4b3e"/>
+</svg>

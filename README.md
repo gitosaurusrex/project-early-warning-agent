@@ -1,10 +1,16 @@
 # Project Early-Warning Agent (pewa)
 
 [![CI](https://github.com/gitosaurusrex/project-early-warning-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/gitosaurusrex/project-early-warning-agent/actions/workflows/ci.yml)
+[![Live demo](https://img.shields.io/badge/live%20demo-pewa--demo.onrender.com-2650d4)](https://pewa-demo.onrender.com/)
 
 Watches a project's Jira, GitHub and Slack activity, flags epics at risk of slipping with
 linked evidence, and drafts status updates. It can **replay history** as of any past date
 using only the data that existed then, so it can be backtested on finished projects.
+
+**Live demo: [pewa-demo.onrender.com](https://pewa-demo.onrender.com/)**. It runs on the fictional
+Atlas project with the offline responder, so it never calls the model. It's password-protected:
+ask the maintainer for access. It runs on Render's free plan, so the first visit after a quiet
+spell takes about a minute while the instance wakes.
 
 See [SPEC.md](SPEC.md) for the full design and [DECISIONS.md](DECISIONS.md) for judgment
 calls made while building it.
@@ -267,6 +273,9 @@ epic reached Done) or load your own JSON in the Atlas format (`pewa outcomes --f
 outcomes.json`). `pewa outcomes` lists what's stored.
 
 ## Hosting
+
+The live demo at [pewa-demo.onrender.com](https://pewa-demo.onrender.com/) is deployed from
+`main` with this Blueprint, and every merge redeploys it.
 
 `render.yaml` is a [Render Blueprint](https://render.com/docs/blueprint-spec) for a hosted,
 password-protected copy of the Atlas demo:
