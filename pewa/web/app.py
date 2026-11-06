@@ -27,6 +27,14 @@ from pewa.models import Assessment, Backtest, BacktestStep, EventRow, Feedback, 
 from pewa.signals import business_days
 
 TEMPLATES = Path(__file__).parent / "templates"
+STATIC = Path(__file__).parent / "static"
+# Served without the dashboard password: browsers fetch icons before (or without) sign-in.
+ICONS = {
+    "/favicon.svg": ("favicon.svg", "image/svg+xml"),
+    "/favicon.ico": ("favicon-32.png", "image/png"),
+    "/apple-touch-icon.png": ("apple-touch-icon.png", "image/png"),
+}
+PUBLIC_PATHS = {"/healthz", *ICONS}
 VERDICTS = ("useful", "noise")
 
 
@@ -124,7 +132,7 @@ def create_app(engine: Engine | None = None, *, project: str | None = None, dry_
         # (Clerk, an SSO proxy, ...) when the dashboard needs per-person accounts.
         @app.middleware("http")
         async def require_password(request: Request, call_next: Callable[[Request], Awaitable[Response]]) -> Response:
-            if request.url.path == "/healthz" or password_ok(request.headers.get("authorization"), password):
+            if request.url.path in PUBLIC_PATHS or password_ok(request.headers.get("authorization"), password):
                 return await call_next(request)
             return Response("Sign in to the pewa dashboard (any username, the shared password).", status_code=401,
                             headers={"WWW-Authenticate": 'Basic realm="pewa", charset="UTF-8"'})
@@ -288,6 +296,13 @@ def create_app(engine: Engine | None = None, *, project: str | None = None, dry_
     def backtest_page(request: Request, session: SessionDep, backtest_id: int) -> Response:
         ev = backtest.evaluate(session, _backtest_or_404(session, app.state.project, backtest_id))
         return page(request, "backtest.html", ev=ev)
+
+    def icon_route(filename: str, media_type: str) -> Callable[[], Response]:
+        body = (STATIC / filename).read_bytes()
+        return lambda: Response(body, media_type=media_type, headers={"Cache-Control": "public, max-age=86400"})
+
+    for path, (filename, media_type) in ICONS.items():
+        app.add_api_route(path, icon_route(filename, media_type), methods=["GET"], include_in_schema=False)
 
     @app.get("/healthz")
     def healthz(session: SessionDep) -> dict[str, Any]:

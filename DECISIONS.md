@@ -272,3 +272,15 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     that `uv.lock` matches `pyproject.toml`, installs from the lockfile, and runs the test suite.
     It needs no secrets: the real-model test is opt-in and every connector test mocks HTTP.
 
+## Branding and the live demo
+
+64. **The logo is an escalation mark**: three rising bars in the rating colours (green, amber,
+    red) on a dark navy tile. It reads as "risk climbing toward red" and stays legible at 16 px. One
+    SVG (`pewa/web/static/favicon.svg`) is both the nav logo and the favicon, with 32 px and 180 px
+    PNG copies for browsers and home screens that don't take SVG icons. Icons are served without
+    the dashboard password, like `/healthz`, since browsers fetch them before sign-in and they
+    reveal nothing. A Font Awesome icon was considered, but it would load a kit or CDN on every page
+    and couldn't say anything specific to this product.
+65. **Live demo** at https://pewa-demo.onrender.com/, deployed from `main` by `render.yaml` (free
+    plan, Atlas data, offline responder, generated password). It's linked from the top of the README.
+

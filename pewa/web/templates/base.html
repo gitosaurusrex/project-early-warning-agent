@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{% block title %}pewa{% endblock %} · {{ project }}</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>
   // Apply the saved theme before first paint. "auto" (no attribute) follows the system setting.
   (function () {
@@ -91,7 +94,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--border); }
 .topbar .wrap { display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap; padding-block: 10px; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; }
-.brand svg { flex: none; }
+.brand img { flex: none; display: block; }
 .brand b { font-family: var(--font-display); font-size: 19px; letter-spacing: -.02em; }
 .brand span { font-size: 12px; color: var(--muted); border-left: 1px solid var(--border); padding-left: 10px; }
 .nav { display: flex; gap: 4px; flex-wrap: wrap; }
@@ -194,12 +197,7 @@ textarea.md { min-height: 340px; background: var(--surface-2); border-color: var
 <body>
 <header class="topbar"><div class="wrap">
   <a class="brand" href="/" aria-label="pewa home">
-    <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
-      <circle cx="14" cy="14" r="13" fill="var(--accent-soft)"></circle>
-      <path d="M8 18.5a8 8 0 0 1 12 0" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"></path>
-      <path d="M10.6 15.6a4.4 4.4 0 0 1 6.8 0" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"></path>
-      <circle cx="14" cy="19.5" r="1.8" fill="var(--red-solid)"></circle>
-    </svg>
+    <img src="/favicon.svg" width="28" height="28" alt="">
     <b>pewa</b><span>Early warning · {{ project }}</span>
   </a>
   {% set here = request.url.path if request else "" %}

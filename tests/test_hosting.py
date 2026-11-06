@@ -88,3 +88,15 @@ def test_render_blueprint_matches_the_cli():
     env = {v["key"]: v for v in service["envVars"]}
     assert env["PEWA_DASHBOARD_PASSWORD"] == {"key": "PEWA_DASHBOARD_PASSWORD", "generateValue": True}
     assert env["PEWA_ANTHROPIC_API_KEY"].get("sync") is False  # a secret: never committed
+
+
+def test_icons_are_public_and_used_by_every_page(tmp_path):
+    client = TestClient(create_app(make_engine(tmp_path / "i.db"), project="atlas", dry_run=True, password="hunter2"))
+    svg = client.get("/favicon.svg")
+    assert svg.status_code == 200 and svg.headers["content-type"].startswith("image/svg+xml") and b"<svg" in svg.content
+    for path in ("/favicon.ico", "/apple-touch-icon.png"):
+        png = client.get(path)
+        assert png.status_code == 200 and png.headers["content-type"] == "image/png" and png.content[:4] == b"\x89PNG"
+    page = client.get("/", headers={"Authorization": basic("me", "hunter2")}).text
+    assert '<link rel="icon" href="/favicon.svg" type="image/svg+xml">' in page
+    assert '<img src="/favicon.svg"' in page  # the nav logo is the same mark
