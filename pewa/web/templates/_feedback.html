@@ -1,15 +1,15 @@
-<div id="feedback-box" class="card">
-  <form method="post" action="/assessments/{{ a.id }}/feedback" hx-post="/assessments/{{ a.id }}/feedback" hx-target="#feedback-box" hx-swap="outerHTML">
-    <label>Note (optional)<textarea name="note" rows="2" placeholder="Why?"></textarea></label>
-    <p style="display:flex; gap:8px; margin:10px 0 0">
-      <button type="submit" name="verdict" value="useful">👍 Useful</button>
-      <button type="submit" name="verdict" value="noise" class="ghost">👎 Noise</button>
-    </p>
+<div id="feedback-box" class="card stack">
+  <form class="stack" method="post" action="/assessments/{{ a.id }}/feedback" hx-post="/assessments/{{ a.id }}/feedback" hx-target="#feedback-box" hx-swap="outerHTML">
+    <label for="note-{{ a.id }}">Note (optional)<textarea id="note-{{ a.id }}" name="note" rows="2" placeholder="What made it useful, or noise?"></textarea></label>
+    <div style="display:flex; gap:8px; flex-wrap:wrap">
+      <button class="btn" type="submit" name="verdict" value="useful">👍 Useful</button>
+      <button class="btn ghost" type="submit" name="verdict" value="noise">👎 Noise</button>
+    </div>
   </form>
-  {% if saved %}<p class="small" style="color:var(--green)">Saved.</p>{% endif %}
+  {% if saved %}<p class="small" style="color: var(--green); font-weight: 600">Saved.</p>{% endif %}
   {% if feedback %}
-  <ul class="plain small" style="margin-top:12px">
-    {% for f in feedback %}<li>{{ "👍" if f.verdict == "useful" else "👎" }} {{ f.verdict }} · <span class="muted">{{ f.created_at | dt("%d %b %H:%M") }}</span>{% if f.note %}<br>{{ f.note }}{% endif %}</li>{% endfor %}
+  <ul class="plain small">
+    {% for f in feedback %}<li>{{ "👍" if f.verdict == "useful" else "👎" }} <b>{{ f.verdict }}</b> · <span class="muted mono">{{ f.created_at | dt("%d %b %H:%M") }}</span>{% if f.note %}<br>{{ f.note }}{% endif %}</li>{% endfor %}
   </ul>
   {% endif %}
 </div>

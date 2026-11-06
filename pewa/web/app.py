@@ -8,7 +8,7 @@ import base64
 import binascii
 import secrets
 from collections.abc import Awaitable, Callable, Iterator
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import Annotated, Any
 from urllib.parse import urlparse
@@ -24,6 +24,7 @@ from pewa.config import get_settings
 from pewa.db import make_engine, session_scope
 from pewa.llm import LLM, LLMAuthError
 from pewa.models import Assessment, Backtest, BacktestStep, EventRow, Feedback, Run
+from pewa.signals import business_days
 
 TEMPLATES = Path(__file__).parent / "templates"
 VERDICTS = ("useful", "noise")
@@ -85,6 +86,25 @@ def _feedback(session: Session, assessment_ids: list[int]) -> dict[int, list[Fee
     return grouped
 
 
+HISTORY_DOTS = 6
+
+
+def countdown(as_of: datetime, due: str | None, done: bool) -> dict[str, Any] | None:
+    """Business days between the run and the epic's due date, for the overview cards."""
+    if done:
+        return {"text": "Completed", "state": "done"}
+    if not due:
+        return None
+    due_date = date.fromisoformat(due)
+    if due_date < as_of.date():
+        n = business_days(due_date, as_of)
+        return {"text": f"{n} business day{'s' * (n != 1)} overdue", "state": "overdue"}
+    n = business_days(as_of, due_date)
+    if n == 0:
+        return {"text": "Due today", "state": "soon"}
+    return {"text": f"{n} business day{'s' * (n != 1)} left", "state": "soon" if n <= 5 else "ok"}
+
+
 def _backtest_or_404(session: Session, project: str, backtest_id: int) -> Backtest:
     bt = session.get(Backtest, backtest_id)
     if bt is None or bt.project != project:
@@ -137,14 +157,24 @@ def create_app(engine: Engine | None = None, *, project: str | None = None, dry_
         before = {a.epic_key: a.rating for a in runs.assessments(session, previous.id)} if previous else {}
         assessments = runs.assessments(session, current.id)
         feedback = _feedback(session, [a.id for a in assessments])
+        # The last few ratings of each epic from comparable runs, oldest first, for the history dots.
+        history: dict[str, list[tuple[datetime, str]]] = {}
+        for key, rating, when in session.execute(
+            select(Assessment.epic_key, Assessment.rating, Run.as_of).join(Run, Run.id == Assessment.run_id)
+            .where(Run.project == current.project, Run.mode == current.mode, Run.model == current.model,
+                   Run.as_of <= current.as_of).order_by(Run.as_of, Run.id)
+        ):
+            history.setdefault(key, []).append((when, rating))
         rows = [
             {"a": a, "trend": runs.trend(before.get(a.epic_key), a.rating), "before": before.get(a.epic_key),
-             "feedback": feedback[a.id]}
+             "feedback": feedback[a.id], "history": history.get(a.epic_key, [])[-HISTORY_DOTS:],
+             "countdown": countdown(current.as_of, a.detail.get("due_date"), a.detail.get("skipped") == "done")}
             for a in assessments
         ]
         rows.sort(key=lambda r: (r["a"].detail.get("skipped") == "done", -report.RANK.get(r["a"].rating, 0),
                                  snapshot.natural_key(r["a"].epic_key)))
-        return page(request, "overview.html", run=current, rows=rows, previous=previous, notice=notice,
+        counts = {r: sum(1 for row in rows if row["a"].rating == r) for r in ("red", "amber", "green", "unknown")}
+        return page(request, "overview.html", run=current, rows=rows, previous=previous, notice=notice, counts=counts,
                     all_runs=runs.list_runs(session, project), as_of_value=as_of or f"{current.as_of:%Y-%m-%d}")
 
     @app.post("/runs")

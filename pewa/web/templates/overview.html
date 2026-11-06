@@ -1,57 +1,124 @@
 {% extends "base.html" %}
-{% from "_macros.html" import badge, trend %}
+{% from "_macros.html" import badge, trend, lamp, meter, pips %}
 {% block title %}Overview{% endblock %}
+{% block style %}
+.pulse { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; align-items: center; }
+.pulse .bar { display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: var(--surface-2); gap: 2px; }
+.pulse .bar span { min-width: 6px; animation: grow .9s cubic-bezier(.2, .7, .2, 1) both; transform-origin: left; }
+@keyframes grow { from { transform: scaleX(0); } }
+.pulse .bar .s-red { background: var(--red-solid); } .pulse .bar .s-amber { background: var(--amber-solid); }
+.pulse .bar .s-green { background: var(--green-solid); } .pulse .bar .s-unknown { background: var(--unknown-solid); }
+.tallies { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.tally { display: grid; gap: 0; }
+.tally b { font: 700 30px/1 var(--font-display); font-variant-numeric: tabular-nums; }
+.tally span { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); }
+.tally.red b { color: var(--red); } .tally.amber b { color: var(--amber); } .tally.green b { color: var(--green); }
+.ledger { display: grid; gap: 12px; }
+.epic { display: grid; grid-template-columns: 290px minmax(0, 1fr); background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.epic:hover { border-color: var(--border-strong); box-shadow: var(--shadow); transform: translateY(-1px); }
+.epic .side { padding: 16px 18px; display: grid; gap: 10px; align-content: start; border-right: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--tint), transparent 80%); }
+.epic.r-red { --tint: color-mix(in srgb, var(--red-bg) 70%, transparent); }
+.epic.r-amber { --tint: color-mix(in srgb, var(--amber-bg) 70%, transparent); }
+.epic.r-green, .epic.r-unknown, .epic.r-done { --tint: transparent; }
+.epic .id { display: flex; align-items: center; gap: 12px; }
+.epic .key { font: 500 12.5px var(--font-data); color: var(--muted); }
+.epic .name { font: 700 17px/1.25 var(--font-display); color: var(--text); text-decoration: none; }
+.epic .name:hover { color: var(--accent); }
+.epic .row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; font-size: 13px; color: var(--muted); }
+.epic .due.overdue { color: var(--red); font-weight: 600; } .epic .due.soon { color: var(--amber); font-weight: 600; }
+.epic .body { padding: 16px 20px; display: grid; gap: 12px; grid-template-rows: 1fr auto; min-width: 0; }
+.epic .why { font-size: 14.5px; line-height: 1.6; max-width: 72ch; }
+.epic .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.epic .signals { display: flex; flex-wrap: wrap; gap: 6px; }
+.epic .open { font-weight: 600; font-size: 13px; text-decoration: none; white-space: nowrap; }
+.empty { display: grid; gap: 8px; padding: 28px; text-align: left; }
+@media (max-width: 860px) { .pulse { grid-template-columns: 1fr; } .epic { grid-template-columns: 1fr; } .epic .side { border-right: 0; border-bottom: 1px solid var(--border); } }
+{% endblock %}
 {% block content %}
-<h1>Epic risk overview</h1>
-{% if run %}
-<p class="muted">As of {{ run.as_of | dt("%a %d %b %Y, %H:%M") }} UTC · run {{ run.id }} · {{ run.model }}{% if run.label %} · {{ run.label }}{% endif %}{% if previous %} · trend vs. {{ previous.as_of | dt("%d %b") }}{% endif %}</p>
-{% endif %}
+<section class="pagehead">
+  <div>
+    <p class="eyebrow">Epic risk overview</p>
+    <h1>{% if run %}{{ counts.red }} red, {{ counts.amber }} amber across {{ rows | length }} epics{% else %}No assessments yet{% endif %}</h1>
+    {% if run %}
+    <div class="meta">
+      <span>As of <b>{{ run.as_of | dt("%a %d %b %Y, %H:%M") }} UTC</b></span>
+      <span>run {{ run.id }} · <span class="mono">{{ run.model }}</span>{% if run.label %} · {{ run.label }}{% endif %}</span>
+      {% if previous %}<span>trend vs. {{ previous.as_of | dt("%d %b") }}</span>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="toolbar">
+    <form method="get" action="/">
+      <label for="as-of">As of<input id="as-of" type="date" name="as_of" value="{{ as_of_value }}"></label>
+      <button class="btn ghost" type="submit">Show</button>
+    </form>
+    <form method="post" action="/runs" onsubmit="document.getElementById('running').style.display='inline'">
+      <input type="hidden" name="as_of" value="{{ as_of_value }}">
+      <button class="btn" type="submit" title="Snapshot, signals and one assessment per epic for this date">Run assessment{% if as_of_value %} for {{ as_of_value }}{% endif %}</button>
+      <span id="running" class="muted small" style="display:none">Assessing epics…</span>
+    </form>
+    {% if all_runs | length > 1 %}
+    <form method="get" action="/">
+      <label for="run-pick">Earlier runs<select id="run-pick" name="run" onchange="this.form.submit()">
+        {% for r in all_runs %}<option value="{{ r.id }}" {% if run and r.id == run.id %}selected{% endif %}>{{ r.as_of | dt("%Y-%m-%d") }} · run {{ r.id }} · {{ r.model }}</option>{% endfor %}
+      </select></label>
+      <noscript><button class="btn ghost" type="submit">Open</button></noscript>
+    </form>
+    {% endif %}
+  </div>
+</section>
 {% if notice %}<div class="notice">{{ notice }}</div>{% endif %}
 
-<div class="toolbar">
-  <form method="get" action="/">
-    <label>As of<input type="date" name="as_of" value="{{ as_of_value }}"></label>
-    <button class="ghost" type="submit">Show</button>
-  </form>
-  <form method="post" action="/runs" onsubmit="document.getElementById('running').style.display='inline'">
-    <input type="hidden" name="as_of" value="{{ as_of_value }}">
-    <button type="submit" title="Snapshot, signals and one assessment per epic for this date">Run assessment{% if as_of_value %} for {{ as_of_value }}{% endif %}</button>
-    <span id="running" class="muted small" style="display:none">Assessing epics…</span>
-  </form>
-  {% if all_runs | length > 1 %}
-  <form method="get" action="/">
-    <label>Earlier runs<select name="run" onchange="this.form.submit()">
-      {% for r in all_runs %}<option value="{{ r.id }}" {% if run and r.id == run.id %}selected{% endif %}>{{ r.as_of | dt("%Y-%m-%d") }} · run {{ r.id }} · {{ r.model }}</option>{% endfor %}
-    </select></label>
-    <noscript><button class="ghost" type="submit">Open</button></noscript>
-  </form>
-  {% endif %}
-</div>
-
 {% if not run %}
-<div class="card">
-  <p>No assessments yet for <strong>{{ project }}</strong>.</p>
-  <p class="muted">Load data with <code>pewa ingest --fixtures atlas</code>, then pick a date and run an assessment (or use <code>pewa assess --as-of 2026-02-13</code>).</p>
+<div class="card empty">
+  <h2>Nothing assessed for {{ project }} yet</h2>
+  <p class="muted">Load data with <code>pewa ingest --fixtures atlas</code>, then pick a date above and run an assessment (or use <code>pewa assess --as-of 2026-02-13</code>).</p>
 </div>
 {% else %}
-<div class="table-wrap">
-<table class="epics">
-  <thead><tr><th>Epic</th><th>Rating</th><th>Trend</th><th>Conf.</th><th>Rationale</th><th>Feedback</th></tr></thead>
-  <tbody>
-  {% for row in rows %}{% set a = row.a %}
-  <tr>
-    <td class="epic"><a href="/assessments/{{ a.id }}"><strong>{{ a.epic_key }}</strong></a><br><span class="small">{{ a.detail.title }}</span>
-      {% if a.detail.due_date %}<br><span class="small muted">due {{ a.detail.due_date }}</span>{% endif %}</td>
-    <td>{{ badge(a.rating) }}</td>
-    <td>{{ trend(row.trend, row.before) }}</td>
-    <td>{{ "%.0f" | format(a.confidence * 100) }}%</td>
-    <td class="rationale">{{ a.rationale }}</td>
-    <td class="small fb">{% set useful = row.feedback | selectattr("verdict", "equalto", "useful") | list | length %}{% set noise = row.feedback | selectattr("verdict", "equalto", "noise") | list | length %}{% if useful or noise %}👍 {{ useful }} · 👎 {{ noise }}{% else %}<span class="muted">none</span>{% endif %}</td>
-  </tr>
+<section class="card pulse" aria-label="Portfolio summary">
+  <div class="stack">
+    <p class="eyebrow">Portfolio pulse</p>
+    <div class="bar" role="img" aria-label="{{ counts.red }} red, {{ counts.amber }} amber, {{ counts.green }} green">
+      {% for r in ["red", "amber", "unknown", "green"] %}{% if counts[r] %}<span class="s-{{ r }}" style="flex: {{ counts[r] }}"></span>{% endif %}{% endfor %}
+    </div>
+  </div>
+  <div class="tallies">
+    {% for r in ["red", "amber", "green"] %}
+    <div class="tally {{ r }}"><b>{{ counts[r] }}</b><span>{{ lamp(r) }} {{ r }}</span></div>
+    {% endfor %}
+    {% if counts.unknown %}<div class="tally"><b>{{ counts.unknown }}</b><span>{{ lamp("unknown") }} failed</span></div>{% endif %}
+  </div>
+</section>
+
+<section class="ledger" aria-label="Epics">
+  {% for row in rows %}{% set a = row.a %}{% set done = a.detail.skipped == "done" %}
+  <article class="epic r-{{ 'done' if done else a.rating }} rise" style="--i: {{ loop.index0 }}">
+    <div class="side">
+      <div class="id">{{ lamp(a.rating, done) }}<div><div class="key">{{ a.epic_key }}</div>
+        <a class="name" href="/assessments/{{ a.id }}">{{ a.detail.title }}</a></div></div>
+      <div class="row">{{ badge(a.rating) }} {{ trend(row.trend, row.before) }}</div>
+      {% if row.countdown %}<div class="row"><span class="due {{ row.countdown.state }}">{{ row.countdown.text }}</span>{% if a.detail.due_date %}<span class="mono">due {{ a.detail.due_date }}</span>{% endif %}</div>{% endif %}
+      <div class="row"><span>Confidence</span>{{ meter(a.confidence) }}<span class="num">{{ "%.0f" | format(a.confidence * 100) }}%</span></div>
+      {% if row.history | length > 1 %}<div class="row"><span>Last {{ row.history | length }} runs</span>
+        <span class="dots">{% for when, r in row.history %}<span class="dot d-{{ r }}" title="{{ when | dt('%d %b') }}: {{ r }}"></span>{% endfor %}</span></div>{% endif %}
+    </div>
+    <div class="body">
+      <p class="why">{{ a.rationale }}</p>
+      <div class="foot">
+        <div class="signals">
+          {% for s in a.signals | sort(attribute="severity", reverse=true) %}{% if loop.index <= 4 %}<span class="tag">{{ pips(s.severity) }}{{ s.type }}</span>{% endif %}{% endfor %}
+          {% if a.signals | length > 4 %}<span class="tag">+{{ a.signals | length - 4 }} more</span>{% endif %}
+          {% set useful = row.feedback | selectattr("verdict", "equalto", "useful") | list | length %}{% set noise = row.feedback | selectattr("verdict", "equalto", "noise") | list | length %}
+          {% if useful or noise %}<span class="tag" title="TPM feedback">👍 {{ useful }} · 👎 {{ noise }}</span>{% endif %}
+        </div>
+        <a class="open" href="/assessments/{{ a.id }}">Evidence and timeline →</a>
+      </div>
+    </div>
+  </article>
   {% endfor %}
-  </tbody>
-</table>
-</div>
-<p class="small muted"><a href="/reports?run={{ run.id }}">Draft the weekly update from this run →</a></p>
+</section>
+<p class="small"><a href="/reports?run={{ run.id }}">Draft the weekly update from this run →</a></p>
 {% endif %}
 {% endblock %}

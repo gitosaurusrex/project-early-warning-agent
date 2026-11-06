@@ -1,62 +1,138 @@
 {% extends "base.html" %}
-{% from "_macros.html" import badge %}
+{% from "_macros.html" import badge, lamp, meter, pips %}
 {% block title %}{{ a.epic_key }}{% endblock %}
+{% block style %}
+.crumb { font-size: 13px; }
+.hero { display: grid; gap: 16px; padding: 24px; border-radius: var(--radius); border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--tint) 0%, var(--surface) 55%); }
+.hero.r-red { --tint: var(--red-bg); } .hero.r-amber { --tint: var(--amber-bg); }
+.hero.r-green { --tint: var(--green-bg); } .hero.r-unknown { --tint: var(--unknown-bg); }
+.hero .title { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.hero .lamp { width: 18px; height: 18px; }
+.hero .why { font-size: 16.5px; line-height: 1.6; max-width: 75ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 28px; }
+.fact { display: grid; gap: 2px; }
+.fact span { font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.fact b { font-weight: 600; display: inline-flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; align-items: start; }
+.layout > div { display: grid; gap: 24px; min-width: 0; }
+.section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.risk { display: grid; gap: 10px; padding: 16px 18px; }
+.risk + .risk { border-top: 1px solid var(--border); }
+.evidence { display: flex; flex-wrap: wrap; gap: 6px; }
+.evidence a { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font: 500 12px var(--font-data);
+  color: var(--accent); background: var(--accent-soft); padding: 3px 8px; border-radius: 6px; }
+.evidence a:hover { text-decoration: underline; }
+.src { font-weight: 700; text-transform: uppercase; font-size: 10px; letter-spacing: .06em; }
+.actions { counter-reset: act; list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.actions li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; align-items: start; }
+.actions li::before { counter-increment: act; content: counter(act); display: grid; place-items: center; width: 24px; height: 24px;
+  border-radius: 50%; background: var(--accent-soft); color: var(--accent); font: 600 12px var(--font-data); }
+.timeline { list-style: none; margin: 0; padding: 0 0 0 4px; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+.timeline li { position: relative; display: grid; grid-template-columns: 22px 112px minmax(0, 1fr); gap: 10px; padding: 8px 0; }
+.timeline li { --node: var(--faint); }
+.timeline li.k-slack { --node: var(--unknown-solid); } .timeline li.k-github { --node: var(--muted); } .timeline li.k-jira { --node: var(--accent); }
+.timeline .node { width: 12px; height: 12px; margin-top: 5px; border-radius: 50%; background: var(--surface); border: 2px solid var(--node); position: relative; z-index: 1; }
+.timeline li.cited .node { background: var(--node); }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--node); }
+.legend i.fill { background: var(--node); }
+.timeline time { font: 12px/1.6 var(--font-data); color: var(--muted); }
+.timeline .what { display: grid; gap: 4px; min-width: 0; }
+.timeline .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.history { display: flex; gap: 8px; flex-wrap: wrap; }
+.history a { display: grid; gap: 4px; justify-items: center; text-decoration: none; }
+.signal-list li { display: grid; gap: 4px; }
+.signal-list .head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .timeline li { grid-template-columns: 22px minmax(0, 1fr); } .timeline time { grid-column: 2; } .timeline .what { grid-column: 2; } }
+{% endblock %}
 {% block content %}
-<p class="small">{% if backtest_id %}<a href="/backtests/{{ backtest_id }}">← Backtest {{ backtest_id }}</a>{% else %}<a href="/?run={{ run.id }}">← Overview (run {{ run.id }})</a>{% endif %}</p>
-<h1>{{ a.epic_key }} {{ a.detail.title }} {{ badge(a.rating) }}</h1>
-<p class="muted">As of {{ run.as_of | dt("%a %d %b %Y") }} · confidence {{ "%.0f" | format(a.confidence * 100) }}%{% if a.detail.owner %} · owner {{ a.detail.owner }}{% endif %}{% if a.detail.due_date %} · due {{ a.detail.due_date }}{% endif %}{% if a.predicted_slip_days %} · predicted slip {{ a.predicted_slip_days }} days{% endif %}</p>
+<p class="crumb">{% if backtest_id %}<a href="/backtests/{{ backtest_id }}">← Backtest {{ backtest_id }}</a>{% else %}<a href="/?run={{ run.id }}">← Overview (run {{ run.id }})</a>{% endif %}</p>
+{% set done = a.detail.skipped == "done" %}
+<section class="hero r-{{ a.rating }}">
+  <div class="title">{{ lamp(a.rating, done) }}<span class="mono muted">{{ a.epic_key }}</span><h1>{{ a.detail.title }}</h1>{{ badge(a.rating) }}</div>
+  <p class="why">{{ a.rationale }}</p>
+  <div class="facts">
+    <div class="fact"><span>As of</span><b>{{ run.as_of | dt("%a %d %b %Y") }}</b></div>
+    {% if a.detail.owner %}<div class="fact"><span>Owner</span><b>{{ a.detail.owner }}</b></div>{% endif %}
+    {% if a.detail.due_date %}<div class="fact"><span>Due</span><b class="mono">{{ a.detail.due_date }}</b></div>{% endif %}
+    <div class="fact"><span>Confidence</span><b>{{ meter(a.confidence) }} {{ "%.0f" | format(a.confidence * 100) }}%</b></div>
+    {% if a.predicted_slip_days %}<div class="fact"><span>Predicted slip</span><b>{{ a.predicted_slip_days }} days</b></div>{% endif %}
+    <div class="fact"><span>Signals fired</span><b>{{ a.signals | length }}</b></div>
+  </div>
+</section>
 
-<div class="grid2">
+<div class="layout">
 <div>
-  <div class="card"><p style="margin:0">{{ a.rationale }}</p></div>
-
   {% if a.detail.key_risks %}
-  <h2>Key risks</h2>
-  <ul class="plain">
-  {% for risk in a.detail.key_risks %}
-    <li>{{ risk.summary }}<br>
-      {% for id in risk.evidence_ids %}{% set ev = evidence.get(id) %}
-      <a class="small" href="{{ evidence_href(id, ev.url if ev else none) }}" title="{{ ev.summary if ev else id }}">{{ ev.when if ev else id }} · {{ ev.source if ev else "" }}</a>{% if not loop.last %} · {% endif %}
-      {% endfor %}
-    </li>
-  {% endfor %}
-  </ul>
+  <section>
+    <div class="section-title"><h2>Key risks</h2><span class="small muted">{{ a.detail.key_risks | length }} with cited evidence</span></div>
+    <div class="card" style="padding: 0">
+    {% for risk in a.detail.key_risks %}
+      <div class="risk">
+        <p>{{ risk.summary }}</p>
+        <div class="evidence">
+        {% for id in risk.evidence_ids %}{% set ev = evidence.get(id) %}
+          <a href="{{ evidence_href(id, ev.url if ev else none) }}" title="{{ ev.summary if ev else id }}"><span class="src">{{ ev.source if ev else "event" }}</span>{{ ev.when if ev else id }}</a>
+        {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
   {% endif %}
 
   {% if a.detail.suggested_actions %}
-  <h2>Suggested actions</h2>
-  <ul>{% for action in a.detail.suggested_actions %}<li>{{ action }}</li>{% endfor %}</ul>
+  <section>
+    <div class="section-title"><h2>Suggested actions</h2><span class="small muted">for this week</span></div>
+    <ol class="actions card">{% for action in a.detail.suggested_actions %}<li><span>{{ action }}</span></li>{% endfor %}</ol>
+  </section>
   {% endif %}
 
-  <h2>Signal timeline</h2>
-  {% if timeline %}
-  <ul class="plain timeline">
-  {% for item in timeline %}
-    <li><span class="small muted">{{ item.event.occurred_at | dt("%a %d %b %H:%M") }}</span>
-      <span>{% for s in item.signals %}<span class="tag">{{ s }}</span>{% endfor %}{% if item.cited %}<span class="tag">cited</span>{% endif %}
-        <a href="{{ evidence_href(item.event.id, item.event.url) }}">{{ item.summary }}</a></span></li>
-  {% endfor %}
-  </ul>
-  {% else %}<p class="muted">No signals fired and nothing was cited.</p>{% endif %}
-
-  {% if a.signals %}
-  <h2>Signals</h2>
-  <ul class="plain">{% for s in a.signals %}<li><span class="tag">{{ s.type }}</span> severity {{ s.severity }}/3 · {{ s.detail }}</li>{% endfor %}</ul>
-  {% endif %}
+  <section>
+    <div class="section-title"><h2>Signal timeline</h2>
+      <span class="legend" aria-label="Legend"><span style="--node: var(--accent)"><i></i>Jira</span><span style="--node: var(--muted)"><i></i>GitHub</span><span style="--node: var(--unknown-solid)"><i></i>Slack</span><span style="--node: var(--muted)"><i class="fill"></i>cited</span></span></div>
+    {% if timeline %}
+    <ol class="timeline card">
+    {% for item in timeline %}
+      <li class="k-{{ item.event.source }}{% if item.cited %} cited{% endif %}">
+        <span class="node" aria-hidden="true"></span>
+        <time datetime="{{ item.event.occurred_at.isoformat() }}">{{ item.event.occurred_at | dt("%a %d %b %H:%M") }}</time>
+        <div class="what">
+          <a href="{{ evidence_href(item.event.id, item.event.url) }}">{{ item.summary }}</a>
+          <div class="tags">{% for s in item.signals %}<span class="tag">{{ s }}</span>{% endfor %}{% if item.cited %}<span class="tag">cited</span>{% endif %}</div>
+        </div>
+      </li>
+    {% endfor %}
+    </ol>
+    {% else %}<p class="muted card">No signals fired and nothing was cited.</p>{% endif %}
+  </section>
 </div>
 
 <div>
-  <h2 style="margin-top:0">Rating history</h2>
-  <div class="history">
-  {% for as_of, rating, aid in history %}<a href="/assessments/{{ aid }}" title="{{ as_of | dt('%a %d %b') }}" style="text-decoration:none">{{ badge(rating) }}<br><span class="small muted">{{ as_of | dt("%d %b") }}</span></a>{% endfor %}
-  </div>
+  <section class="card stack">
+    <h2>Rating history</h2>
+    <div class="history">
+    {% for as_of, rating, aid in history %}<a href="/assessments/{{ aid }}" title="{{ as_of | dt('%a %d %b') }}">{{ badge(rating) }}<span class="small muted mono">{{ as_of | dt("%d %b") }}</span></a>{% endfor %}
+    </div>
+  </section>
 
-  <h2 id="feedback">Was this flag useful?</h2>
-  {% include "_feedback.html" %}
+  <section class="stack" id="feedback">
+    <h2>Was this flag useful?</h2>
+    {% include "_feedback.html" %}
+  </section>
 
-  {% if a.detail.dropped_evidence_ids %}
-  <p class="small muted">The model cited {{ a.detail.dropped_evidence_ids | length }} evidence id(s) that weren't in its input; they were dropped.</p>
+  {% if a.signals %}
+  <section class="card stack">
+    <h2>Signals</h2>
+    <ul class="plain signal-list">{% for s in a.signals | sort(attribute="severity", reverse=true) %}<li><div class="head">{{ pips(s.severity) }}<span class="tag">{{ s.type }}</span></div><span class="small">{{ s.detail }}</span></li>{% endfor %}</ul>
+  </section>
   {% endif %}
+
+  {% if a.detail.dropped_evidence_ids %}<p class="small muted">The model cited {{ a.detail.dropped_evidence_ids | length }} evidence id(s) that weren't in its input; they were dropped.</p>{% endif %}
   {% if a.detail.error %}<p class="small muted">Error: {{ a.detail.error }}</p>{% endif %}
 </div>
 </div>

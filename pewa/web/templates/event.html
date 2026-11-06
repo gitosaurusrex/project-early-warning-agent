@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block title %}{{ e.id }}{% endblock %}
+{% block style %}
+.evt { display: grid; gap: 14px; }
+.evt .head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.evt blockquote { margin: 0; padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--surface-2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 15.5px; white-space: pre-wrap; }
+.evt pre { margin: 0; background: var(--surface-2); border-radius: var(--radius-sm); padding: 14px; overflow-x: auto; }
+{% endblock %}
 {% block content %}
 {% if back %}<p class="small"><a href="{{ back }}">← Back</a></p>{% endif %}
-<h1>{{ e.source }} · {{ e.kind | replace("_", " ") }}</h1>
-<p class="muted">{{ e.occurred_at | dt("%a %d %b %Y, %H:%M") }} UTC · {{ e.actor or "unknown actor" }} · {{ e.entity_id }}{% if e.epic_key %} · epic {{ e.epic_key }}{% endif %} · <code>{{ e.id }}</code></p>
-{% if e.url %}<p class="small">Source link: <code>{{ e.url }}</code>{% if ".example" in e.url %} <span class="muted">(fictional fixture URL, so the event is shown here)</span>{% else %} · <a href="{{ e.url }}">open</a>{% endif %}</p>{% endif %}
-{% if e.payload.text %}<div class="card"><p style="margin:0; white-space:pre-wrap">{{ e.payload.text }}</p></div>{% endif %}
-<h2>Payload</h2>
-<pre class="card">{{ e.payload | tojson(indent=2) }}</pre>
+<section class="card evt">
+  <div class="head"><span class="tag">{{ e.source }}</span><h1>{{ e.kind | replace("_", " ") | capitalize }}</h1></div>
+  <div class="pagehead" style="margin:0"><div class="meta" style="margin:0">
+    <span><b>{{ e.occurred_at | dt("%a %d %b %Y, %H:%M") }}</b> UTC</span><span>{{ e.actor or "unknown actor" }}</span>
+    <span class="mono">{{ e.entity_id }}</span>{% if e.epic_key %}<span>epic <b>{{ e.epic_key }}</b></span>{% endif %}<span class="mono">{{ e.id }}</span>
+  </div></div>
+  {% if e.url %}<p class="small">Source link: <code>{{ e.url }}</code>{% if ".example" in e.url %} <span class="muted">(fictional fixture URL, so the event is shown here)</span>{% else %} · <a href="{{ e.url }}">open</a>{% endif %}</p>{% endif %}
+  {% if e.payload.text %}<blockquote>{{ e.payload.text }}</blockquote>{% endif %}
+  <h2>Payload</h2>
+  <pre>{{ e.payload | tojson(indent=2) }}</pre>
+</section>
 {% endblock %}
