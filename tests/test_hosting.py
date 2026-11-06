@@ -100,3 +100,13 @@ def test_icons_are_public_and_used_by_every_page(tmp_path):
     page = client.get("/", headers={"Authorization": basic("me", "hunter2")}).text
     assert '<link rel="icon" href="/favicon.svg" type="image/svg+xml">' in page
     assert '<img src="/favicon.svg"' in page  # the nav logo is the same mark
+
+
+def test_site_is_branded_atlas(tmp_path):
+    client = TestClient(create_app(make_engine(tmp_path / "b.db"), project="atlas", dry_run=True, password="hunter2"))
+    locked = client.get("/")
+    assert 'realm="ATLAS"' in locked.headers["www-authenticate"] and "ATLAS dashboard" in locked.text
+    page = client.get("/", headers={"Authorization": basic("me", "hunter2")}).text
+    assert '<b>ATLAS</b>' in page and 'aria-label="ATLAS home"' in page and "Early warning" not in page
+    assert "<title>ATLAS</title>" in client.get("/favicon.svg").text
+
