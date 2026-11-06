@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{% block title %}pewa{% endblock %} · {{ project }}</title>
+<title>{% block title %}ATLAS{% endblock %} · {{ project }}</title>
+<meta name="application-name" content="ATLAS">
+<meta name="apple-mobile-web-app-title" content="ATLAS">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -95,8 +97,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .topbar .wrap { display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap; padding-block: 10px; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; }
 .brand img { flex: none; display: block; }
-.brand b { font-family: var(--font-display); font-size: 19px; letter-spacing: -.02em; }
-.brand span { font-size: 12px; color: var(--muted); border-left: 1px solid var(--border); padding-left: 10px; }
+.brand b { font-family: var(--font-display); font-size: 18px; letter-spacing: .06em; }
 .nav { display: flex; gap: 4px; flex-wrap: wrap; }
 .nav a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 14px; padding: 6px 12px; border-radius: 999px; }
 .nav a:hover { color: var(--text); background: var(--surface-2); }
@@ -110,7 +111,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .theme button:hover { color: var(--text); }
 .theme button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
 .theme svg { width: 14px; height: 14px; }
-@media (max-width: 560px) { .theme button span { display: none; } .brand span { display: none; } }
+@media (max-width: 560px) { .theme button span { display: none; } }
 
 /* ---------- controls ---------- */
 .btn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid transparent; border-radius: 999px; cursor: pointer;
@@ -196,9 +197,9 @@ textarea.md { min-height: 340px; background: var(--surface-2); border-color: var
 </head>
 <body>
 <header class="topbar"><div class="wrap">
-  <a class="brand" href="/" aria-label="pewa home">
+  <a class="brand" href="/" aria-label="ATLAS home">
     <img src="/favicon.svg" width="28" height="28" alt="">
-    <b>pewa</b><span>Early warning · {{ project }}</span>
+    <b>ATLAS</b>
   </a>
   {% set here = request.url.path if request else "" %}
   <nav class="nav" aria-label="Sections">

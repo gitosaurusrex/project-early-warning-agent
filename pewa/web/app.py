@@ -122,7 +122,7 @@ def _backtest_or_404(session: Session, project: str, backtest_id: int) -> Backte
 
 def create_app(engine: Engine | None = None, *, project: str | None = None, dry_run: bool = False,
                password: str | None = None) -> FastAPI:
-    app = FastAPI(title="pewa dashboard", docs_url=None, redoc_url=None)
+    app = FastAPI(title="ATLAS dashboard", docs_url=None, redoc_url=None)
     app.state.engine = engine or make_engine(get_settings().pewa_db_path)
     app.state.project = project or get_settings().pewa_project
     app.state.dry_run = dry_run
@@ -134,8 +134,8 @@ def create_app(engine: Engine | None = None, *, project: str | None = None, dry_
         async def require_password(request: Request, call_next: Callable[[Request], Awaitable[Response]]) -> Response:
             if request.url.path in PUBLIC_PATHS or password_ok(request.headers.get("authorization"), password):
                 return await call_next(request)
-            return Response("Sign in to the pewa dashboard (any username, the shared password).", status_code=401,
-                            headers={"WWW-Authenticate": 'Basic realm="pewa", charset="UTF-8"'})
+            return Response("Sign in to the ATLAS dashboard (any username, the shared password).", status_code=401,
+                            headers={"WWW-Authenticate": 'Basic realm="ATLAS", charset="UTF-8"'})
 
     def page(request: Request, name: str, status_code: int = 200, **context: Any) -> HTMLResponse:
         context.update(project=app.state.project, dry_run=app.state.dry_run)
