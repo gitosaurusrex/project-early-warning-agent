@@ -40,8 +40,6 @@ may reshape everything else. Then #12 before any schema change or real-data host
 
 ## Other notes
 
-- An early **view-only snapshot** of the dashboard was published on claude.ai while there was no
-  hosting. It shows the old design and the old name; delete it from claude.ai or ignore it.
 - In Claude Code cloud sessions, the Anthropic key is read from `PEWA_ANTHROPIC_API_KEY`, because a
   user-defined `ANTHROPIC_API_KEY` didn't reach the container (DECISIONS #26).
 - No Render, Vercel or Clerk access was configured for the cloud sessions that built this, so
