@@ -91,7 +91,7 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     428 messages.
 26. **`PEWA_ANTHROPIC_API_KEY` is accepted alongside `ANTHROPIC_API_KEY`, and wins when both are
     set.** In Claude Code cloud environments a user-defined `ANTHROPIC_API_KEY` never reached the
-    container, presumably because the host reserves it for Claude Code's own login. pewa passes
+    container, presumably because the host reserves it for Claude Code's own login. ATLAS passes
     the resolved key to the SDK explicitly. With neither set, the SDK's usual lookup still applies.
 
 ## Phase 3
@@ -194,7 +194,7 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     dates are minute-precision in the API user's timezone. Events before `since` are filtered
     afterwards, and ingest ignores duplicates.
 48. **Status mapping** (the follow-up promised in #9): `JIRA_STATUS_MAP` first, then names already
-    in pewa's workflow, then Jira's status category (new / indeterminate / done), with "review"
+    in ATLAS's workflow, then Jira's status category (new / indeterminate / done), with "review"
     in an in-progress name meaning In Review. Payloads keep the raw names (`from_name`,
     `to_name`). A change between two Jira statuses that map to the same step produces no event.
     An unknown target in `JIRA_STATUS_MAP` is rejected before any request is made.
@@ -225,7 +225,7 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
 
 ## Hosting
 
-56. **Render, not Vercel.** pewa is a long-running FastAPI server with a SQLite file and long jobs
+56. **Render, not Vercel.** ATLAS is a long-running FastAPI server with a SQLite file and long jobs
     (ingest, backtests). Vercel's serverless functions have no persistent disk and short time
     limits. Render runs it as an ordinary web service. `render.yaml` targets the free plan. It
     has no disk, so the demo reseeds on every start (`pewa demo`, about 3 s, no model calls).
@@ -285,4 +285,14 @@ Judgment calls made where the spec was ambiguous, or small deviations from it.
     can't rename an `onrender.com` address, so the ATLAS name meant a new service), deployed from
     `main` by `render.yaml` (free plan, Atlas data, offline responder, generated password). It's
     linked from the top of the README.
+
+## Naming and hand-off
+
+66. **The product is called ATLAS.** The website and these docs use ATLAS. Code identifiers keep
+    `pewa` for now: the CLI command, the Python package and the `PEWA_*` settings. Renaming them breaks
+    existing setups and needs aliases, so it's a separate change ([#18](https://github.com/gitosaurusrex/project-early-warning-agent/issues/18)). The bundled
+    fictional demo project is also named Atlas, which collides with the product name; #18 proposes
+    renaming the dataset too. `SPEC.md` is left as originally written.
+67. **Open work lives in GitHub issues** ([#10–#19](https://github.com/gitosaurusrex/project-early-warning-agent/issues)), summarized with a suggested order in
+    `NEXT_STEPS.md`.
 

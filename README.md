@@ -1,4 +1,4 @@
-# Project Early-Warning Agent (pewa)
+# ATLAS: Project Early-Warning Agent
 
 [![CI](https://github.com/gitosaurusrex/project-early-warning-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/gitosaurusrex/project-early-warning-agent/actions/workflows/ci.yml)
 [![Live demo](https://img.shields.io/badge/live%20demo-mvp--atlas--demo.onrender.com-2650d4)](https://mvp-atlas-demo.onrender.com/)
@@ -12,7 +12,11 @@ Atlas project with the offline responder, so it never calls the model. It's pass
 ask the maintainer for access. It runs on Render's free plan, so the first visit after a quiet
 spell takes about a minute while the instance wakes.
 
-See [SPEC.md](SPEC.md) for the full design and [DECISIONS.md](DECISIONS.md) for judgment
+ATLAS was called **pewa** while it was being built. The command-line tool, the Python package and
+the settings still use that name (`pewa …`, `pewa/`, `PEWA_*`), so the commands below are correct
+as written. Finishing the rename is tracked in [#18](https://github.com/gitosaurusrex/project-early-warning-agent/issues/18).
+
+See [NEXT_STEPS.md](NEXT_STEPS.md) for where the project stands and the open work, [SPEC.md](SPEC.md) for the full design and [DECISIONS.md](DECISIONS.md) for judgment
 calls made while building it.
 
 ## Status
@@ -112,7 +116,7 @@ Requests use structured outputs (a JSON schema on `output_config.format`), so re
 well-formed. The checks above still run in code. Early in an epic, pace projections are noisy:
 until it has `PEWA_MIN_HISTORY_WEEKS` (2) of work and `PEWA_MIN_DONE_TICKETS` (3) finished tickets,
 an amber or red rating needs a detector signal of severity 2 or more, unless the due date is
-within two working weeks. Otherwise pewa keeps it green and notes why. The model is told the same
+within two working weeks. Otherwise ATLAS keeps it green and notes why. The model is told the same
 rule and sees the epic's history.
 
 Done epics are recorded as green without a model call. On models that support it, requests opt
@@ -230,10 +234,10 @@ limit that won't reset soon), the others are still saved. The failure is reporte
 | `JIRA_EPIC_LINK_FIELD` | optional: the classic "Epic Link" field id, for projects that don't use `parent` |
 | `JIRA_STATUS_MAP` | optional: `Jira status=pewa status` pairs, e.g. `Code Review=In Review,QA=In Review` |
 
-pewa reads issues with their changelogs (`/rest/api/3/search/jql` with `expand=changelog`, plus
+ATLAS reads issues with their changelogs (`/rest/api/3/search/jql` with `expand=changelog`, plus
 `/rest/api/3/issue/{key}/changelog` for long histories). It replays each issue's status,
 assignee, due date, parent, points, title and sprint changes as events. Jira statuses are
-mapped onto pewa's four-step workflow (To Do, In Progress, In Review, Done) by their status
+mapped onto ATLAS's four-step workflow (To Do, In Progress, In Review, Done) by their status
 category. An in-progress status with "review" in its name counts as In Review, and
 `JIRA_STATUS_MAP` overrides either rule.
 
@@ -245,10 +249,10 @@ category. An in-progress status with "review" in its name counts as In Review, a
 | `GITHUB_REPOS` | comma-separated `owner/repo` list |
 | `GITHUB_API_URL` | optional, for GitHub Enterprise Server (`https://ghe.example.com/api/v3`) |
 
-For each pull request updated since the last sync, pewa reads the PR, its timeline (review
+For each pull request updated since the last sync, ATLAS reads the PR, its timeline (review
 requests, reviews, merge, close, reopen) and the check runs on its last 30 commits (failed or
 timed-out runs become `ci_failed`). Ticket keys in a PR's title, branch or body link it to Jira.
-GitHub's rate limits are respected: pewa waits for the reset when it is under two minutes away,
+GitHub's rate limits are respected: ATLAS waits for the reset when it is under two minutes away,
 and otherwise stops with a clear error.
 
 ### Slack
@@ -259,7 +263,7 @@ and otherwise stops with a clear error.
 | `SLACK_CHANNELS` | comma-separated channel **ids** (`C0123…`; in Slack, open the channel details to copy it) |
 | `SLACK_THREAD_LOOKBACK_DAYS` | optional (default 14): how far back incremental syncs re-read threads for new replies |
 
-Invite the bot to each channel (`/invite @your-app`). pewa reads channel history and thread
+Invite the bot to each channel (`/invite @your-app`). ATLAS reads channel history and thread
 replies. Messages mentioning a ticket key or PR URL are linked to that epic, and replies inherit
 the thread's links. Message text is stored locally (the blocker-language signal and linking need
 it) but is never logged. People appear as Slack user ids, since resolving names would need the
